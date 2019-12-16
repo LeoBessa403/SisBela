@@ -4,11 +4,11 @@ function servidor_inicial()
 {
     if ($_SERVER['HTTP_HOST'] == 'localhost') {
         $config = array(
-            'HOME' => 'http://localhost/sistemadabeleza/',
+            'HOME' => 'http://localhost/SisBela/',
             'HOST' => 'localhost',
             'USER' => 'root',
             'PASS' => '',
-            'DBSA' => 'sistem25_dabelez',
+            'DBSA' => 'sisbela',
             'DEBUG' => true,
             'PROD' => false
         );
