@@ -9,7 +9,7 @@
 define('MODULO_ASSINANTE', '1');
 define('LOGAR_EMAIL', '1');
 define('TABELA_AUDITORIA', '1');
-define('DESC', 'Sistema da Beleza');
+define('DESC', 'SisBela');
 define('DESC_SIS', 'SisBela');
 define('TITULO_SITE', 'Sistema de gestão do ramo de beleza');
 define('DESC_SITE', 'Sistema de gestão do ramo de beleza');
@@ -25,7 +25,7 @@ define('SESSION_USER', 'user_sistema_beleza');
 define('INATIVO', '30');
 define('BACKUP', '5');
 define('TAMANHO', '800');
-define('WHATSAPP', '5561993704240');
+define('WHATSAPP', '5561993274991');
 define('NUM_BG_IMAGENS', '50');
 define('CONTROLLER_SEO', '');
 define('USER_EMAIL', '');
