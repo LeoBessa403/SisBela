@@ -33,6 +33,13 @@ class Relacionamentos
                     ('Tipo') => '2',
                 ),
             ),
+            (EmpresaEntidade::TABELA) => Array(
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_EMPRESA,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
             (AcessoEntidade::TABELA) => Array(
                 (CO_USUARIO) => Array(
                     ('Campo') => CO_USUARIO,

@@ -95,13 +95,21 @@ INSERT INTO TB_FUNCIONALIDADE VALUES("29","Minificação","MinificacaoGestao","A
 
 
 
-
 INSERT INTO TB_IMAGEM VALUES("1","leonardo-m-c-bessa-56e8920c23ab66.jpg");
+
+
+
+INSERT INTO TB_PACOTE VALUES("1","Assinante","Gestão do assinante no sistema da beleza","2018-07-30 14:00:00","2018-11-02");
+
+INSERT INTO TB_PACOTE VALUES("2","Principal","Onde consta todas as funcionalidades padrões e básicas do sistema","2018-07-30 14:00:00","2018-11-02");
+
 
 
 INSERT INTO TB_PERFIL VALUES("1","Master","A");
 
 INSERT INTO TB_PERFIL VALUES("2","Gestor","A");
+
+INSERT INTO TB_PERFIL VALUES("3","Colaborador","A");
 
 
 
@@ -111,6 +119,16 @@ INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("1","1","1","0");
 INSERT INTO TB_PESSOA VALUES("1","","Usuário SisBela","","2016-10-31 00:00:00","0000-00-00","M","1","1","1");
 
 
+
+INSERT INTO TB_PLANO VALUES("1","2018-07-31 10:17:46","Plano Padrão","1","A");
+
+
+INSERT INTO TB_PLANO_ASSINANTE VALUES("1","0.00","2018-07-31 10:17:46","texto","1");
+
+
+INSERT INTO TB_PLANO_PACOTE VALUES("1","1","1");
+
+INSERT INTO TB_PLANO_PACOTE VALUES("2","1","2");
 
 
 INSERT INTO TB_PROJETO VALUES("1","SisBela","2018-07-25 11:07:40");
