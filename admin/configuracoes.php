@@ -5,7 +5,7 @@ function servidor_inicial()
     if ($_SERVER['HTTP_HOST'] == 'localhost') {
         $config = array(
             'HOME' => 'http://localhost/SisBela/',
-            'HOST' => 'localhost',
+            'HOST' => '127.0.0.1',
             'USER' => 'root',
             'PASS' => '',
             'DBSA' => 'sisbela',
