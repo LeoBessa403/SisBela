@@ -35,19 +35,6 @@ class IndexController extends AbstractController
 //        $dados['NovosProdutos'] = count($produtosNovos);
 //        $dados['MaisProdurados'] = 0;
 
-        $rotas = array(
-            './library/',
-            '../../library/',
-            '../',
-            '',
-            './' . ADMIN . '/',
-            '../../' . ADMIN . '/',
-            './' . SITE . '/',
-            '../../' . SITE . '/'
-        );
-
-        debug($rotas,1);
-
         return [];
     }
 
