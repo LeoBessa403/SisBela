@@ -1,4 +1,4 @@
--- Atualizado em: 12/02/2020 00:04:17
+-- Atualizado em: 03/03/2020 10:35:28
 -- AMBIENTE: http://localhost/SisBela/
 -- BANCO: sisbela
 
@@ -39,7 +39,7 @@ DROP TABLE IF EXISTS TB_AGENDA;
 
 CREATE TABLE `TB_AGENDA` (
   `co_agenda` int(11) NOT NULL AUTO_INCREMENT,
-  `ds_motivo` text,
+  `ds_motivo` text DEFAULT NULL,
   `dt_cadastro` datetime DEFAULT NULL,
   `co_assinante` int(11) NOT NULL,
   PRIMARY KEY (`co_agenda`,`co_assinante`)
@@ -55,7 +55,7 @@ DROP TABLE IF EXISTS TB_ANOTACAO;
 CREATE TABLE `TB_ANOTACAO` (
   `co_anotacao` int(11) NOT NULL AUTO_INCREMENT,
   `dt_cadastro` datetime DEFAULT NULL,
-  `ds_observacao` text,
+  `ds_observacao` text DEFAULT NULL,
   `ds_titulo` varchar(80) DEFAULT NULL,
   `co_historia` int(11) NOT NULL,
   PRIMARY KEY (`co_anotacao`,`co_historia`),
@@ -95,7 +95,7 @@ DROP TABLE IF EXISTS TB_AUDITORIA;
 CREATE TABLE `TB_AUDITORIA` (
   `co_auditoria` int(11) NOT NULL AUTO_INCREMENT,
   `dt_realizado` datetime DEFAULT NULL,
-  `ds_perfil_usuario` text,
+  `ds_perfil_usuario` text DEFAULT NULL,
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
@@ -192,7 +192,7 @@ CREATE TABLE `TB_CLIENTE` (
   `dt_cadastro` datetime DEFAULT NULL,
   `st_status` varchar(1) DEFAULT 'A' COMMENT 'A - Ativo / I - Inativo\n',
   `no_apelido` varchar(45) DEFAULT NULL,
-  `ds_observacao` text,
+  `ds_observacao` text DEFAULT NULL,
   `st_receber_email_agendamento` varchar(1) DEFAULT 'S' COMMENT 'S - Sim / N - Não',
   `st_lembrete_horario_agendamento` varchar(1) DEFAULT 'S' COMMENT 'S - Sim / N - Não',
   `st_sms_marketing` varchar(1) DEFAULT 'S' COMMENT 'S - Sim / N - Não',
@@ -279,7 +279,7 @@ CREATE TABLE `TB_CRONS` (
   `co_cron` int(11) NOT NULL AUTO_INCREMENT,
   `dt_cadastro` datetime DEFAULT NULL,
   `no_cron` varchar(70) DEFAULT NULL,
-  `ds_sql` text,
+  `ds_sql` text DEFAULT NULL,
   PRIMARY KEY (`co_cron`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -297,7 +297,7 @@ CREATE TABLE `TB_EMPRESA` (
   `dt_cadastro` datetime DEFAULT NULL,
   `nu_cnpj` varchar(20) DEFAULT NULL,
   `nu_insc_estadual` varchar(20) DEFAULT NULL,
-  `ds_observacao` text,
+  `ds_observacao` text DEFAULT NULL,
   `st_status` varchar(1) DEFAULT NULL,
   `co_pessoa` int(11) NOT NULL COMMENT 'Pessoa responsável pela empresa\n',
   `co_endereco` int(11) NOT NULL,
@@ -422,7 +422,7 @@ DROP TABLE IF EXISTS TB_HISTORIA;
 CREATE TABLE `TB_HISTORIA` (
   `co_historia` int(11) NOT NULL AUTO_INCREMENT,
   `ds_titulo` varchar(80) DEFAULT NULL,
-  `ds_observacao` text,
+  `ds_observacao` text DEFAULT NULL,
   `dt_cadastro` datetime DEFAULT NULL,
   `dt_atualizado` datetime DEFAULT NULL,
   `st_situacao` varchar(1) DEFAULT 'N' COMMENT 'N - Não iniciada / I - Iniciada / C - Concluida',
@@ -432,20 +432,11 @@ CREATE TABLE `TB_HISTORIA` (
 ) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_HISTORIA VALUES("1","Manter Planos do sistema","Manter planos do sistema da beleza, onde terá que manter os desconto com período para o plano
-\n\nModelagem: Plano e histórico plano módulos","2019-12-18 12:06:25","2020-01-29 19:06:52","C","1");
+INSERT INTO TB_HISTORIA VALUES("1","Manter Planos do sistema","Manter planos do sistema da beleza, onde terá que manter os desconto com período para o plano\n\n\nModelagem: Plano e histórico plano módulos","2019-12-18 12:06:25","2020-01-29 19:06:52","C","1");
 
-INSERT INTO TB_HISTORIA VALUES("2","Manter Assinante","Manter assinante do sistema e com data de expiração do sistema para o assinante, criar contato, criar pessoa, envio de email de confirmação com senha gerada.
-\n\n
-\n\nCriar o usuário quando criar o assinante, plano assinado
-\n\n
-\n\nModelagem: Assinante (Junção de pessoa, contato, usuário, data de expiração, status)","2019-12-18 12:11:52","2020-01-30 12:54:32","C","1");
+INSERT INTO TB_HISTORIA VALUES("2","Manter Assinante","Manter assinante do sistema e com data de expiração do sistema para o assinante, criar contato, criar pessoa, envio de email de confirmação com senha gerada.\n\n\n\n\n\nCriar o usuário quando criar o assinante, plano assinado\n\n\n\n\n\nModelagem: Assinante (Junção de pessoa, contato, usuário, data de expiração, status)","2019-12-18 12:11:52","2020-01-30 12:54:32","C","1");
 
-INSERT INTO TB_HISTORIA VALUES("3","Gestão de pagamentos dos assinantes","Dar baixas no pagamento, e atualizar o prazo de expiração do assinante 
-\n\n
-\n\nCriar histórico dos pagamentos
-\n\n
-\n\n Modelagem: Pagamento assinante (Ligada com plano e assinante)","2019-12-18 12:15:49","2019-12-18 12:15:49","I","1");
+INSERT INTO TB_HISTORIA VALUES("3","Gestão de pagamentos dos assinantes","Dar baixas no pagamento, e atualizar o prazo de expiração do assinante \n\n\n\n\n\nCriar histórico dos pagamentos\n\n\n\n\n\n Modelagem: Pagamento assinante (Ligada com plano e assinante)","2019-12-18 12:15:49","2019-12-18 12:15:49","I","1");
 
 INSERT INTO TB_HISTORIA VALUES("4","Configuração inicial do projeto","Configuração inicial do projeto","2019-12-18 12:16:19","2019-12-18 12:16:19","I","1");
 
@@ -457,25 +448,15 @@ INSERT INTO TB_HISTORIA VALUES("7","Manter Planos do Assinante","Manter Planos d
 
 INSERT INTO TB_HISTORIA VALUES("8","Pesquisa Avançada dos Assinantes","Pesquisa Avançada dos Assinantes por razão social, nome fantasia, Responsável, cidade e UF, email, Tipo de estabelecimento, Atendimento, Género Especializado, funcionamento, data de expiração (Período), número de filiais, valor assinatura atual, número de profissionais,","2019-12-18 12:18:35","2019-12-18 12:18:35","N","1");
 
-INSERT INTO TB_HISTORIA VALUES("9","Dados complementares básicos","Manter dados: (Endereço, telefone, CNPJ, fantasia, razão e outros)
-\n\n
-\n\nModelagem: Contato, endereço e empresa ou pessoa","2019-12-18 12:20:44","2019-12-18 12:20:44","I","2");
+INSERT INTO TB_HISTORIA VALUES("9","Dados complementares básicos","Manter dados: (Endereço, telefone, CNPJ, fantasia, razão e outros)\n\n\n\n\n\nModelagem: Contato, endereço e empresa ou pessoa","2019-12-18 12:20:44","2019-12-18 12:20:44","I","2");
 
-INSERT INTO TB_HISTORIA VALUES("10","Manter Fotos do Estabelecimento","Manter Fotos do Estabelecimento para o Site
-\n\n
-\n\nModelagem: Imagem (FK Assinante)","2019-12-18 12:21:59","2019-12-18 12:21:59","I","2");
+INSERT INTO TB_HISTORIA VALUES("10","Manter Fotos do Estabelecimento","Manter Fotos do Estabelecimento para o Site\n\n\n\n\n\nModelagem: Imagem (FK Assinante)","2019-12-18 12:21:59","2019-12-18 12:21:59","I","2");
 
 INSERT INTO TB_HISTORIA VALUES("11","Gestão de notificações","Gestão de notificações com as mensagens geradas do sistema de sucesso erro e avisos","2019-12-18 12:22:23","2019-12-18 12:22:23","I","2");
 
-INSERT INTO TB_HISTORIA VALUES("12","Cadastrar Agendamento","Cadastrar Agendamento (Opção da recorrência)
-\n\n
-\n\nVários serviços e pacotes
-\n\n
-\n\nModelagem: (FK cliente, Serviço, Profissional, Assistente","2019-12-18 12:23:46","2019-12-18 12:23:55","I","3");
+INSERT INTO TB_HISTORIA VALUES("12","Cadastrar Agendamento","Cadastrar Agendamento (Opção da recorrência)\n\n\n\n\n\nVários serviços e pacotes\n\n\n\n\n\nModelagem: (FK cliente, Serviço, Profissional, Assistente","2019-12-18 12:23:46","2019-12-18 12:23:55","I","3");
 
-INSERT INTO TB_HISTORIA VALUES("13","Edição Agendamento","Edição Agendamento
-\n\n
-\n\nValidação dos status do agendamento e status do serviço","2019-12-18 12:24:38","2019-12-18 12:25:53","I","3");
+INSERT INTO TB_HISTORIA VALUES("13","Edição Agendamento","Edição Agendamento\n\n\n\n\n\nValidação dos status do agendamento e status do serviço","2019-12-18 12:24:38","2019-12-18 12:25:53","I","3");
 
 INSERT INTO TB_HISTORIA VALUES("14","Implantação Agenda","Agenda CSS (Responsivo)","2019-12-18 12:25:03","2019-12-18 12:25:03","I","3");
 
@@ -487,9 +468,7 @@ INSERT INTO TB_HISTORIA VALUES("17","Listagem dos agendamento (Calendário)","Li
 
 INSERT INTO TB_HISTORIA VALUES("18","Histórico do Agendamento","Histórico do Agendamento (Modal)","2019-12-18 12:27:19","2019-12-18 12:27:19","I","3");
 
-INSERT INTO TB_HISTORIA VALUES("19","Deletar Agendamento","Deletar Agendamento (Modal) com Justificativa
-\n\n
-\n\nVisualizar na listagem da grid","2019-12-18 12:27:55","2019-12-18 12:27:55","I","3");
+INSERT INTO TB_HISTORIA VALUES("19","Deletar Agendamento","Deletar Agendamento (Modal) com Justificativa\n\n\n\n\n\nVisualizar na listagem da grid","2019-12-18 12:27:55","2019-12-18 12:27:55","I","3");
 
 INSERT INTO TB_HISTORIA VALUES("20","Listagem dos agendamento (Grid)","Listagem dos agendamento (Grid)","2019-12-18 12:28:13","2019-12-18 12:28:13","I","3");
 
@@ -501,15 +480,9 @@ INSERT INTO TB_HISTORIA VALUES("23","Validações dos botões","Validações dos
 
 INSERT INTO TB_HISTORIA VALUES("24","Iniciar o sistema com as configurações básicas","Iniciar o sistema com as configurações básicas para depois iniciar o painel","2019-12-18 12:31:44","2019-12-18 12:31:44","I","4");
 
-INSERT INTO TB_HISTORIA VALUES("25","Manter Suporte","Manter Suporte, responder suporte, apresentar resposta
-\n\n
-\n\nModelagem: suporte (FK Assinante, Categoria Suporte)
-\n\n
-\n\nTabela base Categoria Suporte","2019-12-18 12:32:21","2019-12-18 12:32:21","N","5");
+INSERT INTO TB_HISTORIA VALUES("25","Manter Suporte","Manter Suporte, responder suporte, apresentar resposta\n\n\n\n\n\nModelagem: suporte (FK Assinante, Categoria Suporte)\n\n\n\n\n\nTabela base Categoria Suporte","2019-12-18 12:32:21","2019-12-18 12:32:21","N","5");
 
-INSERT INTO TB_HISTORIA VALUES("26","Agendamento detalhes","Agendamentos Gerar Gráficos e Relatórios de agendamentos por status do agendamento e período
-\n\n
-\n\n Impressão dos gráficos e dados","2019-12-18 12:34:22","2019-12-18 12:34:22","N","6");
+INSERT INTO TB_HISTORIA VALUES("26","Agendamento detalhes","Agendamentos Gerar Gráficos e Relatórios de agendamentos por status do agendamento e período\n\n\n\n\n\n Impressão dos gráficos e dados","2019-12-18 12:34:22","2019-12-18 12:34:22","N","6");
 
 INSERT INTO TB_HISTORIA VALUES("27","Manter Usuário","Manter Usuário","2019-12-18 12:35:02","2020-01-30 12:55:05","I","7");
 
@@ -523,17 +496,13 @@ INSERT INTO TB_HISTORIA VALUES("31","Página de captura de lead","Página de cap
 
 INSERT INTO TB_HISTORIA VALUES("32","Cadastro pelo site para o assinante","verificar o cadastro pelo site para manter um plano mesmo que que por experiência","2019-12-18 12:38:52","2019-12-18 12:38:52","N","9");
 
-INSERT INTO TB_HISTORIA VALUES("33","Material do Pré Lançamento","Produção e Disponibilização do material para lista de lead
-\n\n
-\n\nDuração de 7 a 10 dias antes do Lançamento de 3 a 4 vídeos","2019-12-18 12:39:57","2019-12-18 12:39:57","N","11");
+INSERT INTO TB_HISTORIA VALUES("33","Material do Pré Lançamento","Produção e Disponibilização do material para lista de lead\n\n\n\n\n\nDuração de 7 a 10 dias antes do Lançamento de 3 a 4 vídeos","2019-12-18 12:39:57","2019-12-18 12:39:57","N","11");
 
 INSERT INTO TB_HISTORIA VALUES("34","Direcionar para o lançamento","Após Lançamento Direcionar para o lançamento o tráfego do PL","2019-12-18 12:40:34","2019-12-18 12:40:34","N","11");
 
 INSERT INTO TB_HISTORIA VALUES("35","Criação da Lista de Lead","Criação da Lista de Lead já trabalhadas nas redes sociais e mais..","2019-12-18 12:42:55","2019-12-18 12:42:55","N","10");
 
-INSERT INTO TB_HISTORIA VALUES("36","Criar conteúdos e Entregas","Criar conteúdos para entrega e ir formulando a lista de lead
-\n\n
-\n\nInicio da divulgação para o lançamento.","2019-12-18 12:43:22","2019-12-18 12:43:22","N","10");
+INSERT INTO TB_HISTORIA VALUES("36","Criar conteúdos e Entregas","Criar conteúdos para entrega e ir formulando a lista de lead\n\n\n\n\n\nInicio da divulgação para o lançamento.","2019-12-18 12:43:22","2019-12-18 12:43:22","N","10");
 
 INSERT INTO TB_HISTORIA VALUES("37","Lançamento das Vendas","de 1 a 7 dias de vendas com página aquecida","2019-12-18 12:44:04","2019-12-18 12:44:04","N","12");
 
@@ -742,7 +711,7 @@ DROP TABLE IF EXISTS TB_PACOTE;
 CREATE TABLE `TB_PACOTE` (
   `co_pacote` int(11) NOT NULL AUTO_INCREMENT,
   `no_pacote` varchar(50) DEFAULT NULL,
-  `ds_descricao` text,
+  `ds_descricao` text DEFAULT NULL,
   `dt_cadastro` datetime DEFAULT NULL,
   `dt_lancamento` date DEFAULT NULL,
   PRIMARY KEY (`co_pacote`)
@@ -841,29 +810,29 @@ CREATE TABLE `TB_PERFIL_FUNCIONALIDADE` (
 
 INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("1","1","1","0");
 
-INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("9","4","2","0");
-
-INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("8","5","2","0");
-
-INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("7","6","2","0");
-
-INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("13","6","3","0");
-
-INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("6","11","2","0");
-
-INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("12","11","3","0");
-
-INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("5","12","2","0");
-
-INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("4","25","2","0");
+INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("2","27","2","0");
 
 INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("3","26","2","0");
 
-INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("11","26","3","0");
+INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("4","25","2","0");
 
-INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("2","27","2","0");
+INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("5","12","2","0");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("6","11","2","0");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("7","6","2","0");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("8","5","2","0");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("9","4","2","0");
 
 INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("10","27","3","0");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("11","26","3","0");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("12","11","3","0");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("13","6","3","0");
 
 
 
@@ -935,7 +904,7 @@ CREATE TABLE `TB_PLANO_ASSINANTE` (
   `co_plano_assinante` int(11) NOT NULL AUTO_INCREMENT,
   `nu_valor` decimal(8,2) DEFAULT NULL,
   `dt_cadastro` datetime DEFAULT NULL,
-  `ds_observacao` text,
+  `ds_observacao` text DEFAULT NULL,
   `co_plano` int(11) NOT NULL,
   PRIMARY KEY (`co_plano_assinante`,`co_plano`),
   KEY `fk_TB_PLANO_ASSINANTE_TB_PLANO1_idx` (`co_plano`)
@@ -964,7 +933,7 @@ CREATE TABLE `TB_PLANO_ASSINANTE_ASSINATURA` (
   `co_plano_assinante_assinatura` int(11) NOT NULL AUTO_INCREMENT,
   `dt_cadastro` datetime DEFAULT NULL,
   `dt_expiracao` date DEFAULT NULL COMMENT 'data de expiriração da assinatura',
-  `nu_filiais` int(11) DEFAULT '0' COMMENT 'Número de filiais para a assinatura',
+  `nu_filiais` int(11) DEFAULT 0 COMMENT 'Número de filiais para a assinatura',
   `nu_valor_assinatura` decimal(8,2) DEFAULT NULL COMMENT 'Valor final da assinatura',
   `nu_profissionais` int(3) DEFAULT NULL COMMENT 'Número de profissionais que o sistema ira gerenciar',
   `co_assinante` int(11) NOT NULL,
@@ -995,25 +964,25 @@ CREATE TABLE `TB_PLANO_PACOTE` (
 
 INSERT INTO TB_PLANO_PACOTE VALUES("1","1","1");
 
-INSERT INTO TB_PLANO_PACOTE VALUES("3","2","1");
-
-INSERT INTO TB_PLANO_PACOTE VALUES("5","3","1");
-
-INSERT INTO TB_PLANO_PACOTE VALUES("7","4","1");
-
-INSERT INTO TB_PLANO_PACOTE VALUES("9","5","1");
-
-INSERT INTO TB_PLANO_PACOTE VALUES("11","6","1");
-
 INSERT INTO TB_PLANO_PACOTE VALUES("2","1","2");
+
+INSERT INTO TB_PLANO_PACOTE VALUES("3","2","1");
 
 INSERT INTO TB_PLANO_PACOTE VALUES("4","2","2");
 
+INSERT INTO TB_PLANO_PACOTE VALUES("5","3","1");
+
 INSERT INTO TB_PLANO_PACOTE VALUES("6","3","2");
+
+INSERT INTO TB_PLANO_PACOTE VALUES("7","4","1");
 
 INSERT INTO TB_PLANO_PACOTE VALUES("8","4","2");
 
+INSERT INTO TB_PLANO_PACOTE VALUES("9","5","1");
+
 INSERT INTO TB_PLANO_PACOTE VALUES("10","5","2");
+
+INSERT INTO TB_PLANO_PACOTE VALUES("11","6","1");
 
 INSERT INTO TB_PLANO_PACOTE VALUES("12","6","2");
 
@@ -1047,9 +1016,9 @@ CREATE TABLE `TB_PROFISSIONAL` (
   `dt_cadastro` datetime DEFAULT NULL,
   `ds_cor_agenda` varchar(7) DEFAULT NULL COMMENT 'Valor Hexadecimal',
   `st_assistente` varchar(1) DEFAULT 'S' COMMENT 'S - Sim / N - Não * Se pode ser assitente de outro profissional',
-  `ds_sobre` text,
+  `ds_sobre` text DEFAULT NULL,
   `no_apelido` varchar(45) DEFAULT NULL,
-  `ds_motivo` text,
+  `ds_motivo` text DEFAULT NULL,
   `st_agenda` varchar(1) DEFAULT 'S' COMMENT 'S - Sim / N - Não * Se possui agenda',
   `st_agenda_online` varchar(1) DEFAULT 'S' COMMENT 'S - Sim / N - Não * Se pode ser ter agendamento on line',
   `st_status` varchar(1) DEFAULT 'A' COMMENT 'A - Ativo / I - Inativo',
@@ -1098,7 +1067,7 @@ CREATE TABLE `TB_SERVICO` (
   `st_assistente` varchar(1) DEFAULT NULL COMMENT 'S - Sim / N - Não * Se precisa ter um assitente',
   `no_servico` varchar(100) DEFAULT NULL,
   `nu_duracao` int(3) DEFAULT NULL,
-  `ds_descricao` text,
+  `ds_descricao` text DEFAULT NULL,
   `co_categoria_servico` int(11) NOT NULL,
   `co_imagem` int(10) NOT NULL,
   PRIMARY KEY (`co_servico`,`co_categoria_servico`,`co_imagem`),
@@ -1162,7 +1131,7 @@ CREATE TABLE `TB_STATUS_AGENDA` (
   `dt_fim_agenda` datetime DEFAULT NULL,
   `nu_valor` decimal(8,2) DEFAULT NULL COMMENT 'Valor total do agendamento',
   `nu_duracao` int(3) DEFAULT NULL COMMENT 'Em minutos',
-  `ds_observacao` text,
+  `ds_observacao` text DEFAULT NULL,
   `co_cliente` int(11) NOT NULL,
   `co_agenda` int(11) NOT NULL,
   `co_usuario` int(10) NOT NULL,
@@ -1245,13 +1214,13 @@ CREATE TABLE `TB_USUARIO_PERFIL` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_USUARIO_PERFIL VALUES("4","0","0","2");
-
 INSERT INTO TB_USUARIO_PERFIL VALUES("1","1","1","0");
 
 INSERT INTO TB_USUARIO_PERFIL VALUES("2","2","2","0");
 
 INSERT INTO TB_USUARIO_PERFIL VALUES("3","0","2","0");
+
+INSERT INTO TB_USUARIO_PERFIL VALUES("4","0","0","2");
 
 
 
