@@ -1,4 +1,4 @@
--- Atualizado em: 03/03/2020 10:35:28
+-- Atualizado em: 03/03/2020 14:29:06
 -- AMBIENTE: http://localhost/SisBela/
 -- BANCO: sisbela
 
@@ -20,16 +20,10 @@ CREATE TABLE `TB_ACESSO` (
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_ACESSO VALUES("9","se9nv8e4fftelvofcm2rf5f8o5","2020-01-30 12:53:31","2020-01-30 13:25:33","F","1","9");
-
-INSERT INTO TB_ACESSO VALUES("10","ilsa2mhmk4hb5tqfq0gg86vnd4","2020-02-11 19:50:14","2020-02-11 19:51:14","F","1","10");
-
-INSERT INTO TB_ACESSO VALUES("11","ilsa2mhmk4hb5tqfq0gg86vnd4","2020-02-11 19:51:17","2020-02-11 19:55:17","F","1","11");
-
-INSERT INTO TB_ACESSO VALUES("12","ilsa2mhmk4hb5tqfq0gg86vnd4","2020-02-11 19:55:23","2020-02-11 20:34:02","F","2","12");
+INSERT INTO TB_ACESSO VALUES("37","bbh555bdtkvi95ohv654vmchu4","2020-03-03 14:27:34","2020-03-03 14:59:06","A","1","37");
 
 
 
@@ -84,7 +78,7 @@ CREATE TABLE `TB_ASSINANTE` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_ASSINANTE VALUES("1","2020-01-29 19:14:25","2020-02-13","N","A","M","1","2");
+INSERT INTO TB_ASSINANTE VALUES("1","2020-01-29 19:14:25","2020-02-13","S","A","M","1","2");
 
 
 
@@ -99,10 +93,8 @@ CREATE TABLE `TB_AUDITORIA` (
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8;
 
-
-INSERT INTO TB_AUDITORIA VALUES("22","2020-02-11 19:55:38","Gestor","2");
 
 
 
@@ -118,34 +110,8 @@ CREATE TABLE `TB_AUDITORIA_ITENS` (
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`),
   KEY `fk_TB_AUDITORIA_ITENS_TB_AUDITORIA_TABELA1_idx` (`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=323 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2213 DEFAULT CHARSET=utf8;
 
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("310","","","ds_endereco","81");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("311","1","","co_empresa","82");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("312","","","no_empresa","82");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("313","Salão da beleza","","no_fantasia","82");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("314","2020-01-29 19:14:24","","dt_cadastro","82");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("315","","","nu_cnpj","82");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("316","","","nu_insc_estadual","82");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("317","","","ds_observacao","82");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("318","","","st_status","82");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("319","0","","co_pessoa","82");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("320","0","3","co_endereco","82");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("321","0","","co_contato","82");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("322","0","","co_imagem","82");
 
 
 
@@ -161,12 +127,8 @@ CREATE TABLE `TB_AUDITORIA_TABELA` (
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`),
   KEY `fk_TB_AUDITORIA_TABELA_TB_AUDITORIA1_idx` (`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=314 DEFAULT CHARSET=utf8;
 
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("81","TB_ENDERECO","I","3","22");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("82","TB_EMPRESA","U","1","22");
 
 
 
@@ -311,7 +273,7 @@ CREATE TABLE `TB_EMPRESA` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_EMPRESA VALUES("1","","Salão da beleza","2020-01-29 19:14:24","","","","","0","3","0","0");
+INSERT INTO TB_EMPRESA VALUES("1","","SALãO DA BELEZA","2020-01-29 19:14:24","","","","","0","3","0","0");
 
 
 
@@ -335,7 +297,7 @@ INSERT INTO TB_ENDERECO VALUES("1","qr 403 conjunto 10 casa 28","","Samambaia No
 
 INSERT INTO TB_ENDERECO VALUES("2","","","","","","");
 
-INSERT INTO TB_ENDERECO VALUES("3","","","","","","");
+INSERT INTO TB_ENDERECO VALUES("3","QR 403 Conjunto 10","","Samambaia Norte (Samambaia)","72319111","Brasília","DF");
 
 
 
@@ -448,11 +410,11 @@ INSERT INTO TB_HISTORIA VALUES("7","Manter Planos do Assinante","Manter Planos d
 
 INSERT INTO TB_HISTORIA VALUES("8","Pesquisa Avançada dos Assinantes","Pesquisa Avançada dos Assinantes por razão social, nome fantasia, Responsável, cidade e UF, email, Tipo de estabelecimento, Atendimento, Género Especializado, funcionamento, data de expiração (Período), número de filiais, valor assinatura atual, número de profissionais,","2019-12-18 12:18:35","2019-12-18 12:18:35","N","1");
 
-INSERT INTO TB_HISTORIA VALUES("9","Dados complementares básicos","Manter dados: (Endereço, telefone, CNPJ, fantasia, razão e outros)\n\n\n\n\n\nModelagem: Contato, endereço e empresa ou pessoa","2019-12-18 12:20:44","2019-12-18 12:20:44","I","2");
+INSERT INTO TB_HISTORIA VALUES("9","Dados complementares básicos","Manter dados: (Endereço, telefone, CNPJ, fantasia, razão e outros)\n\n\n\n\n\nModelagem: Contato, endereço e empresa ou pessoa","2019-12-18 12:20:44","2020-03-03 14:28:17","C","2");
 
-INSERT INTO TB_HISTORIA VALUES("10","Manter Fotos do Estabelecimento","Manter Fotos do Estabelecimento para o Site\n\n\n\n\n\nModelagem: Imagem (FK Assinante)","2019-12-18 12:21:59","2019-12-18 12:21:59","I","2");
+INSERT INTO TB_HISTORIA VALUES("10","Manter Fotos do Estabelecimento","Manter Fotos do Estabelecimento para o Site\n\n\n\n\n\nModelagem: Imagem (FK Assinante)","2019-12-18 12:21:59","2020-03-03 14:28:08","C","2");
 
-INSERT INTO TB_HISTORIA VALUES("11","Gestão de notificações","Gestão de notificações com as mensagens geradas do sistema de sucesso erro e avisos","2019-12-18 12:22:23","2019-12-18 12:22:23","I","2");
+INSERT INTO TB_HISTORIA VALUES("11","Gestão de notificações","Gestão de notificações com as mensagens geradas do sistema de sucesso erro e avisos","2019-12-18 12:22:23","2020-03-03 14:28:35","C","2");
 
 INSERT INTO TB_HISTORIA VALUES("12","Cadastrar Agendamento","Cadastrar Agendamento (Opção da recorrência)\n\n\n\n\n\nVários serviços e pacotes\n\n\n\n\n\nModelagem: (FK cliente, Serviço, Profissional, Assistente","2019-12-18 12:23:46","2019-12-18 12:23:55","I","3");
 
@@ -536,7 +498,7 @@ CREATE TABLE `TB_HISTORICO_HISTORIA` (
   `co_historia` int(11) NOT NULL,
   PRIMARY KEY (`co_historico_historia`,`co_historia`),
   KEY `fk_TB_HISTORICO_HISTORIA_TB_HISTORIA1_idx` (`co_historia`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("1","13","5","2019-12-18 12:06:25","1");
@@ -641,6 +603,12 @@ INSERT INTO TB_HISTORICO_HISTORIA VALUES("50","20","0","2020-01-30 12:54:32","2"
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("51","20","5","2020-01-30 12:55:05","27");
 
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("52","8","0","2020-03-03 14:28:08","10");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("53","20","0","2020-03-03 14:28:17","9");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("54","20","0","2020-03-03 14:28:35","11");
+
 
 
 
@@ -651,7 +619,7 @@ CREATE TABLE `TB_IMAGEM` (
   `co_imagem` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `ds_caminho` varchar(150) NOT NULL,
   PRIMARY KEY (`co_imagem`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_IMAGEM VALUES("1","leonardo-m-c-bessa-56e8920c23ab66.jpg");
@@ -659,6 +627,26 @@ INSERT INTO TB_IMAGEM VALUES("1","leonardo-m-c-bessa-56e8920c23ab66.jpg");
 INSERT INTO TB_IMAGEM VALUES("2","");
 
 INSERT INTO TB_IMAGEM VALUES("3","");
+
+INSERT INTO TB_IMAGEM VALUES("4","fp-salao-da-beleza-1-5e5e840217f89.jpg");
+
+INSERT INTO TB_IMAGEM VALUES("5","Assinante/Assinante-1/salao-da-beleza-1-5e5e83e08b846.jpg");
+
+INSERT INTO TB_IMAGEM VALUES("6","Assinante/Assinante-1/salao-da-beleza-1-5e5e83e093ccc.jpg");
+
+INSERT INTO TB_IMAGEM VALUES("7","Assinante/Assinante-1/salao-da-beleza-1-5e5e83e09c2e8.jpg");
+
+INSERT INTO TB_IMAGEM VALUES("8","Assinante/Assinante-1/salao-da-beleza-1-5e5e83e0a4a60.jpg");
+
+INSERT INTO TB_IMAGEM VALUES("9","Assinante/Assinante-1/salao-da-beleza-1-5e5e840223fd2.jpg");
+
+INSERT INTO TB_IMAGEM VALUES("10","Assinante/Assinante-1/salao-da-beleza-1-5e5e8402386c8.jpg");
+
+INSERT INTO TB_IMAGEM VALUES("11","Assinante/Assinante-1/salao-da-beleza-1-5e5e8402460a6.jpg");
+
+INSERT INTO TB_IMAGEM VALUES("12","Assinante/Assinante-1/salao-da-beleza-1-5e5e8402590ae.jpg");
+
+INSERT INTO TB_IMAGEM VALUES("13","Assinante/Assinante-1/salao-da-beleza-1-5e5e84026bf2c.jpg");
 
 
 
@@ -673,8 +661,28 @@ CREATE TABLE `TB_IMAGEM_ASSINANTE` (
   PRIMARY KEY (`co_imagem_assinante`,`co_assinante`,`co_imagem`),
   KEY `fk_TB_ASSINANTE_has_TB_IMAGEM_TB_IMAGEM1_idx` (`co_imagem`),
   KEY `fk_TB_ASSINANTE_has_TB_IMAGEM_TB_ASSINANTE1_idx` (`co_assinante`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
+
+INSERT INTO TB_IMAGEM_ASSINANTE VALUES("1","1","4");
+
+INSERT INTO TB_IMAGEM_ASSINANTE VALUES("2","1","5");
+
+INSERT INTO TB_IMAGEM_ASSINANTE VALUES("3","1","6");
+
+INSERT INTO TB_IMAGEM_ASSINANTE VALUES("4","1","1");
+
+INSERT INTO TB_IMAGEM_ASSINANTE VALUES("5","1","8");
+
+INSERT INTO TB_IMAGEM_ASSINANTE VALUES("6","1","9");
+
+INSERT INTO TB_IMAGEM_ASSINANTE VALUES("7","1","10");
+
+INSERT INTO TB_IMAGEM_ASSINANTE VALUES("8","1","11");
+
+INSERT INTO TB_IMAGEM_ASSINANTE VALUES("9","1","12");
+
+INSERT INTO TB_IMAGEM_ASSINANTE VALUES("10","1","13");
 
 
 
@@ -860,7 +868,7 @@ CREATE TABLE `TB_PESSOA` (
 
 INSERT INTO TB_PESSOA VALUES("1","","Usuário SisBela","","2016-10-31 00:00:00","0000-00-00","M","1","1","1");
 
-INSERT INTO TB_PESSOA VALUES("2","","Letícia Bessa","","2020-01-29 19:14:24","0000-00-00","","0","2","0");
+INSERT INTO TB_PESSOA VALUES("2","","LETíCIA BESSA","","2020-01-29 19:14:24","","","0","2","0");
 
 INSERT INTO TB_PESSOA VALUES("3","","LETíCIA BESSA","","2020-01-29 19:56:49","0000-00-00","","2","3","0");
 
@@ -1158,16 +1166,10 @@ CREATE TABLE `TB_TRAFEGO` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_TRAFEGO VALUES("9","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0");
-
-INSERT INTO TB_TRAFEGO VALUES("10","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0");
-
-INSERT INTO TB_TRAFEGO VALUES("11","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0");
-
-INSERT INTO TB_TRAFEGO VALUES("12","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0");
+INSERT INTO TB_TRAFEGO VALUES("37","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:73.0) Gecko/20100101 Firefox/73.0");
 
 
 
