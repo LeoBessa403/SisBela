@@ -352,3 +352,99 @@ INSERT INTO TB_IMAGEM_ASSINANTE (co_assinante, co_imagem) VALUES ("1", "13");
 
 UPDATE TB_ASSINANTE SET st_dados_complementares = "S" where co_assinante = 1;
 
+UPDATE TB_PESSOA SET no_pessoa = "LETíCIA BESSA", dt_nascimento = "" where co_pessoa = 2;
+
+UPDATE TB_EMPRESA SET no_empresa = "", no_fantasia = "SALãO DA BELEZA", nu_cnpj = "", nu_insc_estadual = "", ds_observacao = "" where co_empresa = 1;
+
+UPDATE TB_ENDERECO SET ds_endereco = "QR 403 Conjunto 10", ds_complemento = "", ds_bairro = "Samambaia Norte (Samambaia)", nu_cep = "72319111", no_cidade = "Brasília", sg_uf = "DF" where co_endereco = 3;
+
+UPDATE TB_EMPRESA SET co_endereco = "3" where co_empresa = 1;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61993939393", nu_tel2 = "", nu_tel3 = "", nu_tel_0800 = "", ds_email = "lele.403@hotmail.com", ds_site = "", ds_facebook = "", ds_twitter = "", ds_instagram = "" where co_contato = 2;
+
+UPDATE TB_ASSINANTE SET st_dados_complementares = "S" where co_assinante = 1;
+
+UPDATE TB_PESSOA SET no_pessoa = "LETíCIA BESSA", dt_nascimento = "" where co_pessoa = 2;
+
+UPDATE TB_EMPRESA SET no_empresa = "", no_fantasia = "SALãO DA BELEZA", nu_cnpj = "", nu_insc_estadual = "", ds_observacao = "" where co_empresa = 1;
+
+UPDATE TB_ENDERECO SET ds_endereco = "QR 403 Conjunto 10", ds_complemento = "", ds_bairro = "Samambaia Norte (Samambaia)", nu_cep = "72319111", no_cidade = "Brasília", sg_uf = "DF" where co_endereco = 3;
+
+UPDATE TB_EMPRESA SET co_endereco = "3" where co_empresa = 1;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61993939393", nu_tel2 = "", nu_tel3 = "", nu_tel_0800 = "", ds_email = "lele.403@hotmail.com", ds_site = "", ds_facebook = "", ds_twitter = "", ds_instagram = "" where co_contato = 2;
+
+UPDATE TB_ASSINANTE SET st_dados_complementares = "S" where co_assinante = 1;
+
+UPDATE TB_PESSOA SET no_pessoa = "LETíCIA BESSA", dt_nascimento = "" where co_pessoa = 2;
+
+UPDATE TB_EMPRESA SET no_empresa = "", no_fantasia = "SALãO DA BELEZA", nu_cnpj = "", nu_insc_estadual = "", ds_observacao = "" where co_empresa = 1;
+
+UPDATE TB_ENDERECO SET ds_endereco = "QR 403 Conjunto 10", ds_complemento = "", ds_bairro = "Samambaia Norte (Samambaia)", nu_cep = "72319111", no_cidade = "Brasília", sg_uf = "DF" where co_endereco = 3;
+
+UPDATE TB_EMPRESA SET co_endereco = "3" where co_empresa = 1;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61993939393", nu_tel2 = "", nu_tel3 = "", nu_tel_0800 = "", ds_email = "lele.403@hotmail.com", ds_site = "", ds_facebook = "", ds_twitter = "", ds_instagram = "" where co_contato = 2;
+
+UPDATE TB_ASSINANTE SET st_dados_complementares = "S" where co_assinante = 1;
+
+UPDATE TB_PESSOA SET no_pessoa = "LETíCIA BESSA", dt_nascimento = "" where co_pessoa = 2;
+
+UPDATE TB_EMPRESA SET no_empresa = "", no_fantasia = "SALãO DA BELEZA", nu_cnpj = "", nu_insc_estadual = "", ds_observacao = "" where co_empresa = 1;
+
+UPDATE TB_ENDERECO SET ds_endereco = "QR 403 Conjunto 10", ds_complemento = "", ds_bairro = "Samambaia Norte (Samambaia)", nu_cep = "72319111", no_cidade = "Brasília", sg_uf = "DF" where co_endereco = 3;
+
+UPDATE TB_EMPRESA SET co_endereco = "3" where co_empresa = 1;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61993939393", nu_tel2 = "", nu_tel3 = "", nu_tel_0800 = "", ds_email = "lele.403@hotmail.com", ds_site = "", ds_facebook = "", ds_twitter = "", ds_instagram = "" where co_contato = 2;
+
+UPDATE TB_ASSINANTE SET st_dados_complementares = "S" where co_assinante = 1;
+
+UPDATE TB_PESSOA SET no_pessoa = "LETíCIA BESSA", dt_nascimento = "" where co_pessoa = 2;
+
+UPDATE TB_EMPRESA SET no_empresa = "", no_fantasia = "SALãO DA BELEZA", nu_cnpj = "", nu_insc_estadual = "", ds_observacao = "" where co_empresa = 1;
+
+UPDATE TB_ENDERECO SET ds_endereco = "QR 403 Conjunto 10", ds_complemento = "", ds_bairro = "Samambaia Norte (Samambaia)", nu_cep = "72319111", no_cidade = "Brasília", sg_uf = "DF" where co_endereco = 3;
+
+UPDATE TB_EMPRESA SET co_endereco = "3" where co_empresa = 1;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61993939393", nu_tel2 = "", nu_tel3 = "", nu_tel_0800 = "", ds_email = "lele.403@hotmail.com", ds_site = "", ds_facebook = "", ds_twitter = "", ds_instagram = "" where co_contato = 2;
+
+UPDATE TB_ASSINANTE SET st_dados_complementares = "S" where co_assinante = 1;
+
+UPDATE TB_PESSOA SET no_pessoa = "LETíCIA BESSA", dt_nascimento = "" where co_pessoa = 2;
+
+UPDATE TB_EMPRESA SET no_empresa = "", no_fantasia = "SALãO DA BELEZA", nu_cnpj = "", nu_insc_estadual = "", ds_observacao = "" where co_empresa = 1;
+
+UPDATE TB_ENDERECO SET ds_endereco = "QR 403 Conjunto 10", ds_complemento = "", ds_bairro = "Samambaia Norte (Samambaia)", nu_cep = "72319111", no_cidade = "Brasília", sg_uf = "DF" where co_endereco = 3;
+
+UPDATE TB_EMPRESA SET co_endereco = "3" where co_empresa = 1;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61993939393", nu_tel2 = "", nu_tel3 = "", nu_tel_0800 = "", ds_email = "lele.403@hotmail.com", ds_site = "", ds_facebook = "", ds_twitter = "", ds_instagram = "" where co_contato = 2;
+
+UPDATE TB_ASSINANTE SET st_dados_complementares = "S" where co_assinante = 1;
+
+UPDATE TB_PESSOA SET no_pessoa = "LETíCIA BESSA", dt_nascimento = "" where co_pessoa = 2;
+
+UPDATE TB_EMPRESA SET no_empresa = "", no_fantasia = "SALãO DA BELEZA", nu_cnpj = "", nu_insc_estadual = "", ds_observacao = "" where co_empresa = 1;
+
+UPDATE TB_ENDERECO SET ds_endereco = "QR 403 Conjunto 10", ds_complemento = "", ds_bairro = "Samambaia Norte (Samambaia)", nu_cep = "72319111", no_cidade = "Brasília", sg_uf = "DF" where co_endereco = 3;
+
+UPDATE TB_EMPRESA SET co_endereco = "3" where co_empresa = 1;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61993939393", nu_tel2 = "", nu_tel3 = "", nu_tel_0800 = "", ds_email = "lele.403@hotmail.com", ds_site = "", ds_facebook = "", ds_twitter = "", ds_instagram = "" where co_contato = 2;
+
+UPDATE TB_ASSINANTE SET st_dados_complementares = "S" where co_assinante = 1;
+
+UPDATE TB_PESSOA SET no_pessoa = "LETíCIA BESSA", dt_nascimento = "" where co_pessoa = 2;
+
+UPDATE TB_EMPRESA SET no_empresa = "", no_fantasia = "SALãO DA BELEZA", nu_cnpj = "", nu_insc_estadual = "", ds_observacao = "" where co_empresa = 1;
+
+UPDATE TB_ENDERECO SET ds_endereco = "QR 403 Conjunto 10", ds_complemento = "", ds_bairro = "Samambaia Norte (Samambaia)", nu_cep = "72319111", no_cidade = "Brasília", sg_uf = "DF" where co_endereco = 3;
+
+UPDATE TB_EMPRESA SET co_endereco = "3" where co_empresa = 1;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61993939393", nu_tel2 = "", nu_tel3 = "", nu_tel_0800 = "", ds_email = "lele.403@hotmail.com", ds_site = "", ds_facebook = "", ds_twitter = "", ds_instagram = "" where co_contato = 2;
+
+UPDATE TB_ASSINANTE SET st_dados_complementares = "S" where co_assinante = 1;
+
