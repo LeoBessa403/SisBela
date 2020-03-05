@@ -404,11 +404,20 @@ CREATE TABLE `TB_HISTORIA` (
 ) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_HISTORIA VALUES("1","Manter Planos do sistema","Manter planos do sistema da beleza, onde terá que manter os desconto com período para o plano\n\n\n\nModelagem: Plano e histórico plano módulos","2019-12-18 12:06:25","2020-01-29 19:06:52","C","1");
+INSERT INTO TB_HISTORIA VALUES("1","Manter Planos do sistema","Manter planos do sistema da beleza, onde terá que manter os desconto com período para o plano
+\n\n\n\nModelagem: Plano e histórico plano módulos","2019-12-18 12:06:25","2020-01-29 19:06:52","C","1");
 
-INSERT INTO TB_HISTORIA VALUES("2","Manter Assinante","Manter assinante do sistema e com data de expiração do sistema para o assinante, criar contato, criar pessoa, envio de email de confirmação com senha gerada.\n\n\n\n\n\n\n\nCriar o usuário quando criar o assinante, plano assinado\n\n\n\n\n\n\n\nModelagem: Assinante (Junção de pessoa, contato, usuário, data de expiração, status)","2019-12-18 12:11:52","2020-01-30 12:54:32","C","1");
+INSERT INTO TB_HISTORIA VALUES("2","Manter Assinante","Manter assinante do sistema e com data de expiração do sistema para o assinante, criar contato, criar pessoa, envio de email de confirmação com senha gerada.
+\n\n\n\n
+\n\n\n\nCriar o usuário quando criar o assinante, plano assinado
+\n\n\n\n
+\n\n\n\nModelagem: Assinante (Junção de pessoa, contato, usuário, data de expiração, status)","2019-12-18 12:11:52","2020-01-30 12:54:32","C","1");
 
-INSERT INTO TB_HISTORIA VALUES("3","Gestão de pagamentos dos assinantes","Dar baixas no pagamento, e atualizar o prazo de expiração do assinante \n\n\n\n\n\n\n\nCriar histórico dos pagamentos\n\n\n\n\n\n\n\n Modelagem: Pagamento assinante (Ligada com plano e assinante)","2019-12-18 12:15:49","2019-12-18 12:15:49","I","1");
+INSERT INTO TB_HISTORIA VALUES("3","Gestão de pagamentos dos assinantes","Dar baixas no pagamento, e atualizar o prazo de expiração do assinante 
+\n\n\n\n
+\n\n\n\nCriar histórico dos pagamentos
+\n\n\n\n
+\n\n\n\n Modelagem: Pagamento assinante (Ligada com plano e assinante)","2019-12-18 12:15:49","2019-12-18 12:15:49","I","1");
 
 INSERT INTO TB_HISTORIA VALUES("4","Configuração inicial do projeto","Configuração inicial do projeto","2019-12-18 12:16:19","2019-12-18 12:16:19","I","1");
 
@@ -420,15 +429,33 @@ INSERT INTO TB_HISTORIA VALUES("7","Manter Planos do Assinante","Manter Planos d
 
 INSERT INTO TB_HISTORIA VALUES("8","Pesquisa Avançada dos Assinantes","Pesquisa Avançada dos Assinantes por razão social, nome fantasia, Responsável, cidade e UF, email, Tipo de estabelecimento, Atendimento, Género Especializado, funcionamento, data de expiração (Período), número de filiais, valor assinatura atual, número de profissionais,","2019-12-18 12:18:35","2019-12-18 12:18:35","N","1");
 
-INSERT INTO TB_HISTORIA VALUES("9","Dados complementares básicos","Manter dados: (Endereço, telefone, CNPJ, fantasia, razão e outros)\n\n\n\n\n\n\n\n\n\n\n\nModelagem: Contato, endereço e empresa ou pessoa","2019-12-18 12:20:44","2020-03-03 14:28:17","C","2");
+INSERT INTO TB_HISTORIA VALUES("9","Dados complementares básicos","Manter dados: (Endereço, telefone, CNPJ, fantasia, razão e outros)
+\n\n
+\n\n
+\n\n
+\n\n
+\n\n
+\n\nModelagem: Contato, endereço e empresa ou pessoa","2019-12-18 12:20:44","2020-03-03 14:28:17","C","2");
 
-INSERT INTO TB_HISTORIA VALUES("10","Manter Fotos do Estabelecimento","Manter Fotos do Estabelecimento para o Site\n\n\n\n\n\n\n\n\n\n\n\nModelagem: Imagem (FK Assinante)","2019-12-18 12:21:59","2020-03-03 14:28:08","C","2");
+INSERT INTO TB_HISTORIA VALUES("10","Manter Fotos do Estabelecimento","Manter Fotos do Estabelecimento para o Site
+\n\n
+\n\n
+\n\n
+\n\n
+\n\n
+\n\nModelagem: Imagem (FK Assinante)","2019-12-18 12:21:59","2020-03-03 14:28:08","C","2");
 
 INSERT INTO TB_HISTORIA VALUES("11","Gestão de notificações","Gestão de notificações com as mensagens geradas do sistema de sucesso erro e avisos","2019-12-18 12:22:23","2020-03-03 14:28:35","C","2");
 
-INSERT INTO TB_HISTORIA VALUES("12","Cadastrar Agendamento","Cadastrar Agendamento (Opção da recorrência)\n\n\n\n\n\n\n\nVários serviços e pacotes\n\n\n\n\n\n\n\nModelagem: (FK cliente, Serviço, Profissional, Assistente","2019-12-18 12:23:46","2019-12-18 12:23:55","I","3");
+INSERT INTO TB_HISTORIA VALUES("12","Cadastrar Agendamento","Cadastrar Agendamento (Opção da recorrência)
+\n\n\n\n
+\n\n\n\nVários serviços e pacotes
+\n\n\n\n
+\n\n\n\nModelagem: (FK cliente, Serviço, Profissional, Assistente","2019-12-18 12:23:46","2019-12-18 12:23:55","I","3");
 
-INSERT INTO TB_HISTORIA VALUES("13","Edição Agendamento","Edição Agendamento\n\n\n\n\n\n\n\nValidação dos status do agendamento e status do serviço","2019-12-18 12:24:38","2019-12-18 12:25:53","I","3");
+INSERT INTO TB_HISTORIA VALUES("13","Edição Agendamento","Edição Agendamento
+\n\n\n\n
+\n\n\n\nValidação dos status do agendamento e status do serviço","2019-12-18 12:24:38","2019-12-18 12:25:53","I","3");
 
 INSERT INTO TB_HISTORIA VALUES("14","Implantação Agenda","Agenda CSS (Responsivo)","2019-12-18 12:25:03","2019-12-18 12:25:03","I","3");
 
@@ -440,7 +467,9 @@ INSERT INTO TB_HISTORIA VALUES("17","Listagem dos agendamento (Calendário)","Li
 
 INSERT INTO TB_HISTORIA VALUES("18","Histórico do Agendamento","Histórico do Agendamento (Modal)","2019-12-18 12:27:19","2019-12-18 12:27:19","I","3");
 
-INSERT INTO TB_HISTORIA VALUES("19","Deletar Agendamento","Deletar Agendamento (Modal) com Justificativa\n\n\n\n\n\n\n\nVisualizar na listagem da grid","2019-12-18 12:27:55","2019-12-18 12:27:55","I","3");
+INSERT INTO TB_HISTORIA VALUES("19","Deletar Agendamento","Deletar Agendamento (Modal) com Justificativa
+\n\n\n\n
+\n\n\n\nVisualizar na listagem da grid","2019-12-18 12:27:55","2019-12-18 12:27:55","I","3");
 
 INSERT INTO TB_HISTORIA VALUES("20","Listagem dos agendamento (Grid)","Listagem dos agendamento (Grid)","2019-12-18 12:28:13","2019-12-18 12:28:13","I","3");
 
@@ -452,9 +481,15 @@ INSERT INTO TB_HISTORIA VALUES("23","Validações dos botões","Validações dos
 
 INSERT INTO TB_HISTORIA VALUES("24","Iniciar o sistema com as configurações básicas","Iniciar o sistema com as configurações básicas para depois iniciar o painel","2019-12-18 12:31:44","2019-12-18 12:31:44","I","4");
 
-INSERT INTO TB_HISTORIA VALUES("25","Manter Suporte","Manter Suporte, responder suporte, apresentar resposta\n\n\n\n\n\n\n\nModelagem: suporte (FK Assinante, Categoria Suporte)\n\n\n\n\n\n\n\nTabela base Categoria Suporte","2019-12-18 12:32:21","2019-12-18 12:32:21","N","5");
+INSERT INTO TB_HISTORIA VALUES("25","Manter Suporte","Manter Suporte, responder suporte, apresentar resposta
+\n\n\n\n
+\n\n\n\nModelagem: suporte (FK Assinante, Categoria Suporte)
+\n\n\n\n
+\n\n\n\nTabela base Categoria Suporte","2019-12-18 12:32:21","2019-12-18 12:32:21","N","5");
 
-INSERT INTO TB_HISTORIA VALUES("26","Agendamento detalhes","Agendamentos Gerar Gráficos e Relatórios de agendamentos por status do agendamento e período\n\n\n\n\n\n\n\n Impressão dos gráficos e dados","2019-12-18 12:34:22","2019-12-18 12:34:22","N","6");
+INSERT INTO TB_HISTORIA VALUES("26","Agendamento detalhes","Agendamentos Gerar Gráficos e Relatórios de agendamentos por status do agendamento e período
+\n\n\n\n
+\n\n\n\n Impressão dos gráficos e dados","2019-12-18 12:34:22","2019-12-18 12:34:22","N","6");
 
 INSERT INTO TB_HISTORIA VALUES("27","Manter Usuário","Manter Usuário","2019-12-18 12:35:02","2020-03-05 15:48:01","C","7");
 
@@ -468,13 +503,17 @@ INSERT INTO TB_HISTORIA VALUES("31","Página de captura de lead","Página de cap
 
 INSERT INTO TB_HISTORIA VALUES("32","Cadastro pelo site para o assinante","verificar o cadastro pelo site para manter um plano mesmo que que por experiência","2019-12-18 12:38:52","2019-12-18 12:38:52","N","9");
 
-INSERT INTO TB_HISTORIA VALUES("33","Material do Pré Lançamento","Produção e Disponibilização do material para lista de lead\n\n\n\n\n\n\n\nDuração de 7 a 10 dias antes do Lançamento de 3 a 4 vídeos","2019-12-18 12:39:57","2019-12-18 12:39:57","N","11");
+INSERT INTO TB_HISTORIA VALUES("33","Material do Pré Lançamento","Produção e Disponibilização do material para lista de lead
+\n\n\n\n
+\n\n\n\nDuração de 7 a 10 dias antes do Lançamento de 3 a 4 vídeos","2019-12-18 12:39:57","2019-12-18 12:39:57","N","11");
 
 INSERT INTO TB_HISTORIA VALUES("34","Direcionar para o lançamento","Após Lançamento Direcionar para o lançamento o tráfego do PL","2019-12-18 12:40:34","2019-12-18 12:40:34","N","11");
 
 INSERT INTO TB_HISTORIA VALUES("35","Criação da Lista de Lead","Criação da Lista de Lead já trabalhadas nas redes sociais e mais..","2019-12-18 12:42:55","2019-12-18 12:42:55","N","10");
 
-INSERT INTO TB_HISTORIA VALUES("36","Criar conteúdos e Entregas","Criar conteúdos para entrega e ir formulando a lista de lead\n\n\n\n\n\n\n\nInicio da divulgação para o lançamento.","2019-12-18 12:43:22","2019-12-18 12:43:22","N","10");
+INSERT INTO TB_HISTORIA VALUES("36","Criar conteúdos e Entregas","Criar conteúdos para entrega e ir formulando a lista de lead
+\n\n\n\n
+\n\n\n\nInicio da divulgação para o lançamento.","2019-12-18 12:43:22","2019-12-18 12:43:22","N","10");
 
 INSERT INTO TB_HISTORIA VALUES("37","Lançamento das Vendas","de 1 a 7 dias de vendas com página aquecida","2019-12-18 12:44:04","2019-12-18 12:44:04","N","12");
 
@@ -823,6 +862,8 @@ INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("11","26","3","0");
 INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("12","11","3","0");
 
 INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("13","6","3","0");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("14","4","3","0");
 
 INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("22","27","4","0");
 
