@@ -24,73 +24,12 @@ class AgendaForm
             ->setOptions($options)
             ->CriaInpunt();
 
-        $options = ClienteService::clientesCombo();
-        $formulario
-            ->setId(CO_CLIENTE)
-            ->setType(TiposCampoEnum::SELECT)
-            ->setLabel("Cliente")
-            ->setTamanhoInput(9)
-            ->setClasses("ob")
-            ->setOptions($options)
-            ->CriaInpunt();
-
-        $options = ServicoService::servicosCombo();
-        $formulario
-            ->setId(CO_SERVICO)
-            ->setType(TiposCampoEnum::SELECT)
-            ->setLabel("Serviço")
-            ->setTamanhoInput(12)
-            ->setClasses("ob")
-            ->setOptions($options)
-            ->CriaInpunt();
-
-        $formulario
-            ->setId(NU_VALOR . "2")
-            ->setClasses("disabilita")
-            ->setLabel("Preço R$")
-            ->setTamanhoInput(4)
-            ->CriaInpunt();
-
-        $formulario
-            ->setType(TiposCampoEnum::HIDDEN)
-            ->setId(NU_VALOR)
-            ->setValues(null)
-            ->CriaInpunt();
-
-        $options = ['' => 'Selecione um Serviço.'];
-        $formulario
-            ->setId(CO_PROFISSIONAL)
-            ->setType(TiposCampoEnum::SELECT)
-            ->setLabel("Profissional")
-            ->setTamanhoInput(4)
-            ->setClasses("ob")
-            ->setOptions($options)
-            ->CriaInpunt();
-
-        $options = ['' => 'Selecione um Serviço.'];
-        $formulario
-            ->setId('co_assistente')
-            ->setType(TiposCampoEnum::SELECT)
-            ->setLabel("Assistente")
-            ->setTamanhoInput(4)
-            ->setClasses("ob")
-            ->setOptions($options)
-            ->CriaInpunt();
-
         $formulario
             ->setId('dt_agenda')
             ->setTamanhoInput(3)
             ->setClasses("data ob")
             ->setIcon("clip-calendar-3")
             ->setLabel("Data de Inicio")
-            ->CriaInpunt();
-
-        $formulario
-            ->setId(NU_DURACAO)
-            ->setTamanhoInput(3)
-            ->setClasses("numero ob")
-            ->setInfo("Duração do Serviço")
-            ->setLabel("Duração (Minutos)")
             ->CriaInpunt();
 
         $formulario
@@ -109,6 +48,86 @@ class AgendaForm
             ->setPlace("Formato 24Hrs")
             ->setIcon("clip-clock-2", "dir")
             ->setLabel("Hórario de Término")
+            ->CriaInpunt();
+
+        $label_options2 = array("Sim", "Não", "verde", "vermelho");
+        $formulario
+            ->setLabel("Cliente Novo?")
+            ->setId('st_cliente')
+            ->setType(TiposCampoEnum::CHECKBOX)
+            ->setTamanhoInput(3)
+            ->setOptions($label_options2)
+            ->CriaInpunt();
+
+        $options = ClienteService::clientesCombo();
+        $formulario
+            ->setId(CO_CLIENTE)
+            ->setType(TiposCampoEnum::SELECT)
+            ->setLabel("Cliente")
+            ->setTamanhoInput(9)
+            ->setClasses('visivel')
+            ->setOptions($options)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId('no_cliente')
+            ->setTamanhoInput(9)
+            ->setLabel("Novo do Cliente")
+            ->CriaInpunt();
+
+
+        $label_options2 = array("Sim", "Não", "verde", "vermelho");
+        $formulario
+            ->setLabel("Serviço Novo?")
+            ->setId('st_servico')
+            ->setType(TiposCampoEnum::CHECKBOX)
+            ->setTamanhoInput(3)
+            ->setOptions($label_options2)
+            ->CriaInpunt();
+
+        $options = ServicoService::servicosCombo();
+        $formulario
+            ->setId(CO_SERVICO)
+            ->setType(TiposCampoEnum::SELECT)
+            ->setLabel("Serviço")
+            ->setClasses('visivel')
+            ->setTamanhoInput(9)
+            ->setOptions($options)
+            ->CriaInpunt();
+
+
+        $formulario
+            ->setId('no_servico')
+            ->setTamanhoInput(9)
+            ->setLabel("Novo do Serviço")
+            ->CriaInpunt();
+
+
+        $label_options2 = array("Sim", "Não", "verde", "vermelho");
+        $formulario
+            ->setLabel("Profissional Novo?")
+            ->setId('st_profissional')
+            ->setType(TiposCampoEnum::CHECKBOX)
+            ->setTamanhoInput(3)
+            ->setOptions($label_options2)
+            ->CriaInpunt();
+
+
+        $options = ProfissionalService::ProfissionaisAtivosCombo();
+        $formulario
+            ->setId(CO_PROFISSIONAL)
+            ->setType(TiposCampoEnum::SELECT)
+            ->setLabel("Profissional")
+            ->setClasses('visivel')
+            ->setTamanhoInput(9)
+            ->setOptions($options)
+            ->CriaInpunt();
+
+
+        $formulario
+            ->setId('no_profissional')
+            ->setTamanhoInput(9)
+            ->setLabel("Novo do Profissional")
             ->CriaInpunt();
 
         $formulario
@@ -146,7 +165,7 @@ class AgendaForm
         return $formulario->finalizaForm(false, false);
     }
 
-    public static function Pesquisar($resultPreco)
+    public static function Pesquisar()
     {
         $id = "PesquisaAvancadaAgendamento";
 
@@ -197,21 +216,21 @@ class AgendaForm
             ->setOptions(ServicoService::servicosCombo())
             ->CriaInpunt();
 
-        $formulario
-            ->setId(NU_VALOR . '-pesquisa')
-            ->setTamanhoInput(6)
-            ->setIntervalo($resultPreco)
-            ->setType(TiposCampoEnum::SLIDER)
-            ->setLabel("Valor R$")
-            ->CriaInpunt();
+//        $formulario
+//            ->setId(NU_VALOR . '-pesquisa')
+//            ->setTamanhoInput(6)
+//            ->setIntervalo($resultPreco)
+//            ->setType(TiposCampoEnum::SLIDER)
+//            ->setLabel("Valor R$")
+//            ->CriaInpunt();
 
-        $formulario
-            ->setId(NU_DURACAO . '-pesquisa')
-            ->setTamanhoInput(6)
-            ->setClasses("numero")
-            ->setInfo("Duração do Serviço")
-            ->setLabel("Duração (Minutos)")
-            ->CriaInpunt();
+//        $formulario
+//            ->setId(NU_DURACAO . '-pesquisa')
+//            ->setTamanhoInput(6)
+//            ->setClasses("numero")
+//            ->setInfo("Duração do Serviço")
+//            ->setLabel("Duração (Minutos)")
+//            ->CriaInpunt();
 
         $formulario
             ->setId('dt1-pesquisa')

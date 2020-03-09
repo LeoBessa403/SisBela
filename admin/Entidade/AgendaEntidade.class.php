@@ -16,7 +16,6 @@ class AgendaEntidade extends AbstractEntidade
     private $ds_motivo;
     private $co_assinante;
     private $co_status_agenda;
-    private $co_comissao;
 
 
     /**
@@ -132,23 +131,6 @@ class AgendaEntidade extends AbstractEntidade
     public function getCoUltimoStatusAgenda()
     {
         return $this->ultimo($this->getCoStatusAgenda());
-    }
-
-    /**
-     * @return ComissaoEntidade $co_comissao
-     */
-    public function getCoComissao()
-    {
-        return $this->co_comissao;
-    }
-
-    /**
-     * @param $co_comissao
-     * @return mixed
-     */
-    public function setCoComissao($co_comissao)
-    {
-        $this->co_comissao = $co_comissao;
     }
 
 

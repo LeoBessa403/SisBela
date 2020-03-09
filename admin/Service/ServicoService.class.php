@@ -136,22 +136,19 @@ class  ServicoService extends AbstractService
 
     public static function servicosCombo()
     {
-        /** @var CategoriaServicoService $categoriaServicoService */
-        $categoriaServicoService = new CategoriaServicoService();
+        /** @var ServicoService $servicoService */
+        $servicoService = new ServicoService();
         $comboServicos = [
             '' => Mensagens::MSG_SEM_ITEM_SELECIONADO
         ];
-        $categorias = $categoriaServicoService->PesquisaTodos([
+        $servicos = $servicoService->PesquisaTodos([
             CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
         ]);
-        /** @var CategoriaServicoEntidade $categoria */
-        foreach ($categorias as $categoria) {
-            /** @var ServicoEntidade $servico */
-            foreach ($categoria->getCoServico() as $servico) {
-                if($servico->getStStatus() == StatusAcessoEnum::ATIVO){
-                    $comboServicos[$servico->getCoServico()]
-                        = $servico->getNoServico();
-                }
+        /** @var ServicoEntidade $servico */
+        foreach ($servicos as $servico) {
+            if ($servico->getStStatus() == StatusAcessoEnum::ATIVO) {
+                $comboServicos[$servico->getCoServico()]
+                    = $servico->getNoServico();
             }
         }
         return $comboServicos;

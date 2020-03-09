@@ -392,7 +392,37 @@ class Relacionamentos
                     ('Tipo') => '1',
                 ),
             ),
+            (ClienteEntidade::TABELA) => Array(
+                (CO_PESSOA) => Array(
+                    ('Campo') => CO_PESSOA,
+                    ('Entidade') => 'PessoaEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (ProfissionalEntidade::TABELA) => Array(
+                (CO_PESSOA) => Array(
+                    ('Campo') => CO_PESSOA,
+                    ('Entidade') => 'PessoaEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (ServicoEntidade::TABELA) => Array(
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
         );
     }
 }
-

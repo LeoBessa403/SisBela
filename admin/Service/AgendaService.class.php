@@ -162,7 +162,7 @@ class  AgendaService extends AbstractService
             $this->Salva($agenda, $dados[CO_AGENDA]);
 
             $agenda = $agendaService->PesquisaAgendamentos([
-                'age.' . CO_AGENDA => $dados[CO_AGENDA]
+                'ta.' . CO_AGENDA => $dados[CO_AGENDA]
             ], 'cli.co_cliente, pro.co_profissional, pro2.co_profissional as co_assistente,
                 stag.nu_valor, stag.nu_duracao, stag.ds_observacao, ser.co_servico');
 
@@ -334,7 +334,7 @@ class  AgendaService extends AbstractService
             $retorno[MSG] = ATUALIZADO;
 
             $agenda = $agendaService->PesquisaAgendamentos([
-                'age.' . CO_AGENDA => $dados[CO_AGENDA]
+                'ta.' . CO_AGENDA => $dados[CO_AGENDA]
             ], 'cli.co_cliente, pro.co_profissional, pro2.co_profissional as co_assistente,
                 stag.nu_valor, stag.nu_duracao, stag.ds_observacao, ser.co_servico');
 

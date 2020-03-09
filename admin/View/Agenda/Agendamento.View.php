@@ -65,7 +65,8 @@
                                 $grid = new Grid();
                                 $grid->setColunasIndeces($arrColunas);
                                 $grid->criaGrid();
-                                $result = array_reverse($result);
+                                if ($result)
+                                    $result = array_reverse($result);
                                 foreach ($result as $res):
                                     $acao = '<button class="btn btn-primary tooltips btn-visualizar" data-co-agenda="' . $res[CO_AGENDA] . '" 
                                     data-original-title="Visualizar Agendamento" data-placement="top">
