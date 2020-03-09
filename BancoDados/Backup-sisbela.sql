@@ -1,4 +1,4 @@
--- Atualizado em: 09/03/2020 15:40:43
+-- Atualizado em: 09/03/2020 16:51:28
 -- AMBIENTE: http://localhost/SisBela/
 -- BANCO: sisbela
 
@@ -20,10 +20,12 @@ CREATE TABLE `TB_ACESSO` (
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=112 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_ACESSO VALUES("94","hq5gs9pl6e5lg7ep5gfqrp8vpk","2020-03-09 14:01:00","2020-03-09 16:10:43","A","1","94");
+INSERT INTO TB_ACESSO VALUES("108","hq5gs9pl6e5lg7ep5gfqrp8vpk","2020-03-09 16:36:43","2020-03-09 17:06:43","A","6","108");
+
+INSERT INTO TB_ACESSO VALUES("111","hq5gs9pl6e5lg7ep5gfqrp8vpk","2020-03-09 16:49:29","2020-03-09 17:21:28","A","1","111");
 
 
 
@@ -79,7 +81,7 @@ CREATE TABLE `TB_ASSINANTE` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_ASSINANTE VALUES("2","2020-03-05 15:03:40","2020-03-20","S","A","M","2","41");
+INSERT INTO TB_ASSINANTE VALUES("2","2020-03-05 15:03:40","2020-03-01","S","A","M","2","41");
 
 INSERT INTO TB_ASSINANTE VALUES("3","2020-03-05 15:04:27","2020-03-20","N","A","M","3","42");
 
@@ -96,7 +98,7 @@ CREATE TABLE `TB_AUDITORIA` (
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=178 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=184 DEFAULT CHARSET=utf8;
 
 
 
@@ -113,7 +115,7 @@ CREATE TABLE `TB_AUDITORIA_ITENS` (
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`),
   KEY `fk_TB_AUDITORIA_ITENS_TB_AUDITORIA_TABELA1_idx` (`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=5425 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5457 DEFAULT CHARSET=utf8;
 
 
 
@@ -130,7 +132,7 @@ CREATE TABLE `TB_AUDITORIA_TABELA` (
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`),
   KEY `fk_TB_AUDITORIA_TABELA_TB_AUDITORIA1_idx` (`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=835 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=841 DEFAULT CHARSET=utf8;
 
 
 
@@ -406,7 +408,7 @@ CREATE TABLE `TB_HISTORIA` (
   `co_sessao` int(11) NOT NULL,
   PRIMARY KEY (`co_historia`,`co_sessao`),
   KEY `fk_TB_HISTORIA_TB_SESSAO1_idx` (`co_sessao`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_HISTORIA VALUES("1","Manter Planos do sistema","Manter planos do sistema da beleza, onde terá que manter os desconto com período para o plano\n\n\n\nModelagem: Plano e histórico plano módulos","2019-12-18 12:06:25","2020-01-29 19:06:52","C","1");
@@ -417,9 +419,9 @@ INSERT INTO TB_HISTORIA VALUES("3","Gestão de pagamentos dos assinantes","Dar b
 
 INSERT INTO TB_HISTORIA VALUES("4","Configuração inicial do projeto","Configuração inicial do projeto","2019-12-18 12:16:19","2019-12-18 12:16:19","I","1");
 
-INSERT INTO TB_HISTORIA VALUES("5","Mudar loguin","Mudar loguin para logar com email tb, recuperar senha e notificar de mudar senha.","2019-12-18 12:16:48","2019-12-18 12:16:48","I","1");
+INSERT INTO TB_HISTORIA VALUES("5","Mudar loguin","Mudar loguin para logar com email tb, recuperar senha e notificar de mudar senha.","2019-12-18 12:16:48","2020-03-09 16:49:59","C","1");
 
-INSERT INTO TB_HISTORIA VALUES("6","Criar mensagem de expiração e bloqueio do sistema","Criar mensagem de expiração e bloqueio do sistema","2019-12-18 12:17:13","2019-12-18 12:17:13","I","1");
+INSERT INTO TB_HISTORIA VALUES("6","Criar mensagem de expiração e bloqueio do sistema","Criar mensagem de expiração e bloqueio do sistema","2019-12-18 12:17:13","2020-03-09 16:40:54","C","1");
 
 INSERT INTO TB_HISTORIA VALUES("7","Manter Planos do Assinante","Manter Planos do Assinante, alterar seu plano aumentando o plano","2019-12-18 12:17:44","2019-12-18 12:17:44","N","1");
 
@@ -503,6 +505,8 @@ INSERT INTO TB_HISTORIA VALUES("46","Trocar Senha","Confirmar senha antiga e nov
 
 INSERT INTO TB_HISTORIA VALUES("47","Dados complementares Perfil Master edição","Dados complementares Perfil Master edição","2020-03-09 11:46:09","2020-03-09 11:46:18","C","2");
 
+INSERT INTO TB_HISTORIA VALUES("48","Manter Planos do Assinante Sistema Expirado","Manter Planos do Assinante Sistema Expirado","2020-03-09 16:40:39","2020-03-09 16:40:39","N","1");
+
 
 
 
@@ -517,7 +521,7 @@ CREATE TABLE `TB_HISTORICO_HISTORIA` (
   `co_historia` int(11) NOT NULL,
   PRIMARY KEY (`co_historico_historia`,`co_historia`),
   KEY `fk_TB_HISTORICO_HISTORIA_TB_HISTORIA1_idx` (`co_historia`)
-) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("1","13","5","2019-12-18 12:06:25","1");
@@ -645,6 +649,12 @@ INSERT INTO TB_HISTORICO_HISTORIA VALUES("61","20","20","2020-03-09 12:06:45","8
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("62","20","10","2020-03-09 13:45:33","8");
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("63","20","0","2020-03-09 15:40:05","8");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("64","8","8","2020-03-09 16:40:39","48");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("65","13","0","2020-03-09 16:40:54","6");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("66","8","0","2020-03-09 16:49:59","5");
 
 
 
@@ -1155,10 +1165,12 @@ CREATE TABLE `TB_TRAFEGO` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=112 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_TRAFEGO VALUES("94","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:73.0) Gecko/20100101 Firefox/73.0");
+INSERT INTO TB_TRAFEGO VALUES("108","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:73.0) Gecko/20100101 Firefox/73.0");
+
+INSERT INTO TB_TRAFEGO VALUES("111","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:73.0) Gecko/20100101 Firefox/73.0");
 
 
 
