@@ -134,3 +134,7 @@ UPDATE TB_HISTORIA SET ds_titulo = "Dados complementares Perfil Master edição"
 
 INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("5", "5"_restante, "2020-03-09 11:46:18", "47");
 
+UPDATE TB_HISTORIA SET ds_titulo = "Pesquisa Avançada dos Assinantes", ds_observacao = "Pesquisa Avançada dos Assinantes por razão social, nome fantasia, Responsável, cidade e UF, email, valor assinatura atual.", co_sessao = "1", st_situacao = "N", dt_atualizado = "2020-03-09 12:06:45" where co_historia = 8;
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("20", "20"_restante, "2020-03-09 12:06:45", "8");
+
