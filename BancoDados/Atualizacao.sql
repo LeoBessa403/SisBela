@@ -126,3 +126,11 @@ INSERT INTO TB_USUARIO_PERFIL (co_perfil) VALUES ("4");
 
 INSERT INTO TB_USUARIO_PERFIL (co_perfil) VALUES ("3");
 
+INSERT INTO TB_HISTORIA (ds_titulo, ds_observacao, co_sessao, st_situacao, dt_atualizado, dt_cadastro) VALUES ("Dados complementares Perfil Master edição", "Dados complementares Perfil Master edição", "2", "N", "2020-03-09 11:46:09", "2020-03-09 11:46:09");
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("5", "5"_restante, "2020-03-09 11:46:09", "47");
+
+UPDATE TB_HISTORIA SET ds_titulo = "Dados complementares Perfil Master edição", ds_observacao = "Dados complementares Perfil Master edição", co_sessao = "2", st_situacao = "C", dt_atualizado = "2020-03-09 11:46:18" where co_historia = 47;
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("5", "5"_restante, "2020-03-09 11:46:18", "47");
+
