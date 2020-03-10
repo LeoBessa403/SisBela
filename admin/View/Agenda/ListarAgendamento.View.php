@@ -25,28 +25,28 @@
                     <span class="st_status"><b></b></span>
                 </div>
             </div>
-            <div id="form-group-profissional" class="form-group col-sm-12">
-                <label for="profissional" class="col-sm-3  align-right">
-                    Profissional:
-                </label>
-                <div class="col-sm-9">
-                    <span class="profissional"><b></b></span>
-                </div>
-            </div>
-            <div id="form-group-assistente" class="form-group col-sm-12">
-                <label for="assistente" class="col-sm-3  align-right">
-                    Assistente:
-                </label>
-                <div class="col-sm-9">
-                    <span class="assistente"><b></b></span>
-                </div>
-            </div>
             <div id="form-group-cliente" class="form-group col-sm-12">
                 <label for="cliente" class="col-sm-3  align-right">
                     Cliente:
                 </label>
                 <div class="col-sm-9">
                     <span class="cliente"><b></b></span>
+                </div>
+            </div>
+            <div id="form-group-servico" class="form-group col-sm-12">
+                <label for="servico" class="col-sm-3  align-right">
+                    Serviço:
+                </label>
+                <div class="col-sm-9">
+                    <span class="servico"><b></b></span>
+                </div>
+            </div>
+            <div id="form-group-profissional" class="form-group col-sm-12">
+                <label for="profissional" class="col-sm-3  align-right">
+                    Profissional:
+                </label>
+                <div class="col-sm-9">
+                    <span class="profissional"><b></b></span>
                 </div>
             </div>
             <div id="form-group-dia" class="form-group col-sm-12">
@@ -65,36 +65,12 @@
                     <span class="periodo"><b></b></span>
                 </div>
             </div>
-            <div id="form-group-nu_duracao" class="form-group col-sm-12">
-                <label for="nu_duracao" class="col-sm-3  align-right">
-                    Duração:
-                </label>
-                <div class="col-sm-9">
-                    <span class="nu_duracao"><b></b></span>
-                </div>
-            </div>
-            <div id="form-group-servico" class="form-group col-sm-12">
-                <label for="servico" class="col-sm-3  align-right">
-                    Serviço:
-                </label>
-                <div class="col-sm-9">
-                    <span class="servico"><b></b></span>
-                </div>
-            </div>
-            <div id="form-group-nu_valor" class="form-group col-sm-12">
-                <label for="nu_valor" class="col-sm-3  align-right">
-                    Preço R$:
-                </label>
-                <div class="col-sm-9">
-                    <span class="nu_valor"><b></b></span>
-                </div>
-            </div>
         </div>
     </div>
     <div class="modal-footer pull-left" style="width: 100%;">
         <input id="co_agenda_listagem" name="co_agenda_listagem" value="" type="hidden">
         <button data-dismiss="modal" class="btn btn-primary cancelar">Fechar</button>
-        <button data-dismiss="modal"  class="btn acao btn-warning btn-editar">Editar</button>
+        <button data-dismiss="modal" class="btn acao btn-warning btn-editar">Editar</button>
         <button data-dismiss="modal" class="btn acao btn-bricky btn-deletar">Deletar</button>
         <button data-dismiss="modal" class="btn btn-light-grey btn-historico">Histórico</button>
         <button data-dismiss="modal" class="btn acao btn-success btn-finalizar">Finalizar</button>

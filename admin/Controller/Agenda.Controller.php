@@ -76,10 +76,9 @@ class Agenda extends AbstractController
         /** @var AgendaService $agendaService */
         $agendaService = static::getServiceStatic(AGENDA_SERVICE);
         $Condicoes['ta.' . CO_AGENDA] = $coAgenda;
-        $dados = $agendaService->PesquisaAgendamentos($Condicoes, 'cli.co_cliente, pro.co_profissional, 
-        pro2.co_profissional as co_assistente, stag.nu_valor, stag.nu_duracao, stag.ds_observacao, ser.co_servico');
+        $dados = $agendaService->PesquisaAgendamentos($Condicoes, 'tc.co_cliente, tp.co_profissional, 
+        tsa.ds_observacao, ts.co_servico');
         $dados = $dados[0];
-        $dados[NU_VALOR] = Valida::FormataMoeda($dados[NU_VALOR]);
         $dados['dia'] = Valida::DataShow($dados[DT_INICIO_AGENDA], "d/m/Y");
         $dados['inicio'] = Valida::DataShow($dados[DT_INICIO_AGENDA], "H:i");
         $dados['fim'] = Valida::DataShow($dados[DT_FIM_AGENDA], "H:i");

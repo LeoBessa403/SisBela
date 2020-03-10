@@ -256,6 +256,33 @@ var Calendar = function () {
                 return false;
             });
 
+            // ABRE MODAL DE DETALHAMENTO DO AGENDAMENTO
+            $('.btn-visualizar').click(function () {
+                var coAgenda = $(this).attr('data-co-agenda');
+                var dados = Funcoes.Ajax('Agenda/GetAgendaAjax', coAgenda);
+                $('.st_status b').html($('#Status-Agendamento-' + dados.st_status).html());
+                $('.cliente b').text(dados.cliente);
+                $('.profissional b').text(dados.profissional);
+                $('.servico b').text(dados.no_servico);
+                $('.dia b').text(dados.dia);
+                $('#co_agenda_listagem').val(coAgenda);
+                $('.periodo b').text(' de ' + dados.inicio + ' a ' + dados.fim);
+                $('.acao').hide();
+                if (dados.st_status < 5) {
+                    $('.btn-finalizar').show();
+                    $('.btn-editar').show();
+                    $('.btn-deletar').show();
+                }
+                $("#j_listar").click();
+            });
+
+
+
+
+
+
+
+
 
             // ABRE MODAL DE DELEÇÃO DO AGENDAMENTO
             $(".btn-deletar").click(function () {
@@ -284,30 +311,6 @@ var Calendar = function () {
                 $('#co_profissional').select2("destroy").val(dados.co_profissional).select2({allowClear: false});
                 $('#co_assistente').select2("destroy").val(dados.co_assistente).select2({allowClear: false});
                 $("#co_agenda").val(coAgenda);
-            });
-
-            // ABRE MODAL DE DETALHAMENTO DO AGENDAMENTO
-            $('.btn-visualizar').click(function () {
-                var coAgenda = $(this).attr('data-co-agenda');
-                var dados = Funcoes.Ajax('Agenda/GetAgendaAjax', coAgenda);
-                var assistente = (dados.assistente) ? dados.assistente : 'Sem Assistente';
-                $('.st_status b').html($('#Status-Agendamento-' + dados.st_status).html());
-                $('.cliente b').text(dados.cliente);
-                $('.assistente b').text(assistente);
-                $('.nu_duracao b').text(dados.nu_duracao + ' Minutos');
-                $('.profissional b').text(dados.profissional);
-                $('.servico b').text(dados.no_servico);
-                $('.nu_valor b').text(dados.nu_valor);
-                $('.dia b').text(dados.dia);
-                $('#co_agenda_listagem').val(coAgenda);
-                $('.periodo b').text(' de ' + dados.inicio + ' a ' + dados.fim);
-                $('.acao').hide();
-                if (dados.st_status < 5) {
-                    $('.btn-finalizar').show();
-                    $('.btn-editar').show();
-                    $('.btn-deletar').show();
-                }
-                $("#j_listar").click();
             });
 
             // PESQUISA AVANÇADA DO AGENDAMENTO
