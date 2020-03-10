@@ -201,36 +201,12 @@ class AgendaForm
             ->CriaInpunt();
 
         $formulario
-            ->setId('co_assistente-pesquisa')
-            ->setType(TiposCampoEnum::SELECT)
-            ->setLabel("Assistente")
-            ->setTamanhoInput(6)
-            ->setOptions(ProfissionalService::AssistentesAtivosCombo())
-            ->CriaInpunt();
-
-        $formulario
             ->setId(CO_SERVICO . '-pesquisa')
             ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Serviço")
-            ->setTamanhoInput(12)
+            ->setTamanhoInput(6)
             ->setOptions(ServicoService::servicosCombo())
             ->CriaInpunt();
-
-//        $formulario
-//            ->setId(NU_VALOR . '-pesquisa')
-//            ->setTamanhoInput(6)
-//            ->setIntervalo($resultPreco)
-//            ->setType(TiposCampoEnum::SLIDER)
-//            ->setLabel("Valor R$")
-//            ->CriaInpunt();
-
-//        $formulario
-//            ->setId(NU_DURACAO . '-pesquisa')
-//            ->setTamanhoInput(6)
-//            ->setClasses("numero")
-//            ->setInfo("Duração do Serviço")
-//            ->setLabel("Duração (Minutos)")
-//            ->CriaInpunt();
 
         $formulario
             ->setId('dt1-pesquisa')

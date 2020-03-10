@@ -198,10 +198,6 @@ class  AgendaService extends AbstractService
         $agendaService = $this->getService(AGENDA_SERVICE);
         /** @var StatusAgendaService $statusAgendaService */
         $statusAgendaService = $this->getService(STATUS_AGENDA_SERVICE);
-        /** @var StatusAgendaServicoService $statusAgendaServicoService */
-        $statusAgendaServicoService = $this->getService(STATUS_AGENDA_SERVICO_SERVICE);
-        /** @var StatusAgendaProfissionalService $statusAgendaProfissionalService */
-        $statusAgendaProfissionalService = $this->getService(STATUS_AGENDA_PROFISSIONAL_SERVICE);
         /** @var PDO $PDO */
         $PDO = $this->getPDO();
         $retorno = [
@@ -215,12 +211,10 @@ class  AgendaService extends AbstractService
         /** @var AgendaValidador $validador */
         $validador = $agendaValidador->validarFinalizarAgendamento($dados);
         if ($validador[SUCESSO]) {
-            $retorno[MSG] = ATUALIZADO;
 
             $agenda = $agendaService->PesquisaAgendamentos([
-                'age.' . CO_AGENDA => $dados[CO_AGENDA]
-            ], 'cli.co_cliente, pro.co_profissional, pro2.co_profissional as co_assistente,
-                stag.nu_valor, stag.nu_duracao, stag.ds_observacao, ser.co_servico');
+                'ta.' . CO_AGENDA => $dados[CO_AGENDA]
+            ], 'tc.co_cliente, tp.co_profissional, tsa.ds_observacao, ts.co_servico');
 
             $agenda = $agenda[0];
 
@@ -229,35 +223,19 @@ class  AgendaService extends AbstractService
             $statusAgenda[ST_STATUS] = StatusAgendamentoEnum::FINALIZADO;
             $statusAgenda[DT_INICIO_AGENDA] = $agenda[DT_INICIO_AGENDA];
             $statusAgenda[DT_FIM_AGENDA] = $agenda[DT_FIM_AGENDA];
-            $statusAgenda[NU_VALOR] = $agenda[NU_VALOR];
-            $statusAgenda[NU_DURACAO] = $agenda[NU_DURACAO];
             $statusAgenda[DS_OBSERVACAO] = $agenda[DS_OBSERVACAO];
             $statusAgenda[CO_USUARIO] = UsuarioService::getCoUsuarioLogado();
             $statusAgenda[CO_CLIENTE] = $agenda[CO_CLIENTE];
-            $statusAgendaServico[CO_STATUS_AGENDA] = $statusAgendaService->Salva($statusAgenda);
-
-            $statusAgendaServico[CO_SERVICO] = $agenda[CO_SERVICO];
-            $statusAgendaServico[ST_STATUS] = StatusAtendimentoEnum::CONCLUIDO;
-
-            $statusAgendaProfissional[CO_STATUS_AGENDA_SERVICO] = $statusAgendaServicoService->Salva($statusAgendaServico);
-            $statusAgendaProfissional[CO_STATUS_AGENDA] = $statusAgendaServico[CO_STATUS_AGENDA];
-
-            $statusAgendaProfissional[CO_PROFISSIONAL] = $agenda[CO_PROFISSIONAL];
-            $statusAgendaProfissional[TP_PROFISSIONAL] = 1;
-            $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
-            if (!empty($agenda['co_assistente'])) {
-                $statusAgendaProfissional[CO_PROFISSIONAL] = $agenda['co_assistente'];
-            } else {
-                unset($statusAgendaProfissional[CO_PROFISSIONAL]);
-            }
-            $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
-            $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
+            $statusAgenda[CO_SERVICO] = $agenda[CO_SERVICO];
+            $statusAgenda[CO_PROFISSIONAL] = $agenda[CO_PROFISSIONAL];
+            $retorno[SUCESSO] = $statusAgendaService->Salva($statusAgenda);
         } else {
             $retorno = $validador;
         }
 
         if ($retorno[SUCESSO]) {
             $retorno[SUCESSO] = true;
+            $retorno[MSG] = ATUALIZADO;
             $PDO->commit();
         } else {
             $retorno[MSG] = $validador[MSG];
@@ -348,64 +326,64 @@ class  AgendaService extends AbstractService
 
         return $retorno;
     }
-
-    public function cronStatusAgenda($dados)
-    {
-        /** @var StatusAgendaService $statusAgendaService */
-        $statusAgendaService = $this->getService(STATUS_AGENDA_SERVICE);
-        /** @var StatusAgendaServicoService $statusAgendaServicoService */
-        $statusAgendaServicoService = $this->getService(STATUS_AGENDA_SERVICO_SERVICE);
-        /** @var StatusAgendaProfissionalService $statusAgendaProfissionalService */
-        $statusAgendaProfissionalService = $this->getService(STATUS_AGENDA_PROFISSIONAL_SERVICE);
-        /** @var PDO $PDO */
-        $PDO = $this->getPDO();
-        $retorno = [
-            SUCESSO => false,
-            MSG => null
-        ];
-
-        $PDO->beginTransaction();
-
-        $statusAgenda[CO_AGENDA] = $dados[CO_AGENDA];
-        $statusAgenda[DT_CADASTRO] = Valida::DataHoraAtualBanco();
-        $statusAgenda[ST_STATUS] = $dados[ST_STATUS];
-        $statusAgenda[DT_INICIO_AGENDA] = $dados[DT_INICIO_AGENDA];
-        $statusAgenda[DT_FIM_AGENDA] = $dados[DT_FIM_AGENDA];
-        $statusAgenda[NU_VALOR] = $dados[NU_VALOR];
-        $statusAgenda[NU_DURACAO] = $dados[NU_DURACAO];
-        $statusAgenda[DS_OBSERVACAO] = "Atualizado pelo Sistema";
-        $statusAgenda[CO_USUARIO] = CO_USUARIO_PADRAO;
-        $statusAgenda[CO_CLIENTE] = $dados[CO_CLIENTE];
-
-
-        $statusAgendaServico[CO_STATUS_AGENDA] = $statusAgendaService->Salva($statusAgenda);
-        $statusAgendaServico[CO_SERVICO] = $dados[CO_SERVICO];
-        $statusAgendaServico[ST_STATUS] = StatusAtendimentoEnum::NAO_INICIADO;
-
-        $statusAgendaProfissional[CO_STATUS_AGENDA_SERVICO] = $statusAgendaServicoService->Salva($statusAgendaServico);
-        $statusAgendaProfissional[CO_STATUS_AGENDA] = $statusAgendaServico[CO_STATUS_AGENDA];
-
-        if (!empty($dados[CO_PROFISSIONAL])) {
-            $statusAgendaProfissional[CO_PROFISSIONAL] = $dados[CO_PROFISSIONAL];
-        } else {
-            $statusAgendaProfissional[CO_PROFISSIONAL] = null;
-        }
-        $statusAgendaProfissional[TP_PROFISSIONAL] = 1;
-        $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
-
-        if (!empty($dados['co_assistente'])) {
-            $statusAgendaProfissional[CO_PROFISSIONAL] = $dados['co_assistente'];
-        } else {
-            unset($statusAgendaProfissional[CO_PROFISSIONAL]);
-        }
-        $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
-        $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
-        if ($retorno[SUCESSO]) {
-            $PDO->commit();
-        } else {
-            $PDO->rollBack();
-        }
-    }
+//
+//    public function cronStatusAgenda($dados)
+//    {
+//        /** @var StatusAgendaService $statusAgendaService */
+//        $statusAgendaService = $this->getService(STATUS_AGENDA_SERVICE);
+//        /** @var StatusAgendaServicoService $statusAgendaServicoService */
+//        $statusAgendaServicoService = $this->getService(STATUS_AGENDA_SERVICO_SERVICE);
+//        /** @var StatusAgendaProfissionalService $statusAgendaProfissionalService */
+//        $statusAgendaProfissionalService = $this->getService(STATUS_AGENDA_PROFISSIONAL_SERVICE);
+//        /** @var PDO $PDO */
+//        $PDO = $this->getPDO();
+//        $retorno = [
+//            SUCESSO => false,
+//            MSG => null
+//        ];
+//
+//        $PDO->beginTransaction();
+//
+//        $statusAgenda[CO_AGENDA] = $dados[CO_AGENDA];
+//        $statusAgenda[DT_CADASTRO] = Valida::DataHoraAtualBanco();
+//        $statusAgenda[ST_STATUS] = $dados[ST_STATUS];
+//        $statusAgenda[DT_INICIO_AGENDA] = $dados[DT_INICIO_AGENDA];
+//        $statusAgenda[DT_FIM_AGENDA] = $dados[DT_FIM_AGENDA];
+//        $statusAgenda[NU_VALOR] = $dados[NU_VALOR];
+//        $statusAgenda[NU_DURACAO] = $dados[NU_DURACAO];
+//        $statusAgenda[DS_OBSERVACAO] = "Atualizado pelo Sistema";
+//        $statusAgenda[CO_USUARIO] = CO_USUARIO_PADRAO;
+//        $statusAgenda[CO_CLIENTE] = $dados[CO_CLIENTE];
+//
+//
+//        $statusAgendaServico[CO_STATUS_AGENDA] = $statusAgendaService->Salva($statusAgenda);
+//        $statusAgendaServico[CO_SERVICO] = $dados[CO_SERVICO];
+//        $statusAgendaServico[ST_STATUS] = StatusAtendimentoEnum::NAO_INICIADO;
+//
+//        $statusAgendaProfissional[CO_STATUS_AGENDA_SERVICO] = $statusAgendaServicoService->Salva($statusAgendaServico);
+//        $statusAgendaProfissional[CO_STATUS_AGENDA] = $statusAgendaServico[CO_STATUS_AGENDA];
+//
+//        if (!empty($dados[CO_PROFISSIONAL])) {
+//            $statusAgendaProfissional[CO_PROFISSIONAL] = $dados[CO_PROFISSIONAL];
+//        } else {
+//            $statusAgendaProfissional[CO_PROFISSIONAL] = null;
+//        }
+//        $statusAgendaProfissional[TP_PROFISSIONAL] = 1;
+//        $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
+//
+//        if (!empty($dados['co_assistente'])) {
+//            $statusAgendaProfissional[CO_PROFISSIONAL] = $dados['co_assistente'];
+//        } else {
+//            unset($statusAgendaProfissional[CO_PROFISSIONAL]);
+//        }
+//        $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
+//        $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
+//        if ($retorno[SUCESSO]) {
+//            $PDO->commit();
+//        } else {
+//            $PDO->rollBack();
+//        }
+//    }
 
     public function AgendamentoPesquisaAvancada($dados)
     {

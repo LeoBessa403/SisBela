@@ -127,32 +127,28 @@ class Agenda extends AbstractController
         $agendaService = static::getServiceStatic(AGENDA_SERVICE);
         return $agendaService->DropAgendamentoAjax($dados);
     }
-//
-//    public function AgendamentoPesquisaAvancada($dados)
-//    {
-//        /** @var Session $session */
-//        $session = new Session();
-//        if ($session->CheckSession(PESQUISA_AVANCADA)) {
-//            $session->FinalizaSession(PESQUISA_AVANCADA);
-//        }
-//        /** @var AgendaService $agendaService */
-//        $agendaService = static::getServiceStatic(AGENDA_SERVICE);
-//        $pesquisa = $agendaService->AgendamentoPesquisaAvancada($dados);
-//
-//        $Condicoes = array(
-//            "stag." . ST_STATUS => $pesquisa['st_status-pesquisa'],
-//            "cli." . CO_CLIENTE => $pesquisa['co_cliente-pesquisa'],
-//            "pro." . CO_PROFISSIONAL => $pesquisa['co_profissional-pesquisa'],
-//            "pro." . CO_PROFISSIONAL => $pesquisa['co_assistente-pesquisa'],
-//            "ser." . CO_SERVICO => $pesquisa['co_servico-pesquisa'],
-//            ">=#pre." . NU_VALOR => $pesquisa['nu_valor-pesquisa1'],
-//            "<=#pre." . NU_VALOR => $pesquisa['nu_valor-pesquisa2'],
-//            "ser." . NU_DURACAO => $pesquisa['nu_duracao-pesquisa'],
-//            ">=#stag." . DT_INICIO_AGENDA => Valida::DataDBDate($pesquisa['dt1-pesquisa']) . " 00:00:00",
-//            "<=#stag." . DT_FIM_AGENDA => Valida::DataDBDate($pesquisa['dt2-pesquisa']) . " 23:59:59"
-//        );
-//        $session->setSession(PESQUISA_AVANCADA, $Condicoes);
-//        $retorno[SUCESSO] = true;
-//        return $retorno;
-//    }
+
+    public function AgendamentoPesquisaAvancada($dados)
+    {
+        /** @var Session $session */
+        $session = new Session();
+        if ($session->CheckSession(PESQUISA_AVANCADA)) {
+            $session->FinalizaSession(PESQUISA_AVANCADA);
+        }
+        /** @var AgendaService $agendaService */
+        $agendaService = static::getServiceStatic(AGENDA_SERVICE);
+        $pesquisa = $agendaService->AgendamentoPesquisaAvancada($dados);
+
+        $Condicoes = array(
+            "tsa." . ST_STATUS => $pesquisa['st_status-pesquisa'],
+            "tsa." . CO_CLIENTE => $pesquisa['co_cliente-pesquisa'],
+            "tsa." . CO_PROFISSIONAL => $pesquisa['co_profissional-pesquisa'],
+            "tsa." . CO_SERVICO => $pesquisa['co_servico-pesquisa'],
+            ">=#tsa." . DT_INICIO_AGENDA => Valida::DataDBDate($pesquisa['dt1-pesquisa']) . " 00:00:00",
+            "<=#tsa." . DT_FIM_AGENDA => Valida::DataDBDate($pesquisa['dt2-pesquisa']) . " 23:59:59"
+        );
+        $session->setSession(PESQUISA_AVANCADA, $Condicoes);
+        $retorno[SUCESSO] = true;
+        return $retorno;
+    }
 }

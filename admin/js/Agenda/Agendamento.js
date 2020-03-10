@@ -317,7 +317,7 @@ var Calendar = function () {
                 Calendar.LimpaValidacao();
                 $("#j_cadastro").click();
 
-                $('#co_servico').select2("destroy").val(dados.co_servico).select2({allowClear: false}).trigger('change');
+                $('#co_servico').select2("destroy").val(dados.co_servico).select2({allowClear: false});
                 $('#co_profissional').select2("destroy").val(dados.co_profissional).select2({allowClear: false});
                 $("#co_agenda").val(coAgenda);
             });
@@ -342,17 +342,26 @@ var Calendar = function () {
                 return false;
             });
 
-
-
-
-
-
-
-
-
-
-
-
+            // FINALIZA O AGENDAMENTO (muda st_status para finalizado)
+            $(".btn-finalizar").click(function () {
+                var data = {
+                    co_agenda: Calendar.GetCoAgenda($(this))
+                };
+                var dados = Funcoes.Ajax('Agenda/FinalizarAgendaAjax', data);
+                if (dados) {
+                    if (dados.sucesso && dados.msg === "atualizado") {
+                        Funcoes.AtualizadoSucesso();
+                    } else {
+                        Funcoes.Alerta(dados.msg);
+                    }
+                    if (dados.sucesso) {
+                        Calendar.Renderiza();
+                    }
+                } else {
+                    Funcoes.Erro("Erro: " + dados.msg);
+                }
+                return false;
+            });
 
 
             // PESQUISA AVANÇADA DO AGENDAMENTO
@@ -362,27 +371,6 @@ var Calendar = function () {
                 if (dados.sucesso) {
                     Funcoes.Informativo('Pesquisando....');
                     Calendar.Renderiza(1);
-                } else {
-                    Funcoes.Erro("Erro: " + dados.msg);
-                }
-                return false;
-            });
-
-            // FINALIZA O AGENDAMENTO (muda st_status para finalizado)
-            $(".btn-finalizar").click(function () {
-                var data = {
-                    co_agenda: Calendar.GetCoAgenda($(this))
-                };
-                var dados = Funcoes.Ajax('Agenda/FinalizarAgendaAjax', data);
-                if (dados) {
-                    if (dados.sucesso && dados.msg === "deletado") {
-                        Funcoes.DeletadoSucesso();
-                    } else {
-                        Funcoes.Alerta(dados.msg);
-                    }
-                    if (dados.sucesso) {
-                        Calendar.Renderiza();
-                    }
                 } else {
                     Funcoes.Erro("Erro: " + dados.msg);
                 }
@@ -408,21 +396,21 @@ var Calendar = function () {
             }
             if (dados.st_status == 8) {
                 $('#form-group-motivo').show();
-            }else{
+            } else {
                 $('#form-group-motivo').hide();
             }
             $("#j_listar").click();
         },
         GetCoAgenda: function (element) {
             var coAgenda = $('#co_agenda_listagem').val();
-            if(!coAgenda){
+            if (!coAgenda) {
                 coAgenda = element.attr('data-co-agenda');
             }
             return coAgenda;
         },
         LimpaCombos: function () {
-             $('#co_servico, #co_profissional, #co_cliente').select2("destroy").val(null).select2({allowClear: false});
-             $('#no_servico, #no_profissional, #no_cliente').val('');
+            $('#co_servico, #co_profissional, #co_cliente').select2("destroy").val(null).select2({allowClear: false});
+            $('#no_servico, #no_profissional, #no_cliente').val('');
         },
         Renderiza: function (time) {
             time = time || 3000;
@@ -432,10 +420,7 @@ var Calendar = function () {
             }, time);
         },
         LimpaValidacao: function () {
-            Funcoes.TiraValidacao('co_cliente');
-            Funcoes.TiraValidacao('co_servico');
             Funcoes.TiraValidacao('nu_hora_fim_agenda');
-            Funcoes.TiraValidacao('co_profissional');
             Funcoes.TiraValidacao('st_status');
         },
         VerificaNumero: function (valor) {
