@@ -1,4 +1,4 @@
--- Atualizado em: 10/03/2020 17:27:55
+-- Atualizado em: 10/03/2020 17:57:06
 -- AMBIENTE: http://localhost/SisBela/
 -- BANCO: sisbela
 
@@ -20,10 +20,10 @@ CREATE TABLE `TB_ACESSO` (
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=131 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=135 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_ACESSO VALUES("130","hq5gs9pl6e5lg7ep5gfqrp8vpk","2020-03-10 17:24:55","2020-03-10 17:57:55","A","1","130");
+INSERT INTO TB_ACESSO VALUES("134","hq5gs9pl6e5lg7ep5gfqrp8vpk","2020-03-10 17:54:39","2020-03-10 18:27:06","A","1","134");
 
 
 
@@ -38,7 +38,7 @@ CREATE TABLE `TB_AGENDA` (
   `co_assinante` int(11) NOT NULL,
   PRIMARY KEY (`co_agenda`,`co_assinante`),
   KEY `fk_TB_AGENDAMENTO_TB_ASSINANTE1_idx` (`co_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_AGENDA VALUES("3","dwqfwfew few","2020-03-10 11:49:57","2");
@@ -64,6 +64,8 @@ INSERT INTO TB_AGENDA VALUES("12","","2020-03-10 16:40:15","2");
 INSERT INTO TB_AGENDA VALUES("15","","2020-03-10 16:42:01","2");
 
 INSERT INTO TB_AGENDA VALUES("16","","2020-03-10 17:18:59","2");
+
+INSERT INTO TB_AGENDA VALUES("17","","2020-03-10 17:36:28","2");
 
 
 
@@ -120,7 +122,7 @@ CREATE TABLE `TB_AUDITORIA` (
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=275 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=291 DEFAULT CHARSET=utf8;
 
 
 
@@ -137,7 +139,7 @@ CREATE TABLE `TB_AUDITORIA_ITENS` (
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`),
   KEY `fk_TB_AUDITORIA_ITENS_TB_AUDITORIA_TABELA1_idx` (`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=6272 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6429 DEFAULT CHARSET=utf8;
 
 
 
@@ -154,7 +156,7 @@ CREATE TABLE `TB_AUDITORIA_TABELA` (
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`),
   KEY `fk_TB_AUDITORIA_TABELA_TB_AUDITORIA1_idx` (`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=1011 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1028 DEFAULT CHARSET=utf8;
 
 
 
@@ -483,7 +485,7 @@ INSERT INTO TB_HISTORIA VALUES("19","Deletar Agendamento","Deletar Agendamento (
 
 INSERT INTO TB_HISTORIA VALUES("20","Listagem dos agendamento (Grid)","Listagem dos agendamento (Grid)","2019-12-18 12:28:13","2020-03-10 12:11:48","C","3");
 
-INSERT INTO TB_HISTORIA VALUES("21","Event Dragging & Resizing","Criar eventos Dragging & Resizing","2019-12-18 12:28:41","2020-03-09 17:16:41","I","3");
+INSERT INTO TB_HISTORIA VALUES("21","Event Dragging & Resizing","Criar eventos Dragging & Resizing","2019-12-18 12:28:41","2020-03-10 17:55:15","C","3");
 
 INSERT INTO TB_HISTORIA VALUES("22","Visualizar Agendamento","Visualizar Agendamento","2019-12-18 12:29:06","2020-03-10 12:11:58","C","3");
 
@@ -553,7 +555,7 @@ CREATE TABLE `TB_HISTORICO_HISTORIA` (
   `co_historia` int(11) NOT NULL,
   PRIMARY KEY (`co_historico_historia`,`co_historia`),
   KEY `fk_TB_HISTORICO_HISTORIA_TB_HISTORIA1_idx` (`co_historia`)
-) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("1","13","5","2019-12-18 12:06:25","1");
@@ -731,6 +733,8 @@ INSERT INTO TB_HISTORICO_HISTORIA VALUES("87","5","0","2020-03-10 17:26:12","16"
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("88","13","0","2020-03-10 17:26:22","18");
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("89","5","0","2020-03-10 17:26:31","19");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("90","13","0","2020-03-10 17:55:15","21");
 
 
 
@@ -1267,7 +1271,7 @@ CREATE TABLE `TB_STATUS_AGENDA` (
   KEY `fk_TB_STATUS_AGENDAMENTO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_STATUS_AGENDA_TB_PROFISSIONAL1_idx` (`co_profissional`),
   KEY `fk_TB_STATUS_AGENDA_TB_SERVICO1_idx` (`co_servico`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_STATUS_AGENDA VALUES("1","2020-03-10 11:49:57","1","2020-03-04 08:00:00","2020-03-04 09:50:00","0.00","0","fewfewf","3","3","6","3","3");
@@ -1332,6 +1336,34 @@ INSERT INTO TB_STATUS_AGENDA VALUES("32","2020-03-10 17:18:59","2","2020-03-10 0
 
 INSERT INTO TB_STATUS_AGENDA VALUES("33","2020-03-10 17:20:08","7","2020-03-10 08:00:00","2020-03-10 08:30:00","","","qwe fwe f wef ewf","13","16","6","5","11");
 
+INSERT INTO TB_STATUS_AGENDA VALUES("34","2020-03-10 17:36:28","1","2020-03-12 08:00:00","2020-03-12 09:00:00","0.00","0","rth rth rt","13","17","6","5","11");
+
+INSERT INTO TB_STATUS_AGENDA VALUES("35","2020-03-10 17:38:54","1","2020-03-13 08:00:00","2020-03-13 09:00:00","","","rth rth rt","13","17","6","5","11");
+
+INSERT INTO TB_STATUS_AGENDA VALUES("36","2020-03-10 17:38:55","1","2020-03-13 08:00:00","2020-03-13 09:00:00","","","rth rth rt","13","17","6","5","11");
+
+INSERT INTO TB_STATUS_AGENDA VALUES("37","2020-03-10 17:39:28","1","2020-03-14 08:00:00","2020-03-14 09:00:00","","","rth rth rt","13","17","6","5","11");
+
+INSERT INTO TB_STATUS_AGENDA VALUES("38","2020-03-10 17:47:44","7","2020-03-12 08:00:00","2020-03-12 08:30:00","","","ghjhg j ytj","3","12","6","5","7");
+
+INSERT INTO TB_STATUS_AGENDA VALUES("39","2020-03-10 17:47:44","1","2020-03-13 08:00:00","2020-03-13 09:00:00","","","rth rth rt","13","17","6","5","11");
+
+INSERT INTO TB_STATUS_AGENDA VALUES("40","2020-03-10 17:48:05","7","2020-03-05 08:00:00","2020-03-05 08:30:00","","","ghjhg j ytj","3","12","6","5","7");
+
+INSERT INTO TB_STATUS_AGENDA VALUES("41","2020-03-10 17:48:05","1","2020-03-06 08:00:00","2020-03-06 09:00:00","","","rth rth rt","13","17","6","5","11");
+
+INSERT INTO TB_STATUS_AGENDA VALUES("42","2020-03-10 17:48:06","1","2020-03-14 08:00:00","2020-03-14 09:00:00","","","rth rth rt","13","17","6","5","11");
+
+INSERT INTO TB_STATUS_AGENDA VALUES("43","2020-03-10 17:48:54","7","2020-03-12 08:00:00","2020-03-12 08:30:00","","","f ewf ewf ew","6","15","6","14","7");
+
+INSERT INTO TB_STATUS_AGENDA VALUES("44","2020-03-10 17:48:54","1","2020-03-13 08:00:00","2020-03-13 09:00:00","","","rth rth rt","13","17","6","5","11");
+
+INSERT INTO TB_STATUS_AGENDA VALUES("45","2020-03-10 17:50:03","7","2020-03-20 08:00:00","2020-03-20 08:30:00","","","f ewf ewf ew","6","15","6","14","7");
+
+INSERT INTO TB_STATUS_AGENDA VALUES("46","2020-03-10 17:50:04","1","2020-03-14 08:00:00","2020-03-14 09:00:00","","","rth rth rt","13","17","6","5","11");
+
+INSERT INTO TB_STATUS_AGENDA VALUES("47","2020-03-10 17:50:48","1","2020-03-14 08:00:00","2020-03-14 09:00:00","0.00","0","rth rth rt","6","17","6","14","7");
+
 
 
 
@@ -1351,10 +1383,10 @@ CREATE TABLE `TB_TRAFEGO` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=131 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=135 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_TRAFEGO VALUES("130","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:73.0) Gecko/20100101 Firefox/73.0");
+INSERT INTO TB_TRAFEGO VALUES("134","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:73.0) Gecko/20100101 Firefox/73.0");
 
 
 
