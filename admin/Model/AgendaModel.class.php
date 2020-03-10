@@ -22,10 +22,12 @@ class  AgendaModel extends AbstractModel
                         left join tb_cliente tc on tc.co_cliente = tsa.co_cliente
                         left join tb_servico ts on tsa.co_servico = ts.co_servico
                         inner join tb_pessoa t1 on tc.co_pessoa = t1.co_pessoa
-                        inner join tb_pessoa t2 on tp.co_pessoa = t2.co_pessoa";
+                        inner join tb_pessoa t2 on tp.co_pessoa = t2.co_pessoa
+                        inner join tb_usuario tu on tu.co_usuario = tsa.co_usuario
+                        inner join tb_pessoa t3 on tu.co_pessoa = t3.co_pessoa";
 
         $campos = "ta.co_agenda, dt_inicio_agenda, dt_fim_agenda, t1.no_pessoa as cliente, 
-                t2.no_pessoa as profissional, no_servico, tsa.st_status";
+                t2.no_pessoa as profissional, no_servico, tsa.st_status, t3.no_pessoa as usuario";
 
         if ($maisCampos)
             $campos .= ', ' . $maisCampos;

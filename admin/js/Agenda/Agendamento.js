@@ -95,9 +95,7 @@ var Calendar = function () {
 
                     $("#nu_hora_inicio_agenda").val(hora_inicio);
                     $("#dt_agenda").val(dt_agenda);
-                    $("#nu_duracao").val(null);
                     $("#nu_hora_fim_agenda").val(null);
-                    $("#nu_valor2").val(null);
                     $("#ds_observacao").val(null);
                     $('#co_agenda').val(null);
                     $('#st_status').select2("destroy").val(1).select2({allowClear: false});
@@ -114,25 +112,7 @@ var Calendar = function () {
                 eventClick: function (info) {
                     info.jsEvent.preventDefault();
                     var dados = Funcoes.Ajax('Agenda/GetAgendaAjax', info.event.id);
-                    var assistente = (dados.assistente) ? dados.assistente : 'Sem Assistente';
-                    $('.st_status b').html($('#Status-Agendamento-' + dados.st_status).html());
-                    $('.cliente b').text(dados.cliente);
-                    $('.assistente b').text(assistente);
-                    $('.nu_duracao b').text(dados.nu_duracao + ' Minutos');
-                    $('.profissional b').text(dados.profissional);
-                    $('.servico b').text(dados.no_servico);
-                    $('.nu_valor b').text(dados.nu_valor);
-                    $('.dia b').text(dados.dia);
-                    $('#co_agenda_listagem').val(info.event.id);
-                    $('.periodo b').text(' de ' + dados.inicio + ' a ' + dados.fim);
-                    $('.acao').hide();
-                    if (dados.st_status < 5) {
-                        $('.btn-finalizar').show();
-                        $('.btn-editar').show();
-                        $('.btn-deletar').show();
-                    }
-
-                    $("#j_listar").click();
+                    Calendar.CarregaDadosAgendamento(dados, info.event.id);
                 },
                 eventDrop: function (info) {
                     var hoje = new Date();
@@ -234,6 +214,25 @@ var Calendar = function () {
 
             });
 
+            // CARREGA CALENDÁRIO
+            $('#carregaCalendar').click(function () {
+                $("#grid").fadeOut('fast');
+                $("#calendar").fadeIn('slow');
+                return false;
+            });
+
+            // ABRE MODAL PESQUISA AVANÇADA
+            $('#j_pesquisa').click(function () {
+                $("#j_pesquisar").click();
+                return false;
+            });
+
+            // Abre a modal de legendas
+            $('#j_legendas').click(function () {
+                $("#j_legenda").click();
+                return false;
+            });
+
             // CADASTRO DO AGENDAMENTO
             $("#CadastroAgendamento").submit(function () {
                 var data = $(this).serializeArray();
@@ -260,35 +259,22 @@ var Calendar = function () {
             $('.btn-visualizar').click(function () {
                 var coAgenda = $(this).attr('data-co-agenda');
                 var dados = Funcoes.Ajax('Agenda/GetAgendaAjax', coAgenda);
-                $('.st_status b').html($('#Status-Agendamento-' + dados.st_status).html());
-                $('.cliente b').text(dados.cliente);
-                $('.profissional b').text(dados.profissional);
-                $('.servico b').text(dados.no_servico);
-                $('.dia b').text(dados.dia);
-                $('#co_agenda_listagem').val(coAgenda);
-                $('.periodo b').text(' de ' + dados.inicio + ' a ' + dados.fim);
-                $('.acao').hide();
-                if (dados.st_status < 5) {
-                    $('.btn-finalizar').show();
-                    $('.btn-editar').show();
-                    $('.btn-deletar').show();
-                }
-                $("#j_listar").click();
+                Calendar.CarregaDadosAgendamento(dados, coAgenda);
             });
-
-
-
-
-
-
-
-
 
             // ABRE MODAL DE DELEÇÃO DO AGENDAMENTO
             $(".btn-deletar").click(function () {
                 Funcoes.TiraValidacao('ds_motivo');
                 $("#j_deletar").click();
             });
+
+
+
+
+
+
+
+
 
             // ABRE MODAL DE EDIÇÃO DO AGENDAMENTO
             $(".btn-editar").click(function () {
@@ -383,24 +369,6 @@ var Calendar = function () {
                 return false;
             });
 
-            // CARREGA CALENDÁRIO
-            $('#carregaCalendar').click(function () {
-                $("#grid").fadeOut('fast');
-                $("#calendar").fadeIn('slow');
-                return false;
-            });
-
-            // ABRE MODAL PESQUISA AVANÇADA
-            $('#j_pesquisa').click(function () {
-                $("#j_pesquisar").click();
-                return false;
-            });
-
-            // Abre a modal de legendas
-            $('#j_legendas').click(function () {
-                $("#j_legenda").click();
-                return false;
-            });
 
             // NOVO AGENDAMENTO GRID
             $('#novaAgenda').click(function () {
@@ -425,6 +393,30 @@ var Calendar = function () {
 
                 return false;
             });
+        },
+        CarregaDadosAgendamento: function (dados, coAgenda) {
+            $('.st_status b').html($('#Status-Agendamento-' + dados.st_status).html());
+            $('.cliente b').text(dados.cliente);
+            $('.profissional b').text(dados.profissional);
+            $('.servico b').text(dados.no_servico);
+            $('.observacao b').text(dados.ds_observacao);
+            $('.motivo b').text(dados.ds_motivo);
+            $('.usuario b').text(dados.usuario);
+            $('.dia b').text(dados.dia);
+            $('#co_agenda_listagem').val(coAgenda);
+            $('.periodo b').text(' de ' + dados.inicio + ' a ' + dados.fim);
+            $('.acao').hide();
+            if (dados.st_status < 5) {
+                $('.btn-finalizar').show();
+                $('.btn-editar').show();
+                $('.btn-deletar').show();
+            }
+            if (dados.st_status == 8) {
+                $('#form-group-motivo').show();
+            }else{
+                $('#form-group-motivo').hide();
+            }
+            $("#j_listar").click();
         },
         IniciaCombosProfAssi: function () {
             // $("#co_profissional").select2({
@@ -493,7 +485,6 @@ var Calendar = function () {
         LimpaValidacao: function () {
             Funcoes.TiraValidacao('co_cliente');
             Funcoes.TiraValidacao('co_servico');
-            Funcoes.TiraValidacao('nu_duracao');
             Funcoes.TiraValidacao('nu_hora_fim_agenda');
             Funcoes.TiraValidacao('co_profissional');
             Funcoes.TiraValidacao('co_assistente');

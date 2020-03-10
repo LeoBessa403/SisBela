@@ -129,17 +129,12 @@ class  AgendaService extends AbstractService
         $agendaService = $this->getService(AGENDA_SERVICE);
         /** @var StatusAgendaService $statusAgendaService */
         $statusAgendaService = $this->getService(STATUS_AGENDA_SERVICE);
-        /** @var StatusAgendaServicoService $statusAgendaServicoService */
-        $statusAgendaServicoService = $this->getService(STATUS_AGENDA_SERVICO_SERVICE);
-        /** @var StatusAgendaProfissionalService $statusAgendaProfissionalService */
-        $statusAgendaProfissionalService = $this->getService(STATUS_AGENDA_PROFISSIONAL_SERVICE);
         /** @var PDO $PDO */
         $PDO = $this->getPDO();
         $retorno = [
             SUCESSO => false,
             MSG => null
         ];
-
         $PDO->beginTransaction();
 
         $agendaValidador = new AgendaValidador();
@@ -152,8 +147,7 @@ class  AgendaService extends AbstractService
 
             $agenda = $agendaService->PesquisaAgendamentos([
                 'ta.' . CO_AGENDA => $dados[CO_AGENDA]
-            ], 'cli.co_cliente, pro.co_profissional, pro2.co_profissional as co_assistente,
-                stag.nu_valor, stag.nu_duracao, stag.ds_observacao, ser.co_servico');
+            ], 'tc.co_cliente, tp.co_profissional, tsa.ds_observacao, ts.co_servico');
 
             $agenda = $agenda[0];
 
@@ -162,41 +156,13 @@ class  AgendaService extends AbstractService
             $statusAgenda[ST_STATUS] = StatusAgendamentoEnum::DELETADO;
             $statusAgenda[DT_INICIO_AGENDA] = $agenda[DT_INICIO_AGENDA];
             $statusAgenda[DT_FIM_AGENDA] = $agenda[DT_FIM_AGENDA];
-            $statusAgenda[NU_VALOR] = $agenda[NU_VALOR];
-            $statusAgenda[NU_DURACAO] = $agenda[NU_DURACAO];
             $statusAgenda[DS_OBSERVACAO] = $agenda[DS_OBSERVACAO];
             $statusAgenda[CO_USUARIO] = UsuarioService::getCoUsuarioLogado();
             $statusAgenda[CO_CLIENTE] = $agenda[CO_CLIENTE];
-            $statusAgendaServico[CO_STATUS_AGENDA] = $statusAgendaService->Salva($statusAgenda);
+            $statusAgenda[CO_SERVICO] = $agenda[CO_SERVICO];
+            $statusAgenda[CO_PROFISSIONAL] = $agenda[CO_PROFISSIONAL];
+            $retorno[SUCESSO] = $statusAgendaService->Salva($statusAgenda);
 
-            $statusAgendaServico[CO_SERVICO] = $agenda[CO_SERVICO];
-
-            switch ($statusAgenda[ST_STATUS]) {
-                case StatusAgendamentoEnum::EM_ATENDIMENTO:
-                    $statusAgendaServico[ST_STATUS] = StatusAtendimentoEnum::INICIADO;
-                    break;
-                case StatusAgendamentoEnum::FINALIZADO:
-                    $statusAgendaServico[ST_STATUS] = StatusAtendimentoEnum::CONCLUIDO;
-                    break;
-                default:
-                    $statusAgendaServico[ST_STATUS] = StatusAtendimentoEnum::NAO_INICIADO;
-                    break;
-            }
-
-            $statusAgendaProfissional[CO_STATUS_AGENDA_SERVICO] = $statusAgendaServicoService->Salva($statusAgendaServico);
-            $statusAgendaProfissional[CO_STATUS_AGENDA] = $statusAgendaServico[CO_STATUS_AGENDA];
-
-            $statusAgendaProfissional[CO_PROFISSIONAL] = $agenda[CO_PROFISSIONAL];
-            $statusAgendaProfissional[TP_PROFISSIONAL] = 1;
-            $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
-
-            if (!empty($agenda['co_assistente'])) {
-                $statusAgendaProfissional[CO_PROFISSIONAL] = $agenda['co_assistente'];
-            } else {
-                unset($statusAgendaProfissional[CO_PROFISSIONAL]);
-            }
-            $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
-            $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
         } else {
             $retorno = $validador;
         }

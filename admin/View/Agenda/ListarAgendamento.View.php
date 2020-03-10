@@ -65,6 +65,30 @@
                     <span class="periodo"><b></b></span>
                 </div>
             </div>
+            <div id="form-group-usuario" class="form-group col-sm-12">
+                <label for="usuario" class="col-sm-3  align-right">
+                    Responsável:
+                </label>
+                <div class="col-sm-9">
+                    <span class="usuario"><b></b></span>
+                </div>
+            </div>
+            <div id="form-group-observacao" class="form-group col-sm-12">
+                <label for="observacao" class="col-sm-3  align-right">
+                    Observação:
+                </label>
+                <div class="col-sm-9">
+                    <span class="observacao"><b></b></span>
+                </div>
+            </div>
+            <div id="form-group-motivo" class="form-group col-sm-12">
+                <label for="motivo" class="col-sm-3  align-right">
+                    Motivo:
+                </label>
+                <div class="col-sm-9">
+                    <span class="motivo"><b></b></span>
+                </div>
+            </div>
         </div>
     </div>
     <div class="modal-footer pull-left" style="width: 100%;">
