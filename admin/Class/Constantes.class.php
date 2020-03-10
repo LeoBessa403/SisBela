@@ -40,3 +40,4 @@ define('AGENDA_SERVICE', 'AgendaService');
 define('CLIENTE_SERVICE', 'ClienteService');
 define('PROFISSIONAL_SERVICE', 'ProfissionalService');
 define('SERVICO_SERVICE', 'ServicoService');
+define('STATUS_AGENDA_SERVICE', 'StatusAgendaService');

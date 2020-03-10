@@ -12,22 +12,22 @@ class  AgendaValidador extends AbstractValidador
         DADOS => []
     ];
 
-    public function validarAgendamento($dados, $validaAssistente)
+    public function validarAgendamento($dados)
     {
-        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
-            $dados[CO_CLIENTE], AbstractValidador::VALIDACAO_NUMERO, 'Cliente'
+        $this->retorno[DADOS][] = $this->ValidaSelectObrigatorioNotArray(
+            $dados[ST_STATUS], 'Status Agendamento'
         );
         $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
-            $dados[CO_SERVICO], AbstractValidador::VALIDACAO_NUMERO, 'Serviço'
+            $dados['dt_agenda'], AbstractValidador::VALIDACAO_DATA, 'Data do agendamento'
         );
         $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
-            $dados[CO_PROFISSIONAL], AbstractValidador::VALIDACAO_NUMERO, 'Profissional'
+            $dados['nu_hora_inicio_agenda'], AbstractValidador::VALIDACAO_HORAS,
+            'Hórario de Início'
         );
-        if ($validaAssistente) {
-            $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
-                $dados['co_assistente'], AbstractValidador::VALIDACAO_NUMERO, 'Assistente'
-            );
-        }
+        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
+            $dados['nu_hora_fim_agenda'], AbstractValidador::VALIDACAO_HORAS,
+            'Hórario de Término'
+        );
         return $this->MontaRetorno($this->retorno);
     }
 

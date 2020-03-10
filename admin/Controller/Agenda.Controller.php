@@ -30,14 +30,14 @@ class Agenda extends AbstractController
             if ($agenda[ST_STATUS] != StatusAgendamentoEnum::DELETADO) {
                 $eve = array(
                     'id' => (int)$agenda[CO_AGENDA],
-                    'title' => "Profissional: " . $agenda['profissional'] .
-                        "\nCliente: " . $agenda['cliente'] . "\nServiço: " . $agenda[NO_SERVICO] .
+                    'title' => "Cliente: " . $agenda['cliente'] .
+                        "\nProfissional: " . $agenda['profissional'] . "\nServiço: " . $agenda[NO_SERVICO] .
                         "\nAtualizado em: " . Valida::DataShow($agenda[DT_CADASTRO], 'd/m/Y H:i'),
                     'start' => Valida::DataShow($agenda[DT_INICIO_AGENDA], 'Y-m-d H:i'),
                     'end' => Valida::DataShow($agenda[DT_FIM_AGENDA], 'Y-m-d H:i'),
                     'className' => 'event-' . StatusAgendamentoEnum::$cores[$agenda[ST_STATUS]],
                     'allDay' => false,
-//                    'backgroundColor' => $agenda['ds_cor_agenda'],
+                    'backgroundColor' => StatusAgendamentoEnum::$cores[$agenda[ST_STATUS]],
                 );
                 $eventos[] = $eve;
             }
@@ -52,18 +52,18 @@ class Agenda extends AbstractController
         if ($dados):
             return $agendaService->salvaAgendamentoAjax($dados);
         endif;
-//        /** @var Session $session */
-//        $session = new Session();
-//        if ($session->CheckSession(PESQUISA_AVANCADA)) {
-//            $Condicoes = $session::getSession(PESQUISA_AVANCADA);
-//        } else if ($session->CheckSession('pesq_agendamento')) {
-//            $session->FinalizaSession('pesq_agendamento');
-//        }
-//        $Condicoes['age.' . CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
-//        $this->result = $agendaService->PesquisaAgendamentos($Condicoes, 'stag.dt_cadastro');
-//
-//        $Condicoes = [];
-//        $Condicoes[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
+        /** @var Session $session */
+        $session = new Session();
+        if ($session->CheckSession(PESQUISA_AVANCADA)) {
+            $Condicoes = $session::getSession(PESQUISA_AVANCADA);
+        } else if ($session->CheckSession('pesq_agendamento')) {
+            $session->FinalizaSession('pesq_agendamento');
+        }
+        $Condicoes['ta.' . CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
+        $this->result = $agendaService->PesquisaAgendamentos($Condicoes, 'tsa.dt_cadastro');
+
+        $Condicoes = [];
+        $Condicoes[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
 
         $this->form = AgendaForm::CadastroAgendamento();
         $this->formCancela = AgendaForm::DeletarAgendamento();

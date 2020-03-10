@@ -29,7 +29,7 @@ class AgendaForm
             ->setTamanhoInput(3)
             ->setClasses("data ob")
             ->setIcon("clip-calendar-3")
-            ->setLabel("Data de Inicio")
+            ->setLabel("Data do agendamento")
             ->CriaInpunt();
 
         $formulario
@@ -97,7 +97,7 @@ class AgendaForm
 
 
         $formulario
-            ->setId('no_servico')
+            ->setId(NO_SERVICO)
             ->setTamanhoInput(9)
             ->setLabel("Novo do Serviço")
             ->CriaInpunt();
