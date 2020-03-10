@@ -52,7 +52,6 @@ class  AgendaService extends AbstractService
         $agendaValidador = new AgendaValidador();
         /** @var AgendaValidador $validador */
         $validador = $agendaValidador->validarAgendamento($dados);
-
         if ($validador[SUCESSO]) {
 
             if (!empty($dados[CO_AGENDA])) {
@@ -75,32 +74,42 @@ class  AgendaService extends AbstractService
             $statusAgenda[NU_DURACAO] = 0;
             $statusAgenda[DS_OBSERVACAO] = trim($dados[DS_OBSERVACAO]);
             $statusAgenda[CO_USUARIO] = UsuarioService::getCoUsuarioLogado();
-            if (!empty($dados[CO_PROFISSIONAL])) {
+
+            if (!empty($dados[CO_PROFISSIONAL]) && empty($dados['st_profissional'])) {
                 $statusAgenda[CO_PROFISSIONAL] = $dados[CO_PROFISSIONAL];
-            } else {
+            } elseif (!empty($dados['no_profissional']) && !empty($dados['st_profissional'])) {
                 $pessoa[NO_PESSOA] = $dados['no_profissional'];
                 $profissional[CO_PESSOA] = $pessoaService->Salva($pessoa);
                 $profissional[DT_CADASTRO] = Valida::DataHoraAtualBanco();
                 $profissional[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
                 $statusAgenda[CO_PROFISSIONAL] = $profissionalService->Salva($profissional);
-            }
-            if (!empty($dados[CO_CLIENTE])) {
-                $statusAgenda[CO_CLIENTE] = $dados[CO_CLIENTE];
             } else {
+                $statusAgenda[CO_PROFISSIONAL] = 0;
+            }
+
+            if (!empty($dados[CO_CLIENTE]) && empty($dados['st_cliente'])) {
+                $statusAgenda[CO_CLIENTE] = $dados[CO_CLIENTE];
+            } elseif (!empty($dados['no_cliente']) && !empty($dados['st_cliente'])) {
                 $pessoa[NO_PESSOA] = $dados['no_cliente'];
                 $cliente[CO_PESSOA] = $pessoaService->Salva($pessoa);
                 $cliente[DT_CADASTRO] = Valida::DataHoraAtualBanco();
                 $cliente[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
                 $statusAgenda[CO_CLIENTE] = $clienteService->Salva($cliente);
-            }
-            if (!empty($dados[CO_SERVICO])) {
-                $statusAgenda[CO_SERVICO] = $dados[CO_SERVICO];
             } else {
+                $statusAgenda[CO_CLIENTE] = 0;
+            }
+
+            if (!empty($dados[CO_SERVICO]) && empty($dados['st_servico'])) {
+                $statusAgenda[CO_SERVICO] = $dados[CO_SERVICO];
+            } elseif (!empty($dados[NO_SERVICO]) && !empty($dados['st_servico'])) {
                 $servico[NO_SERVICO] = $dados[NO_SERVICO];
                 $servico[DT_CADASTRO] = Valida::DataHoraAtualBanco();
                 $servico[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
                 $statusAgenda[CO_SERVICO] = $servicoService->Salva($servico);
+            } else {
+                $statusAgenda[CO_SERVICO] = 0;
             }
+
             $retorno[SUCESSO] = $statusAgendaService->Salva($statusAgenda);
         } else {
             $retorno = $validador;

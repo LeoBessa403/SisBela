@@ -100,9 +100,7 @@ var Calendar = function () {
                     $('#co_agenda').val(null);
                     $('#st_status').select2("destroy").val(1).select2({allowClear: false});
 
-                    Calendar.LimpaCombosClienteServico();
-                    Calendar.LimpaCombosProfAssi();
-                    Calendar.IniciaCombosProfAssi();
+                    Calendar.LimpaCombos();
                     Calendar.LimpaValidacao();
 
                     $("#j_cadastro").click();
@@ -312,10 +310,7 @@ var Calendar = function () {
 
                 $('#st_status').select2("destroy").val(dados.st_status).select2({allowClear: false});
                 $('#co_cliente').select2("destroy").val(dados.co_cliente).select2({allowClear: false});
-                $("#nu_valor").val(dados.nu_valor);
-                $("#nu_valor2").val(dados.nu_valor);
                 $("#dt_agenda").val(dados.dia);
-                $("#nu_duracao").val(dados.nu_duracao);
                 $("#nu_hora_inicio_agenda").val(dados.inicio);
                 $("#nu_hora_fim_agenda").val(dados.fim);
                 $("#ds_observacao").val(dados.ds_observacao);
@@ -324,12 +319,28 @@ var Calendar = function () {
 
                 $('#co_servico').select2("destroy").val(dados.co_servico).select2({allowClear: false}).trigger('change');
                 $('#co_profissional').select2("destroy").val(dados.co_profissional).select2({allowClear: false});
-                $('#co_assistente').select2("destroy").val(dados.co_assistente).select2({allowClear: false});
                 $("#co_agenda").val(coAgenda);
             });
 
+            // NOVO AGENDAMENTO GRID
+            $('#novaAgenda').click(function () {
+                var hoje = new Date();
+                var dia = Calendar.VerificaNumero(hoje.getDay());
+                var mes = Calendar.VerificaNumero((hoje.getMonth() + 1));
+                $("#nu_hora_inicio_agenda").val('08:00');
+                $("#dt_agenda").val(dia + '/' + mes + '/' + hoje.getFullYear());
+                $("#nu_hora_fim_agenda").val(null);
+                $("#ds_observacao").val(null);
+                $('#co_agenda').val(null);
+                $('#st_status').select2("destroy").val(1).select2({allowClear: false});
 
+                Calendar.LimpaCombos();
+                Calendar.LimpaValidacao();
 
+                $("#j_cadastro").click();
+
+                return false;
+            });
 
 
 
@@ -377,31 +388,6 @@ var Calendar = function () {
                 }
                 return false;
             });
-
-
-            // NOVO AGENDAMENTO GRID
-            $('#novaAgenda').click(function () {
-                var hoje = new Date();
-                var dia = Calendar.VerificaNumero(hoje.getDay());
-                var mes = Calendar.VerificaNumero((hoje.getMonth() + 1));
-                $("#nu_hora_inicio_agenda").val('08:00');
-                $("#dt_agenda").val(dia + '/' + mes + '/' + hoje.getFullYear());
-                $("#nu_duracao").val(null);
-                $("#nu_hora_fim_agenda").val(null);
-                $("#nu_valor2").val(null);
-                $("#ds_observacao").val(null);
-                $('#co_agenda').val(null);
-                $('#st_status').select2("destroy").val(1).select2({allowClear: false});
-
-                Calendar.LimpaCombosClienteServico();
-                Calendar.LimpaCombosProfAssi();
-                Calendar.IniciaCombosProfAssi();
-                Calendar.LimpaValidacao();
-
-                $("#j_cadastro").click();
-
-                return false;
-            });
         },
         CarregaDadosAgendamento: function (dados, coAgenda) {
             $('.st_status b').html($('#Status-Agendamento-' + dados.st_status).html());
@@ -434,62 +420,9 @@ var Calendar = function () {
             }
             return coAgenda;
         },
-        IniciaCombosProfAssi: function () {
-            // $("#co_profissional").select2({
-            //     allowClear: false
-            // });
-            // $("#co_assistente").select2({
-            //     allowClear: false
-            // });
-            // Funcoes.TiraValidacao('co_assistente');
-            // Funcoes.TiraValidacao('co_profissional');
-        },
-        LimpaCombosClienteServico: function () {
-            // $('#co_servico, #co_cliente').select2("destroy").val(null).select2({allowClear: false});
-        },
-        LimpaCombosProfAssi: function () {
-            // var comboProf = $("#co_profissional");
-            // var comboAss = $("#co_assistente");
-            //
-            // comboProf.select2("destroy");
-            // comboAss.select2("destroy");
-            // comboProf.empty();
-            // comboAss.empty();
-        },
-        CarregaCombos: function (coServico) {
-            // var comboProf = $("#co_profissional");
-            // var comboAss = $("#co_assistente");
-            //
-            // var newOptionProf = new Option('Selecione um Profissional', null, false, false);
-            // var newOptionAss = new Option('Selecione um Assistente', null, false, false);
-            // comboProf.append(newOptionProf).trigger('change');
-            // comboAss.append(newOptionAss).trigger('change');
-            //
-            // var optionsProf = Funcoes.Ajax('Profissional/GetProfissionaisServicoAjax', coServico);
-            // var optionsAss = Funcoes.Ajax('Profissional/GetAssistentesServicoAjax', coServico);
-            //
-            // console.log(optionsAss.length);
-            //
-            // $.each(optionsProf, function (key, value) {
-            //     comboProf.append(new Option(value.no_pessoa, value.co_profissional, false, false)).trigger('change');
-            // });
-            //
-            // if (optionsAss.length) {
-            //     if (!$('co_assistente').hasClass('ob')) {
-            //         $('co_assistente').addClass('ob');
-            //     }
-            //     $.each(optionsAss, function (key, value) {
-            //         comboAss.append(new Option(value.no_pessoa, value.co_profissional, false, false)).trigger('change');
-            //     });
-            //     $('.co_assistente_parent span.symbol').show();
-            // } else {
-            //     if ($('co_assistente').hasClass('ob')) {
-            //         $('co_assistente').removeClass('ob');
-            //     }
-            //     $('.co_assistente_parent span.symbol').hide();
-            // }
-            //
-            // Calendar.IniciaCombosProfAssi();
+        LimpaCombos: function () {
+             $('#co_servico, #co_profissional, #co_cliente').select2("destroy").val(null).select2({allowClear: false});
+             $('#no_servico, #no_profissional, #no_cliente').val('');
         },
         Renderiza: function (time) {
             time = time || 3000;
@@ -503,7 +436,6 @@ var Calendar = function () {
             Funcoes.TiraValidacao('co_servico');
             Funcoes.TiraValidacao('nu_hora_fim_agenda');
             Funcoes.TiraValidacao('co_profissional');
-            Funcoes.TiraValidacao('co_assistente');
             Funcoes.TiraValidacao('st_status');
         },
         VerificaNumero: function (valor) {
