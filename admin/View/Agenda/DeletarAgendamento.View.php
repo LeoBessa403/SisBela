@@ -1,5 +1,5 @@
 <!--  MODAL FORM DE CADASTRO E EDIÇÃO -->
-<div class="modal fade in modal-overflow j_deletar" id="DelAgendamento" tabindex="-1"
+<div class="modal fade in modal-overflow j_deletar j_cadastro" id="DelAgendamento" tabindex="-1"
      role="dialog" aria-hidden="true">
     <div class="modal-header btn-light-grey">
         <button type="button" class="close cancelar" data-dismiss="modal" aria-hidden="true">

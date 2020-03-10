@@ -20,10 +20,10 @@ class StatusAgendaEntidade extends AbstractEntidade
     private $nu_duracao;
     private $ds_observacao;
     private $co_cliente;
+    private $co_profissional;
+    private $co_servico;
     private $co_agenda;
     private $co_usuario;
-    private $co_status_agenda_profissional;
-    private $co_status_agenda_servico;
 
 
     /**
@@ -41,6 +41,8 @@ class StatusAgendaEntidade extends AbstractEntidade
             NU_DURACAO,
             DS_OBSERVACAO,
             CO_CLIENTE,
+            CO_SERVICO,
+            CO_PROFISSIONAL,
             CO_AGENDA,
             CO_USUARIO,
         ];
@@ -251,37 +253,37 @@ class StatusAgendaEntidade extends AbstractEntidade
     }
 
     /**
-     * @return StatusAgendaProfissionalEntidade $co_status_agenda_profissional
+     * @return ProfissionalEntidade $co_profissional
      */
-    public function getCoStatusAgendaProfissional()
+    public function getCoProfissional()
     {
-        return $this->co_status_agenda_profissional;
+        return $this->co_profissional;
     }
 
     /**
-     * @param $co_status_agenda_profissional
-     * @return mixed
+     * @param mixed $co_profissional
      */
-    public function setCoStatusAgendaProfissional($co_status_agenda_profissional)
+    public function setCoProfissional($co_profissional)
     {
-        return $this->co_status_agenda_profissional = $co_status_agenda_profissional;
+        $this->co_profissional = $co_profissional;
     }
 
     /**
-     * @return StatusAgendaServicoEntidade $co_status_agenda_servico
+     * @return ServicoEntidade $co_servico
      */
-    public function getCoStatusAgendaServico()
+    public function getCoServico()
     {
-        return $this->co_status_agenda_servico;
+        return $this->co_servico;
     }
 
     /**
-     * @param $co_status_agenda_servico
-     * @return mixed
+     * @param mixed $co_servico
      */
-    public function setCoStatusAgendaServico($co_status_agenda_servico)
+    public function setCoServico($co_servico)
     {
-        return $this->co_status_agenda_servico = $co_status_agenda_servico;
+        $this->co_servico = $co_servico;
     }
+
+
 
 }

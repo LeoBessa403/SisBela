@@ -141,7 +141,6 @@ class  AgendaService extends AbstractService
         /** @var AgendaValidador $validador */
         $validador = $agendaValidador->validarDeletarAgendamento($dados);
         if ($validador[SUCESSO]) {
-            $retorno[MSG] = DELETADO;
             $agenda[DS_MOTIVO] = trim($dados[DS_MOTIVO]);
             $this->Salva($agenda, $dados[CO_AGENDA]);
 
@@ -169,6 +168,7 @@ class  AgendaService extends AbstractService
 
         if ($retorno[SUCESSO]) {
             $retorno[SUCESSO] = true;
+            $retorno[MSG] = ATUALIZADO;
             $PDO->commit();
         } else {
             $retorno[MSG] = $validador[MSG];

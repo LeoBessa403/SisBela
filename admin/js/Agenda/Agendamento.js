@@ -266,19 +266,48 @@ var Calendar = function () {
             $(".btn-deletar").click(function () {
                 Funcoes.TiraValidacao('ds_motivo');
                 $("#j_deletar").click();
+                $('#co_agenda_listagem').val(Calendar.GetCoAgenda($(this)));
             });
 
+            // DELETA O AGENDAMENTO (muda st_status para deletado)
+            $("#DeletarAgendamento").submit(function () {
+                var data = {
+                    ds_motivo: $('#ds_motivo').val(),
+                    co_agenda: Calendar.GetCoAgenda($(this))
+                };
+                var metodo = $(this).attr('action').split('/');
+                var dados = Funcoes.Ajax(metodo[5] + '/' + metodo[6], data);
+                if (dados) {
+                    if (dados.sucesso && dados.msg === "atualizado") {
+                        Funcoes.AtualizadoSucesso();
+                    } else {
+                        Funcoes.Alerta(dados.msg);
+                    }
+                    if (dados.sucesso) {
+                        Calendar.Renderiza();
+                    }
+                } else {
+                    Funcoes.Erro("Erro: " + dados.msg);
+                }
+                return false;
+            });
 
-
-
-
-
-
-
+            // DIRECIONA PARA O HISTÓRICO DO AGENDAMENTO
+            $(".btn-historico").click(function () {
+                var home = $("#home").attr('data-val');
+                var coAgenda = Calendar.GetCoAgenda($(this));
+                var dados = Funcoes.Ajax('Agenda/GetUrlHistoricoAgendamento', coAgenda);
+                if (dados) {
+                    window.location.href = home + dados;
+                } else {
+                    Funcoes.Erro("Erro: " + dados.msg);
+                }
+                return false;
+            });
 
             // ABRE MODAL DE EDIÇÃO DO AGENDAMENTO
             $(".btn-editar").click(function () {
-                var coAgenda = $('#co_agenda_listagem').val();
+                var coAgenda = Calendar.GetCoAgenda($(this));
                 var dados = Funcoes.Ajax('Agenda/GetAgendaAjax', coAgenda);
 
                 $('#st_status').select2("destroy").val(dados.st_status).select2({allowClear: false});
@@ -299,6 +328,22 @@ var Calendar = function () {
                 $("#co_agenda").val(coAgenda);
             });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             // PESQUISA AVANÇADA DO AGENDAMENTO
             $("#PesquisaAvancadaAgendamento").submit(function () {
                 var data = $(this).serializeArray();
@@ -312,46 +357,10 @@ var Calendar = function () {
                 return false;
             });
 
-            // DIRECIONA PARA O HISTÓRICO DO AGENDAMENTO
-            $(".btn-historico").click(function () {
-                var home = $("#home").attr('data-val');
-                var coAgenda = $('#co_agenda_listagem').val();
-                var dados = Funcoes.Ajax('Agenda/GetUrlHistoricoAgendamento', coAgenda);
-                if (dados) {
-                    window.location.href = home + dados;
-                } else {
-                    Funcoes.Erro("Erro: " + dados.msg);
-                }
-                return false;
-            });
-
-            // DELETA O AGENDAMENTO (muda st_status para deletado)
-            $("#DeletarAgendamento").submit(function () {
-                var data = {
-                    ds_motivo: $('#ds_motivo').val(),
-                    co_agenda: $('#co_agenda_listagem').val()
-                };
-                var metodo = $(this).attr('action').split('/');
-                var dados = Funcoes.Ajax(metodo[5] + '/' + metodo[6], data);
-                if (dados) {
-                    if (dados.sucesso && dados.msg === "atualizado") {
-                        Funcoes.AtualizadoSucesso();
-                    } else {
-                        Funcoes.Alerta(dados.msg);
-                    }
-                    if (dados.sucesso) {
-                        Calendar.Renderiza();
-                    }
-                } else {
-                    Funcoes.Erro("Erro: " + dados.msg);
-                }
-                return false;
-            });
-
             // FINALIZA O AGENDAMENTO (muda st_status para finalizado)
             $(".btn-finalizar").click(function () {
                 var data = {
-                    co_agenda: $('#co_agenda_listagem').val()
+                    co_agenda: Calendar.GetCoAgenda($(this))
                 };
                 var dados = Funcoes.Ajax('Agenda/FinalizarAgendaAjax', data);
                 if (dados) {
@@ -417,6 +426,13 @@ var Calendar = function () {
                 $('#form-group-motivo').hide();
             }
             $("#j_listar").click();
+        },
+        GetCoAgenda: function (element) {
+            var coAgenda = $('#co_agenda_listagem').val();
+            if(!coAgenda){
+                coAgenda = element.attr('data-co-agenda');
+            }
+            return coAgenda;
         },
         IniciaCombosProfAssi: function () {
             // $("#co_profissional").select2({

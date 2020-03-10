@@ -61,7 +61,7 @@
                                     <small>Agendamentos Cadastrados</small>
                                 </h2>
                                 <?php
-                                $arrColunas = array('Cliente', 'Agendado', 'Atualizado em', 'Período', 'Profissional', 'Serviço', 'Status', 'Ações');
+                                $arrColunas = array('Cliente', 'Serviço', 'Profissional', 'Agendado', 'Atualizado em', 'Período', 'Status', 'Ações');
                                 $grid = new Grid();
                                 $grid->setColunasIndeces($arrColunas);
                                 $grid->criaGrid();
@@ -69,21 +69,39 @@
                                     if ($result) {
                                         $result = array_reverse($result);
                                         foreach ($result as $res):
-                                            $acao = '<button class="btn btn-primary tooltips btn-visualizar" data-co-agenda="' . $res[CO_AGENDA] . '" 
+                                            $acao = '<button class="btn btn-primary btn-visualizar tooltips" data-co-agenda="' . $res[CO_AGENDA] . '" 
                                         data-original-title="Visualizar Agendamento" data-placement="top">
                                          <i class="clip-eye"></i>
+                                     </button>';
+                                            if ($res['st_status'] < 5) {
+                                                $acao .= ' <button class="btn btn-warning btn-editar tooltips" data-co-agenda="' . $res[CO_AGENDA] . '" 
+                                                data-original-title="Editar Agendamento" data-placement="top">
+                                                 <i class="fa fa-clipboard"></i>
+                                             </button>';
+                                                $acao .= ' <button class="btn btn-bricky btn-deletar tooltips" data-co-agenda="' . $res[CO_AGENDA] . '" 
+                                                data-original-title="Deletar Agendamento" data-placement="top">
+                                                 <i class="fa fa-trash-o"></i>
+                                             </button>';
+                                                $acao .= ' <button class="btn btn-success btn-finalizar tooltips" data-co-agenda="' . $res[CO_AGENDA] . '" 
+                                                data-original-title="Finalizar Agendamento" data-placement="top">
+                                                 <i class="fa fa-save"></i>
+                                             </button>';
+                                            }
+                                            $acao .= ' <button class="btn btn-light-grey btn-historico tooltips" data-co-agenda="' . $res[CO_AGENDA] . '" 
+                                        data-original-title="Histórico Agendamento" data-placement="top">
+                                         <i class="clip-folder-open"></i>
                                      </button>';
 
                                             $label = '<span class="circle-img label-' . StatusAgendamentoEnum::$cores[$res['st_status']] . '">&nbsp;&nbsp;&nbsp;&nbsp;</span> ';
                                             $grid->setColunas(Valida::Resumi($res['cliente'], 30), 3);
+                                            $grid->setColunas($res['no_servico'], 3);
+                                            $grid->setColunas(Valida::Resumi($res['profissional'], 30), 3);
                                             $grid->setColunas(Valida::DataShow($res['dt_inicio_agenda'], 'd/m/Y'), 1);
                                             $grid->setColunas(Valida::DataShow($res['dt_cadastro'], 'd/m/Y H:i'), 1);
                                             $grid->setColunas(Valida::DataShow($res['dt_inicio_agenda'], 'H:i')
                                                 . ' a ' . Valida::DataShow($res['dt_fim_agenda'], 'H:i'), 1);
-                                            $grid->setColunas(Valida::Resumi($res['profissional'], 30), 3);
-                                            $grid->setColunas($res['no_servico'], 3);
                                             $grid->setColunas($label . StatusAgendamentoEnum::$descricao[$res['st_status']], 1);
-                                            $grid->setColunas($acao, 1);
+                                            $grid->setColunas($acao, 4);
                                             $grid->criaLinha($res[CO_AGENDA]);
                                         endforeach;
                                     }
