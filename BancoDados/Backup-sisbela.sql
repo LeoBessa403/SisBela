@@ -1,4 +1,4 @@
--- Atualizado em: 12/03/2020 14:12:31
+-- Atualizado em: 12/03/2020 16:02:28
 -- AMBIENTE: http://localhost/SisBela/
 -- BANCO: sisbela
 
@@ -20,10 +20,10 @@ CREATE TABLE `TB_ACESSO` (
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=143 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=145 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_ACESSO VALUES("142","hq5gs9pl6e5lg7ep5gfqrp8vpk","2020-03-12 14:11:37","2020-03-12 14:42:31","A","1","142");
+INSERT INTO TB_ACESSO VALUES("144","hq5gs9pl6e5lg7ep5gfqrp8vpk","2020-03-12 15:28:17","2020-03-12 16:32:28","A","1","144");
 
 
 
@@ -148,7 +148,7 @@ CREATE TABLE `TB_AUDITORIA` (
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=319 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=330 DEFAULT CHARSET=utf8;
 
 
 
@@ -165,7 +165,7 @@ CREATE TABLE `TB_AUDITORIA_ITENS` (
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`),
   KEY `fk_TB_AUDITORIA_ITENS_TB_AUDITORIA_TABELA1_idx` (`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=6704 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6763 DEFAULT CHARSET=utf8;
 
 
 
@@ -182,7 +182,7 @@ CREATE TABLE `TB_AUDITORIA_TABELA` (
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`),
   KEY `fk_TB_AUDITORIA_TABELA_TB_AUDITORIA1_idx` (`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=1072 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1086 DEFAULT CHARSET=utf8;
 
 
 
@@ -277,7 +277,7 @@ CREATE TABLE `TB_CONTROLLER` (
   `no_controller` varchar(60) DEFAULT NULL,
   `ds_class_icon` varchar(30) DEFAULT NULL COMMENT 'Classe do Ícone',
   PRIMARY KEY (`co_controller`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_CONTROLLER VALUES("1","Gestão","clip-data");
@@ -301,6 +301,8 @@ INSERT INTO TB_CONTROLLER VALUES("9","Assinante","clip-user-5");
 INSERT INTO TB_CONTROLLER VALUES("10","Agenda","fa fa-calendar");
 
 INSERT INTO TB_CONTROLLER VALUES("11","Relatorio","fa fa-clipboard");
+
+INSERT INTO TB_CONTROLLER VALUES("12","Suporte","fa fa-clipboard");
 
 
 
@@ -395,7 +397,7 @@ CREATE TABLE `TB_FUNCIONALIDADE` (
   `co_controller` int(11) NOT NULL,
   PRIMARY KEY (`co_funcionalidade`,`co_controller`),
   KEY `fk_TB_FUNCIONALIDADE_TB_CONTROLLER1_idx` (`co_controller`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO TB_FUNCIONALIDADE VALUES("1","Perfil Master","PerfilMaster","A","S","0");
@@ -458,6 +460,8 @@ INSERT INTO TB_FUNCIONALIDADE VALUES("29","Minificação","MinificacaoGestao","A
 
 INSERT INTO TB_FUNCIONALIDADE VALUES("30","Gráfico","GraficoRelatorio","A","S","11");
 
+INSERT INTO TB_FUNCIONALIDADE VALUES("31","Listar Suporte","ListarSuporte","A","S","12");
+
 
 
 
@@ -474,7 +478,7 @@ CREATE TABLE `TB_HISTORIA` (
   `co_sessao` int(11) NOT NULL,
   PRIMARY KEY (`co_historia`,`co_sessao`),
   KEY `fk_TB_HISTORIA_TB_SESSAO1_idx` (`co_sessao`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_HISTORIA VALUES("1","Manter Planos do sistema","Manter planos do sistema da beleza, onde terá que manter os desconto com período para o plano\n\n\n\nModelagem: Plano e histórico plano módulos","2019-12-18 12:06:25","2020-01-29 19:06:52","C","1");
@@ -525,7 +529,7 @@ INSERT INTO TB_HISTORIA VALUES("23","Validações dos botões","Validações dos
 
 INSERT INTO TB_HISTORIA VALUES("24","Iniciar o sistema com as configurações básicas","Iniciar o sistema com as configurações básicas para depois iniciar o painel","2019-12-18 12:31:44","2019-12-18 12:31:44","I","4");
 
-INSERT INTO TB_HISTORIA VALUES("25","Manter Suporte","Manter Suporte, responder suporte, apresentar resposta\n\n\n\n\n\n\n\nModelagem: suporte (FK Assinante, Categoria Suporte)\n\n\n\n\n\n\n\nTabela base Categoria Suporte","2019-12-18 12:32:21","2019-12-18 12:32:21","N","5");
+INSERT INTO TB_HISTORIA VALUES("25","Implantar sistema Suporte","Implantar sistema Suporte\n\n\n\n\n\n\n\nModelagem: suporte (FK Assinante, Categoria Suporte)\n\n\n\n\n\n\n\nTabela base Categoria Suporte","2019-12-18 12:32:21","2020-03-12 15:29:04","C","5");
 
 INSERT INTO TB_HISTORIA VALUES("26","Relatórios de agendamentos","Relatórios de agendamentos por status do agendamento e período, Profissional, serviço e cliente\n\n\n\n\n\n\n\n Impressão dos gráficos e dados","2019-12-18 12:34:22","2020-03-11 15:07:26","C","6");
 
@@ -575,6 +579,14 @@ INSERT INTO TB_HISTORIA VALUES("48","Manter Planos do Assinante Sistema Expirado
 
 INSERT INTO TB_HISTORIA VALUES("50","Relatório Agendamentos Gráficos","Relatório Agendamentos Gráficos por status do agendamento e período, Profissional, serviço e cliente","2020-03-10 18:03:50","2020-03-11 15:06:52","C","6");
 
+INSERT INTO TB_HISTORIA VALUES("51","Listar Suporte","Listar Suporte","2020-03-12 15:29:22","2020-03-12 15:29:22","N","5");
+
+INSERT INTO TB_HISTORIA VALUES("52","Criar Suporte","Criar Suporte","2020-03-12 15:29:36","2020-03-12 15:29:36","N","5");
+
+INSERT INTO TB_HISTORIA VALUES("53","Excluir Suporte","Excluir Suporte","2020-03-12 15:29:57","2020-03-12 15:29:57","N","5");
+
+INSERT INTO TB_HISTORIA VALUES("54","Responder Suporte","Responder Suporte","2020-03-12 15:30:12","2020-03-12 15:30:12","N","5");
+
 
 
 
@@ -589,7 +601,7 @@ CREATE TABLE `TB_HISTORICO_HISTORIA` (
   `co_historia` int(11) NOT NULL,
   PRIMARY KEY (`co_historico_historia`,`co_historia`),
   KEY `fk_TB_HISTORICO_HISTORIA_TB_HISTORIA1_idx` (`co_historia`)
-) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("1","13","5","2019-12-18 12:06:25","1");
@@ -782,6 +794,37 @@ INSERT INTO TB_HISTORICO_HISTORIA VALUES("95","13","0","2020-03-11 15:06:52","50
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("96","1","0","2020-03-11 15:07:26","26");
 
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("97","8","0","2020-03-12 15:29:04","25");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("98","13","13","2020-03-12 15:29:22","51");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("99","13","13","2020-03-12 15:29:36","52");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("100","5","5","2020-03-12 15:29:57","53");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("101","13","13","2020-03-12 15:30:12","54");
+
+
+
+
+DROP TABLE IF EXISTS TB_HISTORICO_SUPORTE;
+
+
+CREATE TABLE `TB_HISTORICO_SUPORTE` (
+  `co_historico_suporte` int(11) NOT NULL AUTO_INCREMENT,
+  `dt_cadastro` datetime DEFAULT NULL,
+  `ds_mensagem` text DEFAULT NULL,
+  `st_lido` varchar(1) DEFAULT 'N' COMMENT 'S - Sim / N - Não',
+  `co_suporte` int(11) NOT NULL,
+  `co_usuario` int(10) NOT NULL,
+  `co_imagem` int(10) unsigned NOT NULL COMMENT 'Chave do Anexo.',
+  PRIMARY KEY (`co_historico_suporte`,`co_suporte`,`co_usuario`,`co_imagem`),
+  KEY `fk_TB_HISTORICO_SUPORTE_TB_SUPORTE1_idx` (`co_suporte`),
+  KEY `fk_TB_HISTORICO_SUPORTE_TB_USUARIO1_idx` (`co_usuario`),
+  KEY `fk_TB_HISTORICO_SUPORTE_TB_IMAGEM1_idx` (`co_imagem`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
 
 
 
@@ -952,7 +995,7 @@ CREATE TABLE `TB_PERFIL_FUNCIONALIDADE` (
   KEY `fk_tb_perfil_tb_funcionalidade_tb_funcionalidade1_idx` (`co_funcionalidade`),
   KEY `fk_tb_perfil_tb_funcionalidade_tb_perfil1_idx` (`co_perfil`),
   KEY `fk_TB_PERFIL_FUNCIONALIDADE_TB_PERFIL_ASSINANTE1_idx` (`co_perfil_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("1","1","1","0");
@@ -998,6 +1041,12 @@ INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("30","4","3","0");
 INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("31","4","2","0");
 
 INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("32","30","2","0");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("33","31","4","0");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("34","31","3","0");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("35","31","2","0");
 
 
 
@@ -1447,6 +1496,23 @@ INSERT INTO TB_STATUS_AGENDA VALUES("62","2020-03-11 14:59:07","2","2019-11-20 0
 
 
 
+DROP TABLE IF EXISTS TB_SUPORTE;
+
+
+CREATE TABLE `TB_SUPORTE` (
+  `co_suporte` int(11) NOT NULL AUTO_INCREMENT,
+  `dt_cadastro` datetime DEFAULT NULL,
+  `ds_assunto` varchar(100) DEFAULT NULL,
+  `st_tipo_assunto` int(1) DEFAULT NULL COMMENT '1 - Sugestão ou Melhorias / 2 - Reclamação / 3 -  Correção no Sistema / 4 - Outros',
+  `co_assinante` int(11) NOT NULL,
+  PRIMARY KEY (`co_suporte`,`co_assinante`),
+  KEY `fk_TB_SUPORTE_TB_ASSINANTE1_idx` (`co_assinante`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
 DROP TABLE IF EXISTS TB_TRAFEGO;
 
 
@@ -1463,10 +1529,10 @@ CREATE TABLE `TB_TRAFEGO` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=143 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=145 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_TRAFEGO VALUES("142","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:73.0) Gecko/20100101 Firefox/73.0");
+INSERT INTO TB_TRAFEGO VALUES("144","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:73.0) Gecko/20100101 Firefox/73.0");
 
 
 
