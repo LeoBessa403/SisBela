@@ -423,6 +423,35 @@ class Relacionamentos
                     ('Tipo') => '1',
                 ),
             ),
+            (SuporteEntidade::TABELA) => Array(
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_HISTORICO_SUPORTE) => Array(
+                    ('Campo') => CO_SUPORTE,
+                    ('Entidade') => 'HistoricoSuporteEntidade',
+                    ('Tipo') => '2',
+                ),
+            ),
+            (HistoricoSuporteEntidade::TABELA) => Array(
+                (CO_SUPORTE) => Array(
+                    ('Campo') => CO_SUPORTE,
+                    ('Entidade') => 'SuporteEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_USUARIO) => Array(
+                    ('Campo') => CO_USUARIO,
+                    ('Entidade') => 'UsuarioEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_IMAGEM) => Array(
+                    ('Campo') => CO_IMAGEM,
+                    ('Entidade') => 'ImagemEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
         );
     }
 }
