@@ -62,9 +62,6 @@ class Agenda extends AbstractController
         $Condicoes['ta.' . CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
         $this->result = $agendaService->PesquisaAgendamentos($Condicoes, 'tsa.dt_cadastro');
 
-        $Condicoes = [];
-        $Condicoes[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
-
         $this->form = AgendaForm::CadastroAgendamento();
         $this->formCancela = AgendaForm::DeletarAgendamento();
         $this->formPesquisa = AgendaForm::Pesquisar();
