@@ -25,7 +25,11 @@
                     </li>
                 </ol>
                 <div class="page-header">
-                    <h1>Suporte <small>Mensagens</small></h1>
+                    <h1>Suporte
+                        <small>Mensagens</small>
+                        <?php Valida::geraBtn(' Escrever','CadastroSuporte','btn-green',
+                            'NovoSuporte','fa fa-envelope-o'); ?>
+                    </h1>
                 </div>
                 <!-- end: PAGE TITLE & BREADCRUMB -->
             </div>
