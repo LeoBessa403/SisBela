@@ -5,6 +5,9 @@
         font-size: 14px !important;
     }
 
+    .bg-light {
+        background-color: lightgrey;
+    }
 
 </style>
 <div class="main-content">
@@ -27,8 +30,8 @@
                 <div class="page-header">
                     <h1>Suporte
                         <small>Mensagens</small>
-                        <?php Valida::geraBtn(' Escrever','CadastroSuporte','btn-green',
-                            'NovoSuporte','fa fa-envelope-o'); ?>
+                        <?php Valida::geraBtn(' Escrever', 'CadastroSuporte', 'btn-green',
+                            'NovoSuporte', 'fa fa-envelope-o'); ?>
                     </h1>
                 </div>
                 <!-- end: PAGE TITLE & BREADCRUMB -->
@@ -58,41 +61,61 @@
                                     </div>
                                 </form>
                             </li>
-                            <li class="messages-item">
-                                <?php
-                                /** @var Session $us */
-                                $us = $_SESSION[SESSION_USER];
-                                $user = $us->getUser();
-                                $noPessoa = $user[md5(NO_PESSOA)];
-                                $foto = $user[md5('ds_caminho')];
-                                $sexo = $user[md5('st_sexo')];
-                                if ($sexo == "M"):
-                                    $fotoPerfil = "avatar-homem.jpg";
-                                else:
-                                    $fotoPerfil = "avatar-mulher.jpg";
-                                endif;
-                                if ($foto != "" && file_exists(PASTA_RAIZ . "uploads/usuarios/" . $foto)):
-                                    echo Valida::GetMiniatura("usuarios/" . $foto,
-                                        $noPessoa, 35, 35, "messages-item-avatar");
-                                else:
-                                    echo '<img src="' . TIMTHUMB . '?src=' . HOME .
-                                        'library/Imagens/' . $fotoPerfil . '&w=35&h=35" 
-                                alt="' . $noPessoa . '" title="' . $noPessoa . '" 
-                                class="messages-item-avatar" />';
-                                endif;
+                            <?php
+                            /** @var SuporteEntidade $suporte */
+                            foreach ($result as $suporte):
+                                $foto = ImagemService::getImagemCoUsuario(
+                                    $suporte->getCoPrimeiraMensagem()->getCoUsuario()->getCoUsuario()
+                                );
+                                /** @var PessoaEntidade $pessoa */
+                                $pessoa = UsuarioService::getPessoaCoUsuario(
+                                    $suporte->getCoPrimeiraMensagem()->getCoUsuario()->getCoUsuario()
+                                );
+                                $noPessoa = $pessoa->getNoPessoa();
                                 ?>
-                                <span class="messages-item-from">Peter Clark Clark</span>
-                                <div class="messages-item-time">
-                                    <span class="text">09/11/20 10:23</span>
-                                </div>
-                                <span class="messages-item-subject">Lorem ipsumdolor sit amet amet...</span>
-                                <span class="messages-item-preview">Lorem ipsum dolor sit amet, consec tetur adipisicing
-                                    elit, sed do antera antera...</span>
-                            </li>
+                                <li class="messages-item<?php
+                                echo ($suporte->getCoUltimaMensagem()->getStLido() == SimNaoEnum::NAO) ?
+                                    ' bg-light' : ''; ?>" id="<?= $suporte->getCoSuporte(); ?>">
+                                    <?php
+                                    $sexo = $pessoa->getStSexo();
+                                    if ($sexo == "M"):
+                                        $fotoPerfil = "avatar-homem.jpg";
+                                    else:
+                                        $fotoPerfil = "avatar-mulher.jpg";
+                                    endif;
+                                    if ($foto != "" && file_exists(PASTA_RAIZ . "uploads/usuarios/" . $foto)):
+                                        echo Valida::GetMiniatura("usuarios/" . $foto,
+                                            $noPessoa, 35, 35, "messages-item-avatar");
+                                    else:
+                                        echo '<img src="' . TIMTHUMB . '?src=' . HOME .
+                                            'library/Imagens/' . $fotoPerfil . '&w=35&h=35"
+                                alt="' . $noPessoa . '" title="' . $noPessoa . '"
+                                class="messages-item-avatar" />';
+                                    endif;
+                                    ?>
+                                    <span class="messages-item-from"><?= Valida::Resumi($noPessoa, 15); ?></span>
+                                    <div class="messages-item-time">
+                                    <span class="text"><?=
+                                        Valida::DataShow($suporte->getCoUltimaMensagem()->getDtCadastro(), 'd/m/y H:i');
+                                        ?></span>
+                                    </div>
+                                    <span class="messages-item-subject"><?=
+                                        Valida::Resumi($suporte->getDsAssunto(), 35);
+                                        ?></span>
+                                    <span class="messages-item-preview"><?=
+                                        Valida::Resumi($suporte->getCoUltimaMensagem()->getDsMensagem(), 75);
+                                        ?></span>
+                                </li>
+                            <?php
+                            endforeach;
+                            ?>
                         </ul>
 
                         <div class="messages-content">
-                            <div class="message-header">
+                            <div class="message-header sem_mensagem">
+                                <h1><i class="fa fa-envelope-o"></i> Selecione uma mensagem</h1>
+                            </div>
+                            <div class="message-header nova_mensagem" style="display: none;">
                                 <div class="message-time">
                                     09/11/2020 10:23
                                 </div>
@@ -107,11 +130,15 @@
                                             style="font-weight: bolder; font-size: 1.5em;">New frontend layout</span>
                                 </div>
                                 <div class="message-actions">
-                                    <a title="Excluir" href="#"><i class="fa fa-trash-o"></i></a>
-                                    <a title="Responder" href="#"><i class="fa fa-reply"></i></a>
+                                    <a title="Excluir" href="#" data-id="">
+                                        <i class="fa fa-trash-o"></i>
+                                    </a>
+                                    <a title="Responder" href="#" data-id="">
+                                        <i class="fa fa-reply"></i>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="message-content">
+                            <div class="message-content nova_mensagem" style="display: none;">
                                 <p>
                                     <strong>Lorem ipsum</strong> dolor sit amet, consectetuer adipiscing elit, sed diam
                                     nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut

@@ -8,7 +8,7 @@ class SuporteForm
 {
     public static function Cadastrar($res = false)
     {
-        $id = "cadastroHistoria";
+        $id = "cadastroSuporte";
 
         $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action,
             "Enviar", 6);
@@ -17,6 +17,7 @@ class SuporteForm
         $formulario
             ->setLabel("Tipo do Assunto")
             ->setId(ST_TIPO_ASSUNTO)
+            ->setClasses("ob")
             ->setType(TiposCampoEnum::SELECT)
             ->setOptions($label_options)
             ->CriaInpunt();
@@ -37,8 +38,9 @@ class SuporteForm
         $formulario
             ->setType(TiposCampoEnum::TEXTAREA)
 //            ->setClasses("ckeditor")
-            ->setId(DS_OBSERVACAO)
-            ->setLabel("Descrição da História")
+            ->setClasses("ob")
+            ->setId(DS_MENSAGEM)
+            ->setLabel("Mensagem")
             ->CriaInpunt();
 
         if (!empty($res[CO_SUPORTE])):
