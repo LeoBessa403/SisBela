@@ -153,12 +153,15 @@
                                     </span>
                                     </div>
                                     <div class="message-actions">
-                                        <a title="Excluir" href="#" data-id="">
-                                            <i class="fa fa-trash-o"></i>
-                                        </a>
-                                        <a title="Responder" href="#" data-id="">
-                                            <i class="fa fa-reply"></i>
-                                        </a>
+                                        <?php
+                                        echo '<a title="Excluir" href=" ' . PASTAADMIN . 'Suporte/CadastroSuporte/' .
+                                            Valida::GeraParametro(CO_SUPORTE . "/" . $suporte->getCoSuporte()) .
+                                            '"><i class="fa fa-trash-o"></i></a>';
+                                        echo '<a title="Responder" href=" ' . PASTAADMIN . 'Suporte/CadastroSuporte/' .
+                                            Valida::GeraParametro(CO_SUPORTE . "/" . $suporte->getCoSuporte()) .
+                                            '"><i class="fa fa-reply"></i></a>';
+
+                                        ?>
                                     </div>
                                 </div>
                                 <div class="message-content">

@@ -13,18 +13,39 @@ class SuporteForm
         $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action,
             "Enviar", 6);
 
-        $label_options = TipoAssuntoEnum::$descricao;
-        $formulario
-            ->setLabel("Tipo do Assunto")
-            ->setId(ST_TIPO_ASSUNTO)
-            ->setClasses("ob")
-            ->setType(TiposCampoEnum::SELECT)
-            ->setOptions($label_options)
-            ->CriaInpunt();
+        if ($res):
+            $formulario->setValor($res);
+        endif;
+        $class = '';
+        if (!empty($res[CO_SUPORTE])):
+            $formulario
+                ->setType(TiposCampoEnum::HIDDEN)
+                ->setId(CO_SUPORTE)
+                ->setValues($res[CO_SUPORTE])
+                ->CriaInpunt();
+            $class = ' disabilita';
+        endif;
+
+        if (!$class) {
+            $label_options = TipoAssuntoEnum::$descricao;
+            $formulario
+                ->setLabel("Tipo do Assunto")
+                ->setId(ST_TIPO_ASSUNTO)
+                ->setClasses("ob")
+                ->setType(TiposCampoEnum::SELECT)
+                ->setOptions($label_options)
+                ->CriaInpunt();
+        } else {
+            $formulario
+                ->setId(ST_TIPO_ASSUNTO)
+                ->setClasses("disabilita")
+                ->setLabel("Tipo do Assunto")
+                ->CriaInpunt();
+        }
 
         $formulario
             ->setId(DS_ASSUNTO)
-            ->setClasses("ob")
+            ->setClasses("ob" . $class)
             ->setLabel("Título do Suporte")
             ->CriaInpunt();
 
@@ -42,14 +63,6 @@ class SuporteForm
             ->setId(DS_MENSAGEM)
             ->setLabel("Mensagem")
             ->CriaInpunt();
-
-        if (!empty($res[CO_SUPORTE])):
-            $formulario
-                ->setType(TiposCampoEnum::HIDDEN)
-                ->setId(CO_SUPORTE)
-                ->setValues($res[CO_SUPORTE])
-                ->CriaInpunt();
-        endif;
 
         return $formulario->finalizaForm();
     }

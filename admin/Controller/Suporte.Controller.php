@@ -40,7 +40,17 @@ class Suporte extends AbstractController
             }
         endif;
 
-        $this->form = SuporteForm::Cadastrar();
+        $coSuporte = UrlAmigavel::PegaParametro(CO_SUPORTE);
+        $res = [];
+        if ($coSuporte) {
+            /** @var SuporteEntidade $suporte */
+            $suporte = $suporteService->PesquisaUmRegistro($coSuporte);
+            $res[ST_TIPO_ASSUNTO] = TipoAssuntoEnum::getDescricaoValor($suporte->getStTipoAssunto());
+            $res[DS_ASSUNTO] = $suporte->getDsAssunto();
+            $res[CO_SUPORTE] = $coSuporte;
+        }
+
+        $this->form = SuporteForm::Cadastrar($res);
     }
 
 }
