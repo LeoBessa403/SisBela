@@ -86,5 +86,10 @@ class  SuporteService extends AbstractService
         return $retorno;
     }
 
+    public function PesquisaUmSuporte($coSuporte)
+    {
+        return $this->ObjetoModel->PesquisaUmSuporte($coSuporte);
+    }
+
 
 }

@@ -5,6 +5,10 @@
         font-size: 14px !important;
     }
 
+    .no_link {
+        text-decoration: none !important;
+    }
+
     .bg-light {
         background-color: lightgrey;
     }
@@ -62,6 +66,8 @@
                                 </form>
                             </li>
                             <?php
+                            /** @var SuporteEntidade $mensagem */
+                            $mensagem = $mensagem;
                             /** @var SuporteEntidade $suporte */
                             foreach ($result as $suporte):
                                 $foto = ImagemService::getImagemCoUsuario(
@@ -72,6 +78,8 @@
                                     $suporte->getCoPrimeiraMensagem()->getCoUsuario()->getCoUsuario()
                                 );
                                 $noPessoa = $pessoa->getNoPessoa();
+                                echo '<a class="no_link" href="' . PASTAADMIN . 'Suporte/ListarSuporte/' .
+                                    Valida::GeraParametro(CO_SUPORTE . "/" . $suporte->getCoSuporte()) . '">';
                                 ?>
                                 <li class="messages-item<?php
                                 echo ($suporte->getCoUltimaMensagem()->getStLido() == SimNaoEnum::NAO) ?
@@ -106,68 +114,59 @@
                                         Valida::Resumi($suporte->getCoUltimaMensagem()->getDsMensagem(), 75);
                                         ?></span>
                                 </li>
-                            <?php
+                                <?php
+                                echo '</a>';
                             endforeach;
                             ?>
                         </ul>
 
                         <div class="messages-content">
-                            <div class="message-header sem_mensagem">
-                                <h1><i class="fa fa-envelope-o"></i> Selecione uma mensagem</h1>
-                            </div>
-                            <div class="message-header nova_mensagem" style="display: none;">
-                                <div class="message-time">
-                                    09/11/2020 10:23
+                            <?php if (!$mensagem) { ?>
+                                <div class="message-header">
+                                    <h1><i class="fa fa-envelope-o"></i> Selecione uma mensagem</h1>
                                 </div>
-                                <div class="message-from">
-                                    Nicole Bell &lt;nicole@example.com&gt;
+                            <?php } else { ?>
+                                <div class="message-header">
+                                    <div class="message-time data_mensagem">
+                                        <?= Valida::DataShow(
+                                            $mensagem->getCoUltimaMensagem()->getDtCadastro(), 'd/m/Y H:i:s'
+                                        ); ?>
+                                    </div>
+                                    <div class="message-from nome_mensagem">
+                                        Usuário: <?=
+                                        UsuarioService::getNoPessoaCoUsuario(
+                                            $mensagem->getCoPrimeiraMensagem()->getCoUsuario()->getCoUsuario()
+                                        ); ?>
+                                    </div>
+                                    <div class="message-to">
+                                        Tipo de Assunto: <span
+                                                style="font-weight: bolder; font-size: 1.5em;"
+                                                class="tp_assunto_mensagem">
+                                        <?= TipoAssuntoEnum::getDescricaoValor($mensagem->getStTipoAssunto()); ?>
+                                    </span>
+                                    </div>
+                                    <div class="message-subject">
+                                        Assunto: <span
+                                                style="font-weight: bolder; font-size: 1.5em;"
+                                                class="assunto_mensagem">
+                                        <?= $mensagem->getDsAssunto(); ?>
+                                    </span>
+                                    </div>
+                                    <div class="message-actions">
+                                        <a title="Excluir" href="#" data-id="">
+                                            <i class="fa fa-trash-o"></i>
+                                        </a>
+                                        <a title="Responder" href="#" data-id="">
+                                            <i class="fa fa-reply"></i>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="message-to">
-                                    Para: Peter Clark
+                                <div class="message-content">
+                                    <p class="ds_mensagem">
+                                        <?= $mensagem->getCoUltimaMensagem()->getDsMensagem(); ?>
+                                    </p>
                                 </div>
-                                <div class="message-subject">
-                                    Assunto: <span
-                                            style="font-weight: bolder; font-size: 1.5em;">New frontend layout</span>
-                                </div>
-                                <div class="message-actions">
-                                    <a title="Excluir" href="#" data-id="">
-                                        <i class="fa fa-trash-o"></i>
-                                    </a>
-                                    <a title="Responder" href="#" data-id="">
-                                        <i class="fa fa-reply"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="message-content nova_mensagem" style="display: none;">
-                                <p>
-                                    <strong>Lorem ipsum</strong> dolor sit amet, consectetuer adipiscing elit, sed diam
-                                    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut
-                                    wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
-                                    nisl ut aliquip ex ea commodo consequat.
-                                </p>
-                                <p>
-                                    Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-                                    consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et
-                                    iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore
-                                    te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue
-                                    nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent
-                                    claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
-                                    Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.
-                                </p>
-                                <p>
-                                    Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium
-                                    lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram,
-                                    anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta
-                                    decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in
-                                    futurum.
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut blandit ligula.
-                                    In accumsan mauris at augue feugiat consequat. Aenean consequat sem sed velit
-                                    sagittis dignissim. Phasellus quis convallis est. Praesent porttitor mauris nec
-                                    lectus mollis, eget sodales libero venenatis. Cras eget vestibulum turpis. In hac
-                                    habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in
-                                    faucibus. Nam turpis velit, tempor vitae libero ac, fermentum laoreet dolor.
-                                </p>
-                            </div>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
