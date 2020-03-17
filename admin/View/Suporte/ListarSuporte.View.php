@@ -133,7 +133,7 @@
                                         ); ?>
                                     </div>
                                     <div class="message-from nome_mensagem">
-                                        Usuário: <?=
+                                        Remetente: <?=
                                         UsuarioService::getNoPessoaCoUsuario(
                                             $mensagem->getCoPrimeiraMensagem()->getCoUsuario()->getCoUsuario()
                                         ); ?>
