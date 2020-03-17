@@ -12,6 +12,7 @@ class SuporteEntidade extends AbstractEntidade
     const CHAVE = CO_SUPORTE;
 
     private $co_suporte;
+    private $st_status;
     private $dt_cadastro;
     private $ds_assunto;
     private $st_tipo_assunto;
@@ -26,6 +27,7 @@ class SuporteEntidade extends AbstractEntidade
     {
         return [
             CO_SUPORTE,
+            ST_STATUS,
             DT_CADASTRO,
             DS_ASSUNTO,
             ST_TIPO_ASSUNTO,
@@ -58,6 +60,22 @@ class SuporteEntidade extends AbstractEntidade
     public function setCoSuporte($co_suporte)
     {
         return $this->co_suporte = $co_suporte;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStStatus()
+    {
+        return $this->st_status;
+    }
+
+    /**
+     * @param mixed $st_status
+     */
+    public function setStStatus($st_status)
+    {
+        $this->st_status = $st_status;
     }
 
     /**

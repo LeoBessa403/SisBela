@@ -3,6 +3,7 @@
         margin-top: 0 !important;
         padding: 6.5px 9px !important;
         font-size: 14px !important;
+        position: relative !important;
     }
 
     .no_link {
@@ -152,22 +153,36 @@
                                         <?= $mensagem->getDsAssunto(); ?>
                                     </span>
                                     </div>
+                                    <?php
+                                    if (PerfilService::perfilMaster()) {
+                                        ?>
+                                        <div class="message-subject">
+                                            Status da Mensagem: <span
+                                                    style="color: red; font-size: 1.5em;"
+                                                    class="assunto_mensagem">
+                                        <?= Valida::StatusLabel($mensagem->getStStatus()); ?>
+                                    </span>
+                                        </div>
+                                    <?php } ?>
                                     <div class="message-actions">
                                         <?php
-                                        echo '<a title="Excluir" href=" ' . PASTAADMIN . 'Suporte/CadastroSuporte/' .
-                                            Valida::GeraParametro(CO_SUPORTE . "/" . $suporte->getCoSuporte()) .
-                                            '"><i class="fa fa-trash-o"></i></a>';
-                                        echo '<a title="Responder" href=" ' . PASTAADMIN . 'Suporte/CadastroSuporte/' .
-                                            Valida::GeraParametro(CO_SUPORTE . "/" . $suporte->getCoSuporte()) .
-                                            '"><i class="fa fa-reply"></i></a>';
-
+                                        if ($mensagem->getStStatus() == StatusAcessoEnum::ATIVO) {
+                                            echo '<a class="btn" title="Excluir" href=" ' . PASTAADMIN . 'Suporte/DeletaSuporte/' .
+                                                Valida::GeraParametro(CO_SUPORTE . "/" . $mensagem->getCoSuporte()) .
+                                                '"><i class="fa fa-trash-o"></i></a>';
+                                            echo '<a class="btn" title="Responder" href=" ' . PASTAADMIN . 'Suporte/CadastroSuporte/' .
+                                                Valida::GeraParametro(CO_SUPORTE . "/" . $mensagem->getCoSuporte()) .
+                                                '"><i class="fa fa-reply"></i></a>';
+                                        }
                                         ?>
                                     </div>
                                 </div>
                                 <div class="message-content">
-                                    <p class="ds_mensagem">
-                                        <?= $mensagem->getCoUltimaMensagem()->getDsMensagem(); ?>
-                                    </p>
+                                    <?php
+                                    $nome = "Histórico de Mensagens";
+                                    $historicos = $mensagem->getCoHistoricoSuporte();
+                                    require_once PARTIAL_LIBRARY . 'Admin/historico.php';
+                                    ?>
                                 </div>
                             <?php } ?>
                         </div>

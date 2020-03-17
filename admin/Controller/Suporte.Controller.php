@@ -22,7 +22,8 @@ class Suporte extends AbstractController
         }
         $this->mensagem = $mensagem;
         $this->result = $suporteService->PesquisaTodos([
-            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado(),
+            ST_STATUS => (PerfilService::perfilMaster()) ? null : StatusAcessoEnum::ATIVO
         ]);
     }
 
@@ -51,6 +52,25 @@ class Suporte extends AbstractController
         }
 
         $this->form = SuporteForm::Cadastrar($res);
+    }
+
+    public function DeletaSuporte()
+    {
+        /** @var SuporteService $suporteService */
+        $suporteService = $this->getService(SUPORTE_SERVICE);
+        $coSuporte = UrlAmigavel::PegaParametro(CO_SUPORTE);
+        if ($coSuporte) {
+            $retorno = $suporteService->DeletaSuporte($coSuporte);
+            if ($retorno[SUCESSO]) {
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarSuporte/');
+            }
+        }else{
+            Notificacoes::geraMensagem(
+                'Suporte Não encontrado',
+                TiposMensagemEnum::ALERTA
+            );
+            Redireciona(UrlAmigavel::$modulo . '/' . CONTROLLER_INICIAL_ADMIN . '/' . ACTION_INICIAL_ADMIN);
+        }
     }
 
 }

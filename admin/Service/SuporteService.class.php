@@ -86,4 +86,34 @@ class  SuporteService extends AbstractService
         return $retorno;
     }
 
+    /**
+     * @param $coSuporte
+     * @return array
+     */
+    public function DeletaSuporte($coSuporte)
+    {
+        /** @var PDO $PDO */
+        $PDO = $this->getPDO();
+        $session = new Session();
+        $PDO->beginTransaction();
+        $retorno = [
+            SUCESSO => false,
+            MSG => null
+        ];
+        $dados = [
+            ST_STATUS => StatusAcessoEnum::INATIVO
+        ];
+        $retorno[SUCESSO] = $this->Salva($dados, $coSuporte);
+        if ($retorno[SUCESSO]) {
+            $session->setSession(MENSAGEM, ATUALIZADO);
+            $retorno[SUCESSO] = true;
+            $PDO->commit();
+        } else {
+            $session->setSession(MENSAGEM, 'Erro ao Salvar o Suporte');
+            $retorno[SUCESSO] = false;
+            $PDO->rollBack();
+        }
+        return $retorno;
+    }
+
 }
