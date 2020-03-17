@@ -116,4 +116,21 @@ class  SuporteService extends AbstractService
         return $retorno;
     }
 
+    public function PesquisaSuportes($Condicoes)
+    {
+        return $this->ObjetoModel->PesquisaSuportes($Condicoes);
+    }
+
+    public static function PesquisaCountMensagens()
+    {
+        /** @var SuporteModel $ObjetoModel */
+        $ObjetoModel = New SuporteModel();
+        $Condicoes = [
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado(),
+            ST_STATUS => (PerfilService::perfilMaster()) ? null : StatusAcessoEnum::ATIVO,
+            ST_LIDO => SimNaoEnum::NAO
+        ];
+        $retorno = $ObjetoModel->PesquisaSuportes($Condicoes);
+        return count($retorno);
+    }
 }

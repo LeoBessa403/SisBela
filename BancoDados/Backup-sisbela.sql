@@ -1,4 +1,4 @@
--- Atualizado em: 17/03/2020 17:39:18
+-- Atualizado em: 17/03/2020 18:25:55
 -- AMBIENTE: http://localhost/SisBela/
 -- BANCO: sisbela
 
@@ -20,10 +20,10 @@ CREATE TABLE `TB_ACESSO` (
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=168 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=172 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_ACESSO VALUES("167","mep8uh70qcijnssf9lie6iotmu","2020-03-17 17:28:13","2020-03-17 18:09:17","A","1","167");
+INSERT INTO TB_ACESSO VALUES("171","mep8uh70qcijnssf9lie6iotmu","2020-03-17 18:24:12","2020-03-17 18:55:55","A","1","171");
 
 
 
@@ -148,7 +148,7 @@ CREATE TABLE `TB_AUDITORIA` (
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=483 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=505 DEFAULT CHARSET=utf8;
 
 
 
@@ -165,7 +165,7 @@ CREATE TABLE `TB_AUDITORIA_ITENS` (
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`),
   KEY `fk_TB_AUDITORIA_ITENS_TB_AUDITORIA_TABELA1_idx` (`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=7855 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7998 DEFAULT CHARSET=utf8;
 
 
 
@@ -182,7 +182,7 @@ CREATE TABLE `TB_AUDITORIA_TABELA` (
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`),
   KEY `fk_TB_AUDITORIA_TABELA_TB_AUDITORIA1_idx` (`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=1266 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1289 DEFAULT CHARSET=utf8;
 
 
 
@@ -591,7 +591,7 @@ INSERT INTO TB_HISTORIA VALUES("53","Excluir Suporte","Excluir Suporte","2020-03
 
 INSERT INTO TB_HISTORIA VALUES("54","Responder Suporte","Responder Suporte","2020-03-12 15:30:12","2020-03-16 15:42:55","C","5");
 
-INSERT INTO TB_HISTORIA VALUES("55","Criar Notificação de Mensagem","Criar Notificação de Mensagem","2020-03-17 17:38:57","2020-03-17 17:38:57","N","5");
+INSERT INTO TB_HISTORIA VALUES("55","Criar Notificação de Mensagem","Criar Notificação de Mensagem","2020-03-17 17:38:57","2020-03-17 18:25:18","C","5");
 
 
 
@@ -607,7 +607,7 @@ CREATE TABLE `TB_HISTORICO_HISTORIA` (
   `co_historia` int(11) NOT NULL,
   PRIMARY KEY (`co_historico_historia`,`co_historia`),
   KEY `fk_TB_HISTORICO_HISTORIA_TB_HISTORIA1_idx` (`co_historia`)
-) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("1","13","5","2019-12-18 12:06:25","1");
@@ -826,6 +826,8 @@ INSERT INTO TB_HISTORICO_HISTORIA VALUES("108","5","0","2020-03-17 17:38:22","53
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("109","5","5","2020-03-17 17:38:57","55");
 
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("110","5","0","2020-03-17 18:25:18","55");
+
 
 
 
@@ -844,7 +846,7 @@ CREATE TABLE `TB_HISTORICO_SUPORTE` (
   KEY `fk_TB_HISTORICO_SUPORTE_TB_SUPORTE1_idx` (`co_suporte`),
   KEY `fk_TB_HISTORICO_SUPORTE_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_HISTORICO_SUPORTE_TB_IMAGEM1_idx` (`co_imagem`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_HISTORICO_SUPORTE VALUES("1","2020-03-16 10:39:17","bem essa mensagem e so pra testar mesmo ok","S","1","6","0");
@@ -869,6 +871,16 @@ INSERT INTO TB_HISTORICO_SUPORTE VALUES("13","2020-03-17 16:45:59","g erg qergg 
 
 INSERT INTO TB_HISTORICO_SUPORTE VALUES("14","2020-03-17 16:57:34","bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok bem essa mensagem e so pra testar mesmo ok","S","1","6","0");
 
+INSERT INTO TB_HISTORICO_SUPORTE VALUES("15","2020-03-17 17:47:00","f ewfewf","S","1","1","59");
+
+INSERT INTO TB_HISTORICO_SUPORTE VALUES("16","2020-03-17 18:04:20","h rth rtwhtr h","S","9","6","0");
+
+INSERT INTO TB_HISTORICO_SUPORTE VALUES("17","2020-03-17 18:04:40","g erg reht htrh","S","1","6","0");
+
+INSERT INTO TB_HISTORICO_SUPORTE VALUES("18","2020-03-17 18:15:51","gregreqg4g4g uyh65u rth rth","N","1","1","0");
+
+INSERT INTO TB_HISTORICO_SUPORTE VALUES("19","2020-03-17 18:23:47","dfsh jydtj kuykuy kuykuyk","S","9","6","0");
+
 
 
 
@@ -879,7 +891,7 @@ CREATE TABLE `TB_IMAGEM` (
   `co_imagem` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `ds_caminho` varchar(150) NOT NULL,
   PRIMARY KEY (`co_imagem`)
-) ENGINE=MyISAM AUTO_INCREMENT=59 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=60 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO TB_IMAGEM VALUES("1","leonardo-m-c-bessa-56e8920c23ab66.jpg");
@@ -911,6 +923,8 @@ INSERT INTO TB_IMAGEM VALUES("56","suporte-1-5e6fc45681709.jpg");
 INSERT INTO TB_IMAGEM VALUES("57","suporte-1-5e7127bb8abba.jpg");
 
 INSERT INTO TB_IMAGEM VALUES("58","suporte-9-5e7128f7b630c.jpg");
+
+INSERT INTO TB_IMAGEM VALUES("59","suporte-1-5e7137440c996.jpg");
 
 
 
@@ -1620,10 +1634,10 @@ CREATE TABLE `TB_TRAFEGO` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=168 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=172 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_TRAFEGO VALUES("167","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0");
+INSERT INTO TB_TRAFEGO VALUES("171","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0");
 
 
 

@@ -17,14 +17,19 @@ class Suporte extends AbstractController
         if ($coSuporte) {
             /** @var SuporteEntidade $mensagem */
             $mensagem = $suporteService->PesquisaUmRegistro($coSuporte);
-            $historicoSuporteService->Salva([ST_LIDO => SimNaoEnum::SIM],
-                $mensagem->getCoUltimaMensagem()->getCoHistoricoSuporte());
+
+            if ($mensagem->getCoUltimaMensagem()->getCoUsuario()->getCoUsuario() !=
+                UsuarioService::getCoUsuarioLogado()) {
+                $historicoSuporteService->Salva([ST_LIDO => SimNaoEnum::SIM],
+                    $mensagem->getCoUltimaMensagem()->getCoHistoricoSuporte());
+            }
         }
         $this->mensagem = $mensagem;
-        $this->result = $suporteService->PesquisaTodos([
+        $Condicoes = [
             CO_ASSINANTE => AssinanteService::getCoAssinanteLogado(),
             ST_STATUS => (PerfilService::perfilMaster()) ? null : StatusAcessoEnum::ATIVO
-        ]);
+        ];
+        $this->result = $suporteService->PesquisaSuportes($Condicoes);
     }
 
     public function CadastroSuporte()
@@ -64,7 +69,7 @@ class Suporte extends AbstractController
             if ($retorno[SUCESSO]) {
                 Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarSuporte/');
             }
-        }else{
+        } else {
             Notificacoes::geraMensagem(
                 'Suporte Não encontrado',
                 TiposMensagemEnum::ALERTA
