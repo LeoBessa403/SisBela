@@ -78,6 +78,20 @@ class  AgendaService extends AbstractService
             if (!empty($dados[CO_PROFISSIONAL]) && empty($dados['st_profissional'])) {
                 $statusAgenda[CO_PROFISSIONAL] = $dados[CO_PROFISSIONAL];
             } elseif (!empty($dados['no_profissional']) && !empty($dados['st_profissional'])) {
+
+                // VALIDA O NÚMERO DE PROFISSIONAIS JÁ CADASTRADOS
+                /** @var ProfissionalService $profissionalService */
+                $profissionalService = new ProfissionalService();
+                $retorno = $profissionalService->ValidaNuProfissionais();
+                if (!$retorno[SUCESSO]) {
+                    $retorno[MSG] = 'Já existem ' . $retorno['cadastrados'] . ' Profissionais Cadastrados, ' .
+                        'Favor utilizar um já cadastrado ou mude para um plano maior que possa cadastrar ' .
+                        'mais Profissionais!';
+                    $retorno[SUCESSO] = false;
+                    $PDO->rollBack();
+                    return $retorno;
+                }
+
                 $pessoa[NO_PESSOA] = $dados['no_profissional'];
                 $profissional[CO_PESSOA] = $pessoaService->Salva($pessoa);
                 $profissional[DT_CADASTRO] = Valida::DataHoraAtualBanco();
@@ -286,7 +300,7 @@ class  AgendaService extends AbstractService
             $statusAgenda[CO_CLIENTE] = $agenda[CO_CLIENTE];
             $statusAgenda[CO_SERVICO] = $agenda[CO_SERVICO];
             $statusAgenda[CO_PROFISSIONAL] = $agenda[CO_PROFISSIONAL];
-            $retorno[SUCESSO] =  $statusAgendaService->Salva($statusAgenda);
+            $retorno[SUCESSO] = $statusAgendaService->Salva($statusAgenda);
 
         } else {
             $retorno = $validador;
