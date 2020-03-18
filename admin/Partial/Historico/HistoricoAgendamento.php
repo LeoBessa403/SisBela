@@ -47,7 +47,7 @@ $profissional = $profissionalService->PesquisaUmRegistro($historico->getCoProfis
     Período: <b>de <?= Valida::DataShow($historico->getDtInicioAgenda(), 'h:i'); ?> a
         <?= Valida::DataShow($historico->getDtFimAgenda(), 'h:i'); ?></b></br>
     Observação: <b>
-        <?= Valida::Resumi($historico->getDsObservacao(), 50); ?></b></br>
+        <?= Valida::Resumi($historico->getDsObservacao(), 150); ?></b></br>
     Cadastrado em: <b><?=
         Valida::DataShow(
             $historico->getDtCadastro(), 'd/m/Y H:i'
