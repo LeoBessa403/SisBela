@@ -11,6 +11,7 @@ $(function () {
         limpaComboParcelas();
         iniciaComboParcelas();
         $(".cartao_credito").val('');
+        Funcoes.TiraValidacao('numCartao');
     });
 
     $(".cartao_credito").mask("9999 9999 9999 9999").keyup(function () {
