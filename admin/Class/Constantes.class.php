@@ -38,6 +38,9 @@ define('ST_TIPO_ASSUNTO', 'st_tipo_assunto');
 define('CO_HISTORICO_SUPORTE', 'co_historico_suporte');
 define('DS_MENSAGEM', 'ds_mensagem');
 define('ST_LIDO', 'st_lido');
+define('DT_CONFIRMA_PAGAMENTO', 'dt_confirma_pagamento');
+define('ST_PAGAMENTO', 'st_pagamento');
+define('TP_PAGAMENTO', 'tp_pagamento');
 
 
 // SERVICES
