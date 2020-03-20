@@ -111,7 +111,7 @@ $(function () {
             limpaComboParcelas();
 
             // NÚMERO DE PARCELAS SEM JUROS
-            var noIntInstalQuantity = 1;
+            var noIntInstalQuantity = 3;
             PagSeguroDirectPayment.getInstallments({
 
                 //Valor do produto
