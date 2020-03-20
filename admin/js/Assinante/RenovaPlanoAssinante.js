@@ -9,6 +9,7 @@ $(function () {
     var dados = Funcoes.Ajax('Assinante/getSessaoPagamentoAssinante', null);
     //ID da sessão retornada pelo PagSeguro
     PagSeguroDirectPayment.setSessionId(dados.id);
+    carregaBancos();
 
     $("#co_plano").change(function () {
         limpaComboParcelas();
@@ -160,6 +161,37 @@ $(function () {
         });
     }
 
+    function carregaBancos() {
+        PagSeguroDirectPayment.getPaymentMethods({
+            amount: '15.00',
+            success: function (retorno) {
+
+                console.log(retorno);
+
+                var comboBank = $("#bankName");
+                comboBank.select2("destroy");
+                comboBank.empty();
+                var newOptionBank = new Option('Selecione um Banco', null, false, false);
+                comboBank.append(newOptionBank).trigger('change');
+
+                $.each(retorno.paymentMethods.ONLINE_DEBIT.options, function (i, obj) {
+                    //Apresentar quantidade de parcelas e o valor das parcelas para o usuário no campo SELECT
+                    comboBank.append(new Option(obj.displayName,
+                        obj.name, false, false)).trigger('change');
+                });
+
+                comboBank.select2({
+                    allowClear: false
+                });
+            },
+            error: function (retorno) {
+                // Callback para chamadas que falharam.
+            },
+            complete: function (retorno) {
+                // Callback para todas chamadas.
+            }
+        });
+    }
 
     //Recuperar o token do cartão de crédito
     $("#RenovaPlanoAssinante").on("submit", function (event) {
