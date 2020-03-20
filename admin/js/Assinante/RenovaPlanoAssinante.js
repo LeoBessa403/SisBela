@@ -82,6 +82,7 @@ $(function () {
             limpaComboParcelas();
             iniciaComboParcelas();
         } else {
+            $('#bandeiraCartao').val(imgBand);
             Funcoes.ValidaOK('numCartao', 'Cartão Válido');
             recupParcelas(imgBand);
         }
@@ -146,6 +147,13 @@ $(function () {
         }
     }
 
+    $("#qntParcelas").change(function () {
+        if ($(this).val() != 'null') {
+            var valorParcela =  $("#qntParcelas option:selected").text().split(' x R$ ');
+            $("#installmentValue").val(valorParcela[1]);
+        }
+    });
+
     function limpaComboParcelas() {
         var comboParc = $("#qntParcelas");
         comboParc.select2("destroy");
@@ -203,12 +211,13 @@ $(function () {
         var tpPagamento = $("#tp_pagamento").val();
 
         if (tpPagamento == 3) {
+            var validade = $('#validadeCartao').val().split('/');
             PagSeguroDirectPayment.createCardToken({
                 cardNumber: $('#numCartao').val(), // Número do cartão de crédito
                 brand: $('#bandeiraCartao').val(), // Bandeira do cartão
                 cvv: $('#cvvCartao').val(), // CVV do cartão
-                expirationMonth: $('#mesValidade').val(), // Mês da expiração do cartão
-                expirationYear: $('#anoValidade').val(), // Ano da expiração do cartão, é necessário os 4 dígitos.
+                expirationMonth: validade[0], // Mês da expiração do cartão
+                expirationYear: '20' + validade[1], // Ano da expiração do cartão, é necessário os 4 dígitos.
                 success: function (retorno) {
                     $('#tokenCartao').val(retorno.card.token);
                     recupHashCartao();

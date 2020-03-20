@@ -574,3 +574,335 @@ INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_
 
 UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "1", dt_modificado = "2020-03-20T16:42:53.000-03:00", nu_valor_desconto = "1.99", nu_valor_real = "37.91", ds_link_boleto = "https://sandbox.pagseguro.uol.com.br/checkout/payment/eft/print.jhtml?c=11c0454c765468dd14c40fbc6abac3123e0438a401bbc578db4e9232470543f309bec18d9a3648de", ds_code_transacao = "6A305DE4-2FBF-4E63-B456-44C627C28CE9", co_plano_assinante = "20" where co_plano_assinante_assinatura = 102;
 
+UPDATE TB_PESSOA SET nu_cpf = "07332354179" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61616161162" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("23", "3", "49", "0", "239.90", "3", "2020-03-20 17:07:03", "2022-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "07332354179" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61616161162" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("23", "3", "49", "0", "239.90", "3", "2020-03-20 17:12:38", "2022-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "07332354179" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61616161162" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("23", "3", "49", "0", "239.90", "3", "2020-03-20 17:13:06", "2022-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "07332354179" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61616161162" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("23", "3", "49", "0", "239.90", "3", "2020-03-20 17:14:05", "2022-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "07332354179" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61616161162" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("23", "3", "49", "0", "239.90", "3", "2020-03-20 17:14:27", "2022-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "07332354179" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61616161162" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("23", "3", "49", "0", "239.90", "3", "2020-03-20 17:15:55", "2022-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "07332354179" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61616161162" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("23", "3", "49", "0", "239.90", "3", "2020-03-20 17:21:38", "2022-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "07332354179" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61616161162" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("23", "3", "49", "0", "239.90", "3", "2020-03-20 17:22:22", "2022-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "07332354179" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61616161162" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("23", "3", "49", "0", "239.90", "3", "2020-03-20 17:24:01", "2022-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "6152396333" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("23", "3", "49", "0", "239.90", "5", "2020-03-20 17:31:22", "2022-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61326262323" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("23", "3", "49", "0", "239.90", "3", "2020-03-20 17:34:29", "2022-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61326262323" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("23", "3", "49", "0", "239.90", "3", "2020-03-20 17:34:40", "2022-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61326262323" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("23", "3", "49", "0", "239.90", "3", "2020-03-20 17:35:02", "2022-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61326262323" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("23", "3", "49", "0", "239.90", "3", "2020-03-20 17:35:22", "2022-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61326262323" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("23", "3", "49", "0", "239.90", "3", "2020-03-20 17:36:01", "2022-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "6195555522" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 17:49:39", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "6195555522" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 17:50:07", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "6195555522" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 17:50:41", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "6195555522" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 17:51:04", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "6195555522" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 17:52:42", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "6195555522" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 17:56:06", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "6195555522" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 17:56:17", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "6195555522" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 17:56:29", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "6195555522" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 17:56:36", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "6195555522" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 17:56:44", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "6195555522" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 17:57:01", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "6195555522" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 18:00:07", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61999999999" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 18:12:22", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61999999999" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 18:12:44", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61999999999" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 18:12:59", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61999999999" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 18:13:44", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61999999999" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 18:14:55", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61999999999" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 18:15:13", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61999999999" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 18:15:39", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61999999999" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 18:15:53", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61999999999" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 18:16:05", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61999999999" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 18:16:53", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "6156513213" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 18:20:04", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "6156513213" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 18:20:30", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "6156513213" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 18:20:56", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "6156513213" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 18:21:03", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61999999999" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 18:22:22", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61999999999" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 18:22:45", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61999999999" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 18:23:09", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61999999999" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 18:24:25", "2023-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61999999999" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("25", "3", "73", "0", "339.90", "3", "2020-03-20 18:24:47", "2023-03-20");
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "2", dt_modificado = "2020-03-20T18:24:49.000-03:00", nu_valor_desconto = "13.96", nu_valor_real = "325.94", ds_link_boleto = "", ds_code_transacao = "74C8C066-AEB4-456C-827F-193645FB279F", co_plano_assinante = "25" where co_plano_assinante_assinatura = 148;
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61999952533" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("24", "3", "25", "0", "124.90", "3", "2020-03-20 18:27:04", "2021-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61999952533" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("24", "3", "25", "0", "124.90", "3", "2020-03-20 18:27:15", "2021-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61522223325" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("23", "3", "49", "0", "239.90", "3", "2020-03-20 18:30:15", "2022-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61522223325" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("23", "3", "49", "0", "239.90", "3", "2020-03-20 18:30:44", "2022-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61522223325" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("23", "3", "49", "0", "239.90", "3", "2020-03-20 18:30:53", "2022-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61522223325" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("23", "3", "49", "0", "239.90", "3", "2020-03-20 18:32:35", "2022-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61522223325" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("23", "3", "49", "0", "239.90", "3", "2020-03-20 18:32:55", "2022-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61522223325" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("23", "3", "49", "0", "239.90", "3", "2020-03-20 18:33:06", "2022-03-20");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 42;
+
+UPDATE TB_CONTATO SET nu_tel1 = "61522223325" where co_contato = 54;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("23", "3", "49", "0", "239.90", "3", "2020-03-20 18:33:12", "2022-03-20");
+
