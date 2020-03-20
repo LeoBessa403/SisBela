@@ -2,6 +2,9 @@ $(function () {
 
     var home = $("#home").attr('data-val');
     var imgBand = '';
+    var submit = false;
+
+    $('.debito,.credito').parents('.form-group').hide();
 
     var dados = Funcoes.Ajax('Assinante/getSessaoPagamentoAssinante', null);
     //ID da sessão retornada pelo PagSeguro
@@ -12,6 +15,19 @@ $(function () {
         iniciaComboParcelas();
         $(".cartao_credito").val('');
         Funcoes.TiraValidacao('numCartao');
+    });
+
+    $("#tp_pagamento").change(function () {
+        var tpPagamento = $(this).val();
+        if (tpPagamento == 3) {
+            $('.debito').parents('.form-group').hide();
+            $('.credito').parents('.form-group').show();
+        } else if (tpPagamento == 4) {
+            $('.debito').parents('.form-group').show();
+            $('.credito').parents('.form-group').hide();
+        } else {
+            $('.debito,.credito').parents('.form-group').hide();
+        }
     });
 
     $(".cartao_credito").mask("9999 9999 9999 9999").keyup(function () {
@@ -68,6 +84,18 @@ $(function () {
             Funcoes.ValidaOK('numCartao', 'Cartão Válido');
             recupParcelas(imgBand);
         }
+    });
+
+    $(".cvv").mask("999").keyup(function () {
+        var valor = $(this).val().replace(/[^0-9]+/g, '');
+        valor = valor.val().replace(/[^.-]+/g, '');
+        $(this).val(valor);
+    });
+
+    $(".validade_cartao").mask("99/99").keyup(function () {
+        var valor = $(this).val().replace(/[^0-9]+/g, '');
+        valor = valor.val().replace(/[^.-]+/g, '');
+        $(this).val(valor);
     });
 
 
@@ -129,6 +157,55 @@ $(function () {
         var comboParc = $("#qntParcelas");
         comboParc.select2({
             allowClear: false
+        });
+    }
+
+
+    //Recuperar o token do cartão de crédito
+    $("#RenovaPlanoAssinante").on("submit", function (event) {
+        if (!submit) {
+            event.preventDefault();
+            submit = true;
+        }
+
+        var tpPagamento = $("#tp_pagamento").val();
+
+        if (tpPagamento == 3) {
+            PagSeguroDirectPayment.createCardToken({
+                cardNumber: $('#numCartao').val(), // Número do cartão de crédito
+                brand: $('#bandeiraCartao').val(), // Bandeira do cartão
+                cvv: $('#cvvCartao').val(), // CVV do cartão
+                expirationMonth: $('#mesValidade').val(), // Mês da expiração do cartão
+                expirationYear: $('#anoValidade').val(), // Ano da expiração do cartão, é necessário os 4 dígitos.
+                success: function (retorno) {
+                    $('#tokenCartao').val(retorno.card.token);
+                    recupHashCartao();
+                },
+                error: function (retorno) {
+                    // Callback para chamadas que falharam.
+                },
+                complete: function (retorno) {
+                    // Callback para chamadas que falharam.
+                }
+            });
+        } else if (tpPagamento == 5) {
+            recupHashCartao();
+        } else if (tpPagamento == 4) {
+            recupHashCartao();
+        }
+
+    });
+
+    //Recuperar o hash do cartão
+    function recupHashCartao() {
+        PagSeguroDirectPayment.onSenderHashReady(function (retorno) {
+            if (retorno.status == 'error') {
+                Funcoes.Erro(retorno.message);
+                return false;
+            } else {
+                $("#hash").val(retorno.senderHash);
+                $("#RenovaPlanoAssinante").submit();
+            }
         });
     }
 
