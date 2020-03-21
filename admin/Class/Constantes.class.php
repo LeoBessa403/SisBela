@@ -32,14 +32,7 @@ define('DT_DEMISSAO', 'dt_demissao');
 define('CO_SERVICO', 'co_servico');
 define('NO_SERVICO', 'no_servico');
 define('NU_DURACAO', 'nu_duracao');
-define('CO_SUPORTE', 'co_suporte');
-define('DS_ASSUNTO', 'ds_assunto');
-define('ST_TIPO_ASSUNTO', 'st_tipo_assunto');
-define('CO_HISTORICO_SUPORTE', 'co_historico_suporte');
-define('DS_MENSAGEM', 'ds_mensagem');
-define('ST_LIDO', 'st_lido');
-define('ST_PAGAMENTO', 'st_pagamento');
-define('TP_PAGAMENTO', 'tp_pagamento');
+
 
 
 // SERVICES
@@ -48,5 +41,4 @@ define('CLIENTE_SERVICE', 'ClienteService');
 define('PROFISSIONAL_SERVICE', 'ProfissionalService');
 define('SERVICO_SERVICE', 'ServicoService');
 define('STATUS_AGENDA_SERVICE', 'StatusAgendaService');
-define('SUPORTE_SERVICE', 'SuporteService');
-define('HISTORICO_SUPORTE_SERVICE', 'HistoricoSuporteService');
+
