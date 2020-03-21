@@ -1,4 +1,4 @@
--- Atualizado em: 19/03/2020 18:49:33
+-- Atualizado em: 21/03/2020 18:50:46
 -- AMBIENTE: http://localhost/SisBela/
 -- BANCO: sisbela
 
@@ -11,19 +11,19 @@ DROP TABLE IF EXISTS TB_ACESSO;
 
 CREATE TABLE `TB_ACESSO` (
   `co_acesso` int(11) NOT NULL AUTO_INCREMENT,
-  `ds_session_id` varchar(255) DEFAULT NULL,
+  `ds_session_id` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `dt_inicio_acesso` datetime DEFAULT NULL,
   `dt_fim_acesso` datetime DEFAULT NULL,
-  `tp_situacao` varchar(1) DEFAULT NULL COMMENT 'A - Ativo / F - Finalizado',
+  `tp_situacao` varchar(1) CHARACTER SET utf8 DEFAULT NULL COMMENT 'A - Ativo / F - Finalizado',
   `co_usuario` int(10) NOT NULL,
   `co_trafego` int(11) NOT NULL,
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=194 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=203 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
-INSERT INTO TB_ACESSO VALUES("193","mep8uh70qcijnssf9lie6iotmu","2020-03-19 18:47:31","2020-03-19 19:19:33","A","1","193");
+INSERT INTO TB_ACESSO VALUES("202","731hv5i320pqnlgquikhvfgt6o","2020-03-21 18:47:47","2020-03-21 19:20:46","A","1","202");
 
 
 
@@ -33,12 +33,12 @@ DROP TABLE IF EXISTS TB_AGENDA;
 
 CREATE TABLE `TB_AGENDA` (
   `co_agenda` int(11) NOT NULL AUTO_INCREMENT,
-  `ds_motivo` text DEFAULT NULL,
+  `ds_motivo` text CHARACTER SET utf8 DEFAULT NULL,
   `dt_cadastro` datetime DEFAULT NULL,
   `co_assinante` int(11) NOT NULL,
   PRIMARY KEY (`co_agenda`,`co_assinante`),
   KEY `fk_TB_AGENDAMENTO_TB_ASSINANTE1_idx` (`co_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 INSERT INTO TB_AGENDA VALUES("3","dwqfwfew few","2020-03-10 11:49:57","2");
@@ -104,12 +104,12 @@ DROP TABLE IF EXISTS TB_ANOTACAO;
 CREATE TABLE `TB_ANOTACAO` (
   `co_anotacao` int(11) NOT NULL AUTO_INCREMENT,
   `dt_cadastro` datetime DEFAULT NULL,
-  `ds_observacao` text DEFAULT NULL,
-  `ds_titulo` varchar(80) DEFAULT NULL,
+  `ds_observacao` text CHARACTER SET utf8 DEFAULT NULL,
+  `ds_titulo` varchar(80) CHARACTER SET utf8 DEFAULT NULL,
   `co_historia` int(11) NOT NULL,
   PRIMARY KEY (`co_anotacao`,`co_historia`),
   KEY `fk_TB_ANOTACAO_TB_HISTORIA1_idx` (`co_historia`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 
@@ -122,15 +122,15 @@ CREATE TABLE `TB_ASSINANTE` (
   `co_assinante` int(11) NOT NULL AUTO_INCREMENT,
   `dt_cadastro` datetime DEFAULT NULL,
   `dt_expiracao` date DEFAULT NULL COMMENT 'Data da expiração de utilização do sistema',
-  `st_dados_complementares` varchar(1) DEFAULT 'N' COMMENT 'S - Sim / N - Não',
-  `st_status` varchar(1) DEFAULT 'A' COMMENT 'A - Ativo / I - inativo',
-  `tp_assinante` varchar(1) DEFAULT 'M' COMMENT 'M  - Matriz / F - Filial',
+  `st_dados_complementares` varchar(1) CHARACTER SET utf8 DEFAULT 'N' COMMENT 'S - Sim / N - Não',
+  `st_status` varchar(1) CHARACTER SET utf8 DEFAULT 'A' COMMENT 'A - Ativo / I - inativo',
+  `tp_assinante` varchar(1) CHARACTER SET utf8 DEFAULT 'M' COMMENT 'M  - Matriz / F - Filial',
   `co_empresa` int(11) NOT NULL,
   `co_pessoa` int(11) NOT NULL COMMENT 'Responsável pelo Assinante',
   PRIMARY KEY (`co_assinante`,`co_empresa`,`co_pessoa`),
   KEY `fk_TB_ASSINANTE_TB_EMPRESA1_idx` (`co_empresa`),
   KEY `fk_TB_ASSINANTE_TB_PESSOA1_idx` (`co_pessoa`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 INSERT INTO TB_ASSINANTE VALUES("2","2020-03-05 15:03:40","2020-03-28","S","A","M","2","41");
@@ -146,11 +146,11 @@ DROP TABLE IF EXISTS TB_AUDITORIA;
 CREATE TABLE `TB_AUDITORIA` (
   `co_auditoria` int(11) NOT NULL AUTO_INCREMENT,
   `dt_realizado` datetime DEFAULT NULL,
-  `ds_perfil_usuario` text DEFAULT NULL,
+  `ds_perfil_usuario` text CHARACTER SET utf8 DEFAULT NULL,
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=550 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=556 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 
@@ -161,13 +161,13 @@ DROP TABLE IF EXISTS TB_AUDITORIA_ITENS;
 
 CREATE TABLE `TB_AUDITORIA_ITENS` (
   `co_auditoria_itens` int(11) NOT NULL AUTO_INCREMENT,
-  `ds_item_anterior` varchar(255) DEFAULT NULL,
-  `ds_item_atual` varchar(255) DEFAULT NULL,
-  `ds_campo` varchar(120) DEFAULT NULL,
+  `ds_item_anterior` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_item_atual` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_campo` varchar(120) CHARACTER SET utf8 DEFAULT NULL,
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`),
   KEY `fk_TB_AUDITORIA_ITENS_TB_AUDITORIA_TABELA1_idx` (`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=8442 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8552 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 
@@ -178,13 +178,13 @@ DROP TABLE IF EXISTS TB_AUDITORIA_TABELA;
 
 CREATE TABLE `TB_AUDITORIA_TABELA` (
   `co_auditoria_tabela` int(11) NOT NULL AUTO_INCREMENT,
-  `no_tabela` varchar(45) DEFAULT NULL,
-  `tp_operacao` varchar(1) DEFAULT NULL,
+  `no_tabela` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
+  `tp_operacao` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
   `co_registro` int(11) DEFAULT NULL,
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`),
   KEY `fk_TB_AUDITORIA_TABELA_TB_AUDITORIA1_idx` (`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=1377 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1389 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 
@@ -195,9 +195,9 @@ DROP TABLE IF EXISTS TB_BANCO;
 
 CREATE TABLE `TB_BANCO` (
   `co_banco` int(11) NOT NULL COMMENT 'Código do banco',
-  `no_banco` varchar(60) DEFAULT NULL,
+  `no_banco` varchar(60) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`co_banco`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 
@@ -209,25 +209,25 @@ DROP TABLE IF EXISTS TB_CLIENTE;
 CREATE TABLE `TB_CLIENTE` (
   `co_cliente` int(11) NOT NULL AUTO_INCREMENT,
   `dt_cadastro` datetime DEFAULT NULL,
-  `st_status` varchar(1) DEFAULT 'A' COMMENT 'A - Ativo / I - Inativo\n',
-  `no_apelido` varchar(45) DEFAULT NULL,
-  `ds_observacao` text DEFAULT NULL,
-  `st_receber_email_agendamento` varchar(1) DEFAULT 'S' COMMENT 'S - Sim / N - Não',
-  `st_lembrete_horario_agendamento` varchar(1) DEFAULT 'S' COMMENT 'S - Sim / N - Não',
-  `st_sms_marketing` varchar(1) DEFAULT 'S' COMMENT 'S - Sim / N - Não',
-  `st_email_marketing` varchar(1) DEFAULT 'S' COMMENT 'S - Sim / N - Não',
-  `nu_como_conheceu` varchar(1) DEFAULT NULL COMMENT 'ComoConheceuEnum',
+  `st_status` varchar(1) CHARACTER SET utf8 DEFAULT 'A' COMMENT 'A - Ativo / I - Inativo\n',
+  `no_apelido` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_observacao` text CHARACTER SET utf8 DEFAULT NULL,
+  `st_receber_email_agendamento` varchar(1) CHARACTER SET utf8 DEFAULT 'S' COMMENT 'S - Sim / N - Não',
+  `st_lembrete_horario_agendamento` varchar(1) CHARACTER SET utf8 DEFAULT 'S' COMMENT 'S - Sim / N - Não',
+  `st_sms_marketing` varchar(1) CHARACTER SET utf8 DEFAULT 'S' COMMENT 'S - Sim / N - Não',
+  `st_email_marketing` varchar(1) CHARACTER SET utf8 DEFAULT 'S' COMMENT 'S - Sim / N - Não',
+  `nu_como_conheceu` varchar(1) CHARACTER SET utf8 DEFAULT NULL COMMENT 'ComoConheceuEnum',
   `co_assinante` int(11) NOT NULL,
   `co_pessoa` int(11) NOT NULL,
   PRIMARY KEY (`co_cliente`,`co_assinante`,`co_pessoa`),
   KEY `fk_TB_CLIENTE_TB_ASSINANTE1_idx` (`co_assinante`),
   KEY `fk_TB_CLIENTE_TB_PESSOA1_idx` (`co_pessoa`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
-INSERT INTO TB_CLIENTE VALUES("3","","A","","","S","S","S","S","","2","50");
+INSERT INTO TB_CLIENTE VALUES("3","0000-00-00 00:00:00","A","","","S","S","S","S","","2","50");
 
-INSERT INTO TB_CLIENTE VALUES("4","","A","","","S","S","S","S","","2","51");
+INSERT INTO TB_CLIENTE VALUES("4","0000-00-00 00:00:00","A","","","S","S","S","S","","2","51");
 
 INSERT INTO TB_CLIENTE VALUES("5","2020-03-10 15:54:01","A","","","S","S","S","S","","2","53");
 
@@ -247,24 +247,24 @@ DROP TABLE IF EXISTS TB_CONTATO;
 
 CREATE TABLE `TB_CONTATO` (
   `co_contato` int(11) NOT NULL AUTO_INCREMENT,
-  `nu_tel1` varchar(15) DEFAULT NULL,
-  `nu_tel2` varchar(15) DEFAULT NULL,
-  `nu_tel3` varchar(15) DEFAULT NULL,
-  `nu_tel_0800` varchar(30) DEFAULT NULL,
-  `ds_email` varchar(150) DEFAULT NULL,
-  `ds_site` varchar(100) DEFAULT NULL,
-  `ds_facebook` varchar(90) DEFAULT NULL,
-  `ds_twitter` varchar(90) DEFAULT NULL,
-  `ds_instagram` varchar(90) DEFAULT NULL,
+  `nu_tel1` varchar(15) CHARACTER SET utf8 DEFAULT NULL,
+  `nu_tel2` varchar(15) CHARACTER SET utf8 DEFAULT NULL,
+  `nu_tel3` varchar(15) CHARACTER SET utf8 DEFAULT NULL,
+  `nu_tel_0800` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_email` varchar(150) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_site` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_facebook` varchar(90) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_twitter` varchar(90) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_instagram` varchar(90) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`co_contato`)
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 INSERT INTO TB_CONTATO VALUES("1","61993274991","6130826060","0","","leonardomcbessa@gmail.com","","","","");
 
-INSERT INTO TB_CONTATO VALUES("53","61993939393","","","","lele.403@hotmail.com","","","","");
+INSERT INTO TB_CONTATO VALUES("53","61939393939","","","","lele.403@hotmail.com","","","","");
 
-INSERT INTO TB_CONTATO VALUES("54","61995959595","","","","thais.mail@gmail.com","","","","");
+INSERT INTO TB_CONTATO VALUES("54","61993939393","","","","thais.mail@gmail.com","","","","");
 
 INSERT INTO TB_CONTATO VALUES("55","61314654655","","","","lele.40322@hotmail.com","","","","");
 
@@ -278,10 +278,10 @@ DROP TABLE IF EXISTS TB_CONTROLLER;
 
 CREATE TABLE `TB_CONTROLLER` (
   `co_controller` int(11) NOT NULL AUTO_INCREMENT,
-  `no_controller` varchar(60) DEFAULT NULL,
-  `ds_class_icon` varchar(30) DEFAULT NULL COMMENT 'Classe do Ícone',
+  `no_controller` varchar(60) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_class_icon` varchar(30) CHARACTER SET utf8 DEFAULT NULL COMMENT 'Classe do Ícone',
   PRIMARY KEY (`co_controller`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 INSERT INTO TB_CONTROLLER VALUES("1","Gestão","clip-data");
@@ -317,10 +317,10 @@ DROP TABLE IF EXISTS TB_CRONS;
 CREATE TABLE `TB_CRONS` (
   `co_cron` int(11) NOT NULL AUTO_INCREMENT,
   `dt_cadastro` datetime DEFAULT NULL,
-  `no_cron` varchar(70) DEFAULT NULL,
-  `ds_sql` text DEFAULT NULL,
+  `no_cron` varchar(70) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_sql` text CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`co_cron`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 
@@ -331,13 +331,13 @@ DROP TABLE IF EXISTS TB_EMPRESA;
 
 CREATE TABLE `TB_EMPRESA` (
   `co_empresa` int(11) NOT NULL AUTO_INCREMENT,
-  `no_empresa` varchar(250) DEFAULT NULL COMMENT 'Razão Social\n',
-  `no_fantasia` varchar(150) DEFAULT NULL,
+  `no_empresa` varchar(250) CHARACTER SET utf8 DEFAULT NULL COMMENT 'Razão Social\n',
+  `no_fantasia` varchar(150) CHARACTER SET utf8 DEFAULT NULL,
   `dt_cadastro` datetime DEFAULT NULL,
-  `nu_cnpj` varchar(20) DEFAULT NULL,
-  `nu_insc_estadual` varchar(20) DEFAULT NULL,
-  `ds_observacao` text DEFAULT NULL,
-  `st_status` varchar(1) DEFAULT NULL,
+  `nu_cnpj` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `nu_insc_estadual` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_observacao` text CHARACTER SET utf8 DEFAULT NULL,
+  `st_status` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
   `co_pessoa` int(11) NOT NULL COMMENT 'Pessoa responsável pela empresa\n',
   `co_endereco` int(11) NOT NULL,
   `co_contato` int(11) NOT NULL,
@@ -347,7 +347,7 @@ CREATE TABLE `TB_EMPRESA` (
   KEY `fk_TB_EMPRESA_TB_ENDERECO1_idx` (`co_endereco`),
   KEY `fk_TB_EMPRESA_TB_CONTATO1_idx` (`co_contato`),
   KEY `fk_TB_EMPRESA_TB_IMAGEM1_idx` (`co_imagem`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 INSERT INTO TB_EMPRESA VALUES("2","","SALãO NOVO VISUAL","2020-03-05 15:03:40","","","","","0","14","0","0");
@@ -362,14 +362,14 @@ DROP TABLE IF EXISTS TB_ENDERECO;
 
 CREATE TABLE `TB_ENDERECO` (
   `co_endereco` int(11) NOT NULL AUTO_INCREMENT,
-  `ds_endereco` varchar(150) DEFAULT NULL,
-  `ds_complemento` varchar(100) DEFAULT NULL,
-  `ds_bairro` varchar(80) DEFAULT NULL,
-  `nu_cep` varchar(12) DEFAULT NULL,
-  `no_cidade` varchar(80) DEFAULT NULL,
-  `sg_uf` varchar(2) DEFAULT NULL,
+  `ds_endereco` varchar(150) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_complemento` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_bairro` varchar(80) CHARACTER SET utf8 DEFAULT NULL,
+  `nu_cep` varchar(12) CHARACTER SET utf8 DEFAULT NULL,
+  `no_cidade` varchar(80) CHARACTER SET utf8 DEFAULT NULL,
+  `sg_uf` varchar(2) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`co_endereco`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 INSERT INTO TB_ENDERECO VALUES("1","qr 403 conjunto 10 casa 28","","Samambaia Norte","72319111","Brasília","DF");
@@ -480,43 +480,22 @@ DROP TABLE IF EXISTS TB_HISTORIA;
 
 CREATE TABLE `TB_HISTORIA` (
   `co_historia` int(11) NOT NULL AUTO_INCREMENT,
-  `ds_titulo` varchar(80) DEFAULT NULL,
-  `ds_observacao` text DEFAULT NULL,
+  `ds_titulo` varchar(80) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_observacao` text CHARACTER SET utf8 DEFAULT NULL,
   `dt_cadastro` datetime DEFAULT NULL,
   `dt_atualizado` datetime DEFAULT NULL,
-  `st_situacao` varchar(1) DEFAULT 'N' COMMENT 'N - Não iniciada / I - Iniciada / C - Concluida',
+  `st_situacao` varchar(1) CHARACTER SET utf8 DEFAULT 'N' COMMENT 'N - Não iniciada / I - Iniciada / C - Concluida',
   `co_sessao` int(11) NOT NULL,
   PRIMARY KEY (`co_historia`,`co_sessao`),
   KEY `fk_TB_HISTORIA_TB_SESSAO1_idx` (`co_sessao`)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
-INSERT INTO TB_HISTORIA VALUES("1","Manter Planos do sistema","Manter planos do sistema da beleza, onde terá que manter os desconto com período para o plano
-\n\n\n\nModelagem: Plano e histórico plano módulos","2019-12-18 12:06:25","2020-01-29 19:06:52","C","1");
+INSERT INTO TB_HISTORIA VALUES("1","Manter Planos do sistema","Manter planos do sistema da beleza, onde terá que manter os desconto com período para o plano\n\n\n\n\nModelagem: Plano e histórico plano módulos","2019-12-18 12:06:25","2020-01-29 19:06:52","C","1");
 
-INSERT INTO TB_HISTORIA VALUES("2","Manter Assinante","Manter assinante do sistema e com data de expiração do sistema para o assinante, criar contato, criar pessoa, envio de email de confirmação com senha gerada.
-\n\n\n\n
-\n\n\n\nCriar o usuário quando criar o assinante, plano assinado
-\n\n\n\n
-\n\n\n\nModelagem: Assinante (Junção de pessoa, contato, usuário, data de expiração, status)","2019-12-18 12:11:52","2020-01-30 12:54:32","C","1");
+INSERT INTO TB_HISTORIA VALUES("2","Manter Assinante","Manter assinante do sistema e com data de expiração do sistema para o assinante, criar contato, criar pessoa, envio de email de confirmação com senha gerada.\n\n\n\n\n\n\n\n\n\nCriar o usuário quando criar o assinante, plano assinado\n\n\n\n\n\n\n\n\n\nModelagem: Assinante (Junção de pessoa, contato, usuário, data de expiração, status)","2019-12-18 12:11:52","2020-01-30 12:54:32","C","1");
 
-INSERT INTO TB_HISTORIA VALUES("3","Gestão de pagamentos dos assinantes","Dar baixas no pagamento, e atualizar o prazo de expiração do assinante Automaticamente via PagSeguro 
-\n
-\n
-\n
-\n
-\n
-\n
-\n
-\nCriar histórico dos pagamentos
-\n
-\n
-\n
-\n
-\n
-\n
-\n
-\n Modelagem: Pagamento assinante (Ligada com plano e assinante)","2019-12-18 12:15:49","2020-03-19 18:48:49","I","1");
+INSERT INTO TB_HISTORIA VALUES("3","Gestão de pagamentos dos assinantes","Dar baixas no pagamento, e atualizar o prazo de expiração do assinante Automaticamente via PagSeguro realizar estorno/cancelamento da transação consultas as transações e consulta a detalhes da transação\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCriar histórico dos pagamentos\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Modelagem: Pagamento assinante (Ligada com plano e assinante)","2019-12-18 12:15:49","2020-03-21 18:49:44","I","1");
 
 INSERT INTO TB_HISTORIA VALUES("4","Configuração inicial do projeto","Configuração inicial do projeto","2019-12-18 12:16:19","2020-03-17 18:39:45","C","1");
 
@@ -524,55 +503,19 @@ INSERT INTO TB_HISTORIA VALUES("5","Mudar loguin","Mudar loguin para logar com e
 
 INSERT INTO TB_HISTORIA VALUES("6","Criar mensagem de expiração e bloqueio do sistema","Criar mensagem de expiração e bloqueio do sistema","2019-12-18 12:17:13","2020-03-09 16:40:54","C","1");
 
-INSERT INTO TB_HISTORIA VALUES("7","Manter Planos do Assinante","Manter Planos do Assinante, alterar seu plano aumentando o plano","2019-12-18 12:17:44","2020-03-19 18:49:15","I","1");
+INSERT INTO TB_HISTORIA VALUES("7","Manter Planos do Assinante","Manter Planos do Assinante, alterar seu plano aumentando o plano","2019-12-18 12:17:44","2020-03-21 18:50:16","C","1");
 
 INSERT INTO TB_HISTORIA VALUES("8","Pesquisa Avançada dos Assinantes","Pesquisa Avançada dos Assinantes por razão social, nome fantasia, Responsável, cidade e UF, email, valor assinatura atual.","2019-12-18 12:18:35","2020-03-09 15:40:05","C","1");
 
-INSERT INTO TB_HISTORIA VALUES("9","Dados complementares básicos","Manter dados: (Endereço, telefone, CNPJ, fantasia, razão e outros)
-\n\n
-\n\n
-\n\n
-\n\n
-\n\n
-\n\nModelagem: Contato, endereço e empresa ou pessoa","2019-12-18 12:20:44","2020-03-03 14:28:17","C","2");
+INSERT INTO TB_HISTORIA VALUES("9","Dados complementares básicos","Manter dados: (Endereço, telefone, CNPJ, fantasia, razão e outros)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModelagem: Contato, endereço e empresa ou pessoa","2019-12-18 12:20:44","2020-03-03 14:28:17","C","2");
 
-INSERT INTO TB_HISTORIA VALUES("10","Manter Fotos do Estabelecimento","Manter Fotos do Estabelecimento para o Site
-\n\n
-\n\n
-\n\n
-\n\n
-\n\n
-\n\nModelagem: Imagem (FK Assinante)","2019-12-18 12:21:59","2020-03-03 14:28:08","C","2");
+INSERT INTO TB_HISTORIA VALUES("10","Manter Fotos do Estabelecimento","Manter Fotos do Estabelecimento para o Site\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModelagem: Imagem (FK Assinante)","2019-12-18 12:21:59","2020-03-03 14:28:08","C","2");
 
 INSERT INTO TB_HISTORIA VALUES("11","Gestão de notificações","Gestão de notificações com as mensagens geradas do sistema de sucesso erro e avisos","2019-12-18 12:22:23","2020-03-03 14:28:35","C","2");
 
-INSERT INTO TB_HISTORIA VALUES("12","Cadastrar Agendamento","Cadastrar Agendamento (Opção da recorrência)
-\n
-\n
-\n
-\n
-\n
-\n
-\n
-\nVários serviços e pacotes
-\n
-\n
-\n
-\n
-\n
-\n
-\n
-\nModelagem: (FK cliente, Serviço, Profissional, Assistente","2019-12-18 12:23:46","2020-03-10 12:11:11","C","3");
+INSERT INTO TB_HISTORIA VALUES("12","Cadastrar Agendamento","Cadastrar Agendamento (Opção da recorrência)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVários serviços e pacotes\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModelagem: (FK cliente, Serviço, Profissional, Assistente","2019-12-18 12:23:46","2020-03-10 12:11:11","C","3");
 
-INSERT INTO TB_HISTORIA VALUES("13","Edição Agendamento","Edição Agendamento
-\n
-\n
-\n
-\n
-\n
-\n
-\n
-\nValidação dos status do agendamento e status do serviço","2019-12-18 12:24:38","2020-03-10 17:25:45","C","3");
+INSERT INTO TB_HISTORIA VALUES("13","Edição Agendamento","Edição Agendamento\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nValidação dos status do agendamento e status do serviço","2019-12-18 12:24:38","2020-03-10 17:25:45","C","3");
 
 INSERT INTO TB_HISTORIA VALUES("14","Implantação Agenda","Agenda CSS (Responsivo)","2019-12-18 12:25:03","2020-03-09 18:51:22","C","3");
 
@@ -584,15 +527,7 @@ INSERT INTO TB_HISTORIA VALUES("17","Listagem dos agendamento (Calendário)","Li
 
 INSERT INTO TB_HISTORIA VALUES("18","Histórico do Agendamento","Histórico do Agendamento (Modal)","2019-12-18 12:27:19","2020-03-10 17:26:22","C","3");
 
-INSERT INTO TB_HISTORIA VALUES("19","Deletar Agendamento","Deletar Agendamento (Modal) com Justificativa
-\n
-\n
-\n
-\n
-\n
-\n
-\n
-\nVisualizar na listagem da grid","2019-12-18 12:27:55","2020-03-10 17:26:31","C","3");
+INSERT INTO TB_HISTORIA VALUES("19","Deletar Agendamento","Deletar Agendamento (Modal) com Justificativa\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizar na listagem da grid","2019-12-18 12:27:55","2020-03-10 17:26:31","C","3");
 
 INSERT INTO TB_HISTORIA VALUES("20","Listagem dos agendamento (Grid)","Listagem dos agendamento (Grid)","2019-12-18 12:28:13","2020-03-10 12:11:48","C","3");
 
@@ -604,33 +539,9 @@ INSERT INTO TB_HISTORIA VALUES("23","Validações dos botões","Validações dos
 
 INSERT INTO TB_HISTORIA VALUES("24","Iniciar o sistema com as configurações básicas","Iniciar o sistema com as configurações básicas para depois iniciar o painel","2019-12-18 12:31:44","2020-03-18 12:13:12","C","4");
 
-INSERT INTO TB_HISTORIA VALUES("25","Implantar sistema Suporte","Implantar sistema Suporte
-\n
-\n
-\n
-\n
-\n
-\n
-\n
-\nModelagem: suporte (FK Assinante, Categoria Suporte)
-\n
-\n
-\n
-\n
-\n
-\n
-\n
-\nTabela base Categoria Suporte","2019-12-18 12:32:21","2020-03-12 15:29:04","C","5");
+INSERT INTO TB_HISTORIA VALUES("25","Implantar sistema Suporte","Implantar sistema Suporte\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModelagem: suporte (FK Assinante, Categoria Suporte)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTabela base Categoria Suporte","2019-12-18 12:32:21","2020-03-12 15:29:04","C","5");
 
-INSERT INTO TB_HISTORIA VALUES("26","Relatórios de agendamentos","Relatórios de agendamentos por status do agendamento e período, Profissional, serviço e cliente
-\n
-\n
-\n
-\n
-\n
-\n
-\n
-\n Impressão dos gráficos e dados","2019-12-18 12:34:22","2020-03-11 15:07:26","C","6");
+INSERT INTO TB_HISTORIA VALUES("26","Relatórios de agendamentos","Relatórios de agendamentos por status do agendamento e período, Profissional, serviço e cliente\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Impressão dos gráficos e dados","2019-12-18 12:34:22","2020-03-11 15:07:26","C","6");
 
 INSERT INTO TB_HISTORIA VALUES("27","Manter Usuário","Manter Usuário","2019-12-18 12:35:02","2020-03-05 15:48:01","C","7");
 
@@ -644,17 +555,13 @@ INSERT INTO TB_HISTORIA VALUES("31","Página de captura de lead","Página de cap
 
 INSERT INTO TB_HISTORIA VALUES("32","Cadastro pelo site para o assinante","verificar o cadastro pelo site para manter um plano mesmo que que por experiência","2019-12-18 12:38:52","2019-12-18 12:38:52","N","9");
 
-INSERT INTO TB_HISTORIA VALUES("33","Material do Pré Lançamento","Produção e Disponibilização do material para lista de lead
-\n\n\n\n
-\n\n\n\nDuração de 7 a 10 dias antes do Lançamento de 3 a 4 vídeos","2019-12-18 12:39:57","2019-12-18 12:39:57","N","11");
+INSERT INTO TB_HISTORIA VALUES("33","Material do Pré Lançamento","Produção e Disponibilização do material para lista de lead\n\n\n\n\n\n\n\n\n\nDuração de 7 a 10 dias antes do Lançamento de 3 a 4 vídeos","2019-12-18 12:39:57","2019-12-18 12:39:57","N","11");
 
 INSERT INTO TB_HISTORIA VALUES("34","Direcionar para o lançamento","Após Lançamento Direcionar para o lançamento o tráfego do PL","2019-12-18 12:40:34","2019-12-18 12:40:34","N","11");
 
 INSERT INTO TB_HISTORIA VALUES("35","Criação da Lista de Lead","Criação da Lista de Lead já trabalhadas nas redes sociais e mais..","2019-12-18 12:42:55","2019-12-18 12:42:55","N","10");
 
-INSERT INTO TB_HISTORIA VALUES("36","Criar conteúdos e Entregas","Criar conteúdos para entrega e ir formulando a lista de lead
-\n\n\n\n
-\n\n\n\nInicio da divulgação para o lançamento.","2019-12-18 12:43:22","2019-12-18 12:43:22","N","10");
+INSERT INTO TB_HISTORIA VALUES("36","Criar conteúdos e Entregas","Criar conteúdos para entrega e ir formulando a lista de lead\n\n\n\n\n\n\n\n\n\nInicio da divulgação para o lançamento.","2019-12-18 12:43:22","2019-12-18 12:43:22","N","10");
 
 INSERT INTO TB_HISTORIA VALUES("37","Lançamento das Vendas","de 1 a 7 dias de vendas com página aquecida","2019-12-18 12:44:04","2019-12-18 12:44:04","N","12");
 
@@ -704,13 +611,13 @@ DROP TABLE IF EXISTS TB_HISTORICO_HISTORIA;
 
 CREATE TABLE `TB_HISTORICO_HISTORIA` (
   `co_historico_historia` int(11) NOT NULL AUTO_INCREMENT,
-  `nu_esforco` varchar(2) DEFAULT NULL,
-  `nu_esforco_restante` varchar(2) DEFAULT NULL,
+  `nu_esforco` varchar(2) CHARACTER SET utf8 DEFAULT NULL,
+  `nu_esforco_restante` varchar(2) CHARACTER SET utf8 DEFAULT NULL,
   `dt_cadastro` datetime DEFAULT NULL,
   `co_historia` int(11) NOT NULL,
   PRIMARY KEY (`co_historico_historia`,`co_historia`),
   KEY `fk_TB_HISTORICO_HISTORIA_TB_HISTORIA1_idx` (`co_historia`)
-) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=126 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("1","13","5","2019-12-18 12:06:25","1");
@@ -957,6 +864,10 @@ INSERT INTO TB_HISTORICO_HISTORIA VALUES("122","30","25","2020-03-19 18:48:49","
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("123","20","13","2020-03-19 18:49:15","7");
 
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("124","40","15","2020-03-21 18:49:44","3");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("125","20","0","2020-03-21 18:50:16","7");
+
 
 
 
@@ -966,8 +877,8 @@ DROP TABLE IF EXISTS TB_HISTORICO_SUPORTE;
 CREATE TABLE `TB_HISTORICO_SUPORTE` (
   `co_historico_suporte` int(11) NOT NULL AUTO_INCREMENT,
   `dt_cadastro` datetime DEFAULT NULL,
-  `ds_mensagem` text DEFAULT NULL,
-  `st_lido` varchar(1) DEFAULT 'N' COMMENT 'S - Sim / N - Não',
+  `ds_mensagem` text CHARACTER SET utf8 DEFAULT NULL,
+  `st_lido` varchar(1) CHARACTER SET utf8 DEFAULT 'N' COMMENT 'S - Sim / N - Não',
   `co_suporte` int(11) NOT NULL,
   `co_usuario` int(10) NOT NULL,
   `co_imagem` int(10) unsigned NOT NULL COMMENT 'Chave do Anexo.',
@@ -975,7 +886,7 @@ CREATE TABLE `TB_HISTORICO_SUPORTE` (
   KEY `fk_TB_HISTORICO_SUPORTE_TB_SUPORTE1_idx` (`co_suporte`),
   KEY `fk_TB_HISTORICO_SUPORTE_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_HISTORICO_SUPORTE_TB_IMAGEM1_idx` (`co_imagem`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 INSERT INTO TB_HISTORICO_SUPORTE VALUES("1","2020-03-16 10:39:17","bem essa mensagem e so pra testar mesmo ok","S","1","6","0");
@@ -1068,7 +979,7 @@ CREATE TABLE `TB_IMAGEM_ASSINANTE` (
   PRIMARY KEY (`co_imagem_assinante`,`co_assinante`,`co_imagem`),
   KEY `fk_TB_ASSINANTE_has_TB_IMAGEM_TB_IMAGEM1_idx` (`co_imagem`),
   KEY `fk_TB_ASSINANTE_has_TB_IMAGEM_TB_ASSINANTE1_idx` (`co_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 INSERT INTO TB_IMAGEM_ASSINANTE VALUES("11","2","45");
@@ -1081,12 +992,12 @@ DROP TABLE IF EXISTS TB_MODULO;
 
 CREATE TABLE `TB_MODULO` (
   `co_modulo` int(11) NOT NULL AUTO_INCREMENT,
-  `no_modulo` varchar(50) DEFAULT NULL,
+  `no_modulo` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
   `dt_cadastro` datetime DEFAULT NULL,
   `co_projeto` int(11) NOT NULL,
   PRIMARY KEY (`co_modulo`,`co_projeto`),
   KEY `fk_TB_MODULO_TB_PROJETO1_idx` (`co_projeto`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 INSERT INTO TB_MODULO VALUES("1","Assinante","2019-12-18 11:29:02","1");
@@ -1107,12 +1018,12 @@ DROP TABLE IF EXISTS TB_PACOTE;
 
 CREATE TABLE `TB_PACOTE` (
   `co_pacote` int(11) NOT NULL AUTO_INCREMENT,
-  `no_pacote` varchar(50) DEFAULT NULL,
-  `ds_descricao` text DEFAULT NULL,
+  `no_pacote` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_descricao` text CHARACTER SET utf8 DEFAULT NULL,
   `dt_cadastro` datetime DEFAULT NULL,
   `dt_lancamento` date DEFAULT NULL,
   PRIMARY KEY (`co_pacote`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 INSERT INTO TB_PACOTE VALUES("1","Assinante","Gestão do assinante no sistema da beleza","2018-07-30 14:00:00","2018-11-02");
@@ -1128,11 +1039,11 @@ DROP TABLE IF EXISTS TB_PAGINA;
 CREATE TABLE `TB_PAGINA` (
   `co_pagina` int(11) NOT NULL AUTO_INCREMENT,
   `dt_cadastro` datetime DEFAULT NULL,
-  `ds_titulo_url_amigavel` varchar(255) DEFAULT NULL COMMENT 'Url amigável da página',
+  `ds_titulo_url_amigavel` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT 'Url amigável da página',
   `nu_visualizacao` int(11) DEFAULT NULL,
   `nu_usuario` int(11) DEFAULT NULL COMMENT 'Número de usuário que visitou a página',
   PRIMARY KEY (`co_pagina`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 
@@ -1148,7 +1059,7 @@ CREATE TABLE `TB_PAGINA_VISITA` (
   PRIMARY KEY (`co_pagina_visita`,`co_visita`,`co_pagina`),
   KEY `fk_TB_PAGINA_has_TB_VISITA_TB_VISITA1_idx` (`co_visita`),
   KEY `fk_TB_PAGINA_has_TB_VISITA_TB_PAGINA1_idx` (`co_pagina`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 
@@ -1181,12 +1092,12 @@ DROP TABLE IF EXISTS TB_PERFIL_ASSINANTE;
 
 CREATE TABLE `TB_PERFIL_ASSINANTE` (
   `co_perfil_assinante` int(11) NOT NULL AUTO_INCREMENT,
-  `no_perfil` varchar(45) DEFAULT NULL,
-  `st_status` varchar(1) DEFAULT NULL,
+  `no_perfil` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
+  `st_status` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
   `co_assinante` int(11) NOT NULL,
   PRIMARY KEY (`co_perfil_assinante`,`co_assinante`),
   KEY `fk_TB_PERFIL_ASSINANTE_TB_ASSINANTE1_idx` (`co_assinante`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 
@@ -1281,12 +1192,12 @@ DROP TABLE IF EXISTS TB_PESSOA;
 
 CREATE TABLE `TB_PESSOA` (
   `co_pessoa` int(11) NOT NULL AUTO_INCREMENT,
-  `nu_cpf` varchar(15) DEFAULT NULL,
-  `no_pessoa` varchar(100) DEFAULT NULL,
-  `nu_rg` varchar(45) DEFAULT NULL,
+  `nu_cpf` varchar(15) CHARACTER SET utf8 DEFAULT NULL,
+  `no_pessoa` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+  `nu_rg` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
   `dt_cadastro` datetime DEFAULT NULL,
   `dt_nascimento` date DEFAULT NULL,
-  `st_sexo` varchar(1) DEFAULT NULL COMMENT 'M - Masculino ou F - Feminino',
+  `st_sexo` varchar(1) CHARACTER SET utf8 DEFAULT NULL COMMENT 'M - Masculino ou F - Feminino',
   `co_endereco` int(11) NOT NULL,
   `co_contato` int(11) NOT NULL,
   `co_imagem` int(10) NOT NULL,
@@ -1294,44 +1205,44 @@ CREATE TABLE `TB_PESSOA` (
   KEY `fk_TB_PESSOA_TB_ENDERECO1_idx` (`co_endereco`),
   KEY `fk_TB_PESSOA_TB_CONTATO1_idx` (`co_contato`),
   KEY `fk_TB_PESSOA_TB_IMAGEM1_idx` (`co_imagem`)
-) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 INSERT INTO TB_PESSOA VALUES("1","","Usuário SisBela","","2016-10-31 00:00:00","0000-00-00","M","1","1","1");
 
-INSERT INTO TB_PESSOA VALUES("41","","LETICIA BESSA","","2020-03-05 15:03:40","","","11","53","0");
+INSERT INTO TB_PESSOA VALUES("41","12345678909","LETICIA BESSA","","2020-03-05 15:03:40","0000-00-00","","11","53","0");
 
-INSERT INTO TB_PESSOA VALUES("42","","THAIS LIMA ROCHA","","2020-03-05 15:04:27","","","12","54","0");
+INSERT INTO TB_PESSOA VALUES("42","12345678909","THAIS LIMA ROCHA","","2020-03-05 15:04:27","0000-00-00","","12","54","0");
 
-INSERT INTO TB_PESSOA VALUES("43","12345678909","BRENDA NAYANE DUDA MOREIRA","","2020-03-05 15:41:40","","","13","55","0");
+INSERT INTO TB_PESSOA VALUES("43","12345678909","BRENDA NAYANE DUDA MOREIRA","","2020-03-05 15:41:40","0000-00-00","","13","55","0");
 
-INSERT INTO TB_PESSOA VALUES("44","07332354179","AMANDA TOMINAGA","","2020-03-05 16:02:57","","","16","56","0");
+INSERT INTO TB_PESSOA VALUES("44","07332354179","AMANDA TOMINAGA","","2020-03-05 16:02:57","0000-00-00","","16","56","0");
 
-INSERT INTO TB_PESSOA VALUES("49","","Novo Profissional","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("49","","Novo Profissional","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("50","","Novo Cliente","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("50","","Novo Cliente","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("51","","Novo Cliente 22","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("51","","Novo Cliente 22","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("52","","","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("52","","","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("53","","","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("53","","","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("54","","Leo bessa","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("54","","Leo bessa","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("55","","Thais Maia","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("55","","Thais Maia","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("56","","","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("56","","","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("70","","Marisa","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("70","","Marisa","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("71","","Jeferson","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("71","","Jeferson","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("72","","Lilian","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("72","","Lilian","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("73","","Marisa NOVINHA","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("73","","Marisa NOVINHA","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("74","","Jeferson 22","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("74","","Jeferson 22","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
 
 
@@ -1342,11 +1253,11 @@ DROP TABLE IF EXISTS TB_PLANO;
 CREATE TABLE `TB_PLANO` (
   `co_plano` int(11) NOT NULL AUTO_INCREMENT,
   `dt_cadastro` datetime DEFAULT NULL,
-  `no_plano` varchar(100) DEFAULT NULL,
+  `no_plano` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   `nu_mes_ativo` int(1) DEFAULT NULL COMMENT 'Número de meses ativo do plano (1, 3, 6, 12 e 24)',
-  `st_status` varchar(1) DEFAULT 'A' COMMENT 'Status do plano A - Ativo / I - Inativo',
+  `st_status` varchar(1) CHARACTER SET utf8 DEFAULT 'A' COMMENT 'Status do plano A - Ativo / I - Inativo',
   PRIMARY KEY (`co_plano`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 INSERT INTO TB_PLANO VALUES("1","2018-07-31 10:17:46","Período de Teste","1","A");
@@ -1373,11 +1284,11 @@ CREATE TABLE `TB_PLANO_ASSINANTE` (
   `co_plano_assinante` int(11) NOT NULL AUTO_INCREMENT,
   `nu_valor` decimal(8,2) DEFAULT NULL,
   `dt_cadastro` datetime DEFAULT NULL,
-  `ds_observacao` text DEFAULT NULL,
+  `ds_observacao` text CHARACTER SET utf8 DEFAULT NULL,
   `co_plano` int(11) NOT NULL,
   PRIMARY KEY (`co_plano_assinante`,`co_plano`),
   KEY `fk_TB_PLANO_ASSINANTE_TB_PLANO1_idx` (`co_plano`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 INSERT INTO TB_PLANO_ASSINANTE VALUES("1","0.00","2018-07-31 10:17:46","texto","1");
@@ -1440,10 +1351,15 @@ CREATE TABLE `TB_PLANO_ASSINANTE_ASSINATURA` (
   `co_plano_assinante_assinatura` int(11) NOT NULL AUTO_INCREMENT,
   `dt_cadastro` datetime DEFAULT NULL,
   `dt_expiracao` date DEFAULT NULL COMMENT 'data de expiriração da assinatura',
-  `dt_confirma_pagamento` datetime DEFAULT NULL,
+  `dt_confirma_pagamento` datetime DEFAULT NULL COMMENT 'Data que confirmou o pagamento',
   `tp_pagamento` int(1) DEFAULT NULL COMMENT '3 - Cartão de Crédito / 4 - Depósito ou Transferência / 5 - Boleto',
   `st_pagamento` int(1) DEFAULT 0 COMMENT '0 - Pendente / 1 - Aguardando pagamento / 2 - Em análise / 3 - Pago / 4 - Disponível / 5 - Em disputa / 6 - Devolvida / 7 - Cancelada',
+  `dt_modificado` datetime DEFAULT NULL COMMENT 'Data da ùltima modificação',
+  `nu_valor_desconto` decimal(8,2) DEFAULT NULL COMMENT 'Valor de Desconto do PagSeguro',
+  `nu_valor_real` decimal(8,2) DEFAULT NULL COMMENT 'Valor de recebimento do PagSeguro\n',
+  `ds_link_boleto` text COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Link do Boleto que retorno da PagSeguro',
   `nu_filiais` int(11) DEFAULT 0 COMMENT 'Número de filiais para a assinatura',
+  `ds_code_transacao` varchar(80) COLLATE utf8_unicode_ci DEFAULT 'null' COMMENT 'Code da transação do PagSeguro',
   `nu_valor_assinatura` decimal(8,2) DEFAULT NULL COMMENT 'Valor final da assinatura',
   `nu_profissionais` int(3) DEFAULT NULL COMMENT 'Número de profissionais que o sistema ira gerenciar',
   `co_assinante` int(11) NOT NULL,
@@ -1451,14 +1367,18 @@ CREATE TABLE `TB_PLANO_ASSINANTE_ASSINATURA` (
   PRIMARY KEY (`co_plano_assinante_assinatura`,`co_assinante`,`co_plano_assinante`),
   KEY `fk_TB_PLANO_ASSINANTE_ASSINATURA_TB_ASSINANTE1_idx` (`co_assinante`),
   KEY `fk_TB_PLANO_ASSINANTE_ASSINATURA_TB_PLANO_ASSINANTE1_idx` (`co_plano_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
-INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("2","2020-03-05 15:03:40","2020-03-20","2020-03-05 00:00:00","","3","0","0.00","3","2","1");
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("2","2020-03-05 15:03:40","2020-03-20","2020-03-05 00:00:00","0","3","","","","","0","null","0.00","3","2","1");
 
-INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("3","2020-03-05 15:04:27","2020-03-20","2020-03-05 00:00:00","","3","0","0.00","3","3","1");
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("3","2020-03-05 15:04:27","2020-03-20","2020-03-05 00:00:00","0","3","","","","","0","null","0.00","3","3","1");
 
-INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("4","2020-03-05 15:04:27","2021-03-20","","","0","0","129.90","25","3","22");
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("4","2020-03-05 15:04:27","2021-03-20","","0","0","","","","","0","null","129.90","25","3","22");
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("5","2020-03-21 17:36:09","2022-03-20","","3","2","2020-03-21 17:36:14","16.06","223.84","","0","DD0AE5A0-84BC-43EA-AAE0-FD6AB352CC9F","239.90","49","3","23");
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("6","2020-03-21 18:09:30","2023-03-28","","3","2","2020-03-21 18:09:33","21.17","318.73","","0","E3DF454D-EDBB-4FC7-9761-70AF0A1F3D82","339.90","73","2","25");
 
 
 
@@ -1473,7 +1393,7 @@ CREATE TABLE `TB_PLANO_PACOTE` (
   PRIMARY KEY (`co_plano_pacote`,`co_plano`,`co_pacote`),
   KEY `fk_TB_PLANO_has_TB_MODULO_TB_MODULO1_idx` (`co_pacote`),
   KEY `fk_TB_PLANO_has_TB_MODULO_TB_PLANO1_idx` (`co_plano`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 INSERT INTO TB_PLANO_PACOTE VALUES("30","2","1");
@@ -1510,13 +1430,13 @@ CREATE TABLE `TB_PRECO_SERVICO` (
   `co_preco_servico` int(11) NOT NULL AUTO_INCREMENT,
   `nu_valor` decimal(6,2) DEFAULT NULL,
   `dt_cadastro` datetime DEFAULT NULL,
-  `ds_observacao` varchar(120) DEFAULT NULL,
+  `ds_observacao` varchar(120) CHARACTER SET utf8 DEFAULT NULL,
   `co_servico` int(11) NOT NULL,
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_preco_servico`,`co_servico`,`co_usuario`),
   KEY `fk_TB_PRECO_SERVICO_TB_SERVICO1_idx` (`co_servico`),
   KEY `fk_TB_PRECO_SERVICO_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 
@@ -1528,14 +1448,14 @@ DROP TABLE IF EXISTS TB_PROFISSIONAL;
 CREATE TABLE `TB_PROFISSIONAL` (
   `co_profissional` int(11) NOT NULL AUTO_INCREMENT,
   `dt_cadastro` datetime DEFAULT NULL,
-  `ds_cor_agenda` varchar(7) DEFAULT NULL COMMENT 'Valor Hexadecimal',
-  `st_assistente` varchar(1) DEFAULT 'S' COMMENT 'S - Sim / N - Não * Se pode ser assitente de outro profissional',
-  `ds_sobre` text DEFAULT NULL,
-  `no_apelido` varchar(45) DEFAULT NULL,
-  `ds_motivo` text DEFAULT NULL,
-  `st_agenda` varchar(1) DEFAULT 'S' COMMENT 'S - Sim / N - Não * Se possui agenda',
-  `st_agenda_online` varchar(1) DEFAULT 'S' COMMENT 'S - Sim / N - Não * Se pode ser ter agendamento on line',
-  `st_status` varchar(1) DEFAULT 'A' COMMENT 'A - Ativo / I - Inativo',
+  `ds_cor_agenda` varchar(7) CHARACTER SET utf8 DEFAULT NULL COMMENT 'Valor Hexadecimal',
+  `st_assistente` varchar(1) CHARACTER SET utf8 DEFAULT 'S' COMMENT 'S - Sim / N - Não * Se pode ser assitente de outro profissional',
+  `ds_sobre` text CHARACTER SET utf8 DEFAULT NULL,
+  `no_apelido` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_motivo` text CHARACTER SET utf8 DEFAULT NULL,
+  `st_agenda` varchar(1) CHARACTER SET utf8 DEFAULT 'S' COMMENT 'S - Sim / N - Não * Se possui agenda',
+  `st_agenda_online` varchar(1) CHARACTER SET utf8 DEFAULT 'S' COMMENT 'S - Sim / N - Não * Se pode ser ter agendamento on line',
+  `st_status` varchar(1) CHARACTER SET utf8 DEFAULT 'A' COMMENT 'A - Ativo / I - Inativo',
   `tp_contratacao` int(1) DEFAULT NULL COMMENT '1 - Contrato de trabalho CLT / 2 - Contrato de trabalho por prazo determinado / 3 - Sem vínculo empregatício / 4 - Contrato de Locação de espaço / 5 - Outros',
   `dt_admissao` date DEFAULT NULL,
   `dt_demissao` date DEFAULT NULL,
@@ -1548,20 +1468,20 @@ CREATE TABLE `TB_PROFISSIONAL` (
   KEY `fk_TB_PROFISSIONAL_TB_PESSOA1_idx` (`co_pessoa`),
   KEY `fk_TB_PROFISSIONAL_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_PROFISSIONAL_TB_ASSINANTE1_idx` (`co_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
-INSERT INTO TB_PROFISSIONAL VALUES("3","","","S","","","","S","S","A","","","","0","49","0","2");
+INSERT INTO TB_PROFISSIONAL VALUES("3","0000-00-00 00:00:00","","S","","","","S","S","A","0","0000-00-00","0000-00-00","0","49","0","2");
 
-INSERT INTO TB_PROFISSIONAL VALUES("4","2020-03-10 15:54:01","","S","","","","S","S","A","","","","0","52","0","2");
+INSERT INTO TB_PROFISSIONAL VALUES("4","2020-03-10 15:54:01","","S","","","","S","S","A","0","0000-00-00","0000-00-00","0","52","0","2");
 
-INSERT INTO TB_PROFISSIONAL VALUES("5","2020-03-10 16:38:12","","S","","","","S","S","A","","","","0","54","0","2");
+INSERT INTO TB_PROFISSIONAL VALUES("5","2020-03-10 16:38:12","","S","","","","S","S","A","0","0000-00-00","0000-00-00","0","54","0","2");
 
-INSERT INTO TB_PROFISSIONAL VALUES("6","2020-03-10 16:38:50","","S","","","","S","S","A","","","","0","56","0","2");
+INSERT INTO TB_PROFISSIONAL VALUES("6","2020-03-10 16:38:50","","S","","","","S","S","A","0","0000-00-00","0000-00-00","0","56","0","2");
 
-INSERT INTO TB_PROFISSIONAL VALUES("14","2020-03-10 17:05:28","","S","","","","S","S","A","","","","0","70","0","2");
+INSERT INTO TB_PROFISSIONAL VALUES("14","2020-03-10 17:05:28","","S","","","","S","S","A","0","0000-00-00","0000-00-00","0","70","0","2");
 
-INSERT INTO TB_PROFISSIONAL VALUES("15","2020-03-18 11:58:41","","S","","","","S","S","A","","","","0","73","0","3");
+INSERT INTO TB_PROFISSIONAL VALUES("15","2020-03-18 11:58:41","","S","","","","S","S","A","0","0000-00-00","0000-00-00","0","73","0","3");
 
 
 
@@ -1571,10 +1491,10 @@ DROP TABLE IF EXISTS TB_PROJETO;
 
 CREATE TABLE `TB_PROJETO` (
   `co_projeto` int(11) NOT NULL AUTO_INCREMENT,
-  `no_projeto` varchar(80) DEFAULT NULL,
+  `no_projeto` varchar(80) CHARACTER SET utf8 DEFAULT NULL,
   `dt_cadastro` datetime DEFAULT NULL,
   PRIMARY KEY (`co_projeto`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 INSERT INTO TB_PROJETO VALUES("1","SisBela","2018-07-25 11:07:40");
@@ -1588,33 +1508,33 @@ DROP TABLE IF EXISTS TB_SERVICO;
 CREATE TABLE `TB_SERVICO` (
   `co_servico` int(11) NOT NULL AUTO_INCREMENT,
   `dt_cadastro` datetime DEFAULT NULL,
-  `st_status` varchar(1) DEFAULT 'A' COMMENT 'A - Ativo / I - Inativo',
-  `st_assistente` varchar(1) DEFAULT NULL COMMENT 'S - Sim / N - Não * Se precisa ter um assitente',
-  `no_servico` varchar(100) DEFAULT NULL,
+  `st_status` varchar(1) CHARACTER SET utf8 DEFAULT 'A' COMMENT 'A - Ativo / I - Inativo',
+  `st_assistente` varchar(1) CHARACTER SET utf8 DEFAULT NULL COMMENT 'S - Sim / N - Não * Se precisa ter um assitente',
+  `no_servico` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   `nu_duracao` int(3) DEFAULT NULL,
-  `ds_descricao` text DEFAULT NULL,
+  `ds_descricao` text CHARACTER SET utf8 DEFAULT NULL,
   `co_categoria_servico` int(11) NOT NULL,
   `co_imagem` int(10) NOT NULL,
   `co_assinante` int(11) NOT NULL,
   PRIMARY KEY (`co_servico`,`co_categoria_servico`,`co_imagem`,`co_assinante`),
   KEY `fk_TB_SERVICO_TB_IMAGEM1_idx` (`co_imagem`),
   KEY `fk_TB_SERVICO_TB_ASSINANTE1_idx` (`co_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
-INSERT INTO TB_SERVICO VALUES("3","","A","","Novo Servico","","","0","0","2");
+INSERT INTO TB_SERVICO VALUES("3","0000-00-00 00:00:00","A","","Novo Servico","0","","0","0","2");
 
-INSERT INTO TB_SERVICO VALUES("4","","A","","Novo Servico 22","","","0","0","2");
+INSERT INTO TB_SERVICO VALUES("4","0000-00-00 00:00:00","A","","Novo Servico 22","0","","0","0","2");
 
-INSERT INTO TB_SERVICO VALUES("5","2020-03-10 11:59:37","A","","Novo Servico 159","","","0","0","2");
+INSERT INTO TB_SERVICO VALUES("5","2020-03-10 11:59:37","A","","Novo Servico 159","0","","0","0","2");
 
-INSERT INTO TB_SERVICO VALUES("6","2020-03-10 15:54:01","A","","","","","0","0","2");
+INSERT INTO TB_SERVICO VALUES("6","2020-03-10 15:54:01","A","","","0","","0","0","2");
 
-INSERT INTO TB_SERVICO VALUES("7","2020-03-10 16:38:13","A","","Penteado de cabelo longo","","","0","0","2");
+INSERT INTO TB_SERVICO VALUES("7","2020-03-10 16:38:13","A","","Penteado de cabelo longo","0","","0","0","2");
 
-INSERT INTO TB_SERVICO VALUES("11","2020-03-10 17:05:28","A","","Corte de cabelo social","","","0","0","2");
+INSERT INTO TB_SERVICO VALUES("11","2020-03-10 17:05:28","A","","Corte de cabelo social","0","","0","0","2");
 
-INSERT INTO TB_SERVICO VALUES("12","2020-03-18 11:58:41","A","","Corte de cabelo social","","","0","0","3");
+INSERT INTO TB_SERVICO VALUES("12","2020-03-18 11:58:41","A","","Corte de cabelo social","0","","0","0","3");
 
 
 
@@ -1624,12 +1544,12 @@ DROP TABLE IF EXISTS TB_SESSAO;
 
 CREATE TABLE `TB_SESSAO` (
   `co_sessao` int(11) NOT NULL AUTO_INCREMENT,
-  `no_sessao` varchar(80) DEFAULT NULL,
+  `no_sessao` varchar(80) CHARACTER SET utf8 DEFAULT NULL,
   `dt_cadastro` datetime DEFAULT NULL,
   `co_modulo` int(11) NOT NULL,
   PRIMARY KEY (`co_sessao`,`co_modulo`),
   KEY `fk_TB_SESSAO_TB_MODULO1_idx` (`co_modulo`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 INSERT INTO TB_SESSAO VALUES("1","Assinante","2019-12-18 11:36:52","1");
@@ -1674,7 +1594,7 @@ CREATE TABLE `TB_STATUS_AGENDA` (
   `dt_fim_agenda` datetime DEFAULT NULL,
   `nu_valor` decimal(8,2) DEFAULT NULL COMMENT 'Valor total do agendamento',
   `nu_duracao` int(3) DEFAULT NULL COMMENT 'Em minutos',
-  `ds_observacao` text DEFAULT NULL,
+  `ds_observacao` text CHARACTER SET utf8 DEFAULT NULL,
   `co_cliente` int(11) NOT NULL,
   `co_agenda` int(11) NOT NULL,
   `co_usuario` int(10) NOT NULL,
@@ -1686,7 +1606,7 @@ CREATE TABLE `TB_STATUS_AGENDA` (
   KEY `fk_TB_STATUS_AGENDAMENTO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_STATUS_AGENDA_TB_PROFISSIONAL1_idx` (`co_profissional`),
   KEY `fk_TB_STATUS_AGENDA_TB_SERVICO1_idx` (`co_servico`)
-) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 INSERT INTO TB_STATUS_AGENDA VALUES("1","2020-03-10 11:49:57","1","2020-03-04 08:00:00","2020-03-04 09:50:00","0.00","0","fewfewf","3","3","6","3","3");
@@ -1697,21 +1617,21 @@ INSERT INTO TB_STATUS_AGENDA VALUES("3","2020-03-10 11:59:04","1","2020-03-05 08
 
 INSERT INTO TB_STATUS_AGENDA VALUES("4","2020-03-10 11:59:37","3","2020-03-05 08:00:00","2020-03-05 09:50:00","0.00","0","ger ger gerg","4","6","6","3","5");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("5","2020-03-10 14:34:00","8","2020-03-04 07:20:00","2020-03-04 08:00:00","","","dfa fewf ewf","4","4","6","3","4");
+INSERT INTO TB_STATUS_AGENDA VALUES("5","2020-03-10 14:34:00","8","2020-03-04 07:20:00","2020-03-04 08:00:00","0.00","0","dfa fewf ewf","4","4","6","3","4");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("6","2020-03-10 15:30:16","8","2020-03-05 08:00:00","2020-03-05 09:50:00","","","ger ger gerg","4","6","6","3","5");
+INSERT INTO TB_STATUS_AGENDA VALUES("6","2020-03-10 15:30:16","8","2020-03-05 08:00:00","2020-03-05 09:50:00","0.00","0","ger ger gerg","4","6","6","3","5");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("7","2020-03-10 15:45:36","8","2020-03-05 08:00:00","2020-03-05 09:56:00","","","dsthtrhth","4","5","6","3","3");
+INSERT INTO TB_STATUS_AGENDA VALUES("7","2020-03-10 15:45:36","8","2020-03-05 08:00:00","2020-03-05 09:56:00","0.00","0","dsthtrhth","4","5","6","3","3");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("10","2020-03-10 15:52:54","8","2020-03-04 08:00:00","2020-03-04 09:50:00","","","fewfewf","3","3","6","3","3");
+INSERT INTO TB_STATUS_AGENDA VALUES("10","2020-03-10 15:52:54","8","2020-03-04 08:00:00","2020-03-04 09:50:00","0.00","0","fewfewf","3","3","6","3","3");
 
 INSERT INTO TB_STATUS_AGENDA VALUES("11","2020-03-10 15:53:39","2","2020-03-10 08:00:00","2020-03-10 09:54:00","0.00","0","fg ht j67","4","7","6","3","5");
 
 INSERT INTO TB_STATUS_AGENDA VALUES("12","2020-03-10 15:54:01","4","2020-03-11 15:30:00","2020-03-11 18:30:00","0.00","0","rrthrthtr","5","8","6","4","6");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("13","2020-03-10 16:23:44","8","2020-03-10 08:00:00","2020-03-10 09:54:00","","","fg ht j67","4","7","6","3","5");
+INSERT INTO TB_STATUS_AGENDA VALUES("13","2020-03-10 16:23:44","8","2020-03-10 08:00:00","2020-03-10 09:54:00","0.00","0","fg ht j67","4","7","6","3","5");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("14","2020-03-10 16:24:59","8","2020-03-11 15:30:00","2020-03-11 18:30:00","","","rrthrthtr","5","8","6","4","6");
+INSERT INTO TB_STATUS_AGENDA VALUES("14","2020-03-10 16:24:59","8","2020-03-11 15:30:00","2020-03-11 18:30:00","0.00","0","rrthrthtr","5","8","6","4","6");
 
 INSERT INTO TB_STATUS_AGENDA VALUES("15","2020-03-10 16:37:26","1","2020-03-02 08:00:00","2020-03-02 09:41:00","0.00","0","dwvwe ewgewge wg","4","9","6","3","5");
 
@@ -1735,51 +1655,51 @@ INSERT INTO TB_STATUS_AGENDA VALUES("24","2020-03-10 17:06:07","4","2020-03-04 1
 
 INSERT INTO TB_STATUS_AGENDA VALUES("25","2020-03-10 17:08:54","3","2020-03-11 08:00:00","2020-03-11 08:30:00","0.00","0","f ewf ewf ew","6","15","6","14","7");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("26","2020-03-10 17:11:59","7","2020-03-04 13:00:00","2020-03-04 14:00:00","","","btr b trb tr","13","11","6","6","7");
+INSERT INTO TB_STATUS_AGENDA VALUES("26","2020-03-10 17:11:59","7","2020-03-04 13:00:00","2020-03-04 14:00:00","0.00","0","btr b trb tr","13","11","6","6","7");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("27","2020-03-10 17:12:34","7","2020-03-04 13:00:00","2020-03-04 14:00:00","","","btr b trb tr","13","11","6","6","7");
+INSERT INTO TB_STATUS_AGENDA VALUES("27","2020-03-10 17:12:34","7","2020-03-04 13:00:00","2020-03-04 14:00:00","0.00","0","btr b trb tr","13","11","6","6","7");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("28","2020-03-10 17:12:52","7","2020-03-11 08:00:00","2020-03-11 08:30:00","","","ghjhg j ytj","3","12","6","5","7");
+INSERT INTO TB_STATUS_AGENDA VALUES("28","2020-03-10 17:12:52","7","2020-03-11 08:00:00","2020-03-11 08:30:00","0.00","0","ghjhg j ytj","3","12","6","5","7");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("29","2020-03-10 17:13:16","7","2020-03-02 08:00:00","2020-03-02 09:20:00","","","dwvwe ewgewge wg 22","13","9","6","14","11");
+INSERT INTO TB_STATUS_AGENDA VALUES("29","2020-03-10 17:13:16","7","2020-03-02 08:00:00","2020-03-02 09:20:00","0.00","0","dwvwe ewgewge wg 22","13","9","6","14","11");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("30","2020-03-10 17:13:37","8","2020-03-10 08:00:00","2020-03-10 18:50:00","","","fewf ewf ewg rg r","6","10","6","5","7");
+INSERT INTO TB_STATUS_AGENDA VALUES("30","2020-03-10 17:13:37","8","2020-03-10 08:00:00","2020-03-10 18:50:00","0.00","0","fewf ewf ewg rg r","6","10","6","5","7");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("31","2020-03-10 17:14:21","7","2020-03-11 08:00:00","2020-03-11 08:30:00","","","f ewf ewf ew","6","15","6","14","7");
+INSERT INTO TB_STATUS_AGENDA VALUES("31","2020-03-10 17:14:21","7","2020-03-11 08:00:00","2020-03-11 08:30:00","0.00","0","f ewf ewf ew","6","15","6","14","7");
 
 INSERT INTO TB_STATUS_AGENDA VALUES("32","2020-03-10 17:18:59","2","2020-03-10 08:00:00","2020-03-10 08:30:00","0.00","0","qwe fwe f wef ewf","13","16","6","5","11");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("33","2020-03-10 17:20:08","7","2020-03-10 08:00:00","2020-03-10 08:30:00","","","qwe fwe f wef ewf","13","16","6","5","11");
+INSERT INTO TB_STATUS_AGENDA VALUES("33","2020-03-10 17:20:08","7","2020-03-10 08:00:00","2020-03-10 08:30:00","0.00","0","qwe fwe f wef ewf","13","16","6","5","11");
 
 INSERT INTO TB_STATUS_AGENDA VALUES("34","2020-03-10 17:36:28","1","2020-03-12 08:00:00","2020-03-12 09:00:00","0.00","0","rth rth rt","13","17","6","5","11");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("35","2020-03-10 17:38:54","1","2020-03-13 08:00:00","2020-03-13 09:00:00","","","rth rth rt","13","17","6","5","11");
+INSERT INTO TB_STATUS_AGENDA VALUES("35","2020-03-10 17:38:54","1","2020-03-13 08:00:00","2020-03-13 09:00:00","0.00","0","rth rth rt","13","17","6","5","11");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("36","2020-03-10 17:38:55","1","2020-03-13 08:00:00","2020-03-13 09:00:00","","","rth rth rt","13","17","6","5","11");
+INSERT INTO TB_STATUS_AGENDA VALUES("36","2020-03-10 17:38:55","1","2020-03-13 08:00:00","2020-03-13 09:00:00","0.00","0","rth rth rt","13","17","6","5","11");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("37","2020-03-10 17:39:28","1","2020-03-14 08:00:00","2020-03-14 09:00:00","","","rth rth rt","13","17","6","5","11");
+INSERT INTO TB_STATUS_AGENDA VALUES("37","2020-03-10 17:39:28","1","2020-03-14 08:00:00","2020-03-14 09:00:00","0.00","0","rth rth rt","13","17","6","5","11");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("38","2020-03-10 17:47:44","7","2020-03-12 08:00:00","2020-03-12 08:30:00","","","ghjhg j ytj","3","12","6","5","7");
+INSERT INTO TB_STATUS_AGENDA VALUES("38","2020-03-10 17:47:44","7","2020-03-12 08:00:00","2020-03-12 08:30:00","0.00","0","ghjhg j ytj","3","12","6","5","7");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("39","2020-03-10 17:47:44","1","2020-03-13 08:00:00","2020-03-13 09:00:00","","","rth rth rt","13","17","6","5","11");
+INSERT INTO TB_STATUS_AGENDA VALUES("39","2020-03-10 17:47:44","1","2020-03-13 08:00:00","2020-03-13 09:00:00","0.00","0","rth rth rt","13","17","6","5","11");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("40","2020-03-10 17:48:05","7","2020-03-05 08:00:00","2020-03-05 08:30:00","","","ghjhg j ytj","3","12","6","5","7");
+INSERT INTO TB_STATUS_AGENDA VALUES("40","2020-03-10 17:48:05","7","2020-03-05 08:00:00","2020-03-05 08:30:00","0.00","0","ghjhg j ytj","3","12","6","5","7");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("41","2020-03-10 17:48:05","1","2020-03-06 08:00:00","2020-03-06 09:00:00","","","rth rth rt","13","17","6","5","11");
+INSERT INTO TB_STATUS_AGENDA VALUES("41","2020-03-10 17:48:05","1","2020-03-06 08:00:00","2020-03-06 09:00:00","0.00","0","rth rth rt","13","17","6","5","11");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("42","2020-03-10 17:48:06","1","2020-03-14 08:00:00","2020-03-14 09:00:00","","","rth rth rt","13","17","6","5","11");
+INSERT INTO TB_STATUS_AGENDA VALUES("42","2020-03-10 17:48:06","1","2020-03-14 08:00:00","2020-03-14 09:00:00","0.00","0","rth rth rt","13","17","6","5","11");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("43","2020-03-10 17:48:54","7","2020-03-12 08:00:00","2020-03-12 08:30:00","","","f ewf ewf ew","6","15","6","14","7");
+INSERT INTO TB_STATUS_AGENDA VALUES("43","2020-03-10 17:48:54","7","2020-03-12 08:00:00","2020-03-12 08:30:00","0.00","0","f ewf ewf ew","6","15","6","14","7");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("44","2020-03-10 17:48:54","1","2020-03-13 08:00:00","2020-03-13 09:00:00","","","rth rth rt","13","17","6","5","11");
+INSERT INTO TB_STATUS_AGENDA VALUES("44","2020-03-10 17:48:54","1","2020-03-13 08:00:00","2020-03-13 09:00:00","0.00","0","rth rth rt","13","17","6","5","11");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("45","2020-03-10 17:50:03","7","2020-03-20 08:00:00","2020-03-20 08:30:00","","","f ewf ewf ew","6","15","6","14","7");
+INSERT INTO TB_STATUS_AGENDA VALUES("45","2020-03-10 17:50:03","7","2020-03-20 08:00:00","2020-03-20 08:30:00","0.00","0","f ewf ewf ew","6","15","6","14","7");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("46","2020-03-10 17:50:04","1","2020-03-14 08:00:00","2020-03-14 09:00:00","","","rth rth rt","13","17","6","5","11");
+INSERT INTO TB_STATUS_AGENDA VALUES("46","2020-03-10 17:50:04","1","2020-03-14 08:00:00","2020-03-14 09:00:00","0.00","0","rth rth rt","13","17","6","5","11");
 
 INSERT INTO TB_STATUS_AGENDA VALUES("47","2020-03-10 17:50:48","1","2020-03-14 08:00:00","2020-03-14 09:00:00","0.00","0","rth rth rt","6","17","6","14","7");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("48","2020-03-10 18:17:11","1","2020-03-13 08:00:00","2020-03-13 09:00:00","","","rth rth rt","6","17","6","14","7");
+INSERT INTO TB_STATUS_AGENDA VALUES("48","2020-03-10 18:17:11","1","2020-03-13 08:00:00","2020-03-13 09:00:00","0.00","0","rth rth rt","6","17","6","14","7");
 
 INSERT INTO TB_STATUS_AGENDA VALUES("49","2020-03-10 18:45:09","7","2020-02-04 08:00:00","2020-02-04 09:00:00","0.00","0","bhnghnhn","13","18","6","14","11");
 
@@ -1801,7 +1721,7 @@ INSERT INTO TB_STATUS_AGENDA VALUES("57","2020-03-11 14:33:57","4","2020-03-31 0
 
 INSERT INTO TB_STATUS_AGENDA VALUES("58","2020-03-11 14:36:00","1","2020-04-30 08:00:00","2020-04-30 08:50:00","0.00","0","fw ef wef wef","6","27","6","14","11");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("59","2020-03-11 14:36:24","1","2020-04-29 08:00:00","2020-04-29 08:50:00","","","fw ef wef wef","6","27","6","14","11");
+INSERT INTO TB_STATUS_AGENDA VALUES("59","2020-03-11 14:36:24","1","2020-04-29 08:00:00","2020-04-29 08:50:00","0.00","0","fw ef wef wef","6","27","6","14","11");
 
 INSERT INTO TB_STATUS_AGENDA VALUES("60","2020-03-11 14:37:02","4","2019-12-18 08:00:00","2019-12-18 09:50:00","0.00","0","fwe f we","14","28","6","14","11");
 
@@ -1825,7 +1745,7 @@ INSERT INTO TB_STATUS_AGENDA VALUES("69","2020-03-18 00:00:01","5","2020-02-19 0
 
 INSERT INTO TB_STATUS_AGENDA VALUES("70","2020-03-18 00:00:01","6","2020-02-07 08:00:00","2020-02-07 10:30:00","0.00","0","Mudou para o Status (Faltou) automaticamente pelo Sistema","4","19","1","3","5");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("71","2020-03-18 00:00:01","6","2020-03-13 08:00:00","2020-03-13 09:00:00","","","Mudou para o Status (Faltou) automaticamente pelo Sistema","6","17","1","14","7");
+INSERT INTO TB_STATUS_AGENDA VALUES("71","2020-03-18 00:00:01","6","2020-03-13 08:00:00","2020-03-13 09:00:00","0.00","0","Mudou para o Status (Faltou) automaticamente pelo Sistema","6","17","1","14","7");
 
 INSERT INTO TB_STATUS_AGENDA VALUES("72","2020-03-18 11:58:41","2","2020-03-04 08:00:00","2020-03-04 09:50:00","0.00","0","F EWF WEGEWG EG","15","34","7","15","12");
 
@@ -1839,14 +1759,14 @@ DROP TABLE IF EXISTS TB_SUPORTE;
 
 CREATE TABLE `TB_SUPORTE` (
   `co_suporte` int(11) NOT NULL AUTO_INCREMENT,
-  `st_status` varchar(1) DEFAULT 'A' COMMENT 'A - Ativa / I - Inativa',
+  `st_status` varchar(1) CHARACTER SET utf8 DEFAULT 'A' COMMENT 'A - Ativa / I - Inativa',
   `dt_cadastro` datetime DEFAULT NULL,
-  `ds_assunto` varchar(100) DEFAULT NULL,
+  `ds_assunto` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   `st_tipo_assunto` int(1) DEFAULT NULL COMMENT '1 - Sugestão ou Melhorias / 2 - Reclamação / 3 -  Correção no Sistema / 4 - Outros',
   `co_assinante` int(11) NOT NULL,
   PRIMARY KEY (`co_suporte`,`co_assinante`),
   KEY `fk_TB_SUPORTE_TB_ASSINANTE1_idx` (`co_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 INSERT INTO TB_SUPORTE VALUES("1","A","2020-03-16 10:39:16","Novo assunto","1","2");
@@ -1869,21 +1789,21 @@ DROP TABLE IF EXISTS TB_TRAFEGO;
 
 CREATE TABLE `TB_TRAFEGO` (
   `co_trafego` int(11) NOT NULL AUTO_INCREMENT,
-  `nu_ip` varchar(20) DEFAULT NULL,
-  `ds_pais` varchar(100) DEFAULT NULL,
-  `ds_code_pais` varchar(100) DEFAULT NULL,
-  `ds_uf` varchar(45) DEFAULT NULL,
-  `ds_estado` varchar(100) DEFAULT NULL,
-  `ds_cidade` varchar(120) DEFAULT NULL,
-  `ds_navegador` varchar(45) DEFAULT NULL,
-  `ds_sistema_operacional` varchar(45) DEFAULT NULL,
-  `ds_dispositivo` varchar(45) DEFAULT NULL,
-  `ds_agente` varchar(255) DEFAULT NULL,
+  `nu_ip` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_pais` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_code_pais` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_uf` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_estado` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_cidade` varchar(120) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_navegador` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_sistema_operacional` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_dispositivo` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
+  `ds_agente` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=194 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=203 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
-INSERT INTO TB_TRAFEGO VALUES("193","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0");
+INSERT INTO TB_TRAFEGO VALUES("202","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 8.1","Desktop","Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0");
 
 
 
@@ -1893,10 +1813,10 @@ DROP TABLE IF EXISTS TB_USUARIO;
 
 CREATE TABLE `TB_USUARIO` (
   `co_usuario` int(10) NOT NULL AUTO_INCREMENT,
-  `ds_senha` varchar(100) NOT NULL,
-  `ds_code` varchar(50) NOT NULL COMMENT 'Senha criptografada',
-  `st_status` varchar(1) NOT NULL DEFAULT 'I' COMMENT '''A - Ativo / I - Inativo''',
-  `st_troca_senha` varchar(1) DEFAULT 'N',
+  `ds_senha` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `ds_code` varchar(50) CHARACTER SET utf8 NOT NULL COMMENT 'Senha criptografada',
+  `st_status` varchar(1) CHARACTER SET utf8 NOT NULL DEFAULT 'I' COMMENT '''A - Ativo / I - Inativo''',
+  `st_troca_senha` varchar(1) CHARACTER SET utf8 DEFAULT 'N',
   `dt_cadastro` datetime NOT NULL,
   `co_imagem` int(10) NOT NULL,
   `co_pessoa` int(11) NOT NULL,
@@ -1905,7 +1825,7 @@ CREATE TABLE `TB_USUARIO` (
   KEY `fk_TB_USUARIO_TB_IMAGEM1_idx` (`co_imagem`),
   KEY `fk_TB_USUARIO_TB_PESSOA1_idx` (`co_pessoa`),
   KEY `fk_TB_USUARIO_TB_ASSINANTE1_idx` (`co_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 INSERT INTO TB_USUARIO VALUES("1","123456**","TVRJek5EVTJLaW89","A","S","2016-10-31 00:00:00","1","1","0");
@@ -1933,7 +1853,7 @@ CREATE TABLE `TB_USUARIO_PERFIL` (
   KEY `fk_tb_usuario_tb_perfil_tb_perfil1_idx` (`co_perfil`),
   KEY `fk_tb_usuario_tb_perfil_tb_usuario_idx` (`co_usuario`),
   KEY `fk_TB_USUARIO_PERFIL_TB_PERFIL_ASSINANTE1_idx` (`co_perfil_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=106 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=106 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 INSERT INTO TB_USUARIO_PERFIL VALUES("1","1","1","0");
@@ -2078,7 +1998,7 @@ CREATE TABLE `TB_VISITA` (
   `co_trafego` int(11) NOT NULL,
   PRIMARY KEY (`co_visita`,`co_trafego`),
   KEY `fk_TB_VISITA_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 
