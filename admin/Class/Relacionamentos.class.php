@@ -355,6 +355,11 @@ class Relacionamentos
                     ('Entidade') => 'PlanoAssinanteEntidade',
                     ('Tipo') => '1',
                 ),
+                (CO_HISTORICO_PAG_ASSINATURA) => Array(
+                    ('Campo') => CO_PLANO_ASSINANTE_ASSINATURA,
+                    ('Entidade') => 'HistoricoPagAssinaturaEntidade',
+                    ('Tipo') => '2',
+                ),
             ),
             (ImagemAssinanteEntidade::TABELA) => Array(
                 (CO_ASSINANTE) => Array(
@@ -449,6 +454,13 @@ class Relacionamentos
                 (CO_IMAGEM) => Array(
                     ('Campo') => CO_IMAGEM,
                     ('Entidade') => 'ImagemEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (HistoricoPagAssinaturaEntidade::TABELA) => Array(
+                (CO_PLANO_ASSINANTE_ASSINATURA) => Array(
+                    ('Campo') => CO_PLANO_ASSINANTE_ASSINATURA,
+                    ('Entidade') => 'PlanoAssinanteAssinaturaEntidade',
                     ('Tipo') => '1',
                 ),
             ),
