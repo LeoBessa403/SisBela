@@ -126,3 +126,53 @@ INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadas
 
 UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "3", dt_modificado = "2020-03-21T18:10:10.000-03:00", dt_confirma_pagamento = "2020-03-21T18:10:10.000-03:00", st_status = "A" where co_plano_assinante_assinatura = 6;
 
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("8", "2020-03-23T12:48:59.000-03:00", "Mudou para o Status do pagamento de Em análise", "Retorno da operadora do pagamento", "2");
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "2", dt_modificado = "2020-03-23T12:48:59.000-03:00" where co_plano_assinante_assinatura = 8;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (st_status) VALUES ("I");
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("8", "2020-03-23T16:49:24.000-03:00", "Mudou para o Status do pagamento de Pago ", "Retorno da operadora do pagamento", "3");
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "3", dt_modificado = "2020-03-23T16:49:24.000-03:00", dt_confirma_pagamento = "2020-03-23T16:49:24.000-03:00", st_status = "A" where co_plano_assinante_assinatura = 8;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (st_status) VALUES ("I");
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_status = "I" where co_plano_assinante_assinatura = 3;
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("8", "2020-03-23T16:49:24.000-03:00", "Mudou para o Status do pagamento de Pago ", "Retorno da operadora do pagamento", "3");
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "3", dt_modificado = "2020-03-23T16:49:24.000-03:00", dt_confirma_pagamento = "2020-03-23T16:49:24.000-03:00", st_status = "A" where co_plano_assinante_assinatura = 8;
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_status = "I" where co_plano_assinante_assinatura = 3;
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("8", "2020-03-23T17:02:08.000-03:00", "Mudou para o Status do pagamento de Disponível", "Retorno da operadora do pagamento", "4");
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "4", dt_modificado = "2020-03-23T17:02:08.000-03:00", st_status = "A" where co_plano_assinante_assinatura = 8;
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_status = "I" where co_plano_assinante_assinatura = 3;
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("8", "2020-03-23T17:02:08.000-03:00", "Mudou para o Status do pagamento de Disponível", "Retorno da operadora do pagamento", "4");
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "4", dt_modificado = "2020-03-23T17:02:08.000-03:00", st_status = "A" where co_plano_assinante_assinatura = 8;
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_status = "I" where co_plano_assinante_assinatura = 2;
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("7", "2020-03-22T00:52:33.000-03:00", "Mudou para o Status do pagamento de Cancelada", "Retorno da operadora do pagamento", "7");
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "7", dt_modificado = "2020-03-22T00:52:33.000-03:00", st_status = "A" where co_plano_assinante_assinatura = 7;
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_status = "I" where co_plano_assinante_assinatura = 2;
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_status = "I" where co_plano_assinante_assinatura = 2;
+
+UPDATE TB_ASSINANTE SET dt_expiracao = "2023-03-28" where co_assinante = 2;
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("6", "2020-03-23T17:25:58.000-03:00", "Mudou para o Status do pagamento de Disponível", "Retorno da operadora do pagamento", "4");
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "4", dt_modificado = "2020-03-23T17:25:58.000-03:00", st_status = "A" where co_plano_assinante_assinatura = 6;
+
+UPDATE TB_HISTORIA SET ds_titulo = "Notificação do PagSeguro", ds_observacao = "Notificação do PagSeguro atualização automática mais funcionalidade de teste", co_sessao = "15", st_situacao = "C", dt_atualizado = "2020-03-23 17:29:00" where co_historia = 63;
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("20", "20"_restante, "2020-03-23 17:29:00", "63");
+
