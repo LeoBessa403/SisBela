@@ -15,7 +15,8 @@ class Relatorio extends AbstractController
                 . " 00:00:00",
             "<=#tsa." . DT_FIM_AGENDA =>
                 Valida::DataDBDate(Valida::CalculaData(date("31/m/Y"), 1, "+", 'm'))
-                . " 23:59:59"
+                . " 23:59:59",
+            "ta." . CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
         );
 
         $agendas = $agendaService->PesquisaAgendamentos($Condicoes, 'tsa.dt_cadastro');
@@ -66,6 +67,13 @@ class Relatorio extends AbstractController
                 $meses[] = $mes;
             }
         }
+
+        $qtdMeses = count($meses);
+        $meses[0] = (0 <= $qtdMeses) ? $meses[0] : '';
+        $meses[1] = (1 < $qtdMeses) ? $meses[1] : '';
+        $meses[2] = (2 < $qtdMeses) ? $meses[2] : '';
+        $meses[3] = (3 < $qtdMeses) ? $meses[3] : '';
+        $meses[4] = (4 < $qtdMeses) ? $meses[4] : '';
 
         $arrayMes = array("['Mês','" . $meses[0] . "','" . $meses[1] . "','" . $meses[2] . "','" .
             $meses[3] . "','" . $meses[4] . "']");

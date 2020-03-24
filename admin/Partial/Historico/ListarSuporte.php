@@ -7,7 +7,8 @@
     }
     .timeline_element{
         min-height: 250px !important;
-        width: 400px !important;
+        width: 95% !important;
+        padding: 0 8px !important;
     }
 </style>
 <?php
