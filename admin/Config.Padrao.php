@@ -28,10 +28,11 @@ define('TAMANHO', '800');
 define('WHATSAPP', '5561993274991');
 define('NUM_BG_IMAGENS', '50');
 define('CONTROLLER_SEO', '');
-define('USER_EMAIL', '');
-define('PASS_EMAIL', '');
-define('HOST_EMAIL', '');
-define('PORTA_EMAIL', '');
+define('USER_EMAIL', 'contato@gejdombosco.com.br');
+define('PASS_EMAIL', 'Admin101**');
+define('HOST_EMAIL', 'mail.gejdombosco.com.br');
+define('PORTA_EMAIL', '587');
 define('ID_ANALITCS', '');
 define('TEM_SITE', '');
+
 
