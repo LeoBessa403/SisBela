@@ -158,3 +158,15 @@ INSERT INTO TB_ENDERECO (ds_endereco) VALUES ("");
 
 UPDATE TB_EMPRESA SET co_endereco = "4" where co_empresa = 5;
 
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 6;
+
+UPDATE TB_CONTATO SET nu_tel1 = "6199999999" where co_contato = 6;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao, co_plano_assinante_assinatura_ativo) VALUES ("6", "5", "49", "0", "239.90", "3", "2020-03-25 15:50:56", "2022-04-09", "6"_assinatura_ativo);
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("6", "2020-03-25 15:50:56", "Inicia o pagamento", "LEO Bessa Iniciou o pagamento", "0");
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "2", dt_modificado = "2020-03-25T15:51:06.000-03:00", nu_valor_desconto = "17.03", nu_valor_real = "222.87", ds_link_boleto = "", ds_code_transacao = "5E706DDC-A10D-4D74-A0B6-3B6AF09E97D8", co_plano_assinante = "6" where co_plano_assinante_assinatura = 6;
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("6", "2020-03-25T15:51:06.000-03:00", "Mudou para o Status do pagamento de Em análise", "Retorno da operadora do pagamento", "2");
+
