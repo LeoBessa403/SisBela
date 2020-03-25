@@ -1,33 +1,26 @@
 var Calendar = function () {
-    //function to initiate Full CAlendar
     var runCalendar = function () {
-        //VARIÁVEL GLOBAL
         var home = $("#home").attr('data-val');
         var metodo = $("#metodo").val();
         var urlValida = home + 'library/Controller/Ajax.Controller.php?acao=Ajax&controller=' + metodo;
-
         document.addEventListener('DOMContentLoaded', function () {
             var calendarEl = document.getElementById('calendar');
-
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 customButtons: {
                     legendaButton: {
                         click: function () {
-                            $("#j_legenda").click();
+                            $("#j_legenda").click()
                         }
-                    },
-                    gridButton: {
+                    }, gridButton: {
                         click: function () {
                             $("#calendar").fadeOut('fast');
-                            $("#grid").fadeIn('slow');
+                            $("#grid").fadeIn('slow')
                         }
-                    },
-                    pesquisaButton: {
+                    }, pesquisaButton: {
                         click: function () {
-                            $("#j_pesquisar").click();
+                            $("#j_pesquisar").click()
                         }
-                    },
-                    calendarButton: {}
+                    }, calendarButton: {}
                 },
                 bootstrapFontAwesome: {
                     legendaButton: 'fa-align-left',
@@ -43,41 +36,27 @@ var Calendar = function () {
                     center: 'title',
                     right: 'legendaButton,pesquisaButton calendarButton,gridButton dayGridMonth,timeGridWeek,timeGridDay,listWeek'
                 },
-                buttonText: {
-                    today: 'Hoje',
-                    month: 'Mês',
-                    week: 'Semana',
-                    day: 'Dia',
-                    list: 'Lista'
-                },
-                allDaySlot: false,
-                slotEventOverlap: true,
+                buttonText: {today: 'Hoje', month: 'Mês', week: 'Semana', day: 'Dia', list: 'Lista'},
+                allDaySlot: !1,
+                slotEventOverlap: !0,
                 eventLimitText: 'Mais',
-                navLinks: true, // can click day/week names to navigate views
-                editable: true,
-                eventLimit: 2, // allow "more" link when too many events
-                selectable: true,
+                navLinks: !0,
+                editable: !0,
+                eventLimit: 2,
+                selectable: !0,
                 slotDuration: '00:10:00',
-                minTime: "06:00:00", // HORA DE INICIO DO ATENDIMENTO
-                maxTime: "23:00:00", // HORA DE TERMINO DO ATENDIMENTO
-                slotLabelFormat: {
-                    hour: 'numeric',
-                    minute: '2-digit',
-                    omitZeroMinute: false,
-                    meridiem: 'short'
-                },
+                minTime: "06:00:00",
+                maxTime: "23:00:00",
+                slotLabelFormat: {hour: 'numeric', minute: '2-digit', omitZeroMinute: !1, meridiem: 'short'},
                 events: {
-                    url: urlValida,
-                    failure: function () {
+                    url: urlValida, failure: function () {
                         Funcoes.Alerta('Não foi possível carregar os Agendamentos no Calendário!');
                         $("#grid").fadeIn('fast');
-                        $("#calendar").fadeOut('slow');
+                        $("#calendar").fadeOut('slow')
                     }
                 },
                 extraParams: function () {
-                    return {
-                        cachebuster: new Date().valueOf()
-                    };
+                    return {cachebuster: new Date().valueOf()}
                 },
                 select: function (info) {
                     var dia = Calendar.VerificaNumero(info.start.getDate());
@@ -89,56 +68,45 @@ var Calendar = function () {
                     if (hora > 0)
                         hora_inicio = hora + ':' + minuto;
                     if (!hora_inicio) {
-                        hora_inicio = '08:00';
+                        hora_inicio = '08:00'
                     }
                     dt_agenda = dia + '/' + mes + '/' + info.start.getFullYear();
-
                     $("#nu_hora_inicio_agenda").val(hora_inicio);
                     $("#dt_agenda").val(dt_agenda);
                     $("#nu_hora_fim_agenda").val(null);
                     $("#ds_observacao").val(null);
                     $('#co_agenda').val(null);
-                    $('#st_status').select2("destroy").val(1).select2({allowClear: false});
-
+                    $('#st_status').select2("destroy").val(1).select2({allowClear: !1});
                     Calendar.LimpaCombos();
                     Calendar.LimpaValidacao();
-
-                    $("#j_cadastro").click();
-
+                    $("#j_cadastro").click()
                 },
-                // ABRE MODAL DE DETALHAMENTO DO AGENDAMENTO
                 eventClick: function (info) {
                     info.jsEvent.preventDefault();
                     var dados = Funcoes.Ajax('Agenda/GetAgendaAjax', info.event.id);
-                    Calendar.CarregaDadosAgendamento(dados, info.event.id);
+                    Calendar.CarregaDadosAgendamento(dados, info.event.id)
                 },
                 eventDrop: function (info) {
                     var hoje = new Date();
                     hoje.setHours(0);
                     hoje.setMinutes(0);
                     hoje.setSeconds(0);
-
                     var coAgenda = info.event.id;
                     var dadosAg = Funcoes.Ajax('Agenda/GetAgendaAjax', coAgenda);
-
                     if (dadosAg.st_status > 4) {
                         Funcoes.Alerta('Não pode Mudar Agendamento com esse status.');
-                        info.revert();
+                        info.revert()
                     } else if (info.event.start < hoje) {
                         Funcoes.Informativo('Não pode Mudar Agendamento para uma data inferior a de hoje.');
-                        info.revert();
+                        info.revert()
                     } else if (info.oldEvent.start < hoje) {
                         Funcoes.Informativo('Não pode Mudar Agendamento passado.');
-                        info.revert();
+                        info.revert()
                     } else {
-                        $("#modal_confirma_ativacao .modal-body b").text("Confirma a mudança do agendamento para "
-                            + info.event.start.toLocaleString());
-
-                        $("#model_confirmacao_ativacao").click();
+                        $("#modal_confirma_ativacao .modal-body b").text("Confirma a mudança do agendamento para " + info.event.start.toLocaleString());
+                        $("#model_confirmacao_ativacao").click()
                     }
-
                     $('#btn-success-modal_confirma_ativacao').click(function () {
-
                         var diaIni = Calendar.VerificaNumero(info.event.start.getDate());
                         var mesIni = Calendar.VerificaNumero((info.event.start.getMonth() + 1));
                         var anoIni = Calendar.VerificaNumero(info.event.start.getFullYear());
@@ -149,11 +117,8 @@ var Calendar = function () {
                         var anoFim = Calendar.VerificaNumero(info.event.end.getFullYear());
                         var horaFim = Calendar.VerificaNumero(info.event.end.getHours());
                         var minutoFim = Calendar.VerificaNumero(info.event.end.getMinutes());
-                        var dt_inicio_agenda = anoIni + '-' + mesIni + '-' + diaIni + ' '
-                            + horaIni + ':' + minutoIni + ':00';
-                        var dt_fim_agenda = anoFim + '-' + mesFim + '-' + diaFim + ' '
-                            + horaFim + ':' + minutoFim + ':00';
-
+                        var dt_inicio_agenda = anoIni + '-' + mesIni + '-' + diaIni + ' ' + horaIni + ':' + minutoIni + ':00';
+                        var dt_fim_agenda = anoFim + '-' + mesFim + '-' + diaFim + ' ' + horaFim + ':' + minutoFim + ':00';
                         var data = {
                             dt_inicio_agenda: dt_inicio_agenda,
                             dt_fim_agenda: dt_fim_agenda,
@@ -162,94 +127,76 @@ var Calendar = function () {
                         var dados = Funcoes.Ajax('Agenda/DropAgendamentoAjax', data);
                         if (dados) {
                             if (dados.sucesso && dados.msg === "atualizado") {
-                                Funcoes.AtualizadoSucesso();
+                                Funcoes.AtualizadoSucesso()
                             } else {
-                                Funcoes.Alerta(dados.msg);
+                                Funcoes.Alerta(dados.msg)
                             }
                             if (dados.sucesso) {
-                                Calendar.Renderiza();
+                                Calendar.Renderiza()
                             }
                         } else {
-                            Funcoes.Erro("Erro: " + dados.msg);
+                            Funcoes.Erro("Erro: " + dados.msg)
                         }
                     });
-
                     $('.cancelar').click(function () {
-                        info.revert();
-                    });
+                        info.revert()
+                    })
                 },
                 eventResize: function (info) {
-                    info.revert();
+                    info.revert()
                 }
             });
-
-            calendar.render();
-        });
+            calendar.render()
+        })
     };
     return {
         init: function () {
             runCalendar();
-
             $('#no_cliente,#no_servico,#no_profissional').parent(".form-group").parent("div").hide().css('display', 'none');
-
             $('#st_servico,#st_cliente,#st_profissional').change(function () {
                 if ($(this).attr('id') == 'st_profissional') {
                     var dados = Funcoes.Ajax('Agenda/ValidaNuProfissionais', null);
                     if (!dados.sucesso) {
-                        Funcoes.Informativo('Já existem ' + dados.cadastrados + ' Profissionais Cadastrados, ' +
-                            'Favor utilizar um já cadastrado ou mude para um plano maior que possa cadastrar ' +
-                            'mais Profissionais!');
-
+                        Funcoes.Informativo('Já existem ' + dados.cadastrados + ' Profissionais Cadastrados, ' + 'Favor utilizar um já cadastrado ou mude para um plano maior que possa cadastrar ' + 'mais Profissionais!');
                         $(this).click();
-                        return false;
+                        return !1
                     }
                 }
-                apresentacao($(this).attr('id').replace('st_', ''));
+                apresentacao($(this).attr('id').replace('st_', ''))
             });
 
             function apresentacao($name) {
                 if ($('#co_' + $name).hasClass('visivel')) {
                     $('#co_' + $name).removeClass('visivel').parent(".form-group").parent("div").hide();
-                    $('#no_' + $name).parent(".form-group").parent("div").show();
+                    $('#no_' + $name).parent(".form-group").parent("div").show()
                 } else {
                     $('#co_' + $name).addClass('visivel').parent(".form-group").parent("div").show();
-                    $('#no_' + $name).parent(".form-group").parent("div").hide();
+                    $('#no_' + $name).parent(".form-group").parent("div").hide()
                 }
             }
 
             $('#grid, #pesquisandoAgendamento').hide();
-
             $(window).load(function () {
                 $('.fc-calendarButton-button').addClass('active');
                 $('.fc-pesquisaButton-button').removeClass('btn-primary').addClass('btn-light-grey');
                 $('.fc-legendaButton-button').removeClass('btn-primary').addClass('btn-warning');
-
                 $('.btn').click(function () {
-                    $('.fc-calendarButton-button').addClass('active');
-                });
-
+                    $('.fc-calendarButton-button').addClass('active')
+                })
             });
-
-            // CARREGA CALENDÁRIO
             $('#carregaCalendar').click(function () {
                 $("#grid").fadeOut('fast');
                 $("#calendar").fadeIn('slow');
-                return false;
+                return !1
             });
-
-            // ABRE MODAL PESQUISA AVANÇADA
             $('#j_pesquisa').click(function () {
                 $("#j_pesquisar").click();
-                return false;
+                return !1
             });
-
-            // Abre a modal de legendas
             $('#j_legendas').click(function () {
                 $("#j_legenda").click();
-                return false;
+                return !1
             });
-
-            // CADASTRO DO AGENDAMENTO
             $("#CadastroAgendamento").submit(function () {
                 var data = $(this).serializeArray();
                 var metodo = $(this).attr('action').split('/');
@@ -258,89 +205,74 @@ var Calendar = function () {
                     if (dados.sucesso && dados.msg === "cadastrado") {
                         Funcoes.CadastradoSucesso()
                     } else if (dados.sucesso && dados.msg === "atualizado") {
-                        Funcoes.AtualizadoSucesso();
+                        Funcoes.AtualizadoSucesso()
                     } else {
-                        Funcoes.Alerta(dados.msg);
+                        Funcoes.Alerta(dados.msg)
                     }
                     if (dados.sucesso) {
-                        Calendar.Renderiza();
+                        Calendar.Renderiza()
                     }
                 } else {
-                    Funcoes.Erro("Erro: " + dados.msg);
+                    Funcoes.Erro("Erro: " + dados.msg)
                 }
-                return false;
+                return !1
             });
-
-            // ABRE MODAL DE DETALHAMENTO DO AGENDAMENTO
             $('.btn-visualizar').click(function () {
                 var coAgenda = $(this).attr('data-co-agenda');
                 var dados = Funcoes.Ajax('Agenda/GetAgendaAjax', coAgenda);
-                Calendar.CarregaDadosAgendamento(dados, coAgenda);
+                Calendar.CarregaDadosAgendamento(dados, coAgenda)
             });
-
-            // ABRE MODAL DE DELEÇÃO DO AGENDAMENTO
             $(".btn-deletar").click(function () {
                 Funcoes.TiraValidacao('ds_motivo');
                 $("#j_deletar").click();
-                $('#co_agenda_listagem').val(Calendar.GetCoAgenda($(this)));
+                $('#co_agenda_listagem').val(Calendar.GetCoAgenda($(this)))
             });
-
-            // DELETA O AGENDAMENTO (muda st_status para deletado)
             $("#DeletarAgendamento").submit(function () {
-                var data = {
-                    ds_motivo: $('#ds_motivo').val(),
-                    co_agenda: Calendar.GetCoAgenda($(this))
-                };
+                var data = {ds_motivo: $('#ds_motivo').val(), co_agenda: Calendar.GetCoAgenda($(this))};
                 var metodo = $(this).attr('action').split('/');
                 var dados = Funcoes.Ajax(metodo[5] + '/' + metodo[6], data);
                 if (dados) {
                     if (dados.sucesso && dados.msg === "atualizado") {
-                        Funcoes.AtualizadoSucesso();
+                        Funcoes.AtualizadoSucesso()
                     } else {
-                        Funcoes.Alerta(dados.msg);
+                        Funcoes.Alerta(dados.msg)
                     }
                     if (dados.sucesso) {
-                        Calendar.Renderiza();
+                        Calendar.Renderiza()
                     }
                 } else {
-                    Funcoes.Erro("Erro: " + dados.msg);
+                    Funcoes.Erro("Erro: " + dados.msg)
                 }
-                return false;
+                return !1
             });
-
-            // DIRECIONA PARA O HISTÓRICO DO AGENDAMENTO
             $(".btn-historico").click(function () {
                 var home = $("#home").attr('data-val');
                 var coAgenda = Calendar.GetCoAgenda($(this));
                 var dados = Funcoes.Ajax('Agenda/GetUrlHistoricoAgendamento', coAgenda);
                 if (dados) {
-                    window.location.href = home + dados;
+                    window.location.href = home + dados
                 } else {
-                    Funcoes.Erro("Erro: " + dados.msg);
+                    Funcoes.Erro("Erro: " + dados.msg)
                 }
-                return false;
+                return !1
             });
-
-            // ABRE MODAL DE EDIÇÃO DO AGENDAMENTO
             $(".btn-editar").click(function () {
                 var coAgenda = Calendar.GetCoAgenda($(this));
                 var dados = Funcoes.Ajax('Agenda/GetAgendaAjax', coAgenda);
-
-                $('#st_status').select2("destroy").val(dados.st_status).select2({allowClear: false});
-                $('#co_cliente').select2("destroy").val(dados.co_cliente).select2({allowClear: false});
+                $('#st_status').select2("destroy").val(dados.st_status).select2({allowClear: !1});
+                $('#co_cliente').select2("destroy").val(dados.co_cliente).select2({allowClear: !1});
                 $("#dt_agenda").val(dados.dia);
                 $("#nu_hora_inicio_agenda").val(dados.inicio);
                 $("#nu_hora_fim_agenda").val(dados.fim);
                 $("#ds_observacao").val(dados.ds_observacao);
+                Funcoes.TiraValidacao('dt_agenda');
+                Funcoes.TiraValidacao('nu_hora_inicio_agenda');
                 Calendar.LimpaValidacao();
                 $("#j_cadastro").click();
-
-                $('#co_servico').select2("destroy").val(dados.co_servico).select2({allowClear: false});
-                $('#co_profissional').select2("destroy").val(dados.co_profissional).select2({allowClear: false});
-                $("#co_agenda").val(coAgenda);
+                $('#co_servico').select2("destroy").val(dados.co_servico).select2({allowClear: !1});
+                $('#co_profissional').select2("destroy").val(dados.co_profissional).select2({allowClear: !1});
+                $("#co_agenda").val(coAgenda)
             });
-
-            // NOVO AGENDAMENTO GRID
             $('#novaAgenda').click(function () {
                 var hoje = new Date();
                 var dia = Calendar.VerificaNumero(hoje.getDay());
@@ -350,52 +282,41 @@ var Calendar = function () {
                 $("#nu_hora_fim_agenda").val(null);
                 $("#ds_observacao").val(null);
                 $('#co_agenda').val(null);
-                $('#st_status').select2("destroy").val(1).select2({allowClear: false});
-
+                $('#st_status').select2("destroy").val(1).select2({allowClear: !1});
                 Calendar.LimpaCombos();
                 Calendar.LimpaValidacao();
-
                 $("#j_cadastro").click();
-
-                return false;
+                return !1
             });
-
-            // FINALIZA O AGENDAMENTO (muda st_status para finalizado)
             $(".btn-finalizar").click(function () {
-                var data = {
-                    co_agenda: Calendar.GetCoAgenda($(this))
-                };
+                var data = {co_agenda: Calendar.GetCoAgenda($(this))};
                 var dados = Funcoes.Ajax('Agenda/FinalizarAgendaAjax', data);
                 if (dados) {
                     if (dados.sucesso && dados.msg === "atualizado") {
-                        Funcoes.AtualizadoSucesso();
+                        Funcoes.AtualizadoSucesso()
                     } else {
-                        Funcoes.Alerta(dados.msg);
+                        Funcoes.Alerta(dados.msg)
                     }
                     if (dados.sucesso) {
-                        Calendar.Renderiza();
+                        Calendar.Renderiza()
                     }
                 } else {
-                    Funcoes.Erro("Erro: " + dados.msg);
+                    Funcoes.Erro("Erro: " + dados.msg)
                 }
-                return false;
+                return !1
             });
-
-
-            // PESQUISA AVANÇADA DO AGENDAMENTO
             $("#PesquisaAvancadaAgendamento").submit(function () {
                 var data = $(this).serializeArray();
                 var dados = Funcoes.Ajax('Agenda/AgendamentoPesquisaAvancada', data);
                 if (dados.sucesso) {
                     Funcoes.Informativo('Pesquisando....');
-                    Calendar.Renderiza(1);
+                    Calendar.Renderiza(1)
                 } else {
-                    Funcoes.Erro("Erro: " + dados.msg);
+                    Funcoes.Erro("Erro: " + dados.msg)
                 }
-                return false;
-            });
-        },
-        CarregaDadosAgendamento: function (dados, coAgenda) {
+                return !1
+            })
+        }, CarregaDadosAgendamento: function (dados, coAgenda) {
             $('.st_status b').html($('#Status-Agendamento-' + dados.st_status).html());
             $('.cliente b').text(dados.cliente);
             $('.profissional b').text(dados.profissional);
@@ -410,43 +331,38 @@ var Calendar = function () {
             if (dados.st_status < 5) {
                 $('.btn-finalizar').show();
                 $('.btn-editar').show();
-                $('.btn-deletar').show();
+                $('.btn-deletar').show()
             }
             if (dados.st_status == 8) {
-                $('#form-group-motivo').show();
+                $('#form-group-motivo').show()
             } else {
-                $('#form-group-motivo').hide();
+                $('#form-group-motivo').hide()
             }
-            $("#j_listar").click();
-        },
-        GetCoAgenda: function (element) {
+            $("#j_listar").click()
+        }, GetCoAgenda: function (element) {
             var coAgenda = $('#co_agenda_listagem').val();
             if (!coAgenda) {
-                coAgenda = element.attr('data-co-agenda');
+                coAgenda = element.attr('data-co-agenda')
             }
-            return coAgenda;
-        },
-        LimpaCombos: function () {
-            $('#co_servico, #co_profissional, #co_cliente').select2("destroy").val(null).select2({allowClear: false});
-            $('#no_servico, #no_profissional, #no_cliente').val('');
-        },
-        Renderiza: function (time) {
+            return coAgenda
+        }, LimpaCombos: function () {
+            $('#co_servico, #co_profissional, #co_cliente').select2("destroy").val(null).select2({allowClear: !1});
+            $('#no_servico, #no_profissional, #no_cliente').val('')
+        }, Renderiza: function (time) {
             time = time || 3000;
             $(".close").click();
             setTimeout(function () {
-                location.reload();
-            }, time);
-        },
-        LimpaValidacao: function () {
+                location.reload()
+            }, time)
+        }, LimpaValidacao: function () {
             Funcoes.TiraValidacao('nu_hora_fim_agenda');
-            Funcoes.TiraValidacao('st_status');
-        },
-        VerificaNumero: function (valor) {
+            Funcoes.TiraValidacao('st_status')
+        }, VerificaNumero: function (valor) {
             if (valor < 10) {
-                valor = '0' + valor;
+                valor = '0' + valor
             }
-            return valor;
+            return valor
         }
-    };
+    }
 }();
-Calendar.init();
+Calendar.init()
