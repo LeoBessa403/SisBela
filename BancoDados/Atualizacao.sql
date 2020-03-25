@@ -170,3 +170,57 @@ UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "2", dt_modificado = "20
 
 INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("6", "2020-03-25T15:51:06.000-03:00", "Mudou para o Status do pagamento de Em análise", "Retorno da operadora do pagamento", "2");
 
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("6", "2020-03-25T15:51:06.000-03:00", "Mudou para o Status do pagamento de Em análise", "Retorno da operadora do pagamento", "2");
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "2", dt_modificado = "2020-03-25T15:51:06.000-03:00" where co_plano_assinante_assinatura = 6;
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "2", dt_modificado = "2020-03-25T15:51:06.000-03:00" where co_plano_assinante_assinatura = 6;
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("6", "2020-03-25 16:14:43", "Mudou para o Status do pagamento de Cancelada", "Suporte Efetuou o cancelamento.", "7");
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET dt_modificado = "2020-03-25 16:14:43", st_status = "I", st_pagamento = "7" where co_plano_assinante_assinatura = 6;
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 6;
+
+UPDATE TB_CONTATO SET nu_tel1 = "11651561115" where co_contato = 6;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao, co_plano_assinante_assinatura_ativo) VALUES ("5", "5", "25", "0", "124.90", "5", "2020-03-25 16:15:38", "2021-04-09", "5"_assinatura_ativo);
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("7", "2020-03-25 16:15:38", "Inicia o pagamento", "LEO Bessa Iniciou o pagamento", "0");
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "1", dt_modificado = "2020-03-25T16:15:46.000-03:00", nu_valor_desconto = "5.38", nu_valor_real = "119.52", ds_link_boleto = "https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=7b44c80e5b528387bc67d405b29d4d7827c2f0f5f1425d56c8d41170005505e083fbc0f342424194", ds_code_transacao = "EDA0F0A7-B225-4F2B-877D-AE6021DE7077", co_plano_assinante = "5" where co_plano_assinante_assinatura = 7;
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("7", "2020-03-25T16:15:46.000-03:00", "Mudou para o Status do pagamento de Aguardando pagamento", "Retorno da operadora do pagamento", "1");
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_status = "I" where co_plano_assinante_assinatura = 5;
+
+UPDATE TB_ASSINANTE SET dt_expiracao = "2021-04-09" where co_assinante = 5;
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("7", "2020-03-25T16:17:47.000-03:00", "Mudou para o Status do pagamento de Pago ", "Retorno da operadora do pagamento", "3");
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "3", dt_modificado = "2020-03-25T16:17:47.000-03:00", dt_confirma_pagamento = "2020-03-25T16:17:47.000-03:00", st_status = "A" where co_plano_assinante_assinatura = 7;
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("7", "2020-03-25 16:18:42", "Mudou para o Status do pagamento de Devolvida", "Suporte Efetuou o estorno.", "6");
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_status = "A" where co_plano_assinante_assinatura = 5;
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET dt_modificado = "2020-03-25 16:18:42", st_status = "I", st_pagamento = "6" where co_plano_assinante_assinatura = 7;
+
+UPDATE TB_ASSINANTE SET dt_expiracao = "2020-04-09" where co_assinante = 5;
+
+UPDATE TB_PESSOA SET no_pessoa = "LEO BESSA", dt_nascimento = "" where co_pessoa = 6;
+
+UPDATE TB_EMPRESA SET no_empresa = "BARBEARIA NOVA BARBA RAZãO SOCIAL", no_fantasia = "BARBEARIA NOVA BARBA", nu_cnpj = "", nu_insc_estadual = "", ds_observacao = "nova descrição" where co_empresa = 5;
+
+UPDATE TB_ENDERECO SET ds_endereco = "QR 403 Conjunto 10", ds_complemento = "103", ds_bairro = "Samambaia Norte (Samambaia)", nu_cep = "72319111", no_cidade = "Brasília", sg_uf = "DF" where co_endereco = 4;
+
+UPDATE TB_EMPRESA SET co_endereco = "4" where co_empresa = 5;
+
+UPDATE TB_CONTATO SET nu_tel1 = "11651561115", nu_tel2 = "11999999999", nu_tel3 = "", nu_tel_0800 = "", ds_email = "leonardo.bessa@basis.com.br", ds_site = "", ds_facebook = "", ds_twitter = "", ds_instagram = "" where co_contato = 6;
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("fp-barbearia-nova-barba-5-5e7bb232d988d.png");
+
+INSERT INTO TB_IMAGEM_ASSINANTE (co_assinante, co_imagem) VALUES ("5", "2");
+
+UPDATE TB_ASSINANTE SET st_dados_complementares = "S" where co_assinante = 5;
+
