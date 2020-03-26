@@ -18,12 +18,12 @@ function servidor_inicial()
                 "sandbox.pagseguro.js",
         );
     } else {
-        if ($_SERVER['HTTP_HOST'] == 'teste') {
+        if ($_SERVER['SCRIPT_NAME'] == '/teste/index.php') {
             $config = array(
                 'HOME' => 'https://sistemadabeleza.com.br/teste/',
                 'HOST' => 'localhost',
                 'USER' => 'sistem25_dabelez',
-                'PASS' => 'Admin101*',
+                'PASS' => 'Admin101**',
                 'DBSA' => 'sistem25_teste',
                 'DEBUG' => false,
                 'PROD' => true,
@@ -67,5 +67,4 @@ function servidor_inicial()
     define("EMAIL_LOJA", "leodjx@hotmail.com");
     define("MOEDA_PAGAMENTO", "BRL");
     define("URL_NOTIFICACAO", HOME . "NotificacaoPagSeguro.php");
-
 }
