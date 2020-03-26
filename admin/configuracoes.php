@@ -18,20 +18,37 @@ function servidor_inicial()
                 "sandbox.pagseguro.js",
         );
     } else {
-        $config = array(
-            'HOME' => 'https://sistemadabeleza.com.br/',
-            'HOST' => 'localhost',
-            'USER' => 'sistem25_dabelez',
-            'PASS' => 'Admin101*',
-            'DBSA' => 'sistem25_dabelez',
-            'DEBUG' => false,
-            'PROD' => true,
-            'TOKEN_PAGSEGURO' => "e420df9f-b88a-4ba4-acfc-ef3dc796abd129194be145c3878bd1e90a4f65786848b0c0-51de-48b2-a242-7ae275f26890",
-            'URL_PAGSEGURO' =>
-                "https://ws.pagseguro.uol.com.br/v2/",
-            'JS_PAGSEGURO' =>
-                "pagseguro.js",
-        );
+        if ($_SERVER['HTTP_HOST'] == 'teste') {
+            $config = array(
+                'HOME' => 'https://sistemadabeleza.com.br/teste/',
+                'HOST' => 'localhost',
+                'USER' => 'sistem25_dabelez',
+                'PASS' => 'Admin101*',
+                'DBSA' => 'sistem25_teste',
+                'DEBUG' => false,
+                'PROD' => true,
+                'TOKEN_PAGSEGURO' => "5FDD35645CC1412296CE57A3542E48D0",
+                'URL_PAGSEGURO' =>
+                    "https://ws.sandbox.pagseguro.uol.com.br/v2/",
+                'JS_PAGSEGURO' =>
+                    "sandbox.pagseguro.js",
+            );
+        } else {
+            $config = array(
+                'HOME' => 'https://sistemadabeleza.com.br/',
+                'HOST' => 'localhost',
+                'USER' => 'sistem25_dabelez',
+                'PASS' => 'Admin101*',
+                'DBSA' => 'sistem25_dabelez',
+                'DEBUG' => false,
+                'PROD' => true,
+                'TOKEN_PAGSEGURO' => "e420df9f-b88a-4ba4-acfc-ef3dc796abd129194be145c3878bd1e90a4f65786848b0c0-51de-48b2-a242-7ae275f26890",
+                'URL_PAGSEGURO' =>
+                    "https://ws.pagseguro.uol.com.br/v2/",
+                'JS_PAGSEGURO' =>
+                    "pagseguro.js",
+            );
+        }
     }
 
     define('HOME', $config['HOME']);
