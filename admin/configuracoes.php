@@ -27,7 +27,7 @@ function servidor_inicial()
                 'PASS' => 'Admin101**',
                 'DBSA' => 'sistem25_teste',
                 'DEBUG' => false,
-                'PROD' => true,
+                'PROD' => false,
                 'TOKEN_PAGSEGURO' => "5FDD35645CC1412296CE57A3542E48D0",
                 'URL_PAGSEGURO' =>
                     "https://ws.sandbox.pagseguro.uol.com.br/v2/",
