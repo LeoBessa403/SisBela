@@ -16,4 +16,4 @@ return!1})},CarregaDadosAgendamento:function(dados,coAgenda){$('.st_status b').h
 if(dados.st_status==8){$('#form-group-motivo').show()}else{$('#form-group-motivo').hide()}
 $("#j_listar").click()},GetCoAgenda:function(element){var coAgenda=$('#co_agenda_listagem').val();if(!coAgenda){coAgenda=element.attr('data-co-agenda')}
 return coAgenda},LimpaCombos:function(){$('#co_servico, #co_profissional, #co_cliente').select2("destroy").val(null).select2({allowClear:!1});$('#no_servico, #no_profissional, #no_cliente').val('')},Renderiza:function(time){time=time||3000;$(".close").click();setTimeout(function(){location.reload()},time)},LimpaValidacao:function(){Funcoes.TiraValidacao('nu_hora_fim_agenda');Funcoes.TiraValidacao('st_status')},VerificaNumero:function(valor){if(valor<10){valor='0'+valor}
-return valor}}}();Calendar.init();
+return valor}}}();Calendar.init()
