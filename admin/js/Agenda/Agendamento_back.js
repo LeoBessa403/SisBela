@@ -365,4 +365,4 @@ var Calendar = function () {
         }
     }
 }();
-Calendar.init()
+Calendar.init();

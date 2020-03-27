@@ -26,20 +26,22 @@ class Agenda extends AbstractController
         $Condicoes = $session::getSession('pesq_agendamento');
         $agendas = $agendaService->PesquisaAgendamentos($Condicoes, 'tsa.dt_cadastro');
         $eventos = [];
-        foreach ($agendas as $agenda) {
-            if ($agenda[ST_STATUS] != StatusAgendamentoEnum::DELETADO) {
-                $eve = array(
-                    'id' => (int)$agenda[CO_AGENDA],
-                    'title' => "Cliente: " . $agenda['cliente'] .
-                        "\nProfissional: " . $agenda['profissional'] . "\nServiço: " . $agenda[NO_SERVICO] .
-                        "\nAtualizado em: " . Valida::DataShow($agenda[DT_CADASTRO], 'd/m/Y H:i'),
-                    'start' => Valida::DataShow($agenda[DT_INICIO_AGENDA], 'Y-m-d H:i'),
-                    'end' => Valida::DataShow($agenda[DT_FIM_AGENDA], 'Y-m-d H:i'),
-                    'className' => 'event-' . StatusAgendamentoEnum::$cores[$agenda[ST_STATUS]],
-                    'allDay' => false,
-                    'backgroundColor' => StatusAgendamentoEnum::$cores[$agenda[ST_STATUS]],
-                );
-                $eventos[] = $eve;
+        if(!empty($agendas)){
+            foreach ($agendas as $agenda) {
+                if ($agenda[ST_STATUS] != StatusAgendamentoEnum::DELETADO) {
+                    $eve = array(
+                        'id' => (int)$agenda[CO_AGENDA],
+                        'title' => "Cliente: " . $agenda['cliente'] .
+                            "\nProfissional: " . $agenda['profissional'] . "\nServiço: " . $agenda[NO_SERVICO] .
+                            "\nAtualizado em: " . Valida::DataShow($agenda[DT_CADASTRO], 'd/m/Y H:i'),
+                        'start' => Valida::DataShow($agenda[DT_INICIO_AGENDA], 'Y-m-d H:i'),
+                        'end' => Valida::DataShow($agenda[DT_FIM_AGENDA], 'Y-m-d H:i'),
+                        'className' => 'event-' . StatusAgendamentoEnum::$cores[$agenda[ST_STATUS]],
+                        'allDay' => false,
+                        'backgroundColor' => StatusAgendamentoEnum::$cores[$agenda[ST_STATUS]],
+                    );
+                    $eventos[] = $eve;
+                }
             }
         }
         return $eventos;
