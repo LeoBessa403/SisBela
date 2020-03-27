@@ -366,36 +366,44 @@ class  ProfissionalService extends AbstractService
 
     public function ValidaNuProfissionais()
     {
-        /** @var ProfissionalService $profissionalService */
-        $profissionalService = new ProfissionalService();
-        /** @var AssinanteService $assinanteService */
-        $assinanteService = new AssinanteService();
+        if (AssinanteService::getCoAssinanteLogado()) {
+            /** @var ProfissionalService $profissionalService */
+            $profissionalService = new ProfissionalService();
+            /** @var AssinanteService $assinanteService */
+            $assinanteService = new AssinanteService();
 
-        $todosProfissionais = $profissionalService->PesquisaTodos([
-            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado(),
-            ST_STATUS => StatusUsuarioEnum::ATIVO
-        ]);
-        $profCad = count($todosProfissionais);
+            $todosProfissionais = $profissionalService->PesquisaTodos([
+                CO_ASSINANTE => AssinanteService::getCoAssinanteLogado(),
+                ST_STATUS => StatusUsuarioEnum::ATIVO
+            ]);
+            $profCad = count($todosProfissionais);
 
-        $assinate = $assinanteService->PesquisaTodos([
-            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado(),
-            ST_STATUS => StatusUsuarioEnum::ATIVO
-        ]);
-        /** @var AssinanteEntidade $assinate */
-        $assinate = $assinate[0];
-        $profPermito = $assinate->getUltimoCoPlanoAssinante()->getNuProfissionais();
-        if($profCad < $profPermito){
-            $dados = [
-                SUCESSO => TRUE,
-                'cadastrados' => $profPermito
-            ];
-        }else{
-            $dados = [
+            $assinate = $assinanteService->PesquisaTodos([
+                CO_ASSINANTE => AssinanteService::getCoAssinanteLogado(),
+                ST_STATUS => StatusUsuarioEnum::ATIVO
+            ]);
+            /** @var AssinanteEntidade $assinate */
+            $assinate = $assinate[0];
+            $profPermito = $assinate->getUltimoCoPlanoAssinante()->getNuProfissionais();
+            if ($profCad < $profPermito) {
+                $dados = [
+                    SUCESSO => TRUE,
+                    'cadastrados' => $profPermito
+                ];
+            } else {
+                $dados = [
+                    SUCESSO => NULL,
+                    'cadastrados' => $profCad
+                ];
+            }
+            return $dados;
+        } else {
+            return [
                 SUCESSO => NULL,
-                'cadastrados' => $profCad
+                'cadastrados' => 0
             ];
         }
-        return $dados;
+
     }
 
 }
