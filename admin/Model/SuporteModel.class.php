@@ -14,9 +14,9 @@ class  SuporteModel extends AbstractModel
 
     public function PesquisaSuportes($Condicoes)
     {
-        $Condicoes['ths.co_historico_suporte'] = 'select max(ths2.co_historico_suporte) from tb_historico_suporte ths2
+        $Condicoes['ths.co_historico_suporte'] = 'select max(ths2.co_historico_suporte) from TB_HISTORICO_SUPORTE ths2
     where ths2.co_suporte = ts.co_suporte';
-        $tabela = "tb_suporte ts inner join tb_historico_suporte ths on ts.co_suporte = ths.co_suporte";
+        $tabela = "TB_SUPORTE ts inner join TB_HISTORICO_SUPORTE ths on ts.co_suporte = ths.co_suporte";
 
         $campos = "*";
 
