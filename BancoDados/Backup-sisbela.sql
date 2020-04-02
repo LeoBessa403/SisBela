@@ -1,4 +1,4 @@
--- Atualizado em: 25/03/2020 17:39:00
+-- Atualizado em: 02/04/2020 11:34:48
 -- AMBIENTE: http://localhost/SisBela/
 -- BANCO: sisbela
 
@@ -18,12 +18,24 @@ CREATE TABLE `TB_ACESSO` (
   `co_usuario` int(10) NOT NULL,
   `co_trafego` int(11) NOT NULL,
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_ACESSO VALUES("17","p76clusbbv84g50q5bp2lvsuc9","2020-03-25 16:56:49","2020-03-25 18:03:25","A","6","17");
+INSERT INTO TB_ACESSO VALUES("17","p76clusbbv84g50q5bp2lvsuc9","2020-03-25 16:56:49","2020-03-25 18:03:25","F","6","17");
 
-INSERT INTO TB_ACESSO VALUES("18","7ia5mhun5qnd1mant314hahn6v","2020-03-25 17:38:16","2020-03-25 18:09:00","A","1","18");
+INSERT INTO TB_ACESSO VALUES("18","7ia5mhun5qnd1mant314hahn6v","2020-03-25 17:38:16","2020-03-25 18:09:01","F","1","18");
+
+INSERT INTO TB_ACESSO VALUES("19","tlasupobdhpvahoar4pm4fo6ok","2020-03-25 17:39:27","2020-03-25 18:09:44","F","1","19");
+
+INSERT INTO TB_ACESSO VALUES("20","mes61oj1q6pmri0hm5mi0sjcjm","2020-03-26 20:07:04","2020-03-26 20:07:07","F","1","20");
+
+INSERT INTO TB_ACESSO VALUES("21","4dgmrj8f4ivhipatstb0e8ln84","2020-03-27 10:36:09","2020-03-27 11:26:54","F","1","21");
+
+INSERT INTO TB_ACESSO VALUES("22","4dgmrj8f4ivhipatstb0e8ln84","2020-03-27 11:27:03","2020-03-27 11:57:09","F","6","22");
+
+INSERT INTO TB_ACESSO VALUES("23","ks91imhfljhr38srup5tje5j4p","2020-03-27 19:43:55","2020-03-27 20:46:30","A","6","23");
+
+INSERT INTO TB_ACESSO VALUES("24","ccbcj988abvors2gr55jcrpe0g","2020-03-27 20:23:10","2020-03-27 20:53:47","A","1","24");
 
 
 
@@ -103,8 +115,14 @@ CREATE TABLE `TB_AUDITORIA` (
   `ds_perfil_usuario` text DEFAULT NULL,
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
 
+
+INSERT INTO TB_AUDITORIA VALUES("45","2020-03-27 19:44:23","Gestor","6");
+
+INSERT INTO TB_AUDITORIA VALUES("46","2020-03-27 20:11:15","Gestor","6");
+
+INSERT INTO TB_AUDITORIA VALUES("47","2020-03-27 20:16:26","Gestor","6");
 
 
 
@@ -119,8 +137,350 @@ CREATE TABLE `TB_AUDITORIA_ITENS` (
   `ds_campo` varchar(120) DEFAULT NULL,
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=1157 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1328 DEFAULT CHARSET=utf8;
 
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1157","6","","co_pessoa","165");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1158","12345678909","12345678909","nu_cpf","165");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1159","LEO BESSA","","no_pessoa","165");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1160","","","nu_rg","165");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1161","2020-03-25 13:03:39","","dt_cadastro","165");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1162","","","dt_nascimento","165");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1163","","","st_sexo","165");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1164","5","","co_endereco","165");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1165","6","","co_contato","165");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1166","0","","co_imagem","165");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1167","6","","co_contato","166");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1168","11651561115","6155565565","nu_tel1","166");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1169","11999999999","","nu_tel2","166");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1170","","","nu_tel3","166");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1171","","","nu_tel_0800","166");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1172","leonardo.bessa@basis.com.br","","ds_email","166");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1173","","","ds_site","166");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1174","","","ds_facebook","166");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1175","","","ds_twitter","166");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1176","","","ds_instagram","166");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1177","","6","co_plano_assinante","167");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1178","","5","co_assinante","167");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1179","","49","nu_profissionais","167");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1180","","0","nu_filiais","167");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1181","","239.90","nu_valor_assinatura","167");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1182","","4","tp_pagamento","167");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1183","","2020-03-27 19:44:23","dt_cadastro","167");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1184","","2022-04-09","dt_expiracao","167");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1185","","5","co_plano_assinante_assinatura_ativo","167");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1186","","8","co_plano_assinante_assinatura","168");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1187","","2020-03-27 19:44:23","dt_cadastro","168");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1188","","Inicia o pagamento","ds_acao","168");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1189","","LEO BESSA Iniciou o pagamento","ds_usuario","168");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1190","","0","st_pagamento","168");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1191","8","","co_plano_assinante_assinatura","169");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1192","2020-03-27 19:44:23","","dt_cadastro","169");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1193","2022-04-09","","dt_expiracao","169");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1194","","","dt_confirma_pagamento","169");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1195","4","","tp_pagamento","169");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1196","0","1","st_pagamento","169");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1197","","2020-03-27T19:44:26.000-03:00","dt_modificado","169");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1198","","9.97","nu_valor_desconto","169");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1199","","229.93","nu_valor_real","169");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1200","null","https://sandbox.pagseguro.uol.com.br/checkout/payment/eft/print.jhtml?c=af67f2b0e357cfc862c36dd336d24b136ff153d2f084c2671d65f056ee5c9a190f48b18f41a05961","ds_link_boleto","169");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1201","0","","nu_filiais","169");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1202","5","","co_plano_assinante_assinatura_ativo","169");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1203","I","","st_status","169");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1204","null","65150A2A-1D95-4220-8EBA-9D1EC6233B3D","ds_code_transacao","169");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1205","239.90","","nu_valor_assinatura","169");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1206","49","","nu_profissionais","169");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1207","5","","co_assinante","169");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1208","6","6","co_plano_assinante","169");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1209","","8","co_plano_assinante_assinatura","170");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1210","","2020-03-27T19:44:26.000-03:00","dt_cadastro","170");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1211","","Mudou para o Status do pagamento de Aguardando pagamento","ds_acao","170");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1212","","Retorno da operadora do pagamento","ds_usuario","170");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1213","","1","st_pagamento","170");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1214","6","","co_pessoa","171");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1215","12345678909","12345678909","nu_cpf","171");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1216","LEO BESSA","","no_pessoa","171");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1217","","","nu_rg","171");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1218","2020-03-25 13:03:39","","dt_cadastro","171");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1219","","","dt_nascimento","171");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1220","","","st_sexo","171");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1221","5","","co_endereco","171");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1222","6","","co_contato","171");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1223","0","","co_imagem","171");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1224","6","","co_contato","172");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1225","6155565565","5555555555","nu_tel1","172");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1226","11999999999","","nu_tel2","172");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1227","","","nu_tel3","172");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1228","","","nu_tel_0800","172");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1229","leonardo.bessa@basis.com.br","","ds_email","172");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1230","","","ds_site","172");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1231","","","ds_facebook","172");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1232","","","ds_twitter","172");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1233","","","ds_instagram","172");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1234","","4","co_plano_assinante","173");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1235","","5","co_assinante","173");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1236","","13","nu_profissionais","173");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1237","","0","nu_filiais","173");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1238","","69.90","nu_valor_assinatura","173");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1239","","5","tp_pagamento","173");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1240","","2020-03-27 20:11:15","dt_cadastro","173");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1241","","2020-10-09","dt_expiracao","173");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1242","","5","co_plano_assinante_assinatura_ativo","173");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1243","","9","co_plano_assinante_assinatura","174");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1244","","2020-03-27 20:11:15","dt_cadastro","174");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1245","","Inicia o pagamento","ds_acao","174");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1246","","LEO BESSA Iniciou o pagamento","ds_usuario","174");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1247","","0","st_pagamento","174");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1248","9","","co_plano_assinante_assinatura","175");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1249","2020-03-27 20:11:15","","dt_cadastro","175");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1250","2020-10-09","","dt_expiracao","175");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1251","","","dt_confirma_pagamento","175");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1252","5","","tp_pagamento","175");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1253","0","1","st_pagamento","175");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1254","","2020-03-27T20:11:20.000-03:00","dt_modificado","175");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1255","","3.19","nu_valor_desconto","175");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1256","","66.71","nu_valor_real","175");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1257","null","https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=eae56d9b6d547ac5aac0e4ca1a28ecc4b6d3173595fee1ab347a2a9e1b9a667f7b18b61f16abbd4a","ds_link_boleto","175");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1258","0","","nu_filiais","175");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1259","5","","co_plano_assinante_assinatura_ativo","175");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1260","I","","st_status","175");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1261","null","3F9F1DF4-44DD-437F-92D4-F1DF473A8C6C","ds_code_transacao","175");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1262","69.90","","nu_valor_assinatura","175");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1263","13","","nu_profissionais","175");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1264","5","","co_assinante","175");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1265","4","4","co_plano_assinante","175");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1266","","9","co_plano_assinante_assinatura","176");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1267","","2020-03-27T20:11:20.000-03:00","dt_cadastro","176");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1268","","Mudou para o Status do pagamento de Aguardando pagamento","ds_acao","176");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1269","","Retorno da operadora do pagamento","ds_usuario","176");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1270","","1","st_pagamento","176");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1271","6","","co_pessoa","177");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1272","12345678909","12345678909","nu_cpf","177");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1273","LEO BESSA","","no_pessoa","177");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1274","","","nu_rg","177");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1275","2020-03-25 13:03:39","","dt_cadastro","177");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1276","","","dt_nascimento","177");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1277","","","st_sexo","177");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1278","5","","co_endereco","177");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1279","6","","co_contato","177");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1280","0","","co_imagem","177");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1281","6","","co_contato","178");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1282","5555555555","7855522225","nu_tel1","178");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1283","11999999999","","nu_tel2","178");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1284","","","nu_tel3","178");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1285","","","nu_tel_0800","178");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1286","leonardo.bessa@basis.com.br","","ds_email","178");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1287","","","ds_site","178");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1288","","","ds_facebook","178");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1289","","","ds_twitter","178");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1290","","","ds_instagram","178");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1291","","5","co_plano_assinante","179");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1292","","5","co_assinante","179");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1293","","25","nu_profissionais","179");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1294","","0","nu_filiais","179");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1295","","124.90","nu_valor_assinatura","179");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1296","","5","tp_pagamento","179");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1297","","2020-03-27 20:16:26","dt_cadastro","179");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1298","","2021-04-09","dt_expiracao","179");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1299","","5","co_plano_assinante_assinatura_ativo","179");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1300","","10","co_plano_assinante_assinatura","180");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1301","","2020-03-27 20:16:26","dt_cadastro","180");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1302","","Inicia o pagamento","ds_acao","180");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1303","","LEO BESSA Iniciou o pagamento","ds_usuario","180");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1304","","0","st_pagamento","180");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1305","10","","co_plano_assinante_assinatura","181");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1306","2020-03-27 20:16:26","","dt_cadastro","181");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1307","2021-04-09","","dt_expiracao","181");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1308","","","dt_confirma_pagamento","181");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1309","5","","tp_pagamento","181");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1310","0","1","st_pagamento","181");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1311","","2020-03-27T20:16:29.000-03:00","dt_modificado","181");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1312","","5.38","nu_valor_desconto","181");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1313","","119.52","nu_valor_real","181");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1314","null","https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=2c3663994b33bfcfed4b5db4fc3bebd38e82aa2cd5c32442634547b3a165d8ef3ece4f60594d7970","ds_link_boleto","181");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1315","0","","nu_filiais","181");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1316","5","","co_plano_assinante_assinatura_ativo","181");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1317","I","","st_status","181");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1318","null","069BC6BF-743D-4282-96B9-0A25391A040C","ds_code_transacao","181");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1319","124.90","","nu_valor_assinatura","181");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1320","25","","nu_profissionais","181");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1321","5","","co_assinante","181");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1322","5","5","co_plano_assinante","181");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1323","","10","co_plano_assinante_assinatura","182");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1324","","2020-03-27T20:16:29.000-03:00","dt_cadastro","182");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1325","","Mudou para o Status do pagamento de Aguardando pagamento","ds_acao","182");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1326","","Retorno da operadora do pagamento","ds_usuario","182");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("1327","","1","st_pagamento","182");
 
 
 
@@ -135,8 +495,44 @@ CREATE TABLE `TB_AUDITORIA_TABELA` (
   `co_registro` int(11) DEFAULT NULL,
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=165 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=183 DEFAULT CHARSET=utf8;
 
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("165","TB_PESSOA","U","6","45");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("166","TB_CONTATO","U","6","45");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("167","TB_PLANO_ASSINANTE_ASSINATURA","I","8","45");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("168","TB_HISTORICO_PAG_ASSINATURA","I","14","45");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("169","TB_PLANO_ASSINANTE_ASSINATURA","U","8","45");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("170","TB_HISTORICO_PAG_ASSINATURA","I","15","45");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("171","TB_PESSOA","U","6","46");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("172","TB_CONTATO","U","6","46");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("173","TB_PLANO_ASSINANTE_ASSINATURA","I","9","46");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("174","TB_HISTORICO_PAG_ASSINATURA","I","16","46");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("175","TB_PLANO_ASSINANTE_ASSINATURA","U","9","46");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("176","TB_HISTORICO_PAG_ASSINATURA","I","17","46");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("177","TB_PESSOA","U","6","47");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("178","TB_CONTATO","U","6","47");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("179","TB_PLANO_ASSINANTE_ASSINATURA","I","10","47");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("180","TB_HISTORICO_PAG_ASSINATURA","I","18","47");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("181","TB_PLANO_ASSINANTE_ASSINATURA","U","10","47");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("182","TB_HISTORICO_PAG_ASSINATURA","I","19","47");
 
 
 
@@ -209,7 +605,7 @@ INSERT INTO TB_CONTATO VALUES("4","61993126972","","","","ddfds@fdsfjf.com.br","
 
 INSERT INTO TB_CONTATO VALUES("5","61998110601","","","","fef@rtj.com","","","","");
 
-INSERT INTO TB_CONTATO VALUES("6","11651561115","11999999999","","","leonardo.bessa@basis.com.br","","","","");
+INSERT INTO TB_CONTATO VALUES("6","7855522225","11999999999","","","leonardo.bessa@basis.com.br","","","","");
 
 INSERT INTO TB_CONTATO VALUES("7","61922565323","","","","henriquecarvalhohca@outlook.com","","","","");
 
@@ -844,7 +1240,7 @@ CREATE TABLE `TB_HISTORICO_PAG_ASSINATURA` (
   `st_pagamento` int(1) DEFAULT NULL COMMENT '0 - Pendente / 1 - Aguardando pagamento / 2 - Em análise / 3 - Pago / 4 - Disponível / 5 - Em disputa / 6 - Devolvida / 7 - Cancelada\n',
   `co_plano_assinante_assinatura` int(11) NOT NULL,
   PRIMARY KEY (`co_historico_pag_assinatura`,`co_plano_assinante_assinatura`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_HISTORICO_PAG_ASSINATURA VALUES("1","2020-03-25 12:09:13","Plano Grátis","Usuário SisBela Iniciou o plano de experiência","3","1");
@@ -872,6 +1268,18 @@ INSERT INTO TB_HISTORICO_PAG_ASSINATURA VALUES("11","2020-03-25 16:15:46","Mudou
 INSERT INTO TB_HISTORICO_PAG_ASSINATURA VALUES("12","2020-03-25 16:17:47","Mudou para o Status do pagamento de Pago ","Retorno da operadora do pagamento","3","7");
 
 INSERT INTO TB_HISTORICO_PAG_ASSINATURA VALUES("13","2020-03-25 16:18:42","Mudou para o Status do pagamento de Devolvida","Suporte Efetuou o estorno.","6","7");
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA VALUES("14","2020-03-27 19:44:23","Inicia o pagamento","LEO BESSA Iniciou o pagamento","0","8");
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA VALUES("15","2020-03-27 19:44:26","Mudou para o Status do pagamento de Aguardando pagamento","Retorno da operadora do pagamento","1","8");
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA VALUES("16","2020-03-27 20:11:15","Inicia o pagamento","LEO BESSA Iniciou o pagamento","0","9");
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA VALUES("17","2020-03-27 20:11:20","Mudou para o Status do pagamento de Aguardando pagamento","Retorno da operadora do pagamento","1","9");
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA VALUES("18","2020-03-27 20:16:26","Inicia o pagamento","LEO BESSA Iniciou o pagamento","0","10");
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA VALUES("19","2020-03-27 20:16:29","Mudou para o Status do pagamento de Aguardando pagamento","Retorno da operadora do pagamento","1","10");
 
 
 
@@ -1266,7 +1674,7 @@ CREATE TABLE `TB_PLANO_ASSINANTE_ASSINATURA` (
   `co_assinante` int(11) NOT NULL,
   `co_plano_assinante` int(11) NOT NULL,
   PRIMARY KEY (`co_plano_assinante_assinatura`,`co_assinante`,`co_plano_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("1","2020-03-25 12:09:13","2020-04-09","","","3","2020-03-25 12:09:13","","","null","0","0","A","null","0.00","3","1","1");
@@ -1282,6 +1690,12 @@ INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("5","2020-03-25 13:03:42","2020
 INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("6","2020-03-25 15:50:56","2022-04-09","","3","7","2020-03-25 16:14:43","17.03","222.87","","0","5","I","5E706DDC-A10D-4D74-A0B6-3B6AF09E97D8","239.90","49","5","6");
 
 INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("7","2020-03-25 16:15:38","2021-04-09","2020-03-25 16:17:47","5","6","2020-03-25 16:18:42","5.38","119.52","https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=7b44c80e5b528387bc67d405b29d4d7827c2f0f5f1425d56c8d41170005505e083fbc0f342424194","0","5","I","EDA0F0A7-B225-4F2B-877D-AE6021DE7077","124.90","25","5","5");
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("8","2020-03-27 19:44:23","2022-04-09","","4","1","2020-03-27 19:44:26","9.97","229.93","https://sandbox.pagseguro.uol.com.br/checkout/payment/eft/print.jhtml?c=af67f2b0e357cfc862c36dd336d24b136ff153d2f084c2671d65f056ee5c9a190f48b18f41a05961","0","5","I","65150A2A-1D95-4220-8EBA-9D1EC6233B3D","239.90","49","5","6");
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("9","2020-03-27 20:11:15","2020-10-09","","5","1","2020-03-27 20:11:20","3.19","66.71","https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=eae56d9b6d547ac5aac0e4ca1a28ecc4b6d3173595fee1ab347a2a9e1b9a667f7b18b61f16abbd4a","0","5","I","3F9F1DF4-44DD-437F-92D4-F1DF473A8C6C","69.90","13","5","4");
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("10","2020-03-27 20:16:26","2021-04-09","","5","1","2020-03-27 20:16:29","5.38","119.52","https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=2c3663994b33bfcfed4b5db4fc3bebd38e82aa2cd5c32442634547b3a165d8ef3ece4f60594d7970","0","5","I","069BC6BF-743D-4282-96B9-0A25391A040C","124.90","25","5","5");
 
 
 
@@ -1534,12 +1948,24 @@ CREATE TABLE `TB_TRAFEGO` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_TRAFEGO VALUES("17","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 8.1","Desktop","Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0");
 
 INSERT INTO TB_TRAFEGO VALUES("18","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 8.1","Desktop","Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0");
+
+INSERT INTO TB_TRAFEGO VALUES("19","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 8.1","Desktop","Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0");
+
+INSERT INTO TB_TRAFEGO VALUES("20","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 8.1","Desktop","Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0");
+
+INSERT INTO TB_TRAFEGO VALUES("21","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 8.1","Desktop","Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0");
+
+INSERT INTO TB_TRAFEGO VALUES("22","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 8.1","Desktop","Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0");
+
+INSERT INTO TB_TRAFEGO VALUES("23","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 8.1","Desktop","Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0");
+
+INSERT INTO TB_TRAFEGO VALUES("24","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 8.1","Desktop","Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0");
 
 
 

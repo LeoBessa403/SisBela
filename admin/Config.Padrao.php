@@ -33,6 +33,6 @@ define('PASS_EMAIL', 'Admin101**');
 define('HOST_EMAIL', 'mail.sistemadabeleza.com.br');
 define('PORTA_EMAIL', '587');
 define('ID_ANALITCS', '');
-define('TEM_SITE', '');
+define('TEM_SITE', 1);
 
 

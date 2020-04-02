@@ -5,7 +5,9 @@ $url = (isset($link) && $link != "") ? $link : SITE;
 $url = ((TEM_SITE && $url == SITE) ? SITE : ADMIN);
 $url = explode("/", $url);
 
-if ($url[0] == SITE && TEM_SITE):
+if ($url[0] == ADMIN):
+    include './' . ADMIN . '/sistema.php';
+elseif (TEM_SITE):
     include './' . SITE . '/web.php';
 else:
     include './' . ADMIN . '/sistema.php';
