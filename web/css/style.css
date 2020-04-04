@@ -2956,10 +2956,10 @@ Section
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
-    height: 40px;
-    width: 40px;
+    -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+    height: 30px;
+    width: 30px;
     position: relative;
     z-index: 1;
     -webkit-transition: all .4s ease;
@@ -2992,7 +2992,7 @@ Section
 }
 
 .beautypress-instagram {
-    background-color: #E4405F !important;
+    background-color: #EA4C89 !important;
 }
 
 .beautypress-google-plus {
@@ -3000,7 +3000,20 @@ Section
 }
 
 .beautypress-envelope {
-    background-color: #373737 !important;
+    background-color: #fa9f1e !important;
+}
+
+.beautypress-whatsapp {
+    background-color: #007000 !important;
+}
+
+.beautypress-social-list li a{
+    padding-left: 25% !important;
+}
+
+.beautypress-social-list li a:hover {
+    box-shadow: 5px 5px 10px black;
+    cursor: pointer;
 }
 
 .beautypress-version-2.beautypress-social-list li a {
@@ -10832,26 +10845,4 @@ label[for="rating"] {
 
 #preloader-cancel-btn span {
     background-color: #fff;
-}
-
-.no-link a {
-    color: unset !important;
-}
-
-.no-link:hover {
-    color: #EC5598 !important;
-    cursor: pointer;
-}
-
-.i-zap {
-    padding-right: 3px !important;
-}
-
-.beautypress-whatsapp {
-    background-color: #007000 !important;
-}
-
-.beautypress-footer-social .beautypress-social-list li a:hover {
-    box-shadow: 2px 2px 8px black;
-    cursor: pointer;
 }

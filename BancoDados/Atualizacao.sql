@@ -98,3 +98,7 @@ INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("suporte-2-5e88937015c50.jpg");
 
 INSERT INTO TB_HISTORICO_SUPORTE (co_suporte, dt_cadastro, ds_mensagem, st_lido, co_usuario, co_imagem) VALUES ("2", "2020-04-04 11:02:24", "Guarda roupas fechado", "N", "1", "10");
 
+INSERT INTO TB_HISTORIA (ds_titulo, ds_observacao, co_sessao, st_situacao, dt_atualizado, dt_cadastro) VALUES ("Adaptação da estrutura do site", "Adaptação da estrutura do site", "9", "I", "2020-04-04 11:06:57", "2020-04-04 11:06:57");
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("20", "20"_restante, "2020-04-04 11:06:57", "65");
+
