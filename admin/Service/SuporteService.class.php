@@ -57,7 +57,7 @@ class  SuporteService extends AbstractService
                 /** @var ImagemService $imagemService */
                 $imagemService = $this->getService(IMAGEM_SERVICE);
                 $up = new Upload();
-                $noPasta = "Suporte/Assinante-" . AssinanteService::getCoAssinanteLogado();
+                $noPasta = "Suporte";
 
                 $foto = $_FILES[DS_CAMINHO];
                 $up->UploadImagem($foto, "suporte-" . $historicoSuporte[CO_SUPORTE], $noPasta);

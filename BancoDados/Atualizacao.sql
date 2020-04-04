@@ -34,3 +34,67 @@ INSERT INTO TB_ENDERECO (ds_endereco) VALUES ("");
 
 UPDATE TB_EMPRESA SET co_endereco = "8" where co_empresa = 3;
 
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 1;
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 1;
+
+INSERT INTO TB_HISTORICO_SUPORTE (co_suporte, dt_cadastro, ds_mensagem, st_lido, co_usuario) VALUES ("2", "2020-04-02 22:49:52", "fe wqweg rg agrgrg reg", "N", "1");
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 1;
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 4;
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 4;
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 4;
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 4;
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 4;
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("suporte-2-5e86971784b83.jpg");
+
+INSERT INTO TB_HISTORICO_SUPORTE (co_suporte, dt_cadastro, ds_mensagem, st_lido, co_usuario, co_imagem) VALUES ("2", "2020-04-02 22:53:27", "nh th trh trh", "N", "6", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("suporte-2-5e8699a3de762.jpg");
+
+INSERT INTO TB_HISTORICO_SUPORTE (co_suporte, dt_cadastro, ds_mensagem, st_lido, co_usuario, co_imagem) VALUES ("2", "2020-04-02 23:04:19", "sdhfhfh5h54 h56h 5h", "N", "6", "9");
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 6;
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 6;
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 6;
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 6;
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 6;
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 6;
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 6;
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 6;
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 6;
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 6;
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 6;
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 6;
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 6;
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 6;
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 6;
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 6;
+
+INSERT INTO TB_HISTORICO_SUPORTE (co_suporte, dt_cadastro, ds_mensagem, st_lido, co_usuario) VALUES ("2", "2020-04-04 11:01:57", "Ese esta sem imagens", "N", "1");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("suporte-2-5e88937015c50.jpg");
+
+INSERT INTO TB_HISTORICO_SUPORTE (co_suporte, dt_cadastro, ds_mensagem, st_lido, co_usuario, co_imagem) VALUES ("2", "2020-04-04 11:02:24", "Guarda roupas fechado", "N", "1", "10");
+

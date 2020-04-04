@@ -1,14 +1,25 @@
 <style>
-    .img_user{
+    .img_user {
         float: left;
         min-height: 35px;
         margin-right: 8px;
         border: 0.5px solid black;
     }
-    .timeline_element{
+
+    .timeline_element {
         min-height: 250px !important;
         width: 95% !important;
         padding: 0 8px !important;
+    }
+
+    .btn-anexo {
+        box-shadow: 2px 2px 6px black;
+        border-radius: 100%;
+    }
+
+    .btn-anexo:hover {
+        box-shadow: none;
+        cursor: pointer;
     }
 </style>
 <?php
@@ -19,6 +30,14 @@ $historico = $historico;
 $usuarioService = new UsuarioService();
 /** @var UsuarioEntidade $usuario */
 $usuario = $usuarioService->PesquisaUmRegistro($historico->getCoUsuario()->getCoUsuario());
+
+/** @var ImagemService $imagemService */
+$imagemService = new ImagemService();
+$imagem = false;
+if (!is_object($historico->getCoImagem())) {
+    /** @var ImagemEntidade $imagem */
+    $imagem = $imagemService->PesquisaUmRegistro($historico->getCoImagem());
+}
 
 $foto = ImagemService::getImagemCoUsuario(
     $usuario->getCoUsuario()
@@ -48,5 +67,20 @@ $foto = ImagemService::getImagemCoUsuario(
     Remetente: <b> <?= Valida::Resumi($usuario->getCoPessoa()->getNoPessoa(), 30); ?></b></br>
     Data: <b><?= Valida::DataShow($historico->getDtCadastro(), 'd/m/Y H:i'); ?></b></br></br>
     Mensagem: <b>
-        <?= Valida::Resumi($historico->getDsMensagem(), 1000); ?></b></br>
+        <?= Valida::Resumi($historico->getDsMensagem(), 1000); ?></b></br></br>
+
+    <?php
+    if ($historico->getCoImagem()) {
+        if(!$imagem){
+            $img = $historico->getCoImagem()->getDsCaminho();
+        }else{
+            $img = $imagem->getDsCaminho();
+        }
+        ?>
+        <a class="btn btn-bricky btn-anexo tooltips" target="_blank"
+           href="<?= HOME . 'uploads/Suporte/' . $img; ?>"
+           data-original-title="Ver Anexo" data-placement="right">
+            <i class="clip-file-pdf"></i>
+        </a>
+    <?php } ?>
 </div>
