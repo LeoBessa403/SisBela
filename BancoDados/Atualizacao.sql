@@ -102,3 +102,39 @@ INSERT INTO TB_HISTORIA (ds_titulo, ds_observacao, co_sessao, st_situacao, dt_at
 
 INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("20", "20"_restante, "2020-04-04 11:06:57", "65");
 
+UPDATE TB_PESSOA SET nu_cpf = "05418337157" where co_pessoa = 6;
+
+UPDATE TB_CONTATO SET nu_tel1 = "6199552332" where co_contato = 6;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao, co_plano_assinante_assinatura_ativo) VALUES ("3", "5", "7", "0", "39.90", "5", "2020-04-04 13:55:19", "2020-07-09", "3"_assinatura_ativo);
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("11", "2020-04-04 13:55:19", "Inicia o pagamento", "LEO BESSA Iniciou o pagamento", "0");
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "1", dt_modificado = "2020-04-04T13:55:27.000-03:00", nu_valor_desconto = "1.99", nu_valor_real = "37.91", ds_link_boleto = "https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=035c74e4680fe8b271bd056c44f457a7fe00437c0fe106dcdfe145f256ab5acd53092dfb85a827ec", ds_code_transacao = "CD6110D9-4252-41E8-93DE-815263F3C02D", co_plano_assinante = "3" where co_plano_assinante_assinatura = 11;
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("11", "2020-04-04T13:55:27.000-03:00", "Mudou para o Status do pagamento de Aguardando pagamento", "Retorno da operadora do pagamento", "1");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 6;
+
+UPDATE TB_CONTATO SET nu_tel1 = "54668755655" where co_contato = 6;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao, co_plano_assinante_assinatura_ativo) VALUES ("5", "5", "25", "0", "124.90", "5", "2020-04-04 13:57:43", "2021-04-09", "5"_assinatura_ativo);
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("12", "2020-04-04 13:57:43", "Inicia o pagamento", "LEO BESSA Iniciou o pagamento", "0");
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "1", dt_modificado = "2020-04-04T13:57:52.000-03:00", nu_valor_desconto = "5.38", nu_valor_real = "119.52", ds_link_boleto = "https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=d71b3af5146918cb665df8d98fe28ff091c013353b587e74bc21ee64b415f9ae67b7766690138a66", ds_code_transacao = "29439106-A1B4-47FA-B558-BBA1AA16FCBC", co_plano_assinante = "5" where co_plano_assinante_assinatura = 12;
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("12", "2020-04-04T13:57:52.000-03:00", "Mudou para o Status do pagamento de Aguardando pagamento", "Retorno da operadora do pagamento", "1");
+
+UPDATE TB_PESSOA SET nu_cpf = "12345678909" where co_pessoa = 6;
+
+UPDATE TB_CONTATO SET nu_tel1 = "6184455656" where co_contato = 6;
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_profissionais, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao, co_plano_assinante_assinatura_ativo) VALUES ("2", "5", "3", "0", "14.90", "3", "2020-04-04 14:01:30", "2020-05-09", "2"_assinatura_ativo);
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("13", "2020-04-04 14:01:30", "Inicia o pagamento", "LEO BESSA Iniciou o pagamento", "0");
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "2", dt_modificado = "2020-04-04T14:01:37.000-03:00", nu_valor_desconto = "0.99", nu_valor_real = "13.91", ds_link_boleto = "", ds_code_transacao = "DCAB740B-F6D5-4150-AFF2-9CE647BF8038", co_plano_assinante = "2" where co_plano_assinante_assinatura = 13;
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("13", "2020-04-04T14:01:37.000-03:00", "Mudou para o Status do pagamento de Em análise", "Retorno da operadora do pagamento", "2");
+
