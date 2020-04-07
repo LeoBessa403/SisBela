@@ -385,6 +385,7 @@ class  ProfissionalService extends AbstractService
             /** @var AssinanteEntidade $assinate */
             $assinate = $assinate[0];
             $profPermito = $assinate->getUltimoCoPlanoAssinante()->getNuProfissionais();
+
             if ($profCad < $profPermito) {
                 $dados = [
                     SUCESSO => TRUE,

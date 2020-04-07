@@ -26,7 +26,7 @@ class Agenda extends AbstractController
         $Condicoes = $session::getSession('pesq_agendamento');
         $agendas = $agendaService->PesquisaAgendamentos($Condicoes, 'tsa.dt_cadastro');
         $eventos = [];
-        if(!empty($agendas)){
+        if (!empty($agendas)) {
             foreach ($agendas as $agenda) {
                 if ($agenda[ST_STATUS] != StatusAgendamentoEnum::DELETADO) {
                     $eve = array(
@@ -136,15 +136,56 @@ class Agenda extends AbstractController
         }
         /** @var AgendaService $agendaService */
         $agendaService = static::getServiceStatic(AGENDA_SERVICE);
-        $pesquisa = $agendaService->AgendamentoPesquisaAvancada($dados);
+        $pesquisaAjax = $agendaService->AgendamentoPesquisaAvancada($dados);
+
+        $pesquisa = [];
+        foreach ($dados as $valor) {
+            if ($valor['name'] == 'st_status-pesquisa[]') {
+                $pesquisa['st_status-pesquisa'][] = $valor['value'];
+            }
+            if ($valor['name'] == 'co_cliente-pesquisa[]') {
+                $pesquisa['co_cliente-pesquisa'][] = $valor['value'];
+            }
+            if ($valor['name'] == 'co_profissional-pesquisa[]') {
+                $pesquisa['co_profissional-pesquisa'][] = $valor['value'];
+            }
+            if ($valor['name'] == 'co_servico-pesquisa[]') {
+                $pesquisa['co_servico-pesquisa'][] = $valor['value'];
+            }
+
+        }
+
+        if (!empty($pesquisa['st_status-pesquisa'])) {
+            $st_status = implode("', '", $pesquisa['st_status-pesquisa']);
+        } else {
+            $st_status = null;
+        }
+
+        if (!empty($pesquisa['co_profissional-pesquisa'])) {
+            $co_profissional = implode("', '", $pesquisa['co_profissional-pesquisa']);
+        } else {
+            $co_profissional = null;
+        }
+
+        if (!empty($pesquisa['co_cliente-pesquisa'])) {
+            $co_cliente = implode("', '", $pesquisa['co_cliente-pesquisa']);
+        } else {
+            $co_cliente = null;
+        }
+
+        if (!empty($pesquisa['co_servico-pesquisa'])) {
+            $co_servico = implode("', '", $pesquisa['co_servico-pesquisa']);
+        } else {
+            $co_servico = null;
+        }
 
         $Condicoes = array(
-            "tsa." . ST_STATUS => $pesquisa['st_status-pesquisa'],
-            "tsa." . CO_CLIENTE => $pesquisa['co_cliente-pesquisa'],
-            "tsa." . CO_PROFISSIONAL => $pesquisa['co_profissional-pesquisa'],
-            "tsa." . CO_SERVICO => $pesquisa['co_servico-pesquisa'],
-            ">=#tsa." . DT_INICIO_AGENDA => Valida::DataDBDate($pesquisa['dt1-pesquisa']) . " 00:00:00",
-            "<=#tsa." . DT_FIM_AGENDA => Valida::DataDBDate($pesquisa['dt2-pesquisa']) . " 23:59:59"
+            "in#tsa." . ST_STATUS => $st_status,
+            "in#tsa." . CO_CLIENTE => $co_cliente,
+            "in#tsa." . CO_PROFISSIONAL => $co_profissional,
+            "in#tsa." . CO_SERVICO => $co_servico,
+            ">=#tsa." . DT_INICIO_AGENDA => Valida::DataDBDate($pesquisaAjax['dt1-pesquisa']) . " 00:00:00",
+            "<=#tsa." . DT_FIM_AGENDA => Valida::DataDBDate($pesquisaAjax['dt2-pesquisa']) . " 23:59:59"
         );
         $session->setSession(PESQUISA_AVANCADA, $Condicoes);
         $retorno[SUCESSO] = true;

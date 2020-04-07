@@ -179,6 +179,7 @@ class AgendaForm
             ->setId(ST_STATUS . '-pesquisa')
             ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Status Agendamento")
+            ->setClasses('multipla')
             ->setTamanhoInput(6)
             ->setOptions($options)
             ->CriaInpunt();
@@ -188,6 +189,7 @@ class AgendaForm
             ->setId(CO_CLIENTE . '-pesquisa')
             ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Cliente")
+            ->setClasses('multipla')
             ->setTamanhoInput(6)
             ->setOptions($options)
             ->CriaInpunt();
@@ -196,6 +198,7 @@ class AgendaForm
             ->setId(CO_PROFISSIONAL . '-pesquisa')
             ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Profissional")
+            ->setClasses('multipla')
             ->setTamanhoInput(6)
             ->setOptions(ProfissionalService::ProfissionaisAtivosCombo())
             ->CriaInpunt();
@@ -203,6 +206,7 @@ class AgendaForm
         $formulario
             ->setId(CO_SERVICO . '-pesquisa')
             ->setType(TiposCampoEnum::SELECT)
+            ->setClasses('multipla')
             ->setLabel("Serviço")
             ->setTamanhoInput(6)
             ->setOptions(ServicoService::servicosCombo())

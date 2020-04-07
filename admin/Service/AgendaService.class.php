@@ -31,8 +31,6 @@ class  AgendaService extends AbstractService
 
         /** @var StatusAgendaService $statusAgendaService */
         $statusAgendaService = $this->getService(STATUS_AGENDA_SERVICE);
-        /** @var ProfissionalService $profissionalService */
-        $profissionalService = $this->getService(PROFISSIONAL_SERVICE);
         /** @var ClienteService $clienteService */
         $clienteService = $this->getService(CLIENTE_SERVICE);
         /** @var ServicoService $servicoService */
@@ -82,8 +80,9 @@ class  AgendaService extends AbstractService
                 // VALIDA O NÚMERO DE PROFISSIONAIS JÁ CADASTRADOS
                 /** @var ProfissionalService $profissionalService */
                 $profissionalService = new ProfissionalService();
-                $retorno = $profissionalService->ValidaNuProfissionais();
-                if (!$retorno[SUCESSO]) {
+                $retornoValidaProf = $profissionalService->ValidaNuProfissionais();
+
+                if (!$retornoValidaProf[SUCESSO]) {
                     $retorno[MSG] = 'Já existem ' . $retorno['cadastrados'] . ' Profissionais Cadastrados, ' .
                         'Favor utilizar um já cadastrado ou mude para um plano maior que possa cadastrar ' .
                         'mais Profissionais!';
