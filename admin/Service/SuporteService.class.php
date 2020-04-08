@@ -128,7 +128,8 @@ class  SuporteService extends AbstractService
         $Condicoes = [
             CO_ASSINANTE => AssinanteService::getCoAssinanteLogado(),
             ST_STATUS => (PerfilService::perfilMaster()) ? null : StatusAcessoEnum::ATIVO,
-            ST_LIDO => SimNaoEnum::NAO
+            ST_LIDO => SimNaoEnum::NAO,
+            "<>#ths." . CO_USUARIO => UsuarioService::getCoUsuarioLogado()
         ];
         $retorno = $ObjetoModel->PesquisaSuportes($Condicoes);
         return count($retorno);

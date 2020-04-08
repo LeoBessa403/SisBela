@@ -30,91 +30,109 @@
                     <div class="panel-body">
                         <div class="col-sm-4">
                             <button class="btn btn-icon btn-block">
-                                <i class="clip-users-3"></i>
-                                Produtos Cadastrados
+                                <i class="fa fa-envelope"></i>
+                                Suporte(s) Não Lido(s)
                                 <span class="negrito dados dados-success">
-                                  <? //= $dados['ProdutosCadastrados']; ?>
-                                    0
+                                  <?= $dados['MsgNaoLidas']; ?>
                                 </span>
                             </button>
                         </div>
                         <div class="col-sm-4">
                             <button class="btn btn-icon btn-block">
-                                <i class="clip-users-3"></i>
-                                Categorias cadastradas
+                                <i class="fa-calendar fa"></i>
+                                Agendamentos de Hoje
                                 <span class="negrito dados dados-danger">
-                                     <? //= $dados['ProdutosCadastrados']; ?>
-                                    0
+                                     <?= $dados['agHoje']; ?>
                                 </span>
                             </button>
                         </div>
                         <div class="col-sm-4">
                             <button class="btn btn-icon btn-block">
-                                <i class="clip-users-2"></i>
-                                Fabricantes Cadastrados
+                                <i class="fa fa-calendar-o"></i>
+                                Agend. do Mês
                                 <span class="dados negrito dados-black">
-                                     <? //= $dados['ProdutosCadastrados']; ?>
-                                    0
+                                     <?= $dados['agMes']; ?>
                                 </span>
                             </button>
                         </div>
                         <div class="col-sm-4">
                             <button class="btn btn-icon btn-block">
                                 <i class="clip-users-3"></i>
-                                Produtos Destaque
+                                Agend. Finalizados do Mês
                                 <span class="negrito dados dados-warning">
-                                     <? //= $dados['ProdutosCadastrados']; ?>
-                                    0
+                                     <?= $dados['agMesFinal']; ?>
                                 </span>
                             </button>
                         </div>
                         <div class="col-sm-4">
                             <button class="btn btn-icon btn-block">
                                 <i class="fa fa-money"></i>
-                                Mais Visitados
+                                Agend. com Falta do Mês
                                 <span class="dados negrito dados-info">
-                                     <? //= $dados['ProdutosCadastrados']; ?>
-                                    0
+                                     <?= $dados['agMesFaltou']; ?>
                                 </span>
                             </button>
                         </div>
                         <div class="col-sm-4">
                             <button class="btn btn-icon btn-block">
                                 <i class="clip-user-cancel"></i>
-                                Mais Vendidos
+                                Agend. Cancelados do Mês
                                 <span class="dados negrito dados-beige">
-                                     <? //= $dados['ProdutosCadastrados']; ?>
-                                    0
+                                     <?= $dados['agMesCanc']; ?>
                                 </span>
                             </button>
                         </div>
                         <div class="col-sm-4">
                             <button class="btn btn-icon btn-block">
                                 <i class="clip-user-3"></i>
-                                Produtos sem estoque
-                                <span class="dados negrito dados-olivia">
-                                     <? //= $dados['ProdutosCadastrados']; ?>
-                                    0
+                                Agend. Agendados do Mês
+                                <span class="dados negrito dados-orange">
+                                     <?= $dados['agMesAge']; ?>
                                 </span>
                             </button>
                         </div>
                         <div class="col-sm-4">
                             <button class="btn btn-icon btn-block">
                                 <i class="fa-dollar fa"></i>
-                                Novos Produtos
-                                <span class="dados negrito dados-orange">
-                                     <? //= $dados['ProdutosCadastrados']; ?>
-                                    0
+                                Agend. Confirmados do Mês
+                                <span class="dados negrito dados-olivia">
+                                     <?= $dados['agMesConf']; ?>
                                 </span>
                             </button>
                         </div>
                         <div class="col-sm-4">
                             <button class="btn btn-icon btn-block">
                                 <i class="fa-eur fa"></i>
-                                Mais procurados
+                                Agend. Deletados do Mês
                                 <span class="dados negrito dados-gray">
-                                    <? //= $dados['ProdutosCadastrados']; ?>
-                                    0
+                                    <?= $dados['agMesDel']; ?>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="col-sm-4">
+                            <button class="btn btn-icon btn-block">
+                                <i class="clip-user-3"></i>
+                                Profissionais Cadastrados
+                                <span class="dados negrito dados-info">
+                                     <?= $dados['nuProf']; ?>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="col-sm-4">
+                            <button class="btn btn-icon btn-block">
+                                <i class="fa-dollar fa"></i>
+                                Serviços Cadastrados
+                                <span class="dados negrito dados-success">
+                                     <?= $dados['nuServ']; ?>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="col-sm-4">
+                            <button class="btn btn-icon btn-block">
+                                <i class="fa-eur fa"></i>
+                                Clientes Cadastrados
+                                <span class="dados negrito dados-warning">
+                                    <?= $dados['nuCli']; ?>
                                 </span>
                             </button>
                         </div>

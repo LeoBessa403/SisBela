@@ -4,38 +4,88 @@ class IndexController extends AbstractController
 {
     public function Index()
     {
+        $dados = [];
 
-//        /** @var ProdutoService $produtoService */
-//        $produtoService = $this->getService(PRODUTO_SERVICE);
-//        $produtos = $produtoService->PesquisaTodos();
-//
-//        /** @var CategoriaService $categoriaService */
-//        $categoriaService = $this->getService(CATEGORIA_SERVICE);
-//        $categorias = $categoriaService->PesquisaTodos();
-//
-//        /** @var FabricanteService $fabricanteService */
-//        $fabricanteService = $this->getService(FABRICANTE_SERVICE);
-//        $fabricantes = $fabricanteService->PesquisaTodos();
-//
-//        /** @var ProdutoDetalheService $produtoDetalheService */
-//        $produtoDetalheService = $this->getService(PRODUTO_DETALHE_SERVICE);
-//        $produtosDestaque = $produtoDetalheService->PesquisaProdutosDestaque();
-//
-//        $produtosSemEstoque = $produtoService->PesquisaProdutosSemEstoque();
-//        $produtosNovos = $produtoService->PesquisaProdutosNovos(30); // Dias passados para compara
-//        $produtosMaisVisitados = $produtoService->PesquisaProdutosMaisVisitados();
-//
-//        $dados['ProdutosCadastrados'] = count($produtos);
-//        $dados['FabricantesCadastrados'] = count($fabricantes);
-//        $dados['CategoriasCadastrados'] = count($categorias);
-//        $dados['ProdutosDestaque'] = count($produtosDestaque);
-//        $dados['MaisVisitados'] = count($produtosMaisVisitados);
-//        $dados['MaisVendidos'] = 0;
-//        $dados['ProdutosSemEstoque'] = count($produtosSemEstoque);
-//        $dados['NovosProdutos'] = count($produtosNovos);
-//        $dados['MaisProdurados'] = 0;
+        /** @var AgendaService $agendaService */
+        $agendaService = $this->getService(AGENDA_SERVICE);
+        /** @var ClienteService $clienteService */
+        $clienteService = $this->getService(CLIENTE_SERVICE);
+        /** @var ProfissionalService $profissionalService */
+        $profissionalService = $this->getService(PROFISSIONAL_SERVICE);
+        /** @var ServicoService $servicoService */
+        $servicoService = $this->getService(SERVICO_SERVICE);
 
-        return [];
+        $Condicoes[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
+
+        /** @var Session $session */
+        $session = new Session();
+
+        if ($session->CheckSession(SESSION_USER)) {
+
+            $CondicoesagHj = array(
+                "ta." . CO_ASSINANTE => AssinanteService::getCoAssinanteLogado(),
+                ">=#tsa." . DT_INICIO_AGENDA => Valida::DataAtualBanco() . " 00:00:00",
+                "<=#tsa." . DT_FIM_AGENDA => Valida::DataAtualBanco() . " 23:59:59"
+            );
+            $agHj = $agendaService->PesquisaAgendamentos($CondicoesagHj);
+
+            $CondicoesagMes = array(
+                "ta." . CO_ASSINANTE => AssinanteService::getCoAssinanteLogado(),
+                ">=#tsa." . DT_INICIO_AGENDA => date("Y-m-01") . " 00:00:00",
+                "<=#tsa." . DT_FIM_AGENDA => date("Y-m-31") . " 23:59:59"
+            );
+            $agMes = $agendaService->PesquisaAgendamentos($CondicoesagMes);
+
+            $agMesFinal = 0;
+            $agMesFaltou = 0;
+            $agMesCanc = 0;
+            $agMesAge = 0;
+            $agMesConf = 0;
+            $agMesDel = 0;
+            foreach ($agMes as $agendamento) {
+                switch ($agendamento["st_status"]) {
+                    case StatusAgendamentoEnum::FINALIZADO:
+                        $agMesFinal++;
+                        break;
+                    case StatusAgendamentoEnum::FALTOU:
+                        $agMesFaltou++;
+                        break;
+                    case StatusAgendamentoEnum::CANCELADO:
+                        $agMesCanc++;
+                        break;
+                    case StatusAgendamentoEnum::AGENDADO:
+                        $agMesAge++;
+                        break;
+                    case StatusAgendamentoEnum::CONFIRMADO:
+                        $agMesConf++;
+                        break;
+                    case StatusAgendamentoEnum::DELETADO:
+                        $agMesDel++;
+                        break;
+                }
+            }
+
+
+            $nuProf = $profissionalService->PesquisaTodos($Condicoes);
+            $nuServ = $servicoService->PesquisaTodos($Condicoes);
+            $nuCli = $clienteService->PesquisaTodos($Condicoes);
+
+
+            $dados['MsgNaoLidas'] = SuporteService::PesquisaCountMensagens();
+            $dados['agHoje'] = count($agHj);
+            $dados['agMes'] = count($agMes);
+            $dados['agMesFinal'] = $agMesFinal;
+            $dados['agMesFaltou'] = $agMesFaltou;
+            $dados['agMesCanc'] = $agMesCanc;
+            $dados['agMesAge'] = $agMesAge;
+            $dados['agMesConf'] = $agMesConf;
+            $dados['agMesDel'] = $agMesDel;
+            $dados['nuProf'] = count($nuProf);
+            $dados['nuServ'] = count($nuServ);
+            $dados['nuCli'] = count($nuCli);
+        }
+
+        return $dados;
     }
 
     public function CronExecute()
@@ -88,11 +138,11 @@ class IndexController extends AbstractController
                     case StatusAgendamentoEnum::CONFIRMADO:
                         $dados[ST_STATUS] = StatusAgendamentoEnum::FALTOU;
                         $dados[DS_OBSERVACAO] = 'Mudou para o Status (Faltou) automaticamente pelo Sistema';
-                    break;
+                        break;
                     case StatusAgendamentoEnum::AGUARDANDO:
                     case StatusAgendamentoEnum::EM_ATENDIMENTO:
-                    $dados[ST_STATUS] = StatusAgendamentoEnum::CANCELADO;
-                    $dados[DS_OBSERVACAO] = 'Mudou para o Status (Cancelado) automaticamente pelo Sistema';
+                        $dados[ST_STATUS] = StatusAgendamentoEnum::CANCELADO;
+                        $dados[DS_OBSERVACAO] = 'Mudou para o Status (Cancelado) automaticamente pelo Sistema';
                         break;
                 }
                 $statusAgendaService->Salva($dados);
