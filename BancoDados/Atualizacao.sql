@@ -204,3 +204,7 @@ INSERT INTO TB_HISTORIA (ds_titulo, ds_observacao, co_sessao, st_situacao, dt_at
 
 INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("20", "20"_restante, "2020-04-08 11:37:38", "66");
 
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 8;
+
+UPDATE TB_HISTORICO_SUPORTE SET st_lido = "S" where co_historico_suporte = 8;
+
