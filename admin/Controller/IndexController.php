@@ -6,19 +6,19 @@ class IndexController extends AbstractController
     {
         $dados = [];
 
-        /** @var AgendaService $agendaService */
-        $agendaService = $this->getService(AGENDA_SERVICE);
-        /** @var ClienteService $clienteService */
-        $clienteService = $this->getService(CLIENTE_SERVICE);
-        /** @var ProfissionalService $profissionalService */
-        $profissionalService = $this->getService(PROFISSIONAL_SERVICE);
-        /** @var ServicoService $servicoService */
-        $servicoService = $this->getService(SERVICO_SERVICE);
-
         /** @var Session $session */
         $session = new Session();
 
         if ($session->CheckSession(SESSION_USER)) {
+
+            /** @var AgendaService $agendaService */
+            $agendaService = $this->getService(AGENDA_SERVICE);
+            /** @var ClienteService $clienteService */
+            $clienteService = $this->getService(CLIENTE_SERVICE);
+            /** @var ProfissionalService $profissionalService */
+            $profissionalService = $this->getService(PROFISSIONAL_SERVICE);
+            /** @var ServicoService $servicoService */
+            $servicoService = $this->getService(SERVICO_SERVICE);
 
             $Condicoes[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
 
