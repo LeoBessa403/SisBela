@@ -15,12 +15,12 @@ class IndexController extends AbstractController
         /** @var ServicoService $servicoService */
         $servicoService = $this->getService(SERVICO_SERVICE);
 
-        $Condicoes[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
-
         /** @var Session $session */
         $session = new Session();
 
         if ($session->CheckSession(SESSION_USER)) {
+
+            $Condicoes[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
 
             $CondicoesagHj = array(
                 "ta." . CO_ASSINANTE => AssinanteService::getCoAssinanteLogado(),
