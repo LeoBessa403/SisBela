@@ -67,5 +67,5 @@ function servidor_inicial()
     define("EMAIL_PAGSEGURO", "leodjx@hotmail.com");
     define("EMAIL_LOJA", "leodjx@hotmail.com");
     define("MOEDA_PAGAMENTO", "BRL");
-    define("URL_NOTIFICACAO", HOME . "NotificacaoPagSeguro.php");
+    define("URL_NOTIFICACAO", HOME . "library/NotificacaoPagSeguro.php");
 }
