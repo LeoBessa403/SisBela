@@ -732,6 +732,8 @@ Section
 .beautypress-purple-overlay,
 .beautypress-pink-overlay,
 .beautypress-sky-blue-overlay,
+.beautypress-green-overlay,
+.beautypress-red-overlay,
 .beautypress-white-overlay,
 .beautypress-chocolate-overlay {
     position: relative;
@@ -742,6 +744,8 @@ Section
 .beautypress-purple-overlay:before,
 .beautypress-pink-overlay:before,
 .beautypress-sky-blue-overlay:before,
+.beautypress-green-overlay:before,
+.beautypress-red-overlay:before,
 .beautypress-single-team:before,
 .beautypress-single-team:after,
 .beautypress-white-overlay:before,
@@ -776,6 +780,16 @@ Section
     background-image: -ms-linear-gradient(90deg, #ec5598 0%, #00bcd4 0%, rgba(255, 255, 255, 0) 100%);
 }
 
+.beautypress-green-overlay:before {
+    background-image: -webkit-linear-gradient(90deg, #00ff00 0%, #1b7e5a 0%, rgba(255, 255, 255, 0) 100%);
+    background-image: -ms-linear-gradient(90deg, #00ff00 0%, #1b7e5a 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.beautypress-red-overlay:before {
+    background-image: -webkit-linear-gradient(90deg, #f08f75 0%, #990000 0%, rgba(255, 255, 255, 0) 100%);
+    background-image: -ms-linear-gradient(90deg, #f08f75 0%, #990000 0%, rgba(255, 255, 255, 0) 100%);
+}
+
 .beautypress-white-overlay:before {
     background-image: -webkit-linear-gradient(90deg, #e2b9a3 0%, white 0%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0) 100%);
     background-image: -ms-linear-gradient(90deg, #e2b9a3 0%, white 0%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0) 100%);
@@ -796,6 +810,11 @@ Section
     background-image: -ms-linear-gradient(90deg, black 0%, #00bcd4 0%, rgba(77, 208, 225, 0.5) 30%, rgba(255, 255, 255, 0) 100%);
 }
 
+.beautypress-light-overlay.beautypress-green-overlay:before {
+    background-image: -webkit-linear-gradient(90deg, black 0%, #1b7e5a 0%, rgba(77, 208, 225, 0.5) 30%, rgba(255, 255, 255, 0) 100%);
+    background-image: -ms-linear-gradient(90deg, black 0%, #1b7e5a 0%, rgba(77, 208, 225, 0.5) 30%, rgba(255, 255, 255, 0) 100%);
+}
+
 .beautypress-single-team.beautypress-purple-overlay:before {
     background-image: -webkit-linear-gradient(90deg, #d31027 0%, #7d00fe 0%, rgba(255, 255, 255, 0) 50%);
     background-image: -ms-linear-gradient(90deg, #d31027 0%, #7d00fe 0%, rgba(255, 255, 255, 0) 50%);
@@ -811,6 +830,11 @@ Section
     background-image: -ms-linear-gradient(90deg, #ec5598 0%, #00bcd4 0%, rgba(255, 255, 255, 0) 50%);
 }
 
+.beautypress-single-team.beautypress-green-overlay:before {
+    background-image: -webkit-linear-gradient(90deg, #ec5598 0%, #00ff00 0%, rgba(255, 255, 255, 0) 50%);
+    background-image: -ms-linear-gradient(90deg, #ec5598 0%, #00ff00 0%, rgba(255, 255, 255, 0) 50%);
+}
+
 .beautypress-single-team.beautypress-purple-overlay:after {
     background-image: -webkit-linear-gradient(90deg, #d31027 0%, #7d00fe 0%, rgba(255, 255, 255, 0) 100%);
     background-image: -ms-linear-gradient(90deg, #d31027 0%, #7d00fe 0%, rgba(255, 255, 255, 0) 100%);
@@ -824,6 +848,11 @@ Section
 .beautypress-single-team.beautypress-sky-blue-overlay:after {
     background-image: -webkit-linear-gradient(90deg, #ec5598 0%, #00bcd4 0%, rgba(255, 255, 255, 0) 100%);
     background-image: -ms-linear-gradient(90deg, #ec5598 0%, #00bcd4 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.beautypress-single-team.beautypress-green-overlay:after {
+    background-image: -webkit-linear-gradient(90deg, #ec5598 0%, #00ff00 0%, rgba(255, 255, 255, 0) 100%);
+    background-image: -ms-linear-gradient(90deg, #ec5598 0%, #00ff00 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 .beautypress-black-gradient-overlay {
@@ -904,7 +933,7 @@ Section
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-end;
-    padding: 10px 0;
+    padding: 0;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
@@ -2939,11 +2968,11 @@ Section
 
 .beautypress-social-list li {
     display: inline-block;
-    margin: 0 10px 10px 0;
+    margin: 0;
 }
 
 .beautypress-social-list li:last-child {
-    margin: 0 0 10px 0;
+    margin: 0 !important;
 }
 
 .beautypress-social-list li a {
@@ -2958,8 +2987,8 @@ Section
     align-items: center;
     -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
-    height: 30px;
-    width: 30px;
+    height: 35px;
+    width: 35px;
     position: relative;
     z-index: 1;
     -webkit-transition: all .4s ease;
@@ -2967,8 +2996,9 @@ Section
     transition: all .4s ease;
     background-color: #222222;
     color: #FFFFFF;
-    border-radius: 100%;
-    font-size: 1em;
+    padding-left: 25% !important;
+    /*border-radius: 100%;*/
+    font-size: 1.2em;
 }
 
 .beautypress-social-list li a i {
@@ -3007,14 +3037,10 @@ Section
     background-color: #007000 !important;
 }
 
-.beautypress-social-list li a{
-    padding-left: 25% !important;
-    box-shadow: 3px 3px 6px black;
-}
-
 .beautypress-social-list li a:hover {
     box-shadow: none;
     cursor: pointer;
+    font-size: 1.35em;
 }
 
 .beautypress-version-2.beautypress-social-list li a {
@@ -10846,4 +10872,9 @@ label[for="rating"] {
 
 #preloader-cancel-btn span {
     background-color: #fff;
+}
+.btn-exp{
+    padding: 8px 12px;
+    border-radius: 0px !important;
+    font-size: 0.9em;
 }

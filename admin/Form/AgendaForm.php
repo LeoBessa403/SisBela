@@ -99,7 +99,7 @@ class AgendaForm
         $formulario
             ->setId(NO_SERVICO)
             ->setTamanhoInput(9)
-            ->setLabel("Novo do Serviço")
+            ->setLabel("Nome do Serviço")
             ->CriaInpunt();
 
 

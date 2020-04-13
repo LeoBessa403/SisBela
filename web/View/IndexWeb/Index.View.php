@@ -1,17 +1,150 @@
-<div id="top-banner-and-menu" class="homepage2">
+<style>
+    .input-group {
+        margin: 30px 15px;
+    }
+
+    .beautypress-single-pricing-table {
+        margin-top: 20px;
+    }
+</style>
+<!-- EXPERIMENTE GRÁTIS-->
+<section class="beautypress-booking-section section-padding">
     <div class="container">
-        <div class="col-xs-12">
-            <?php require PASTA_RAIZ . SITE . '/parts/section/home-page-slider-2.php'; ?>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-lg-6 col-xl-6">
+                <div class="beautypress-booking-text-wraper">
+                    <div class="beautypress-booking-content-text beautypress-border beautypress-version-3">
+                        <div class="beautypress-booking-text" style="padding-left: 35px;">
+                            <h2>Adeus, agenda de papel!</h2>
+                            <h3>Papel Nunca Mais..</h3>
+                            <div class="beautypress-icon-bg-text">
+                                <p style="font: bold; color: #0b0b0b;">Ter uma agenda organizada é fundamental. Todo
+                                    profissional que possui uma carteira de
+                                    clientes necessita de uma agenda organizada. Se esse profissional atua no setor de
+                                    beleza e estética, essa necessidade torna-se ainda mais importante.</p>
+                            </div><!-- .beautypress-icon-bg-text END -->
+                            <ul>
+                                <li>Agenda Disponível...</li>
+                                <li>24 Horas por Dia</li>
+                                <li>7 Dias da Semana</li>
+                                <li>De forma Rápida</li>
+                            </ul>
+                        </div><!-- .beautypress-booking-text END -->
+                    </div><!-- .beautypress-booking-content-text END -->
+                </div><!-- .beautypress-booking-text-wraper END -->
+            </div>
+            <div class="col-md-12 col-sm-12 col-lg-6 col-xl-6">
+                <div class="beautypress-booking-form-wraper">
+                    <form action="#" method="POST" id="beautypress-booking-form">
+                        <div class="beautypress-service-and-date">
+                            <h2>Experimente Grátis por <?= ConfiguracoesEnum::DIAS_EXPERIMENTAR ?> Dias.</h2>
+                            <h2>Ainda não é cliente, Faça seu cadastro.</h2>
+
+
+                            <div class="input-group">
+                                <input type="text" required name="<?= NO_FANTASIA; ?>" class="form-control"
+                                       id="<?= NO_FANTASIA; ?>" placeholder="Nome do Estabelecimento">
+                                <div class="input-group-addon"><i class="fa fa-hospital-o"></i></div>
+                            </div>
+
+                            <div class="input-group">
+                                <input type="text" required name="<?= NO_PESSOA; ?>" class="form-control"
+                                       id="<?= NO_PESSOA; ?>" placeholder="Nome do Responsável">
+                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                            </div>
+
+                            <div class="input-group">
+                                <input type="text" required name="<?= NU_TEL1; ?>" class="form-control tel"
+                                       id="<?= NU_TEL1; ?>" placeholder="Telefone (WhatsApp)....">
+                                <div class="input-group-addon"><i class="fa fa-whatsapp"></i></div>
+                            </div>
+
+                            <div class="input-group">
+                                <input type="email" required name="<?= DS_EMAIL; ?>" class="form-control"
+                                       id="<?= DS_EMAIL; ?>" placeholder="Email ....">
+                                <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                            </div>
+
+                            <div class="beautypress-btn-wraper" style="text-align: right; margin-right: -10px">
+                                <button type="submit" style="cursor: pointer!important;"
+                                        class="xs-btn round-btn box-shadow-btn bg-color-green">
+                                    Experimentar Agora
+                                    <span></span></button>
+                            </div>
+                        </div><!-- .beautypress-service-and-date END -->
+                    </form><!-- #beautypress-booking-form END -->
+                </div>
+            </div>
         </div>
     </div>
-</div><!-- /.homepage2 -->
+</section>
 
-<?php require PASTA_RAIZ . SITE . '/parts/section/home-banners.php'; ?>
-
-<?php require PASTA_RAIZ . SITE . '/parts/section/home-page-tabs.php'; ?>
-
-<?php require PASTA_RAIZ . SITE . '/parts/section/best-sellers.php'; ?>
-
-<?php require PASTA_RAIZ . SITE . '/parts/section/recently-viewed.php'; ?>
-
-<?php require PASTA_RAIZ . SITE . '/parts/section/top-brands.php'; ?>
+<!-- Pricing table -->
+<section class="beautypress-pricing-table-section beautypress-padding-bottom  beautypress-bg"
+         style="background-image: url(<?= PASTASITE; ?>img/pricing-bg.jpg)">
+    <div class="container">
+        <div class="beautypress-section-headinig beautypress-section-headinig-white">
+            <h2>Pacotes Promocionais</h2>
+            <h3>Preços super acessíveis</h3>
+        </div>
+        <div class="row">
+            <?php
+            $foto = 1;
+            $cores = [
+                'sky-blue',
+                'red',
+                'pink',
+                'green',
+                'purple',
+                'black-gradient'
+            ];
+            $result = array_reverse($result);
+            /** @var PlanoEntidade $plano */
+            foreach ($result as $plano) {
+                if ($plano->getCoPlano() > 1) {
+                    ?>
+                    <div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">
+                        <div class="beautypress-single-pricing-table">
+                            <div class="beautypress-pricing-header beautypress-<?= $cores[$foto-1]; ?>-overlay">
+                                <?php
+                                echo '<img src="' . TIMTHUMB . '?src=' .
+                                    PASTASITE . 'img/pricing-' . $foto . '.jpg&w=370&h=274" 
+                                alt="' . $plano->getNoPlano() . '" title="' . $plano->getNoPlano() . '" />';
+                                ?>
+                                <div class="beautypress-pricing-header-content">
+                                    <div class="beautypress-pricing-title">
+                                        <h2><?= $plano->getNoPlano(); ?></h2>
+                                    </div>
+                                    <div class="beautypress-pricing-price">
+                                        <h4>em até 12x</h4>
+                                        <h5><span>$</span><?php
+                                            $preço = explode('.', $plano->getCoUltimoPlanoAssinante()->getNuValor());
+                                            echo $preço[0];
+                                            echo '<span>.' . $preço[1] . '</span>';
+                                            ?>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div><!-- .beautypress-pricing-header END -->
+                            <div class="beautypress-pricing-footer">
+                                <ul class="beautypress-both-side-list">
+                                    <li>Meses de Assinatura<span><?= $plano->getNuMesAtivo(); ?></span></li>
+                                    <li>Nº Profissionais<span><?= PlanoService::getNuProfissionais(
+                                                $plano->getNuMesAtivo()); ?></span>
+                                    </li>
+                                </ul>
+                                <div class="beautypress-btn-wraper">
+                                    <a href="#" class="xs-btn round-btn box-shadow-btn bg-color-purple">Appointment Now
+                                        <span></span></a>
+                                </div>
+                            </div><!-- .beautypress-pricing-footer END -->
+                        </div><!-- .beautypress-single-pricing-table END -->
+                    </div>
+                    <?php $foto++;
+                }
+            } ?>
+        </div>
+    </div>
+    <div class="beautypress-black-overlay"></div>
+</section><!-- .beautypress-pricing-table-section END -->
+<!-- Pricing table -->

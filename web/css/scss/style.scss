@@ -747,6 +747,7 @@ Section
 .beautypress-purple-overlay,
 .beautypress-pink-overlay,
 .beautypress-sky-blue-overlay,
+.beautypress-green-overlay,
 .beautypress-white-overlay,
 .beautypress-chocolate-overlay {
     position: relative;
@@ -757,6 +758,7 @@ Section
 .beautypress-purple-overlay:before,
 .beautypress-pink-overlay:before,
 .beautypress-sky-blue-overlay:before,
+.beautypress-green-overlay:before,
 .beautypress-single-team:before,
 .beautypress-single-team:after,
 .beautypress-white-overlay:before,
@@ -790,6 +792,11 @@ Section
     background-image: -ms-linear-gradient( 90deg, rgb(236, 85, 152) 0%, rgb(0, 188, 212) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
+.beautypress-green-overlay:before {
+    background-image: -webkit-linear-gradient(90deg, #00ff00 0%, #0b2e13 0%, rgba(255, 255, 255, 0) 100%);
+    background-image: -ms-linear-gradient(90deg, #00ff00 0%, #0b2e13 0%, rgba(255, 255, 255, 0) 100%);
+}
+
 .beautypress-white-overlay:before {
     background-image: -webkit-linear-gradient( 90deg, rgb(226, 185, 163) 0%, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0) 100%);
     background-image: -ms-linear-gradient( 90deg, rgb(226, 185, 163) 0%, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0) 100%);
@@ -810,6 +817,11 @@ Section
     background-image: -ms-linear-gradient( 90deg, rgb(0, 0, 0) 0%, rgb(0, 188, 212) 0%, rgba(77, 208, 225, 0.5) 30%, rgba(255, 255, 255, 0) 100%);
 }
 
+.beautypress-light-overlay.beautypress-green-overlay:before {
+    background-image: -webkit-linear-gradient(90deg, black 0%, #0b2e13 0%, rgba(77, 208, 225, 0.5) 30%, rgba(255, 255, 255, 0) 100%);
+    background-image: -ms-linear-gradient(90deg, black 0%, #0b2e13 0%, rgba(77, 208, 225, 0.5) 30%, rgba(255, 255, 255, 0) 100%);
+}
+
 .beautypress-single-team.beautypress-purple-overlay:before {
     background-image: -webkit-linear-gradient( 90deg, rgb(211, 16, 39) 0%, rgb(125, 0, 254) 0%, rgba(255, 255, 255, 0) 50%);
     background-image: -ms-linear-gradient( 90deg, rgb(211, 16, 39) 0%, rgb(125, 0, 254) 0%, rgba(255, 255, 255, 0) 50%);
@@ -825,6 +837,11 @@ Section
     background-image: -ms-linear-gradient( 90deg, rgb(236, 85, 152) 0%, rgb(0, 188, 212) 0%, rgba(255, 255, 255, 0) 50%);
 }
 
+.beautypress-single-team.beautypress-green-overlay:before {
+    background-image: -webkit-linear-gradient(90deg, #ec5598 0%, #00ff00 0%, rgba(255, 255, 255, 0) 50%);
+    background-image: -ms-linear-gradient(90deg, #ec5598 0%, #00ff00 0%, rgba(255, 255, 255, 0) 50%);
+}
+
 .beautypress-single-team.beautypress-purple-overlay:after {
     background-image: -webkit-linear-gradient( 90deg, rgb(211, 16, 39) 0%, rgb(125, 0, 254) 0%, rgba(255, 255, 255, 0) 100%);
     background-image: -ms-linear-gradient( 90deg, rgb(211, 16, 39) 0%, rgb(125, 0, 254) 0%, rgba(255, 255, 255, 0) 100%);
@@ -838,6 +855,11 @@ Section
 .beautypress-single-team.beautypress-sky-blue-overlay:after {
     background-image: -webkit-linear-gradient( 90deg, rgb(236, 85, 152) 0%, rgb(0, 188, 212) 0%, rgba(255, 255, 255, 0) 100%);
     background-image: -ms-linear-gradient( 90deg, rgb(236, 85, 152) 0%, rgb(0, 188, 212) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.beautypress-single-team.beautypress-green-overlay:after {
+    background-image: -webkit-linear-gradient(90deg, #ec5598 0%, #00ff00 0%, rgba(255, 255, 255, 0) 100%);
+    background-image: -ms-linear-gradient(90deg, #ec5598 0%, #00ff00 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 .beautypress-black-gradient-overlay {
@@ -2877,7 +2899,7 @@ Section
 
 .beautypress-social-list li {
     display: inline-block;
-    margin: 0 10px 10px 0;
+    margin: 0 1px 10px 0;
 }
 
 .beautypress-social-list li:last-child {
@@ -2895,15 +2917,15 @@ Section
     -ms-flex-align: center;
     align-items: center;
     box-shadow: $primary-shadow;
-    height: 40px;
-    width: 40px;
+    height: 400px;
+    width: 400px;
     position: relative;
     z-index: 1;
     -webkit-transition: all .4s ease;
     transition: all .4s ease;
     background-color: $color-semi-black;
     color: $color-white;
-    border-radius: 100%;
+    //border-radius: 100%;
     font-size: 1em;
 }
 
