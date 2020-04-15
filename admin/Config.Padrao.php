@@ -14,7 +14,7 @@ define('DESC_SIS', 'SisBela');
 define('TITULO_SITE', 'Sistema de gestão do ramo de beleza');
 define('DESC_SITE', 'Sistema de gestão do ramo de beleza');
 define('CONTROLLER_INICIAL_ADMIN', 'Index');
-define('ACTION_INICIAL_ADMIN', 'Index');
+define('ACTION_INICIAL_ADMIN', 'IndexAdmin');
 define('CONTROLLER_INICIAL_SITE', 'IndexWeb');
 define('ACTION_INICIAL_SITE', 'Index');
 define('TABLE_USER', 'tb_usuario');
