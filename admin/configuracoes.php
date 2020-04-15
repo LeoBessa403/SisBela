@@ -68,4 +68,6 @@ function servidor_inicial()
     define("EMAIL_LOJA", "leodjx@hotmail.com");
     define("MOEDA_PAGAMENTO", "BRL");
     define("URL_NOTIFICACAO", HOME . "library/NotificacaoPagSeguro.php");
+    define("API_WHATS_URL", "https://api.chat-api.com/instance117133/");
+    define("API_WHATS_TOKEN", "wtnx36qqeqbxn21i");
 }
