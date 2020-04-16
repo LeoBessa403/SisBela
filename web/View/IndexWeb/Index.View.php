@@ -174,7 +174,8 @@
                         agendamentos de qualquer lugar, com Relatórios que são simples,
                         claros e completos. Rápido e fácil de usar.</p>
                     <div class="beautypress-btn-wraper">
-                        <a href="#" class="xs-btn bg-color-purple round-btn box-shadow-btn">learn more <span></span></a>
+                        <a href="#" class="xs-btn bg-color-purple round-btn box-shadow-btn
+                        saiba_mais">Saiba Mais<span></span></a>
                     </div>
                 </div><!-- . END -->
             </div>
