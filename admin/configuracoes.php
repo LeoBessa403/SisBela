@@ -18,10 +18,10 @@ function servidor_inicial()
                 "sandbox.pagseguro.js",
         );
     } else {
-        $ambTeste = strstr($_SERVER['SCRIPT_NAME'], '/teste/');
+        $ambTeste = strstr($_SERVER['SERVER_NAME'], 'testando.sistemadabeleza.com.br');
         if ($ambTeste != null) {
             $config = array(
-                'HOME' => 'https://sistemadabeleza.com.br/teste/',
+                'HOME' => 'https://testando.sistemadabeleza.com.br/',
                 'HOST' => 'localhost',
                 'USER' => 'sistem25_dabelez',
                 'PASS' => 'Admin101**',

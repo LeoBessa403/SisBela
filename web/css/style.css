@@ -3077,6 +3077,43 @@ Section
     background-color: #222222 !important;
 }
 
+
+.color-sky-blue {
+    color: #3B5999 !important;
+}
+
+.color-navy-blue {
+    color: #55ACEE !important;
+}
+
+.color-red {
+    color: #BD081C !important;
+}
+
+.color-pink {
+    color: #EA4C89 !important;
+}
+
+.color-red-light {
+    color: #DD4B39 !important;
+}
+
+.color-yellow {
+    color: #fa9f1e !important;
+}
+
+.color-green {
+    color: #007000 !important;
+}
+
+.color-gray {
+    background-color: #47454F !important;
+}
+
+.color_black {
+    color: #222222 !important;
+}
+
 .beautypress-team-person-socail-details {
     opacity: 0;
     -webkit-transition: all .4s ease;
@@ -10897,8 +10934,21 @@ label[for="rating"] {
 #preloader-cancel-btn span {
     background-color: #fff;
 }
-.btn-exp{
+
+.btn-exp {
     padding: 8px 12px;
     border-radius: 0px !important;
     font-size: 0.9em;
+}
+
+.beautypress-service-header {
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 8em;
+    padding-left: 25% !important;
+}
+
+.beautypress-service-footer {
+    padding: 0 !important;
+    margin: 0 !important;
 }
