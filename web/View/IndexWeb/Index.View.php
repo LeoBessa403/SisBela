@@ -39,6 +39,9 @@
                         <div class="beautypress-service-and-date">
                             <h2>Experimente Grátis por <?= ConfiguracoesEnum::DIAS_EXPERIMENTAR ?> Dias.</h2>
                             <h2>Ainda não é cliente, Faça seu cadastro.</h2>
+                            <h5>Sou Cliente, acesso o sistema
+                                <a href="<?= PASTAADMIN; ?>Index/PrimeiroAcesso" title="Acesso ao Sitema SisBela"
+                                   target="_blank">SisBela</a>.</h5>
 
 
                             <div class="input-group">
@@ -105,7 +108,7 @@
                     ?>
                     <div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">
                         <div class="beautypress-single-pricing-table">
-                            <div class="beautypress-pricing-header beautypress-<?= $cores[$foto-1]; ?>-overlay">
+                            <div class="beautypress-pricing-header beautypress-<?= $cores[$foto - 1]; ?>-overlay">
                                 <?php
                                 echo '<img src="' . TIMTHUMB . '?src=' .
                                     PASTASITE . 'img/pricing-' . $foto . '.jpg&w=370&h=274" 
@@ -116,11 +119,15 @@
                                         <h2><?= $plano->getNoPlano(); ?></h2>
                                     </div>
                                     <div class="beautypress-pricing-price">
-                                        <h4>em até 12x</h4>
-                                        <h5><span>$</span><?php
-                                            $preço = explode('.', $plano->getCoUltimoPlanoAssinante()->getNuValor());
+                                        <h4>Total: <?= Valida::FormataMoeda(
+                                                $plano->getCoUltimoPlanoAssinante()->getNuValor()); ?></h4>
+                                        <h5><span>R$</span><?php
+                                            $preço = explode(',', Valida::FormataMoeda(
+                                                $plano->getCoUltimoPlanoAssinante()->getNuValor() /
+                                                $plano->getNuMesAtivo()
+                                            ));
                                             echo $preço[0];
-                                            echo '<span>.' . $preço[1] . '</span>';
+                                            echo '<span>,' . $preço[1] . '/Mês</span>';
                                             ?>
                                         </h5>
                                     </div>
@@ -132,10 +139,12 @@
                                     <li>Nº Profissionais<span><?= PlanoService::getNuProfissionais(
                                                 $plano->getNuMesAtivo()); ?></span>
                                     </li>
+                                    <li>Cartão em até<span>12x</span></li>
                                 </ul>
-                                <div class="beautypress-btn-wraper">
-                                    <a href="#" class="xs-btn round-btn box-shadow-btn bg-color-purple">Appointment Now
-                                        <span></span></a>
+                                <div class="beautypress-btn-wraper experimentar_gratis">
+                                    <a href="#"
+                                       class="xs-btn round-btn box-shadow-btn bg-color-<?= $cores[$foto - 1]; ?>">
+                                        Começar Agora<span></span></a>
                                 </div>
                             </div><!-- .beautypress-pricing-footer END -->
                         </div><!-- .beautypress-single-pricing-table END -->
@@ -148,3 +157,51 @@
     <div class="beautypress-black-overlay"></div>
 </section><!-- .beautypress-pricing-table-section END -->
 <!-- Pricing table -->
+
+
+<!-- Simple text with image-->
+<section class="beautypress-simple-text-with-img-section bg-color-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xl-6 col-lg-6">
+                <div class="beautypress-simple-text beautypress-watermark-icon">
+                    <div class="beautypress-separetor-sub-heading">
+                        <h2>Rápido, fácil e seguro de usar. Acabe com a dor de cabeça na hora
+                            de fazer a gestão do seu negocio! </h2>
+                    </div><!-- . END -->
+                    <p style="font-size: 1.3em;">Você pode controlar sua agenda do computador, tablet ou celular. Faça a
+                        gestão completa dos seus
+                        agendamentos de qualquer lugar, com Relatórios que são simples,
+                        claros e completos. Rápido e fácil de usar.</p>
+                    <div class="beautypress-btn-wraper">
+                        <a href="#" class="xs-btn bg-color-purple round-btn box-shadow-btn">learn more <span></span></a>
+                    </div>
+                </div><!-- . END -->
+            </div>
+            <div class="col-md-12 col-sm-12 col-lg-6 col-xl-6">
+                <div class="beautypress-simple-img-wraper">
+                    <img src="<?= PASTASITE; ?>img/iphoneIpad.png" alt="desing responsivo">
+                </div><!-- .beautypress-simple-img-wraper END -->
+            </div>
+        </div>
+    </div>
+</section><!-- .beautypress-simple-text-with-img-section END -->
+<!-- Simple text with image end -->
+
+
+<!-- Video popup section -->
+<div class="beautypress-video-section beautypress-bg parallax-bg" data-parallax="scroll"
+     data-image-src="<?= PASTASITE; ?>img/welcome-v3-img.jpg">
+    <div class="container">
+        <div class="beautypress-video-section-content">
+            <a href="https://www.youtube.com/watch?v=JUivqhBf0Sg"
+               class="beautypress-video-popup beautypress-video-popup-btn bg-color-purple">
+                <i class="fa fa-play"></i>
+            </a>
+            <p>Em poucos minutos você já terá uma agenda bem organizada e detalhada.</p>
+            <h3>Veja como tudo é simples é rápido.</h3>
+        </div><!-- .beautypress-video-section-content END -->
+    </div>
+    <div class="beautypress-black-overlay"></div>
+</div><!-- .beautypress-video-section END -->
+<!-- Video popup section -->

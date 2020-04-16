@@ -679,6 +679,10 @@ Section
     background-color: #222222 !important;
 }
 
+.bg-color-black-gradient {
+    background-color: #222222 !important;
+}
+
 .bg-color-white {
     background-color: #FFFFFF !important;
 }
@@ -1078,9 +1082,9 @@ Section
     -webkit-transition: all .4s ease;
     -o-transition: all .4s ease;
     transition: all .4s ease;
-    background-color: #6A1B9A;
+    background-color: white;
     height: 4px;
-    width: 0%;
+    width: 0;
 }
 
 .beautypress-main-header nav li a:hover:before {
@@ -2545,7 +2549,7 @@ Section
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding: 30px;
+    padding: 12px;
     -ms-grid-row-align: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -2573,14 +2577,14 @@ Section
 
 .beautypress-pricing-price h4 {
     margin: 0 0 10px;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 1em;
 }
 
 .beautypress-pricing-price h5 {
     margin: 0;
     font-size: 2.857em;
-    font-weight: 200;
+    font-weight: 300;
 }
 
 .beautypress-pricing-price h5 span {
@@ -2987,8 +2991,6 @@ Section
     align-items: center;
     -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
-    height: 35px;
-    width: 35px;
     position: relative;
     z-index: 1;
     -webkit-transition: all .4s ease;
@@ -2996,10 +2998,37 @@ Section
     transition: all .4s ease;
     background-color: #222222;
     color: #FFFFFF;
+}
+
+.beautypress-header-top .beautypress-social-list li a {
     padding-left: 25% !important;
-    /*border-radius: 100%;*/
+    font-size: 1.35em;
+    height: 35px;
+    width: 35px;
+}
+
+.beautypress-footer-social .beautypress-social-list li a {
+    border-radius: 100%;
+    font-size: 1.8em;
+    height: 50px;
+    width: 50px;
+}
+
+.beautypress-social-list li a:hover {
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.beautypress-header-top .beautypress-social-list li a:hover {
     font-size: 1.2em;
 }
+
+.beautypress-footer-social .beautypress-social-list li a:hover {
+    font-size: 1.6em;
+    -webkit-box-shadow: 0 1px 4px 0 rgba(255, 255, 255, 0.9);
+    box-shadow: 0 1px 4px 0 rgba(255, 255, 255, 0.9);
+}
+
 
 .beautypress-social-list li a i {
     line-height: inherit;
@@ -3037,11 +3066,6 @@ Section
     background-color: #007000 !important;
 }
 
-.beautypress-social-list li a:hover {
-    box-shadow: none;
-    cursor: pointer;
-    font-size: 1.35em;
-}
 
 .beautypress-version-2.beautypress-social-list li a {
     background-color: #47454F !important;
