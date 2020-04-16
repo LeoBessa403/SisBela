@@ -649,7 +649,7 @@ Section
 .color-gradient {
     color: #d31027;
     background: -webkit-linear-gradient(0deg, #d31027 0%, #7d00fe 0%, #d52bff 100%);
-    /*background: -ms-linear-gradient( 0deg, rgb(211,16,39) 0%, rgb(125,0,254) 0%, rgb(213,43,255) 100%);*/
+    background: -ms-linear-gradient( 0deg, rgb(211,16,39) 0%, rgb(125,0,254) 0%, rgb(213,43,255) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
