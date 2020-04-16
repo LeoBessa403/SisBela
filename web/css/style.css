@@ -10952,3 +10952,12 @@ label[for="rating"] {
     padding: 0 !important;
     margin: 0 !important;
 }
+
+.beautypress-service-footer p {
+    font-size: 1.3em;
+}
+
+.beautypress-service-title {
+    text-align: center !important;
+    font-size: 1.5em;
+}
