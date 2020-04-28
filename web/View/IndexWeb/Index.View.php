@@ -189,7 +189,6 @@
 </section><!-- .beautypress-simple-text-with-img-section END -->
 <!-- Simple text with image end -->
 
-
 <!-- Video popup section -->
 <div class="beautypress-video-section beautypress-bg parallax-bg" data-parallax="scroll"
      data-image-src="<?= PASTASITE; ?>img/welcome-v3-img.jpg">
