@@ -72,7 +72,7 @@ class AgendaForm
         $formulario
             ->setId('no_cliente')
             ->setTamanhoInput(9)
-            ->setLabel("Novo do Cliente")
+            ->setLabel("Nome do Cliente")
             ->CriaInpunt();
 
 
@@ -127,7 +127,7 @@ class AgendaForm
         $formulario
             ->setId('no_profissional')
             ->setTamanhoInput(9)
-            ->setLabel("Novo do Profissional")
+            ->setLabel("Nome do Profissional")
             ->CriaInpunt();
 
         $formulario
