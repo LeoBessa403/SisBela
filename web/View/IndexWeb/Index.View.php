@@ -156,7 +156,7 @@
             } ?>
         </div>
     </div>
-    <div class="beautypress-black-overlay"></div>
+    <dIndeiv class="beautypress-black-overlay"></dIndeiv>
 </section><!-- .beautypress-pricing-table-section END -->
 <!-- Pricing table -->
 
