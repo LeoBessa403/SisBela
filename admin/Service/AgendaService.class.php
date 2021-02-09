@@ -46,7 +46,6 @@ class  AgendaService extends AbstractService
 
         $PDO->beginTransaction();
 
-
         $agendaValidador = new AgendaValidador();
         /** @var AgendaValidador $validador */
         $validador = $agendaValidador->validarAgendamento($dados);

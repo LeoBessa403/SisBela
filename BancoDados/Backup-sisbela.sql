@@ -1,4 +1,4 @@
--- Atualizado em: 06/05/2020 16:47:36
+-- Atualizado em: 22/12/2020 10:12:12
 -- AMBIENTE: http://localhost/SisBela/
 -- BANCO: sisbela
 
@@ -854,7 +854,7 @@ CREATE TABLE `TB_HISTORIA` (
 ) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_HISTORIA VALUES("2","Manter Assinante","Manter assinante do sistema e com data de expiração do sistema para o assinante, criar contato, criar pessoa, envio de email de confirmação com senha gerada.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCriar o usuário quando criar o assinante, plano assinado\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModelagem: Assinante (Junção de pessoa, contato, usuário, data de expiração, status)","2019-12-18 12:11:52","2020-03-23 15:38:30","C","1");
+INSERT INTO TB_HISTORIA VALUES("2","Manter Assinante","Manter assinante do sistema e com data de expiração do sistema para o assinante, criar contato, criar pessoa, envio de email de confirmação com senha gerada.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCriar o usuário quando criar o assinante, plano assinado\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModelagem: Assinante (Junção de pessoa, contato, usuário, data de expiração, status)","2019-12-18 12:11:52","2020-03-23 15:38:30","C","1");
 
 INSERT INTO TB_HISTORIA VALUES("4","Configuração inicial do projeto","Configuração inicial do projeto","2019-12-18 12:16:19","2020-03-17 18:39:45","C","1");
 
@@ -864,15 +864,15 @@ INSERT INTO TB_HISTORIA VALUES("6","Criar mensagem de expiração e bloqueio do 
 
 INSERT INTO TB_HISTORIA VALUES("8","Pesquisa Avançada dos Assinantes","Pesquisa Avançada dos Assinantes por razão social, nome fantasia, Responsável, cidade e UF, email, valor assinatura atual.","2019-12-18 12:18:35","2020-03-09 15:40:05","C","1");
 
-INSERT INTO TB_HISTORIA VALUES("9","Dados complementares básicos","Manter dados: (Endereço, telefone, CNPJ, fantasia, razão e outros)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModelagem: Contato, endereço e empresa ou pessoa","2019-12-18 12:20:44","2020-03-03 14:28:17","C","2");
+INSERT INTO TB_HISTORIA VALUES("9","Dados complementares básicos","Manter dados: (Endereço, telefone, CNPJ, fantasia, razão e outros)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModelagem: Contato, endereço e empresa ou pessoa","2019-12-18 12:20:44","2020-03-03 14:28:17","C","2");
 
-INSERT INTO TB_HISTORIA VALUES("10","Manter Fotos do Estabelecimento","Manter Fotos do Estabelecimento para o Site\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModelagem: Imagem (FK Assinante)","2019-12-18 12:21:59","2020-03-03 14:28:08","C","2");
+INSERT INTO TB_HISTORIA VALUES("10","Manter Fotos do Estabelecimento","Manter Fotos do Estabelecimento para o Site\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModelagem: Imagem (FK Assinante)","2019-12-18 12:21:59","2020-03-03 14:28:08","C","2");
 
 INSERT INTO TB_HISTORIA VALUES("11","Gestão de notificações","Gestão de notificações com as mensagens geradas do sistema de sucesso erro e avisos","2019-12-18 12:22:23","2020-03-03 14:28:35","C","2");
 
-INSERT INTO TB_HISTORIA VALUES("12","Cadastrar Agendamento","Cadastrar Agendamento (Opção da recorrência)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVários serviços e pacotes\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModelagem: (FK cliente, Serviço, Profissional, Assistente","2019-12-18 12:23:46","2020-03-10 12:11:11","C","3");
+INSERT INTO TB_HISTORIA VALUES("12","Cadastrar Agendamento","Cadastrar Agendamento (Opção da recorrência)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVários serviços e pacotes\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModelagem: (FK cliente, Serviço, Profissional, Assistente","2019-12-18 12:23:46","2020-03-10 12:11:11","C","3");
 
-INSERT INTO TB_HISTORIA VALUES("13","Edição Agendamento","Edição Agendamento\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nValidação dos status do agendamento e status do serviço","2019-12-18 12:24:38","2020-03-10 17:25:45","C","3");
+INSERT INTO TB_HISTORIA VALUES("13","Edição Agendamento","Edição Agendamento\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nValidação dos status do agendamento e status do serviço","2019-12-18 12:24:38","2020-03-10 17:25:45","C","3");
 
 INSERT INTO TB_HISTORIA VALUES("14","Implantação Agenda","Agenda CSS (Responsivo)","2019-12-18 12:25:03","2020-03-09 18:51:22","C","3");
 
@@ -884,7 +884,7 @@ INSERT INTO TB_HISTORIA VALUES("17","Listagem dos agendamento (Calendário)","Li
 
 INSERT INTO TB_HISTORIA VALUES("18","Histórico do Agendamento","Histórico do Agendamento (Modal)","2019-12-18 12:27:19","2020-03-10 17:26:22","C","3");
 
-INSERT INTO TB_HISTORIA VALUES("19","Deletar Agendamento","Deletar Agendamento (Modal) com Justificativa\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizar na listagem da grid","2019-12-18 12:27:55","2020-03-10 17:26:31","C","3");
+INSERT INTO TB_HISTORIA VALUES("19","Deletar Agendamento","Deletar Agendamento (Modal) com Justificativa\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizar na listagem da grid","2019-12-18 12:27:55","2020-03-10 17:26:31","C","3");
 
 INSERT INTO TB_HISTORIA VALUES("20","Listagem dos agendamento (Grid)","Listagem dos agendamento (Grid)","2019-12-18 12:28:13","2020-03-10 12:11:48","C","3");
 
@@ -896,9 +896,9 @@ INSERT INTO TB_HISTORIA VALUES("23","Validações dos botões","Validações dos
 
 INSERT INTO TB_HISTORIA VALUES("24","Iniciar o sistema com as configurações básicas","Iniciar o sistema com as configurações básicas para depois iniciar o painel","2019-12-18 12:31:44","2020-03-18 12:13:12","C","4");
 
-INSERT INTO TB_HISTORIA VALUES("25","Implantar sistema Suporte","Implantar sistema Suporte\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModelagem: suporte (FK Assinante, Categoria Suporte)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTabela base Categoria Suporte","2019-12-18 12:32:21","2020-03-12 15:29:04","C","5");
+INSERT INTO TB_HISTORIA VALUES("25","Implantar sistema Suporte","Implantar sistema Suporte\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModelagem: suporte (FK Assinante, Categoria Suporte)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTabela base Categoria Suporte","2019-12-18 12:32:21","2020-03-12 15:29:04","C","5");
 
-INSERT INTO TB_HISTORIA VALUES("26","Relatórios de agendamentos","Relatórios de agendamentos por status do agendamento e período, Profissional, serviço e cliente\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Impressão dos gráficos e dados","2019-12-18 12:34:22","2020-03-11 15:07:26","C","6");
+INSERT INTO TB_HISTORIA VALUES("26","Relatórios de agendamentos","Relatórios de agendamentos por status do agendamento e período, Profissional, serviço e cliente\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Impressão dos gráficos e dados","2019-12-18 12:34:22","2020-03-11 15:07:26","C","6");
 
 INSERT INTO TB_HISTORIA VALUES("27","Manter Usuário","Manter Usuário","2019-12-18 12:35:02","2020-03-05 15:48:01","C","7");
 
@@ -912,13 +912,13 @@ INSERT INTO TB_HISTORIA VALUES("31","Página de captura de lead","Página de cap
 
 INSERT INTO TB_HISTORIA VALUES("32","Cadastro pelo site para o assinante","verificar o cadastro pelo site para manter um plano mesmo que que por experiência","2019-12-18 12:38:52","2019-12-18 12:38:52","N","9");
 
-INSERT INTO TB_HISTORIA VALUES("33","Material do Pré Lançamento","Produção e Disponibilização do material para lista de lead\n\n\n\n\n\n\n\n\n\n\n\nDuração de 7 a 10 dias antes do Lançamento de 3 a 4 vídeos","2019-12-18 12:39:57","2019-12-18 12:39:57","N","11");
+INSERT INTO TB_HISTORIA VALUES("33","Material do Pré Lançamento","Produção e Disponibilização do material para lista de lead\n\n\n\n\n\n\n\n\n\n\n\n\n\nDuração de 7 a 10 dias antes do Lançamento de 3 a 4 vídeos","2019-12-18 12:39:57","2019-12-18 12:39:57","N","11");
 
 INSERT INTO TB_HISTORIA VALUES("34","Direcionar para o lançamento","Após Lançamento Direcionar para o lançamento o tráfego do PL","2019-12-18 12:40:34","2019-12-18 12:40:34","N","11");
 
 INSERT INTO TB_HISTORIA VALUES("35","Criação da Lista de Lead","Criação da Lista de Lead já trabalhadas nas redes sociais e mais..","2019-12-18 12:42:55","2019-12-18 12:42:55","N","10");
 
-INSERT INTO TB_HISTORIA VALUES("36","Criar conteúdos e Entregas","Criar conteúdos para entrega e ir formulando a lista de lead\n\n\n\n\n\n\n\n\n\n\n\nInicio da divulgação para o lançamento.","2019-12-18 12:43:22","2019-12-18 12:43:22","N","10");
+INSERT INTO TB_HISTORIA VALUES("36","Criar conteúdos e Entregas","Criar conteúdos para entrega e ir formulando a lista de lead\n\n\n\n\n\n\n\n\n\n\n\n\n\nInicio da divulgação para o lançamento.","2019-12-18 12:43:22","2019-12-18 12:43:22","N","10");
 
 INSERT INTO TB_HISTORIA VALUES("37","Lançamento das Vendas","de 1 a 7 dias de vendas com página aquecida","2019-12-18 12:44:04","2019-12-18 12:44:04","N","12");
 
@@ -1644,89 +1644,89 @@ CREATE TABLE `TB_PESSOA` (
 ) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_PESSOA VALUES("1","","Usuário SisBela","","2016-10-31 00:00:00","","M","1","1","1");
+INSERT INTO TB_PESSOA VALUES("1","","Usuário SisBela","","2016-10-31 00:00:00","0000-00-00","M","1","1","1");
 
-INSERT INTO TB_PESSOA VALUES("2","","LETíCIA MACHADO CARVALHO BESSA","","2020-03-25 12:09:13","","","0","2","0");
+INSERT INTO TB_PESSOA VALUES("2","","LETíCIA MACHADO CARVALHO BESSA","","2020-03-25 12:09:13","0000-00-00","","0","2","0");
 
-INSERT INTO TB_PESSOA VALUES("3","","LUCRECE NERI PORTELA","","2020-03-25 12:17:19","","","9","3","0");
+INSERT INTO TB_PESSOA VALUES("3","","LUCRECE NERI PORTELA","","2020-03-25 12:17:19","0000-00-00","","9","3","0");
 
-INSERT INTO TB_PESSOA VALUES("4","","sdaf dsf agsdg","","2020-03-25 12:53:31","","","0","4","0");
+INSERT INTO TB_PESSOA VALUES("4","","sdaf dsf agsdg","","2020-03-25 12:53:31","0000-00-00","","0","4","0");
 
-INSERT INTO TB_PESSOA VALUES("5","","efwegrg","","2020-03-25 12:57:07","","","0","5","0");
+INSERT INTO TB_PESSOA VALUES("5","","efwegrg","","2020-03-25 12:57:07","0000-00-00","","0","5","0");
 
-INSERT INTO TB_PESSOA VALUES("6","12345678909","LEO BESSA","","2020-03-25 13:03:39","","","5","6","0");
+INSERT INTO TB_PESSOA VALUES("6","12345678909","LEO BESSA","","2020-03-25 13:03:39","0000-00-00","","5","6","0");
 
-INSERT INTO TB_PESSOA VALUES("7","","O Cara","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("7","","O Cara","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("8","","Juju","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("8","","Juju","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("9","","Profiça 10","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("9","","Profiça 10","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("10","","Lele","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("10","","Lele","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
 INSERT INTO TB_PESSOA VALUES("11","05418337157","HENRIQUE CARVALHO ASSUNçãO","3481937","2020-03-25 17:05:01","1998-03-05","M","6","7","0");
 
 INSERT INTO TB_PESSOA VALUES("12","07970134157","JOãO VICTOR PEREIRA FERNANDES","3947853","2020-03-25 17:33:09","1981-03-05","M","7","8","0");
 
-INSERT INTO TB_PESSOA VALUES("13","","O Cara 33","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("13","","O Cara 33","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("14","","Juju 333","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("14","","Juju 333","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("15","","O Cara 33","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("15","","O Cara 33","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("16","","Juju 333","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("16","","Juju 333","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("17","","O Cara 33","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("17","","O Cara 33","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("18","","Juju 333","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("18","","Juju 333","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("19","","O Cara 33","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("19","","O Cara 33","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("20","","Juju 333","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("20","","Juju 333","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("21","","O Cara 33","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("21","","O Cara 33","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("22","","Juju 333","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("22","","Juju 333","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("23","","O Cara 33","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("23","","O Cara 33","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("24","","Juju 333","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("24","","Juju 333","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("25","","O Cara 33","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("25","","O Cara 33","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("26","","Juju 333","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("26","","Juju 333","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("27","","O Cara 33","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("27","","O Cara 33","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("28","","Juju 333","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("28","","Juju 333","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("29","","O Cara 33","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("29","","O Cara 33","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("30","","Juju 333","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("30","","Juju 333","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("35","","O Cara 33","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("35","","O Cara 33","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("36","","Juju 333","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("36","","Juju 333","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("37","","O Cara 33","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("37","","O Cara 33","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("38","","Juju 333","","","","","0","0","0");
+INSERT INTO TB_PESSOA VALUES("38","","Juju 333","","0000-00-00 00:00:00","0000-00-00","","0","0","0");
 
-INSERT INTO TB_PESSOA VALUES("39","","HENRIQUE CARVALHO ASSUNçãO","","2020-04-11 18:20:43","","","0","9","0");
+INSERT INTO TB_PESSOA VALUES("39","","HENRIQUE CARVALHO ASSUNçãO","","2020-04-11 18:20:43","0000-00-00","","0","9","0");
 
-INSERT INTO TB_PESSOA VALUES("40","","Marcelo Moita","","2020-04-15 10:44:55","","","0","10","0");
+INSERT INTO TB_PESSOA VALUES("40","","Marcelo Moita","","2020-04-15 10:44:55","0000-00-00","","0","10","0");
 
-INSERT INTO TB_PESSOA VALUES("41","","JOãO VICTOR PEREIRA FERNANDES","","2020-04-15 10:50:44","","","0","11","0");
+INSERT INTO TB_PESSOA VALUES("41","","JOãO VICTOR PEREIRA FERNANDES","","2020-04-15 10:50:44","0000-00-00","","0","11","0");
 
-INSERT INTO TB_PESSOA VALUES("42","","HENRIQUE CARVALHO ASSUNçãO","","2020-04-15 10:52:48","","","0","12","0");
+INSERT INTO TB_PESSOA VALUES("42","","HENRIQUE CARVALHO ASSUNçãO","","2020-04-15 10:52:48","0000-00-00","","0","12","0");
 
-INSERT INTO TB_PESSOA VALUES("43","","Marcelo Moita","","2020-04-15 10:54:18","","","0","13","0");
+INSERT INTO TB_PESSOA VALUES("43","","Marcelo Moita","","2020-04-15 10:54:18","0000-00-00","","0","13","0");
 
-INSERT INTO TB_PESSOA VALUES("44","","HENRIQUE CARVALHO ASSUNçãO","","2020-04-15 10:55:48","","","0","14","0");
+INSERT INTO TB_PESSOA VALUES("44","","HENRIQUE CARVALHO ASSUNçãO","","2020-04-15 10:55:48","0000-00-00","","0","14","0");
 
-INSERT INTO TB_PESSOA VALUES("45","","JOãO VICTOR PEREIRA FERNANDES","","2020-04-15 10:57:20","","","0","15","0");
+INSERT INTO TB_PESSOA VALUES("45","","JOãO VICTOR PEREIRA FERNANDES","","2020-04-15 10:57:20","0000-00-00","","0","15","0");
 
-INSERT INTO TB_PESSOA VALUES("46","","Marcelo Moita","","2020-04-15 11:00:01","","","0","16","0");
+INSERT INTO TB_PESSOA VALUES("46","","Marcelo Moita","","2020-04-15 11:00:01","0000-00-00","","0","16","0");
 
 
 
@@ -1817,47 +1817,47 @@ CREATE TABLE `TB_PLANO_ASSINANTE_ASSINATURA` (
 ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("1","2020-03-25 12:09:13","2020-04-09","","","3","2020-03-25 12:09:13","","","null","0","0","A","null","0.00","3","1","1");
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("1","2020-03-25 12:09:13","2020-04-09","0000-00-00 00:00:00","0","3","2020-03-25 12:09:13","0.00","0.00","null","0","0","A","null","0.00","3","1","1");
 
-INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("2","2020-03-25 12:17:19","2020-04-09","","","3","2020-03-25 12:17:19","","","null","0","0","A","null","0.00","3","2","1");
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("2","2020-03-25 12:17:19","2020-04-09","0000-00-00 00:00:00","0","3","2020-03-25 12:17:19","0.00","0.00","null","0","0","A","null","0.00","3","2","1");
 
-INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("3","2020-03-25 12:53:31","2020-04-09","","","3","2020-03-25 12:53:31","","","null","0","0","A","null","0.00","3","3","1");
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("3","2020-03-25 12:53:31","2020-04-09","0000-00-00 00:00:00","0","3","2020-03-25 12:53:31","0.00","0.00","null","0","0","A","null","0.00","3","3","1");
 
-INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("4","2020-03-25 12:57:07","2020-04-09","","","3","2020-03-25 12:57:07","","","null","0","0","A","null","0.00","3","4","1");
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("4","2020-03-25 12:57:07","2020-04-09","0000-00-00 00:00:00","0","3","2020-03-25 12:57:07","0.00","0.00","null","0","0","A","null","0.00","3","4","1");
 
-INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("5","2020-03-25 13:03:42","2020-04-09","","","3","2020-03-25 13:03:42","","","null","0","0","I","null","0.00","3","5","1");
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("5","2020-03-25 13:03:42","2020-04-09","0000-00-00 00:00:00","0","3","2020-03-25 13:03:42","0.00","0.00","null","0","0","I","null","0.00","3","5","1");
 
-INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("6","2020-03-25 15:50:56","2022-04-09","","3","7","2020-03-25 16:14:48","17.03","222.87","","0","5","I","5E706DDC-A10D-4D74-A0B6-3B6AF09E97D8","239.90","49","5","6");
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("6","2020-03-25 15:50:56","2022-04-09","0000-00-00 00:00:00","3","7","2020-03-25 16:14:48","17.03","222.87","","0","5","I","5E706DDC-A10D-4D74-A0B6-3B6AF09E97D8","239.90","49","5","6");
 
 INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("7","2020-03-25 16:15:38","2021-04-09","2020-03-25 16:17:47","5","6","2020-03-25 16:18:46","5.38","119.52","https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=7b44c80e5b528387bc67d405b29d4d7827c2f0f5f1425d56c8d41170005505e083fbc0f342424194","0","5","I","EDA0F0A7-B225-4F2B-877D-AE6021DE7077","124.90","25","5","5");
 
-INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("8","2020-03-27 19:44:23","2022-04-09","","4","1","2020-03-27 19:44:26","9.97","229.93","https://sandbox.pagseguro.uol.com.br/checkout/payment/eft/print.jhtml?c=af67f2b0e357cfc862c36dd336d24b136ff153d2f084c2671d65f056ee5c9a190f48b18f41a05961","0","5","I","65150A2A-1D95-4220-8EBA-9D1EC6233B3D","239.90","49","5","6");
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("8","2020-03-27 19:44:23","2022-04-09","0000-00-00 00:00:00","4","1","2020-03-27 19:44:26","9.97","229.93","https://sandbox.pagseguro.uol.com.br/checkout/payment/eft/print.jhtml?c=af67f2b0e357cfc862c36dd336d24b136ff153d2f084c2671d65f056ee5c9a190f48b18f41a05961","0","5","I","65150A2A-1D95-4220-8EBA-9D1EC6233B3D","239.90","49","5","6");
 
-INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("9","2020-03-27 20:11:15","2020-10-09","","5","1","2020-03-27 20:11:20","3.19","66.71","https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=eae56d9b6d547ac5aac0e4ca1a28ecc4b6d3173595fee1ab347a2a9e1b9a667f7b18b61f16abbd4a","0","5","I","3F9F1DF4-44DD-437F-92D4-F1DF473A8C6C","69.90","13","5","4");
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("9","2020-03-27 20:11:15","2020-10-09","0000-00-00 00:00:00","5","1","2020-03-27 20:11:20","3.19","66.71","https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=eae56d9b6d547ac5aac0e4ca1a28ecc4b6d3173595fee1ab347a2a9e1b9a667f7b18b61f16abbd4a","0","5","I","3F9F1DF4-44DD-437F-92D4-F1DF473A8C6C","69.90","13","5","4");
 
-INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("10","2020-03-27 20:16:26","2021-04-09","","5","1","2020-03-27 20:16:29","5.38","119.52","https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=2c3663994b33bfcfed4b5db4fc3bebd38e82aa2cd5c32442634547b3a165d8ef3ece4f60594d7970","0","5","I","069BC6BF-743D-4282-96B9-0A25391A040C","124.90","25","5","5");
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("10","2020-03-27 20:16:26","2021-04-09","0000-00-00 00:00:00","5","1","2020-03-27 20:16:29","5.38","119.52","https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=2c3663994b33bfcfed4b5db4fc3bebd38e82aa2cd5c32442634547b3a165d8ef3ece4f60594d7970","0","5","I","069BC6BF-743D-4282-96B9-0A25391A040C","124.90","25","5","5");
 
-INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("11","2020-04-04 13:55:19","2020-07-09","","5","1","2020-04-04 13:55:27","1.99","37.91","https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=035c74e4680fe8b271bd056c44f457a7fe00437c0fe106dcdfe145f256ab5acd53092dfb85a827ec","0","5","I","CD6110D9-4252-41E8-93DE-815263F3C02D","39.90","7","5","3");
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("11","2020-04-04 13:55:19","2020-07-09","0000-00-00 00:00:00","5","1","2020-04-04 13:55:27","1.99","37.91","https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=035c74e4680fe8b271bd056c44f457a7fe00437c0fe106dcdfe145f256ab5acd53092dfb85a827ec","0","5","I","CD6110D9-4252-41E8-93DE-815263F3C02D","39.90","7","5","3");
 
-INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("12","2020-04-04 13:57:43","2021-04-09","","5","1","2020-04-04 13:57:52","5.38","119.52","https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=d71b3af5146918cb665df8d98fe28ff091c013353b587e74bc21ee64b415f9ae67b7766690138a66","0","5","I","29439106-A1B4-47FA-B558-BBA1AA16FCBC","124.90","25","5","5");
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("12","2020-04-04 13:57:43","2021-04-09","0000-00-00 00:00:00","5","1","2020-04-04 13:57:52","5.38","119.52","https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=d71b3af5146918cb665df8d98fe28ff091c013353b587e74bc21ee64b415f9ae67b7766690138a66","0","5","I","29439106-A1B4-47FA-B558-BBA1AA16FCBC","124.90","25","5","5");
 
-INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("13","2020-04-04 14:01:30","2020-05-09","","3","2","2020-04-04 14:01:37","0.99","13.91","","0","5","I","DCAB740B-F6D5-4150-AFF2-9CE647BF8038","14.90","3","5","2");
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("13","2020-04-04 14:01:30","2020-05-09","0000-00-00 00:00:00","3","2","2020-04-04 14:01:37","0.99","13.91","","0","5","I","DCAB740B-F6D5-4150-AFF2-9CE647BF8038","14.90","3","5","2");
 
-INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("14","2020-04-11 18:20:44","2020-04-26","","","3","2020-04-11 18:20:44","","","null","0","0","A","null","0.00","3","6","1");
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("14","2020-04-11 18:20:44","2020-04-26","0000-00-00 00:00:00","0","3","2020-04-11 18:20:44","0.00","0.00","null","0","0","A","null","0.00","3","6","1");
 
-INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("15","2020-04-15 10:45:16","2020-04-30","","","3","2020-04-15 10:45:16","","","null","0","0","A","null","0.00","3","7","1");
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("15","2020-04-15 10:45:16","2020-04-30","0000-00-00 00:00:00","0","3","2020-04-15 10:45:16","0.00","0.00","null","0","0","A","null","0.00","3","7","1");
 
-INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("16","2020-04-15 10:50:56","2020-04-30","","","3","2020-04-15 10:50:56","","","null","0","0","A","null","0.00","3","8","1");
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("16","2020-04-15 10:50:56","2020-04-30","0000-00-00 00:00:00","0","3","2020-04-15 10:50:56","0.00","0.00","null","0","0","A","null","0.00","3","8","1");
 
-INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("17","2020-04-15 10:52:51","2020-04-30","","","3","2020-04-15 10:52:51","","","null","0","0","A","null","0.00","3","9","1");
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("17","2020-04-15 10:52:51","2020-04-30","0000-00-00 00:00:00","0","3","2020-04-15 10:52:51","0.00","0.00","null","0","0","A","null","0.00","3","9","1");
 
-INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("18","2020-04-15 10:54:34","2020-04-30","","","3","2020-04-15 10:54:34","","","null","0","0","A","null","0.00","3","10","1");
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("18","2020-04-15 10:54:34","2020-04-30","0000-00-00 00:00:00","0","3","2020-04-15 10:54:34","0.00","0.00","null","0","0","A","null","0.00","3","10","1");
 
-INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("19","2020-04-15 10:55:55","2020-04-30","","","3","2020-04-15 10:55:55","","","null","0","0","A","null","0.00","3","11","1");
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("19","2020-04-15 10:55:55","2020-04-30","0000-00-00 00:00:00","0","3","2020-04-15 10:55:55","0.00","0.00","null","0","0","A","null","0.00","3","11","1");
 
-INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("20","2020-04-15 10:57:48","2020-04-30","","","3","2020-04-15 10:57:48","","","null","0","0","A","null","0.00","3","12","1");
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("20","2020-04-15 10:57:48","2020-04-30","0000-00-00 00:00:00","0","3","2020-04-15 10:57:48","0.00","0.00","null","0","0","A","null","0.00","3","12","1");
 
-INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("21","2020-04-15 11:00:35","2020-04-30","","","3","2020-04-15 11:00:35","","","null","0","0","A","null","0.00","3","13","1");
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("21","2020-04-15 11:00:35","2020-04-30","0000-00-00 00:00:00","0","3","2020-04-15 11:00:35","0.00","0.00","null","0","0","A","null","0.00","3","13","1");
 
 INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES("22","2020-05-02 10:56:39","2023-04-09","2020-05-02 10:57:57","5","3","2020-05-02 10:57:57","24.34","575.56","https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=7805e93ce3b5c3268c8c6dde3d6e1f171b2cf06a5e50796513a73637fd8cc0295f65051d85332945","0","5","A","6710D77B-B25A-40CF-A304-3709F56904F0","599.90","73","5","7");
 
@@ -1948,31 +1948,31 @@ CREATE TABLE `TB_PROFISSIONAL` (
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_PROFISSIONAL VALUES("1","2020-03-25 16:37:38","","S","","","","S","S","A","","","","0","7","0","5");
+INSERT INTO TB_PROFISSIONAL VALUES("1","2020-03-25 16:37:38","","S","","","","S","S","A","0","0000-00-00","0000-00-00","0","7","0","5");
 
-INSERT INTO TB_PROFISSIONAL VALUES("2","2020-03-25 16:47:42","","S","","","","S","S","A","","","","0","9","0","5");
+INSERT INTO TB_PROFISSIONAL VALUES("2","2020-03-25 16:47:42","","S","","","","S","S","A","0","0000-00-00","0000-00-00","0","9","0","5");
 
-INSERT INTO TB_PROFISSIONAL VALUES("3","2020-04-07 11:48:49","","S","","","","S","S","A","","","","0","13","0","5");
+INSERT INTO TB_PROFISSIONAL VALUES("3","2020-04-07 11:48:49","","S","","","","S","S","A","0","0000-00-00","0000-00-00","0","13","0","5");
 
-INSERT INTO TB_PROFISSIONAL VALUES("4","2020-04-07 11:49:18","","S","","","","S","S","A","","","","0","15","0","5");
+INSERT INTO TB_PROFISSIONAL VALUES("4","2020-04-07 11:49:18","","S","","","","S","S","A","0","0000-00-00","0000-00-00","0","15","0","5");
 
-INSERT INTO TB_PROFISSIONAL VALUES("5","2020-04-07 12:02:04","","S","","","","S","S","A","","","","0","17","0","5");
+INSERT INTO TB_PROFISSIONAL VALUES("5","2020-04-07 12:02:04","","S","","","","S","S","A","0","0000-00-00","0000-00-00","0","17","0","5");
 
-INSERT INTO TB_PROFISSIONAL VALUES("6","2020-04-07 12:02:48","","S","","","","S","S","A","","","","0","19","0","5");
+INSERT INTO TB_PROFISSIONAL VALUES("6","2020-04-07 12:02:48","","S","","","","S","S","A","0","0000-00-00","0000-00-00","0","19","0","5");
 
-INSERT INTO TB_PROFISSIONAL VALUES("7","2020-04-07 12:03:20","","S","","","","S","S","A","","","","0","21","0","5");
+INSERT INTO TB_PROFISSIONAL VALUES("7","2020-04-07 12:03:20","","S","","","","S","S","A","0","0000-00-00","0000-00-00","0","21","0","5");
 
-INSERT INTO TB_PROFISSIONAL VALUES("8","2020-04-07 12:08:46","","S","","","","S","S","A","","","","0","23","0","5");
+INSERT INTO TB_PROFISSIONAL VALUES("8","2020-04-07 12:08:46","","S","","","","S","S","A","0","0000-00-00","0000-00-00","0","23","0","5");
 
-INSERT INTO TB_PROFISSIONAL VALUES("9","2020-04-07 13:06:59","","S","","","","S","S","A","","","","0","25","0","5");
+INSERT INTO TB_PROFISSIONAL VALUES("9","2020-04-07 13:06:59","","S","","","","S","S","A","0","0000-00-00","0000-00-00","0","25","0","5");
 
-INSERT INTO TB_PROFISSIONAL VALUES("10","2020-04-07 13:08:32","","S","","","","S","S","A","","","","0","27","0","5");
+INSERT INTO TB_PROFISSIONAL VALUES("10","2020-04-07 13:08:32","","S","","","","S","S","A","0","0000-00-00","0000-00-00","0","27","0","5");
 
-INSERT INTO TB_PROFISSIONAL VALUES("11","2020-04-07 13:09:50","","S","","","","S","S","A","","","","0","29","0","5");
+INSERT INTO TB_PROFISSIONAL VALUES("11","2020-04-07 13:09:50","","S","","","","S","S","A","0","0000-00-00","0000-00-00","0","29","0","5");
 
-INSERT INTO TB_PROFISSIONAL VALUES("14","2020-04-07 13:14:21","","S","","","","S","S","A","","","","0","35","0","5");
+INSERT INTO TB_PROFISSIONAL VALUES("14","2020-04-07 13:14:21","","S","","","","S","S","A","0","0000-00-00","0000-00-00","0","35","0","5");
 
-INSERT INTO TB_PROFISSIONAL VALUES("15","2020-04-07 13:19:21","","S","","","","S","S","A","","","","0","37","0","2");
+INSERT INTO TB_PROFISSIONAL VALUES("15","2020-04-07 13:19:21","","S","","","","S","S","A","0","0000-00-00","0000-00-00","0","37","0","2");
 
 
 
@@ -2011,29 +2011,29 @@ CREATE TABLE `TB_SERVICO` (
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_SERVICO VALUES("1","2020-03-25 16:37:38","A","","Penteado afro","","","0","0","5");
+INSERT INTO TB_SERVICO VALUES("1","2020-03-25 16:37:38","A","","Penteado afro","0","","0","0","5");
 
-INSERT INTO TB_SERVICO VALUES("2","2020-04-07 11:48:49","A","","Penteado afro  333 ","","","0","0","5");
+INSERT INTO TB_SERVICO VALUES("2","2020-04-07 11:48:49","A","","Penteado afro  333 ","0","","0","0","5");
 
-INSERT INTO TB_SERVICO VALUES("3","2020-04-07 11:49:18","A","","Penteado afro  333","","","0","0","5");
+INSERT INTO TB_SERVICO VALUES("3","2020-04-07 11:49:18","A","","Penteado afro  333","0","","0","0","5");
 
-INSERT INTO TB_SERVICO VALUES("4","2020-04-07 12:02:04","A","","Penteado afro  333","","","0","0","5");
+INSERT INTO TB_SERVICO VALUES("4","2020-04-07 12:02:04","A","","Penteado afro  333","0","","0","0","5");
 
-INSERT INTO TB_SERVICO VALUES("5","2020-04-07 12:02:48","A","","Penteado afro  333","","","0","0","5");
+INSERT INTO TB_SERVICO VALUES("5","2020-04-07 12:02:48","A","","Penteado afro  333","0","","0","0","5");
 
-INSERT INTO TB_SERVICO VALUES("6","2020-04-07 12:03:20","A","","Penteado afro  333","","","0","0","5");
+INSERT INTO TB_SERVICO VALUES("6","2020-04-07 12:03:20","A","","Penteado afro  333","0","","0","0","5");
 
-INSERT INTO TB_SERVICO VALUES("7","2020-04-07 12:08:46","A","","Penteado afro  333","","","0","0","5");
+INSERT INTO TB_SERVICO VALUES("7","2020-04-07 12:08:46","A","","Penteado afro  333","0","","0","0","5");
 
-INSERT INTO TB_SERVICO VALUES("8","2020-04-07 13:06:59","A","","Penteado afro  333","","","0","0","5");
+INSERT INTO TB_SERVICO VALUES("8","2020-04-07 13:06:59","A","","Penteado afro  333","0","","0","0","5");
 
-INSERT INTO TB_SERVICO VALUES("9","2020-04-07 13:08:32","A","","Penteado afro  333","","","0","0","5");
+INSERT INTO TB_SERVICO VALUES("9","2020-04-07 13:08:32","A","","Penteado afro  333","0","","0","0","5");
 
-INSERT INTO TB_SERVICO VALUES("10","2020-04-07 13:09:51","A","","Penteado afro  333","","","0","0","5");
+INSERT INTO TB_SERVICO VALUES("10","2020-04-07 13:09:51","A","","Penteado afro  333","0","","0","0","5");
 
-INSERT INTO TB_SERVICO VALUES("13","2020-04-07 13:14:21","A","","Penteado afro  333","","","0","0","5");
+INSERT INTO TB_SERVICO VALUES("13","2020-04-07 13:14:21","A","","Penteado afro  333","0","","0","0","5");
 
-INSERT INTO TB_SERVICO VALUES("14","2020-04-07 13:19:21","A","","Penteado afro  333","","","0","0","2");
+INSERT INTO TB_SERVICO VALUES("14","2020-04-07 13:19:21","A","","Penteado afro  333","0","","0","0","2");
 
 
 
@@ -2110,9 +2110,9 @@ INSERT INTO TB_STATUS_AGENDA VALUES("2","2020-03-25 16:41:56","3","2020-03-18 17
 
 INSERT INTO TB_STATUS_AGENDA VALUES("3","2020-03-25 16:47:42","1","2020-03-25 11:00:00","2020-03-25 18:00:00","0.00","0","f dsaf g","2","2","6","2","1");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("4","2020-03-25 16:49:39","8","2020-03-25 11:00:00","2020-03-25 18:00:00","","","f dsaf g","2","2","6","2","1");
+INSERT INTO TB_STATUS_AGENDA VALUES("4","2020-03-25 16:49:39","8","2020-03-25 11:00:00","2020-03-25 18:00:00","0.00","0","f dsaf g","2","2","6","2","1");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("5","2020-03-25 16:50:11","7","2020-03-18 17:50:00","2020-03-18 18:00:00","","","frf rg rg","1","1","6","1","1");
+INSERT INTO TB_STATUS_AGENDA VALUES("5","2020-03-25 16:50:11","7","2020-03-18 17:50:00","2020-03-18 18:00:00","0.00","0","frf rg rg","1","1","6","1","1");
 
 INSERT INTO TB_STATUS_AGENDA VALUES("6","2020-03-25 16:58:31","4","2020-03-27 08:00:00","2020-03-27 18:00:00","0.00","0","ghmghmhgmgmd  f bfdb d dfg fdg rthg th","2","3","6","2","1");
 
@@ -2164,7 +2164,7 @@ INSERT INTO TB_STATUS_AGENDA VALUES("31","2020-04-28 00:00:01","6","2020-04-22 0
 
 INSERT INTO TB_STATUS_AGENDA VALUES("32","2020-05-02 11:05:28","2","2020-05-06 08:00:00","2020-05-06 18:00:00","0.00","0","fefef","14","19","6","1","7");
 
-INSERT INTO TB_STATUS_AGENDA VALUES("33","2020-05-02 11:07:31","7","2020-05-06 08:00:00","2020-05-06 18:00:00","","","fefef","14","19","6","1","7");
+INSERT INTO TB_STATUS_AGENDA VALUES("33","2020-05-02 11:07:31","7","2020-05-06 08:00:00","2020-05-06 18:00:00","0.00","0","fefef","14","19","6","1","7");
 
 
 
