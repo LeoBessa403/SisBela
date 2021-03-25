@@ -196,7 +196,7 @@
      data-image-src="<?= PASTASITE; ?>img/welcome-v3-img.jpg">
     <div class="container">
         <div class="beautypress-video-section-content">
-            <a href="https://www.youtube.com/watch?v=JUivqhBf0Sg"
+            <a href="<?= PASTAUPLOADS; ?>Videos/Atendimento_qualidade.mp4"
                class="beautypress-video-popup beautypress-video-popup-btn bg-color-purple">
                 <i class="fa fa-play"></i>
             </a>

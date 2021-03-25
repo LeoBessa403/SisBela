@@ -9,6 +9,8 @@ function servidor_inicial()
             'USER' => 'root',
             'PASS' => '',
             'DBSA' => 'sisbela',
+            'SCHEMA' => 'sisbela',
+            'BANCO' => 1, // 1 = mysql, 2 = postgres
             'DEBUG' => true,
             'PROD' => false,
             'TOKEN_PAGSEGURO' => "5FDD35645CC1412296CE57A3542E48D0",
@@ -26,6 +28,8 @@ function servidor_inicial()
                 'USER' => 'sistem25_dabelez',
                 'PASS' => 'Admin101**',
                 'DBSA' => 'sistem25_teste',
+                'SCHEMA' => 'sistem25_teste',
+                'BANCO' => 1, // 1 = mysql, 2 = postgres
                 'DEBUG' => false,
                 'PROD' => false,
                 'TOKEN_PAGSEGURO' => "5FDD35645CC1412296CE57A3542E48D0",
@@ -41,6 +45,8 @@ function servidor_inicial()
                 'USER' => 'sistem25_dabelez',
                 'PASS' => 'Admin101*',
                 'DBSA' => 'sistem25_dabelez',
+                'SCHEMA' => 'sistem25_dabelez',
+                'BANCO' => 1, // 1 = mysql, 2 = postgres
                 'DEBUG' => false,
                 'PROD' => true,
                 'TOKEN_PAGSEGURO' => "e420df9f-b88a-4ba4-acfc-ef3dc796abd129194be145c3878bd1e90a4f65786848b0c0-51de-48b2-a242-7ae275f26890",
@@ -57,6 +63,8 @@ function servidor_inicial()
     define('USER', $config['USER']);
     define('PASS', $config['PASS']);
     define('DBSA', $config['DBSA']);
+    define('SCHEMA', $config['SCHEMA']);
+    define('BANCO', $config['BANCO']);
     define('DEBUG', $config['DEBUG']);
     define('PROD', $config['PROD']);
     define('CO_USUARIO_PADRAO', 1);
