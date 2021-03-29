@@ -26,7 +26,7 @@ function servidor_inicial()
                 'HOME' => 'https://testando.sistemadabeleza.com.br/',
                 'HOST' => 'localhost',
                 'USER' => 'sistem25_dabelez',
-                'PASS' => 'Admin101**',
+                'PASS' => 'ahF4805qAd',
                 'DBSA' => 'sistem25_teste',
                 'SCHEMA' => 'sistem25_teste',
                 'BANCO' => 1, // 1 = mysql, 2 = postgres
@@ -43,7 +43,7 @@ function servidor_inicial()
                 'HOME' => 'https://sistemadabeleza.com.br/',
                 'HOST' => 'localhost',
                 'USER' => 'sistem25_dabelez',
-                'PASS' => 'Admin101*',
+                'PASS' => 'ahF4805qAd',
                 'DBSA' => 'sistem25_dabelez',
                 'SCHEMA' => 'sistem25_dabelez',
                 'BANCO' => 1, // 1 = mysql, 2 = postgres
