@@ -69,6 +69,13 @@ class Relatorio extends AbstractController
         }
 
         $qtdMeses = count($meses);
+        if(!$meses){
+            $meses[0] = '';
+            $meses[1] = '';
+            $meses[2] = '';
+            $meses[3] = '';
+            $meses[4] = '';
+        }
         $meses[0] = (0 <= $qtdMeses) ? $meses[0] : '';
         $meses[1] = (1 < $qtdMeses) ? $meses[1] : '';
         $meses[2] = (2 < $qtdMeses) ? $meses[2] : '';
