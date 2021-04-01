@@ -802,3 +802,205 @@ UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-30 15:58:50" where co_aces
 
 UPDATE sisbela.TB_ACESSO SET tp_situacao = "F", dt_fim_acesso = "2021-03-30 15:58:54" where co_acesso = 90;
 
+INSERT INTO sisbela.TB_TRAFEGO (ds_navegador, ds_sistema_operacional, ds_dispositivo, nu_ip, ds_pais, ds_code_pais, ds_estado, ds_uf, ds_cidade, ds_agente) VALUES ("Firefox", "Windows 8.1", "Desktop", "127.0.0.1", "Desconhecido", "Desconhecida", "Desconhecida", "Desconhecida", "Desconhecida", "Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0");
+
+INSERT INTO sisbela.TB_VISITA (co_trafego, dt_realizado, dt_atualizado, nu_visitas) VALUES ("95", "2021-03-31 10:54:29", "2021-03-31 10:54:29", "1");
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "3" where co_pagina = 1;
+
+UPDATE sisbela.TB_PAGINA SET nu_usuario = "3" where co_pagina = 1;
+
+INSERT INTO sisbela.TB_PAGINA_VISITA (co_pagina, co_visita) VALUES ("1", "5");
+
+INSERT INTO sisbela.TB_TRAFEGO (ds_navegador, ds_sistema_operacional, ds_dispositivo, nu_ip, ds_pais, ds_code_pais, ds_estado, ds_uf, ds_cidade, ds_agente) VALUES ("Firefox", "Windows 8.1", "Desktop", "127.0.0.1", "Desconhecido", "Desconhecida", "Desconhecida", "Desconhecida", "Desconhecida", "Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0");
+
+INSERT INTO sisbela.TB_VISITA (co_trafego, dt_realizado, dt_atualizado, nu_visitas) VALUES ("96", "2021-03-31 10:54:31", "2021-03-31 10:54:31", "1");
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-03-31 10:54:33" where co_visita = 5;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-03-31 11:12:52" where co_visita = 5;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "4" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-03-31 11:13:03" where co_visita = 5;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "4" where co_pagina = 1;
+
+INSERT INTO sisbela.TB_TRAFEGO (ds_navegador, ds_sistema_operacional, ds_dispositivo, nu_ip, ds_pais, ds_code_pais, ds_estado, ds_uf, ds_cidade, ds_agente) VALUES ("Firefox", "Windows 8.1", "Desktop", "127.0.0.1", "Desconhecido", "Desconhecida", "Desconhecida", "Desconhecida", "Desconhecida", "Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0");
+
+INSERT INTO sisbela.TB_VISITA (co_trafego, dt_realizado, dt_atualizado, nu_visitas) VALUES ("97", "2021-03-31 11:22:17", "2021-03-31 11:22:17", "1");
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "4" where co_pagina = 1;
+
+UPDATE sisbela.TB_PAGINA SET nu_usuario = "4" where co_pagina = 1;
+
+INSERT INTO sisbela.TB_PAGINA_VISITA (co_pagina, co_visita) VALUES ("1", "7");
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-03-31 11:22:30" where co_visita = 5;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "5" where co_pagina = 1;
+
+INSERT INTO sisbela.TB_TRAFEGO (ds_navegador, ds_sistema_operacional, ds_dispositivo, nu_ip, ds_pais, ds_code_pais, ds_estado, ds_uf, ds_cidade, ds_agente) VALUES ("Firefox", "Windows 8.1", "Desktop", "127.0.0.1", "Desconhecido", "Desconhecida", "Desconhecida", "Desconhecida", "Desconhecida", "Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0");
+
+INSERT INTO sisbela.TB_ACESSO (ds_session_id, co_usuario, tp_situacao, co_trafego, dt_fim_acesso, dt_inicio_acesso) VALUES ("3ur8dang5f0v9q1j62cg30fnp6", "1", "A", "98", "2021-03-31 11:52:47", "2021-03-31 11:22:47");
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:52:48" where co_acesso = 91;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:52:49" where co_acesso = 91;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:53:12" where co_acesso = 91;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:53:13" where co_acesso = 91;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:53:19" where co_acesso = 91;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:53:20" where co_acesso = 91;
+
+UPDATE sisbela.TB_ACESSO SET tp_situacao = "F", dt_fim_acesso = "2021-03-31 11:23:31" where co_acesso = 91;
+
+INSERT INTO sisbela.TB_TRAFEGO (ds_navegador, ds_sistema_operacional, ds_dispositivo, nu_ip, ds_pais, ds_code_pais, ds_estado, ds_uf, ds_cidade, ds_agente) VALUES ("Firefox", "Windows 8.1", "Desktop", "127.0.0.1", "Desconhecido", "Desconhecida", "Desconhecida", "Desconhecida", "Desconhecida", "Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0");
+
+INSERT INTO sisbela.TB_ACESSO (ds_session_id, co_usuario, tp_situacao, co_trafego, dt_fim_acesso, dt_inicio_acesso) VALUES ("3ur8dang5f0v9q1j62cg30fnp6", "6", "A", "99", "2021-03-31 11:53:36", "2021-03-31 11:23:36");
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:53:36" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:53:37" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:53:50" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:53:51" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:53:53" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:53:54" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:54:22" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:54:23" where co_acesso = 92;
+
+INSERT INTO TB_SUPORTE (dt_cadastro, ds_assunto, st_tipo_assunto, co_assinante) VALUES ("2021-03-31 11:24:23", "Ta ficando masssa", "1", "5");
+
+INSERT INTO sisbela.TB_IMAGEM (ds_caminho) VALUES ("suporte-3-60648617ea0f3.jpg");
+
+INSERT INTO TB_HISTORICO_SUPORTE (co_suporte, dt_cadastro, ds_mensagem, st_lido, co_usuario, co_imagem) VALUES ("3", "2021-03-31 11:24:23", "Legal", "N", "6", "12");
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:54:24" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:54:24" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:54:31" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:54:31" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:54:33" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:54:33" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:54:52" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:54:53" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:55:09" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:55:09" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:55:35" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:55:35" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:55:50" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:55:50" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:56:39" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:56:39" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:57:29" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 11:57:30" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:04:46" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:04:47" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:05:22" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:05:23" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:05:32" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:05:32" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:09:40" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:09:41" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:09:55" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:09:55" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:10:02" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:10:03" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:10:25" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:10:25" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:11:10" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:11:11" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:11:28" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:11:29" where co_acesso = 92;
+
+INSERT INTO TB_AGENDA (dt_cadastro, co_assinante) VALUES ("2021-03-31 11:42:23", "5");
+
+INSERT INTO sisbela.TB_PESSOA (no_pessoa) VALUES ("Profissa 10");
+
+INSERT INTO TB_PROFISSIONAL (co_pessoa, dt_cadastro, co_assinante) VALUES ("48", "2021-03-31 11:42:23", "5");
+
+INSERT INTO sisbela.TB_PESSOA (no_pessoa) VALUES ("Teste 1010");
+
+INSERT INTO TB_CLIENTE (co_pessoa, dt_cadastro, co_assinante) VALUES ("49", "2021-03-31 11:42:24", "5");
+
+INSERT INTO TB_SERVICO (no_servico, dt_cadastro, co_assinante) VALUES ("Corte da Barba", "2021-03-31 11:42:24", "5");
+
+INSERT INTO TB_STATUS_AGENDA (co_agenda, dt_cadastro, st_status, dt_inicio_agenda, dt_fim_agenda, nu_valor, nu_duracao, ds_observacao, co_usuario, co_profissional, co_cliente, co_servico) VALUES ("21", "2021-03-31 11:42:23", "1", "2021-03-31 08:00:00", "2021-03-31 10:00:00", "0", "0", "So pra testar o campo de observação", "6", "17", "16", "16");
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:12:27" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:12:27" where co_acesso = 92;
+
+INSERT INTO TB_STATUS_AGENDA (co_agenda, dt_cadastro, st_status, dt_inicio_agenda, dt_fim_agenda, ds_observacao, co_usuario, co_cliente, co_servico, co_profissional) VALUES ("21", "2021-03-31 11:43:07", "1", "2021-04-02 08:00:00", "2021-04-02 10:00:00", "So pra testar o campo de observação", "6", "16", "16", "17");
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:13:10" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:13:11" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:19:12" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:19:13" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:24:37" where co_acesso = 92;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-03-31 12:24:38" where co_acesso = 92;
+
+INSERT INTO sisbela.TB_TRAFEGO (ds_navegador, ds_sistema_operacional, ds_dispositivo, nu_ip, ds_pais, ds_code_pais, ds_estado, ds_uf, ds_cidade, ds_agente) VALUES ("Firefox", "Windows 8.1", "Desktop", "127.0.0.1", "Desconhecido", "Desconhecida", "Desconhecida", "Desconhecida", "Desconhecida", "Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0");
+
+INSERT INTO sisbela.TB_VISITA (co_trafego, dt_realizado, dt_atualizado, nu_visitas) VALUES ("100", "2021-04-01 15:09:15", "2021-04-01 15:09:15", "1");
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "5" where co_pagina = 1;
+
+UPDATE sisbela.TB_PAGINA SET nu_usuario = "5" where co_pagina = 1;
+
+INSERT INTO sisbela.TB_PAGINA_VISITA (co_pagina, co_visita) VALUES ("1", "8");
+
+INSERT INTO sisbela.TB_TRAFEGO (ds_navegador, ds_sistema_operacional, ds_dispositivo, nu_ip, ds_pais, ds_code_pais, ds_estado, ds_uf, ds_cidade, ds_agente) VALUES ("Firefox", "Windows 8.1", "Desktop", "127.0.0.1", "Desconhecido", "Desconhecida", "Desconhecida", "Desconhecida", "Desconhecida", "Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0");
+
+INSERT INTO sisbela.TB_VISITA (co_trafego, dt_realizado, dt_atualizado, nu_visitas) VALUES ("101", "2021-04-01 15:09:20", "2021-04-01 15:09:20", "1");
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 15:09:22" where co_visita = 8;
+
