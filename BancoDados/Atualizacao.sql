@@ -1142,3 +1142,13 @@ UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:25
 
 UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
 
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:29:19" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:29:32" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:29:33" where co_visita = 8;
+
