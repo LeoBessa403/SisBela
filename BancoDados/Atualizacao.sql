@@ -1004,3 +1004,141 @@ INSERT INTO sisbela.TB_VISITA (co_trafego, dt_realizado, dt_atualizado, nu_visit
 
 UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 15:09:22" where co_visita = 8;
 
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:01:00" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:01:03" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:01:05" where co_visita = 8;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:01:22" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:01:23" where co_visita = 8;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:03:37" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:03:41" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:03:42" where co_visita = 8;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:11:01" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:11:04" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:11:05" where co_visita = 8;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:14:06" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:16:33" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:16:37" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:16:38" where co_visita = 8;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:17:51" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:18:00" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:18:01" where co_visita = 8;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:20:44" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:20:45" where co_visita = 8;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:20:54" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:20:56" where co_visita = 8;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:22:01" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:22:02" where co_visita = 8;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:22:28" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:22:48" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:22:59" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:23:15" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:23:34" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:23:41" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:23:49" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:24:08" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:24:27" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:24:46" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:25:08" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:25:23" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:25:36" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:25:53" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
+UPDATE sisbela.TB_VISITA SET nu_visitas = "2", dt_atualizado = "2021-04-01 16:25:59" where co_visita = 8;
+
+UPDATE sisbela.TB_PAGINA SET nu_visualizacao = "6" where co_pagina = 1;
+
