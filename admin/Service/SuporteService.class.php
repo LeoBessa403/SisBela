@@ -105,12 +105,17 @@ class  SuporteService extends AbstractService
         ];
         $retorno[SUCESSO] = $this->Salva($dados, $coSuporte);
         if ($retorno[SUCESSO]) {
-            $session->setSession(MENSAGEM, ATUALIZADO);
+            $retorno[MSG] = ATUALIZADO;
+            Notificacoes::geraMensagem(
+                "Mensagem de Suporte Apagada com Sucesso!",
+                TiposMensagemEnum::SUCESSO
+            );
             $retorno[SUCESSO] = true;
             $PDO->commit();
         } else {
             $session->setSession(MENSAGEM, 'Erro ao Salvar o Suporte');
             $retorno[SUCESSO] = false;
+
             $PDO->rollBack();
         }
         return $retorno;

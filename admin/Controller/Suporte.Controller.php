@@ -63,12 +63,9 @@ class Suporte extends AbstractController
     {
         /** @var SuporteService $suporteService */
         $suporteService = $this->getService(SUPORTE_SERVICE);
-        $coSuporte = UrlAmigavel::PegaParametro(CO_SUPORTE);
+        $coSuporte = $_POST['codigo'];
         if ($coSuporte) {
-            $retorno = $suporteService->DeletaSuporte($coSuporte);
-            if ($retorno[SUCESSO]) {
-                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarSuporte/');
-            }
+            return $suporteService->DeletaSuporte($coSuporte);
         } else {
             Notificacoes::geraMensagem(
                 'Suporte Não encontrado',
@@ -77,5 +74,4 @@ class Suporte extends AbstractController
             Redireciona(UrlAmigavel::$modulo . '/' . CONTROLLER_INICIAL_ADMIN . '/' . ACTION_INICIAL_ADMIN);
         }
     }
-
 }

@@ -69,6 +69,13 @@
                             <?php
                             /** @var SuporteEntidade $mensagem */
                             $mensagem = $mensagem;
+
+                            if ($mensagem) {
+                                Modal::ModalConfirmaAtivacao("DeletaSuporte",
+                                    'Deseja realmente Apagar esse Suporte?',
+                                    $mensagem->getCoSuporte(), 'Suporte/DeletaSuporte');
+                            }
+
                             /** @var SuporteEntidade $suporte */
                             foreach ($result as $suporte):
                                 $foto = ImagemService::getImagemCoUsuario(
@@ -112,7 +119,7 @@
                                         Valida::Resumi($suporte->getDsAssunto(), 35);
                                         ?></span>
                                     <span class="messages-item-preview"><?=
-                                        Valida::Resumi($suporte->getCoUltimaMensagem()->getDsMensagem(), 75);
+                                      strip_tags(Valida::Resumi($suporte->getCoUltimaMensagem()->getDsMensagem(), 75));
                                         ?></span>
                                 </li>
                                 <?php
@@ -167,9 +174,15 @@
                                     <div class="message-actions">
                                         <?php
                                         if ($mensagem->getStStatus() == StatusAcessoEnum::ATIVO) {
-                                            echo '<a class="btn" title="Excluir" href=" ' . PASTAADMIN . 'Suporte/DeletaSuporte/' .
-                                                Valida::GeraParametro(CO_SUPORTE . "/" . $mensagem->getCoSuporte()) .
-                                                '"><i class="fa fa-trash-o"></i></a>';
+//                                            echo '<a class="btn" title="Excluir" href=" ' . PASTAADMIN . 'Suporte/DeletaSuporte/' .
+//                                                Valida::GeraParametro(CO_SUPORTE . "/" . $mensagem->getCoSuporte()) .
+//                                                '"><i class="fa fa-trash-o"></i></a>';
+                                            echo '<a data-toggle="modal" role="button" class="btn btn-green tooltips acao" 
+                                                        id="' . $mensagem->getCoSuporte() . '" data-msg-restricao="MSG03"
+                                                       href="#DeletaSuporte" data-original-title="Excluir Suporte" data-placement="top"
+                                                       data-url-action="' . PASTAADMIN . 'Suporte/DeletaSuporte/">
+                                                        <i class="fa fa-trash-o"></i>
+                                                    </a>';
                                             echo '<a class="btn" title="Responder" href=" ' . PASTAADMIN . 'Suporte/CadastroSuporte/' .
                                                 Valida::GeraParametro(CO_SUPORTE . "/" . $mensagem->getCoSuporte()) .
                                                 '"><i class="fa fa-reply"></i></a>';
