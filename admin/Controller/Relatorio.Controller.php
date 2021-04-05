@@ -56,12 +56,11 @@ class Relatorio extends AbstractController
                 }
             }
             // SOMATORIO DE SERVIÇO
-            if (!empty($ttStatus[$agenda["st_status"]][$mes])) {
-                $ttStatus[$agenda["st_status"]][$mes]++;
+            if (!empty($ttStatus[$agenda["st_status"]])) {
+                $ttStatus[$mes][$agenda["st_status"]]++;
             } else {
-                $ttStatus[$agenda["st_status"]][$mes] = 1;
+                $ttStatus[$mes][$agenda["st_status"]] = 1;
             }
-
 
             if (!in_array($mes, $meses)) {
                 $meses[] = $mes;
@@ -69,37 +68,19 @@ class Relatorio extends AbstractController
         }
 
         $qtdMeses = count($meses);
-        if(!$meses){
+        if (!$meses) {
             $meses[0] = '';
             $meses[1] = '';
             $meses[2] = '';
             $meses[3] = '';
-            $meses[4] = '';
         }
         $meses[0] = (0 <= $qtdMeses) ? $meses[0] : '';
         $meses[1] = (1 < $qtdMeses) ? $meses[1] : '';
         $meses[2] = (2 < $qtdMeses) ? $meses[2] : '';
         $meses[3] = (3 < $qtdMeses) ? $meses[3] : '';
-        $meses[4] = (4 < $qtdMeses) ? $meses[4] : '';
 
         $arrayMes = array("['Mês','" . $meses[0] . "','" . $meses[1] . "','" . $meses[2] . "','" .
-            $meses[3] . "','" . $meses[4] . "']");
-
-        //  GRÁFICO CLIENTE
-        $graficoCliente = $arrayMes;
-        foreach ($ttCliente as $cliente => $agendamentos) {
-            $valor1 = (!empty($agendamentos[$meses[0]])) ? $agendamentos[$meses[0]] : 0;
-            $valor2 = (!empty($agendamentos[$meses[1]])) ? $agendamentos[$meses[1]] : 0;
-            $valor3 = (!empty($agendamentos[$meses[2]])) ? $agendamentos[$meses[2]] : 0;
-            $valor4 = (!empty($agendamentos[$meses[3]])) ? $agendamentos[$meses[3]] : 0;
-            $valor5 = (!empty($agendamentos[$meses[4]])) ? $agendamentos[$meses[4]] : 0;
-            $graficoCliente[] = "['" . $cliente . "'," . $valor1 . "," . $valor2 . "," . $valor3 . "," .
-                $valor4 . "," . $valor5 . "]";
-        }
-
-        $grafico = new Grafico(Grafico::COLUNA, "Agendamentos por Cliente", "div_cliente");
-        $grafico->SetDados($graficoCliente);
-        $grafico->GeraGrafico();
+            $meses[3] . "']");
 
         // GRÁFICO PROFISSIONAL
         $graficoProfissional = $arrayMes;
@@ -108,9 +89,8 @@ class Relatorio extends AbstractController
             $valor2 = (!empty($agendamentos[$meses[1]])) ? $agendamentos[$meses[1]] : 0;
             $valor3 = (!empty($agendamentos[$meses[2]])) ? $agendamentos[$meses[2]] : 0;
             $valor4 = (!empty($agendamentos[$meses[3]])) ? $agendamentos[$meses[3]] : 0;
-            $valor5 = (!empty($agendamentos[$meses[4]])) ? $agendamentos[$meses[4]] : 0;
             $graficoProfissional[] = "['" . $profissional . "'," . $valor1 . "," . $valor2 . "," . $valor3 . "," .
-                $valor4 . "," . $valor5 . "]";
+                $valor4 . "]";
         }
 
         $grafico = new Grafico(Grafico::COLUNA, "Agendamentos por Profissional", "div_profissional");
@@ -124,30 +104,30 @@ class Relatorio extends AbstractController
             $valor2 = (!empty($agendamentos[$meses[1]])) ? $agendamentos[$meses[1]] : 0;
             $valor3 = (!empty($agendamentos[$meses[2]])) ? $agendamentos[$meses[2]] : 0;
             $valor4 = (!empty($agendamentos[$meses[3]])) ? $agendamentos[$meses[3]] : 0;
-            $valor5 = (!empty($agendamentos[$meses[4]])) ? $agendamentos[$meses[4]] : 0;
             $graficoServico[] = "['" . $servico . "'," . $valor1 . "," . $valor2 . "," . $valor3 . "," .
-                $valor4 . "," . $valor5 . "]";
+                $valor4 . "]";
         }
 
         $grafico = new Grafico(Grafico::COLUNA, "Agendamentos por Serviço", "div_servico");
         $grafico->SetDados($graficoServico);
         $grafico->GeraGrafico();
 
-        // GRÁFICO STATUS
-        $graficoStatus = $arrayMes;
-        foreach ($ttStatus as $status => $agendamentos) {
-            $valor1 = (!empty($agendamentos[$meses[0]])) ? $agendamentos[$meses[0]] : 0;
-            $valor2 = (!empty($agendamentos[$meses[1]])) ? $agendamentos[$meses[1]] : 0;
-            $valor3 = (!empty($agendamentos[$meses[2]])) ? $agendamentos[$meses[2]] : 0;
-            $valor4 = (!empty($agendamentos[$meses[3]])) ? $agendamentos[$meses[3]] : 0;
-            $valor5 = (!empty($agendamentos[$meses[4]])) ? $agendamentos[$meses[4]] : 0;
-            $graficoStatus[] = "['" . StatusAgendamentoEnum::getDescricaoValor($status) . "'," . $valor1 . "," . $valor2 . "," . $valor3 . "," .
-                $valor4 . "," . $valor5 . "]";
-        }
 
-        $grafico = new Grafico(Grafico::COLUNA, "Agendamentos por Status", "div_status");
-        $grafico->SetDados($graficoStatus);
-        $grafico->GeraGrafico();
+        $i = 5; // Mês do Gráfico
+        $ttStatus = array_reverse($ttStatus);
+        // GRÁFICO STATUS
+        foreach ($ttStatus as $st_pag => $agendamentos) {
+            $graficoStAg = array();
+            $graficoStAg[] = "['Agendamentos','Status']";
+            foreach ($agendamentos as $chave_pag => $qtd) {
+                $graficoStAg[] = "['" . StatusAgendamentoEnum::getDescricaoValor($chave_pag) . "'," . $qtd . "]";
+            }
+            // GRAFICO PIZZA
+            $grafico = new Grafico(Grafico::PIZZA, "Agendamentos / " . $st_pag, "div_status" . $i );
+            $grafico->SetDados($graficoStAg);
+            $grafico->GeraGrafico();
+            $i--;
+        }
 
     }
 

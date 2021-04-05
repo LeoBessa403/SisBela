@@ -28,11 +28,11 @@
                         Relatório dos Agendamentos
                     </div>
                     <div class="panel-body">
-                        <div class="col-md-12">
-                            <div class="alert alert-warning fade in">
-                                <div id="div_cliente"></div>
-                            </div>
-                        </div>
+<!--                        <div class="col-md-12">-->
+<!--                            <div class="alert alert-warning fade in">-->
+<!--                                <div id="div_cliente"></div>-->
+<!--                            </div>-->
+<!--                        </div>-->
                         <div class="col-md-12">
                             <div class="alert alert-success fade in">
                                 <div id="div_profissional"></div>
@@ -43,9 +43,29 @@
                                 <div id="div_servico"></div>
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-4">
                             <div class="alert alert-danger fade in">
-                                <div id="div_status"></div>
+                                <div id="div_status1"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="alert alert-danger fade in">
+                                <div id="div_status2"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="alert alert-danger fade in">
+                                <div id="div_status3"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="alert alert-danger fade in">
+                                <div id="div_status4"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="alert alert-danger fade in">
+                                <div id="div_status5"></div>
                             </div>
                         </div>
                     </div>

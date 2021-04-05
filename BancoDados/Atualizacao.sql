@@ -918,3 +918,219 @@ UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:54:58" where co_aces
 
 UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:54:59" where co_acesso = 104;
 
+UPDATE sisbela.TB_ACESSO SET tp_situacao = "F", dt_fim_acesso = "2021-04-05 18:25:45" where co_acesso = 104;
+
+INSERT INTO sisbela.TB_TRAFEGO (ds_navegador, ds_sistema_operacional, ds_dispositivo, nu_ip, ds_pais, ds_code_pais, ds_estado, ds_uf, ds_cidade, ds_agente) VALUES ("Firefox", "Windows 8.1", "Desktop", "127.0.0.1", "Desconhecido", "Desconhecida", "Desconhecida", "Desconhecida", "Desconhecida", "Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0");
+
+INSERT INTO sisbela.TB_ACESSO (ds_session_id, co_usuario, tp_situacao, co_trafego, dt_fim_acesso, dt_inicio_acesso) VALUES ("6jc3jtbo10jio6gnd4t8b3qoan", "1", "A", "116", "2021-04-05 18:55:50", "2021-04-05 18:25:50");
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:55:51" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:55:51" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:56:05" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:56:06" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:56:11" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:56:12" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:56:13" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:56:13" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:56:17" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:56:18" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:56:21" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:56:22" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:56:27" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:56:27" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:56:34" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:56:35" where co_acesso = 105;
+
+UPDATE sisbela.TB_HISTORIA SET ds_titulo = "CKeditor campo Mensagem", ds_observacao = "CKeditor campo Mensagem", co_sessao = "5", st_situacao = "C", dt_atualizado = "2021-04-05 18:26:35" where co_historia = 69;
+
+INSERT INTO sisbela.TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("5", "5"_restante, "2021-04-05 18:26:35", "69");
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:56:36" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:56:37" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:56:39" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:56:40" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:56:46" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:56:47" where co_acesso = 105;
+
+UPDATE sisbela.TB_HISTORIA SET ds_titulo = "Confirmar Exclusão do suporte", ds_observacao = "Confirmar Exclusão do suporte", co_sessao = "5", st_situacao = "C", dt_atualizado = "2021-04-05 18:26:48" where co_historia = 73;
+
+INSERT INTO sisbela.TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("5", "5"_restante, "2021-04-05 18:26:48", "73");
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:56:48" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 18:56:49" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:02:22" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:02:23" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:02:29" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:02:30" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:02:34" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:02:35" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:02:37" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:02:38" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:02:44" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:02:45" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:02:55" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:02:56" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:03:06" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:03:07" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:04:23" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:04:24" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:04:32" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:04:33" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:04:52" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:04:53" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:07:46" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:07:48" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:09:30" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:09:31" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:11:19" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:11:20" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:11:33" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:11:33" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:16:03" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:16:03" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:16:07" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:16:08" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:16:28" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:16:28" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:17:03" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:17:04" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:17:46" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:17:47" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:19:59" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:20:00" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:22:26" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:22:27" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:23:16" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:23:17" where co_acesso = 105;
+
+UPDATE sisbela.TB_ACESSO SET tp_situacao = "F", dt_fim_acesso = "2021-04-05 18:53:21" where co_acesso = 105;
+
+INSERT INTO sisbela.TB_TRAFEGO (ds_navegador, ds_sistema_operacional, ds_dispositivo, nu_ip, ds_pais, ds_code_pais, ds_estado, ds_uf, ds_cidade, ds_agente) VALUES ("Firefox", "Windows 8.1", "Desktop", "127.0.0.1", "Desconhecido", "Desconhecida", "Desconhecida", "Desconhecida", "Desconhecida", "Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0");
+
+INSERT INTO sisbela.TB_ACESSO (ds_session_id, co_usuario, tp_situacao, co_trafego, dt_fim_acesso, dt_inicio_acesso) VALUES ("6jc3jtbo10jio6gnd4t8b3qoan", "6", "A", "117", "2021-04-05 19:23:26", "2021-04-05 18:53:26");
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:23:26" where co_acesso = 106;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:23:27" where co_acesso = 106;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:23:31" where co_acesso = 106;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:23:31" where co_acesso = 106;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:23:38" where co_acesso = 106;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:23:38" where co_acesso = 106;
+
+INSERT INTO TB_AGENDA (dt_cadastro, co_assinante) VALUES ("2021-04-05 18:53:54", "5");
+
+INSERT INTO TB_STATUS_AGENDA (co_agenda, dt_cadastro, st_status, dt_inicio_agenda, dt_fim_agenda, nu_valor, nu_duracao, ds_observacao, co_usuario, co_profissional, co_cliente, co_servico) VALUES ("23", "2021-04-05 18:53:54", "4", "2021-02-01 08:00:00", "2021-02-01 10:00:00", "0", "0", "", "6", "17", "10", "15");
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:23:57" where co_acesso = 106;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:23:58" where co_acesso = 106;
+
+INSERT INTO TB_AGENDA (dt_cadastro, co_assinante) VALUES ("2021-04-05 18:54:15", "5");
+
+INSERT INTO TB_STATUS_AGENDA (co_agenda, dt_cadastro, st_status, dt_inicio_agenda, dt_fim_agenda, nu_valor, nu_duracao, ds_observacao, co_usuario, co_profissional, co_cliente, co_servico) VALUES ("24", "2021-04-05 18:54:15", "4", "2021-02-09 08:00:00", "2021-02-09 10:00:00", "0", "0", "", "6", "17", "16", "16");
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:24:18" where co_acesso = 106;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:24:18" where co_acesso = 106;
+
+INSERT INTO TB_AGENDA (dt_cadastro, co_assinante) VALUES ("2021-04-05 18:54:35", "5");
+
+INSERT INTO TB_STATUS_AGENDA (co_agenda, dt_cadastro, st_status, dt_inicio_agenda, dt_fim_agenda, nu_valor, nu_duracao, ds_observacao, co_usuario, co_profissional, co_cliente, co_servico) VALUES ("25", "2021-04-05 18:54:35", "7", "2021-01-06 08:00:00", "2021-01-06 09:00:00", "0", "0", "", "6", "17", "16", "16");
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:24:38" where co_acesso = 106;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:24:39" where co_acesso = 106;
+
+INSERT INTO TB_AGENDA (dt_cadastro, co_assinante) VALUES ("2021-04-05 18:54:51", "5");
+
+INSERT INTO TB_STATUS_AGENDA (co_agenda, dt_cadastro, st_status, dt_inicio_agenda, dt_fim_agenda, nu_valor, nu_duracao, ds_observacao, co_usuario, co_profissional, co_cliente, co_servico) VALUES ("26", "2021-04-05 18:54:51", "1", "2021-01-14 08:00:00", "2021-01-14 10:00:00", "0", "0", "", "6", "17", "16", "15");
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:24:54" where co_acesso = 106;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:24:55" where co_acesso = 106;
+
+INSERT INTO TB_AGENDA (dt_cadastro, co_assinante) VALUES ("2021-04-05 18:55:07", "5");
+
+INSERT INTO TB_STATUS_AGENDA (co_agenda, dt_cadastro, st_status, dt_inicio_agenda, dt_fim_agenda, nu_valor, nu_duracao, ds_observacao, co_usuario, co_profissional, co_cliente, co_servico) VALUES ("27", "2021-04-05 18:55:07", "2", "2021-01-08 08:00:00", "2021-01-08 10:00:00", "0", "0", "", "6", "16", "16", "15");
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:25:10" where co_acesso = 106;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:25:11" where co_acesso = 106;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:25:13" where co_acesso = 106;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:25:14" where co_acesso = 106;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:26:06" where co_acesso = 106;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-05 19:26:06" where co_acesso = 106;
+
