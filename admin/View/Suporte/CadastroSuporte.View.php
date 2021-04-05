@@ -29,7 +29,6 @@
         ?>
         <div class="row">
             <?php
-
             echo $form;
             ?>
 
@@ -38,3 +37,4 @@
     </div>
 </div>
 <!-- end: PAGE -->
+<script src="<?= HOME; ?>library/plugins/ckeditor4.2/ckeditor.js"></script>

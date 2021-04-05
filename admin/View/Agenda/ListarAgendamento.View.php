@@ -93,11 +93,11 @@
     </div>
     <div class="modal-footer pull-left" style="width: 100%;">
         <input id="co_agenda_listagem" name="co_agenda_listagem" value="" type="hidden">
-        <button data-dismiss="modal" class="btn btn-primary cancelar">Fechar</button>
-        <button data-dismiss="modal" class="btn acao btn-warning btn-editar">Editar</button>
-        <button data-dismiss="modal" class="btn acao btn-bricky btn-deletar">Deletar</button>
-        <button data-dismiss="modal" class="btn btn-light-grey btn-historico">Histórico</button>
-        <button data-dismiss="modal" class="btn acao btn-success btn-finalizar">Finalizar</button>
+        <button data-dismiss="modal" class="btn acao btn-warning btn-editar">Editar <i class="fa fa-clipboard"></i></button>
+        <button data-dismiss="modal" class="btn acao btn-bricky btn-deletar">Deletar  <i class="fa fa-trash-o"></i></button>
+        <button data-dismiss="modal" class="btn btn-light-grey btn-historico">Histórico <i class="clip-folder-open"></i></button>
+        <button data-dismiss="modal" class="btn acao btn-success btn-finalizar">Finalizar <i class="fa fa-save"></i></button>
+        <button data-dismiss="modal" class="btn btn-primary cancelar">Fechar <i class="clip-close"></i></button>
         <img src="<?= PASTA_LIBRARY; ?>images/loading.gif" class="img-load pull-right"
              style="margin: 15px 0 0 10px; display: block;"/>
     </div>

@@ -58,7 +58,7 @@ class SuporteForm
 
         $formulario
             ->setType(TiposCampoEnum::TEXTAREA)
-//            ->setClasses("ckeditor")
+            ->setClasses("ckeditor")
             ->setClasses("ob")
             ->setId(DS_MENSAGEM)
             ->setLabel("Mensagem")
