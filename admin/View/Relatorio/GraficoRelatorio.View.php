@@ -28,11 +28,11 @@
                         Relatório dos Agendamentos
                     </div>
                     <div class="panel-body">
-<!--                        <div class="col-md-12">-->
-<!--                            <div class="alert alert-warning fade in">-->
-<!--                                <div id="div_cliente"></div>-->
-<!--                            </div>-->
-<!--                        </div>-->
+                        <div class="col-md-12">
+                            <div class="alert alert-warning fade in">
+                                <div id="div_cliente"></div>
+                            </div>
+                        </div>
                         <div class="col-md-12">
                             <div class="alert alert-success fade in">
                                 <div id="div_profissional"></div>

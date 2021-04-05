@@ -82,6 +82,21 @@ class Relatorio extends AbstractController
         $arrayMes = array("['Mês','" . $meses[0] . "','" . $meses[1] . "','" . $meses[2] . "','" .
             $meses[3] . "']");
 
+        //  GRÁFICO CLIENTE
+        $graficoCliente = $arrayMes;
+        foreach ($ttCliente as $cliente => $agendamentos) {
+            $valor1 = (!empty($agendamentos[$meses[0]])) ? $agendamentos[$meses[0]] : 0;
+            $valor2 = (!empty($agendamentos[$meses[1]])) ? $agendamentos[$meses[1]] : 0;
+            $valor3 = (!empty($agendamentos[$meses[2]])) ? $agendamentos[$meses[2]] : 0;
+            $valor4 = (!empty($agendamentos[$meses[3]])) ? $agendamentos[$meses[3]] : 0;
+            $graficoCliente[] = "['" . $cliente . "'," . $valor1 . "," . $valor2 . "," . $valor3 . "," .
+                $valor4 . "]";
+        }
+
+        $grafico = new Grafico(Grafico::COLUNA, "Agendamentos por Cliente", "div_cliente");
+        $grafico->SetDados($graficoCliente);
+        $grafico->GeraGrafico();
+
         // GRÁFICO PROFISSIONAL
         $graficoProfissional = $arrayMes;
         foreach ($ttProfissional as $profissional => $agendamentos) {
@@ -123,13 +138,11 @@ class Relatorio extends AbstractController
                 $graficoStAg[] = "['" . StatusAgendamentoEnum::getDescricaoValor($chave_pag) . "'," . $qtd . "]";
             }
             // GRAFICO PIZZA
-            $grafico = new Grafico(Grafico::PIZZA, "Agendamentos / " . $st_pag, "div_status" . $i );
+            $grafico = new Grafico(Grafico::PIZZA, "Agendamentos / " . $st_pag, "div_status" . $i);
             $grafico->SetDados($graficoStAg);
             $grafico->GeraGrafico();
             $i--;
         }
-
     }
-
 
 }
