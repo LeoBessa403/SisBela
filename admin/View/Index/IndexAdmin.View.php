@@ -14,7 +14,7 @@
                     </li>
                 </ol>
                 <div class="page-header">
-                    <h1>Resumo dos Produtos</h1>
+                    <h1>Resumo do Sistema</h1>
                 </div>
                 <!-- end: PAGE TITLE & BREADCRUMB -->
             </div>
@@ -25,7 +25,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <i class="fa fa-calendar"></i>
-                        Resumo do Sistema
+                        Estatísticas do Sistema
                     </div>
                     <div class="panel-body">
                         <div class="col-sm-4">
@@ -57,60 +57,6 @@
                         </div>
                         <div class="col-sm-4">
                             <button class="btn btn-icon btn-block">
-                                <i class="clip-users-3"></i>
-                                Agend. Finalizados do Mês
-                                <span class="negrito dados dados-warning">
-                                     <?= $dados['agMesFinal']; ?>
-                                </span>
-                            </button>
-                        </div>
-                        <div class="col-sm-4">
-                            <button class="btn btn-icon btn-block">
-                                <i class="fa fa-money"></i>
-                                Agend. com Falta do Mês
-                                <span class="dados negrito dados-info">
-                                     <?= $dados['agMesFaltou']; ?>
-                                </span>
-                            </button>
-                        </div>
-                        <div class="col-sm-4">
-                            <button class="btn btn-icon btn-block">
-                                <i class="clip-user-cancel"></i>
-                                Agend. Cancelados do Mês
-                                <span class="dados negrito dados-beige">
-                                     <?= $dados['agMesCanc']; ?>
-                                </span>
-                            </button>
-                        </div>
-                        <div class="col-sm-4">
-                            <button class="btn btn-icon btn-block">
-                                <i class="clip-user-3"></i>
-                                Agend. Agendados do Mês
-                                <span class="dados negrito dados-orange">
-                                     <?= $dados['agMesAge']; ?>
-                                </span>
-                            </button>
-                        </div>
-                        <div class="col-sm-4">
-                            <button class="btn btn-icon btn-block">
-                                <i class="fa-dollar fa"></i>
-                                Agend. Confirmados do Mês
-                                <span class="dados negrito dados-olivia">
-                                     <?= $dados['agMesConf']; ?>
-                                </span>
-                            </button>
-                        </div>
-                        <div class="col-sm-4">
-                            <button class="btn btn-icon btn-block">
-                                <i class="fa-eur fa"></i>
-                                Agend. Deletados do Mês
-                                <span class="dados negrito dados-gray">
-                                    <?= $dados['agMesDel']; ?>
-                                </span>
-                            </button>
-                        </div>
-                        <div class="col-sm-4">
-                            <button class="btn btn-icon btn-block">
                                 <i class="clip-user-3"></i>
                                 Profissionais Cadastrados
                                 <span class="dados negrito dados-info">
@@ -136,6 +82,50 @@
                                 </span>
                             </button>
                         </div>
+                        <?php
+                        if ($dados['temAgendamentos']) {
+                            ?>
+                            <div class="col-md-12">
+                                <div class="alert alert-warning fade in">
+                                    <div id="div_cliente"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="alert alert-success fade in">
+                                    <div id="div_profissional"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="alert alert-info fade in">
+                                    <div id="div_servico"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="alert alert-danger fade in">
+                                    <div id="div_status1"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="alert alert-danger fade in">
+                                    <div id="div_status2"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="alert alert-danger fade in">
+                                    <div id="div_status3"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="alert alert-danger fade in">
+                                    <div id="div_status4"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="alert alert-danger fade in">
+                                    <div id="div_status5"></div>
+                                </div>
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
                 <!-- end: FULL CALENDAR PANEL -->

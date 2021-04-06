@@ -21,6 +21,7 @@ class Mensagens
     const OK_SALVO_MEMBRO_RETIRO_CARNAVAL = "Cadastro Realizado com Sucesso! </br><b>Porem a garantia da sua 
             vaga somente mediante a PAGAMENTO da taxa de InscriÇÃo. Selecione a forma que pretende pagar.</b>";
     const OK_SALVO_INSCRICAO = "Cadastro Realizado com Sucesso! Aguardando a confirmaÇÃo do Pagamento.";
+    const USUARIO_JA_LOGADO = 'Já existe um acesso com esse usuário Ativo. Favor Verificar.';
     const MSG_ERROS_CAMPOS = "O(s) Campo(s) <b>%s</b> , favor preencher corretamente.";
     const MSG_SEM_ITEM_SELECIONADO = "Nenhum item selecionado";
 
