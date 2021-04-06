@@ -28,46 +28,50 @@
                         Relatório dos Agendamentos
                     </div>
                     <div class="panel-body">
-                        <div class="col-md-12">
-                            <div class="alert alert-warning fade in">
-                                <div id="div_cliente"></div>
-                            </div>
+                        <?php
+                        $grid = new Grid();
+                        echo $grid->PesquisaAvancada('Pesquisar Agendamentos');
+                        ?>
+                        <div class="alert alert-warning fade in">
+                            <h4 class="alert-heading"><i class="fa fa-calendar"></i> Status Agendamento</h4>
+                            <?php
+                            foreach (StatusAgendamentoEnum::$descricao as $chave => $desc) {
+                                if ($chave != StatusAgendamentoEnum::DELETADO) {
+                                    echo '<span class="circle-img label-' . StatusAgendamentoEnum::$cores[$chave] . '">';
+                                    echo '&nbsp;&nbsp;&nbsp;&nbsp;</span> ' . $desc . ' / ';
+                                }
+                            }
+                            ?>
                         </div>
-                        <div class="col-md-12">
-                            <div class="alert alert-success fade in">
-                                <div id="div_profissional"></div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="alert alert-info fade in">
-                                <div id="div_servico"></div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="alert alert-danger fade in">
-                                <div id="div_status1"></div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="alert alert-danger fade in">
-                                <div id="div_status2"></div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="alert alert-danger fade in">
-                                <div id="div_status3"></div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="alert alert-danger fade in">
-                                <div id="div_status4"></div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="alert alert-danger fade in">
-                                <div id="div_status5"></div>
-                            </div>
-                        </div>
+                        <h2>
+                            <small>Agendamentos Cadastrados</small>
+                        </h2>
+                        <?php
+                        $arrColunas = array('Cliente', 'Serviço', 'Profissional', 'Agendado', 'Atualizado em', 'Período', 'Status');
+                        $grid = new Grid();
+                        $grid->setColunasIndeces($arrColunas);
+                        $grid->criaGrid();
+                        if (isset($result)) {
+                            if ($result) {
+                                $result = array_reverse($result);
+                                foreach ($result as $res):
+
+                                    $label = '<span class="circle-img label-' . StatusAgendamentoEnum::$cores[$res['st_status']] . '">&nbsp;&nbsp;&nbsp;&nbsp;</span> ';
+                                    $grid->setColunas(Valida::Resumi($res['cliente'], 30), 3);
+                                    $grid->setColunas($res['no_servico'], 3);
+                                    $grid->setColunas(Valida::Resumi($res['profissional'], 30), 3);
+                                    $grid->setColunas(Valida::DataShow($res['dt_inicio_agenda'], 'd/m/Y'), 1);
+                                    $grid->setColunas(Valida::DataShow($res['dt_cadastro'], 'd/m/Y H:i'), 1);
+                                    $grid->setColunas(Valida::DataShow($res['dt_inicio_agenda'], 'H:i')
+                                        . ' a ' . Valida::DataShow($res['dt_fim_agenda'], 'H:i'), 1);
+                                    $grid->setColunas($label . StatusAgendamentoEnum::$descricao[$res['st_status']], 1);
+
+                                    $grid->criaLinha($res[CO_AGENDA]);
+                                endforeach;
+                            }
+                        }
+                        $grid->finalizaGrid();
+                        ?>
                     </div>
                 </div>
             </div>

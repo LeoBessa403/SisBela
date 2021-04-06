@@ -169,8 +169,24 @@ class AgendaForm
     {
         $id = "PesquisaAvancadaAgendamento";
 
-        $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action, "Pesquisa", 12);
+        $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action,
+            "Pesquisa", 12);
+        $formulario = AgendaForm::geraCamposPesquisa($formulario);
+        return $formulario->finalizaForm('', false);
+    }
 
+    public static function PesquisarRelatorio()
+    {
+        $id = "PesquisarRelatorio";
+
+        $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action,
+            "Pesquisa", 12);
+        $formulario = AgendaForm::geraCamposPesquisa($formulario);
+        return $formulario->finalizaFormPesquisaAvancada();
+    }
+
+    private static function geraCamposPesquisa($formulario)
+    {
         $options[''] = 'Selecione um status';
         foreach (StatusAgendamentoEnum::$descricao as $chave => $valor) {
             $options[$chave] = $valor;
@@ -230,7 +246,6 @@ class AgendaForm
             ->setLabel("Fim")
             ->CriaInpunt();
 
-
-        return $formulario->finalizaForm('', false);
+        return $formulario;
     }
 }
