@@ -91,7 +91,7 @@ class Relatorio extends AbstractController
             $i++;
         }
         $Colunas = array('Cliente', 'Profissional', 'Serviço', 'Agendado', 'Status do Agendamento');
-        $exporta = new Exportacao($formato);
+        $exporta = new Exportacao($formato,'Meus Agendamentos');
         // $exporta->setPapelOrientacao("paisagem");
         $exporta->setColunas($Colunas);
         $exporta->setConteudo($res);

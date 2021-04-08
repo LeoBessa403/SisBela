@@ -502,3 +502,7 @@ UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-08 19:22:14" where co_aces
 
 UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-08 19:22:14" where co_acesso = 3;
 
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-08 19:26:10" where co_acesso = 3;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-08 19:26:11" where co_acesso = 3;
+
