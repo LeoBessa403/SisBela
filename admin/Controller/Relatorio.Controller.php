@@ -64,4 +64,38 @@ class Relatorio extends AbstractController
         echo AgendaForm::PesquisarRelatorio();
     }
 
+    public function ExportarGraficoRelatorio()
+    {
+        /** @var AgendaService $agendaService */
+        $agendaService = $this->getService(AGENDA_SERVICE);
+        $Condicoes['ta.' . CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
+
+        $session = new Session();
+        if ($session->CheckSession(PESQUISA_AVANCADA)) {
+            $Condicoes = $session->getSession(PESQUISA_AVANCADA);
+            $result = $agendaService->PesquisaAgendamentos($Condicoes, 'tsa.dt_cadastro');
+        } else {
+            $result = $agendaService->PesquisaAgendamentos($Condicoes, 'tsa.dt_cadastro');
+        }
+        $formato = UrlAmigavel::PegaParametro("formato");
+        $result = array_reverse($result);
+
+        $i = 0;
+        /** @var UsuarioEntidade $value */
+        foreach ($result as $value) {
+            $res[$i]["cliente"] = $value["cliente"];
+            $res[$i]["profissional"] = $value["profissional"];
+            $res[$i]["no_servico"] = $value["no_servico"];
+            $res[$i]["dt_inicio_agenda"] = Valida::DataShow($value["dt_inicio_agenda"]);
+            $res[$i]["st_status"] = StatusAgendamentoEnum::getDescricaoValor($value["st_status"]);
+            $i++;
+        }
+        $Colunas = array('Cliente', 'Profissional', 'Serviço', 'Agendado', 'Status do Agendamento');
+        $exporta = new Exportacao($formato);
+        // $exporta->setPapelOrientacao("paisagem");
+        $exporta->setColunas($Colunas);
+        $exporta->setConteudo($res);
+        $exporta->GeraArquivo();
+    }
+
 }
