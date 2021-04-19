@@ -55,11 +55,17 @@
                     <div class="panel-body messages">
                         <ul class="messages-list">
                             <li class="messages-search">
-                                <form action="#" class="form-inline">
+                                <?php
+                                $action = HOME . UrlAmigavel::$modulo . "/" . UrlAmigavel::$controller
+                                    . "/" . UrlAmigavel::$action;
+                                ?>
+                                <form action="<?= $action; ?>" method="post" name="pesquisa_suporte"
+                                      id="pesquisa_suporte" class="form-inline">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Pesquisar...">
+                                        <input type="text" name="txt_pesquisa" id="txt_pesquisa"
+                                               class="form-control" placeholder="Pesquisar...">
                                         <div class="input-group-btn">
-                                            <button class="btn btn-primary btn-search" type="button">
+                                            <button class="btn btn-primary btn-search" type="submit">
                                                 <i class="fa fa-search"></i>
                                             </button>
                                         </div>
@@ -119,7 +125,7 @@
                                         Valida::Resumi($suporte->getDsAssunto(), 35);
                                         ?></span>
                                     <span class="messages-item-preview"><?=
-                                      strip_tags(Valida::Resumi($suporte->getCoUltimaMensagem()->getDsMensagem(), 75));
+                                        strip_tags(Valida::Resumi($suporte->getCoUltimaMensagem()->getDsMensagem(), 75));
                                         ?></span>
                                 </li>
                                 <?php

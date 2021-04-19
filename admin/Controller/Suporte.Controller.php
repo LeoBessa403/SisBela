@@ -25,11 +25,20 @@ class Suporte extends AbstractController
             }
         }
         $this->mensagem = $mensagem;
-        $Condicoes = [
-            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado(),
-            ST_STATUS => (PerfilService::perfilMaster()) ? null : StatusAcessoEnum::ATIVO
-        ];
-        $this->result = $suporteService->PesquisaSuportes($Condicoes);
+        if (!empty($_POST)):
+            $Condicoes = [
+                CO_ASSINANTE => AssinanteService::getCoAssinanteLogado(),
+                ST_STATUS => (PerfilService::perfilMaster()) ? null : StatusAcessoEnum::ATIVO,
+                'txt_pesquisa' => $_POST["txt_pesquisa"]
+            ];
+            $this->result = $suporteService->PesquisaAvancada($Condicoes);
+        else:
+            $Condicoes = [
+                CO_ASSINANTE => AssinanteService::getCoAssinanteLogado(),
+                ST_STATUS => (PerfilService::perfilMaster()) ? null : StatusAcessoEnum::ATIVO
+            ];
+            $this->result = $suporteService->PesquisaSuportes($Condicoes);
+        endif;
     }
 
     public function CadastroSuporte()

@@ -126,6 +126,11 @@ class  SuporteService extends AbstractService
         return $this->ObjetoModel->PesquisaSuportes($Condicoes);
     }
 
+    public function PesquisaAvancada($dados)
+    {
+        return $this->ObjetoModel->PesquisaAvancada($dados);
+    }
+
     public static function PesquisaCountMensagens()
     {
         /** @var SuporteModel $ObjetoModel */
