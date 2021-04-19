@@ -744,3 +744,211 @@ UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 15:14:56" where co_aces
 
 UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 15:14:57" where co_acesso = 21;
 
+UPDATE sisbela.TB_ACESSO SET tp_situacao = "F", dt_fim_acesso = "2021-04-19 15:14:59" where co_acesso = 21;
+
+INSERT INTO sisbela.TB_TRAFEGO (ds_navegador, ds_sistema_operacional, ds_dispositivo, nu_ip, ds_pais, ds_code_pais, ds_estado, ds_uf, ds_cidade, ds_agente) VALUES ("Firefox", "Windows 8.1", "Desktop", "127.0.0.1", "Desconhecido", "Desconhecida", "Desconhecida", "Desconhecida", "Desconhecida", "Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0");
+
+INSERT INTO sisbela.TB_ACESSO (ds_session_id, co_usuario, tp_situacao, co_trafego, dt_fim_acesso, dt_inicio_acesso) VALUES ("mbr0gpfb7i72t6jrsf0a436t0r", "1", "A", "182", "2021-04-19 16:03:11", "2021-04-19 15:33:11");
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:03:11" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:03:12" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:03:16" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:03:17" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:03:21" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:03:21" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:03:31" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:03:32" where co_acesso = 22;
+
+INSERT INTO sisbela.TB_ENDERECO (ds_endereco, ds_complemento, ds_bairro, nu_cep, no_cidade, sg_uf) VALUES ("", "", "", "", "", "");
+
+UPDATE sisbela.TB_CONTATO SET co_contato = "5", nu_tel1 = "61998110601", nu_tel2 = "", nu_tel3 = "", nu_tel_0800 = "", ds_email = "fef@rtj.com", ds_site = "", ds_facebook = "", ds_twitter = "", ds_instagram = "" where co_contato = 5;
+
+UPDATE sisbela.TB_PESSOA SET co_pessoa = "5", nu_cpf = "", no_pessoa = "EFWEGRG", nu_rg = "", dt_nascimento = "", st_sexo = "", co_contato = "5", co_endereco = "12" where co_pessoa = 5;
+
+UPDATE sisbela.TB_USUARIO SET ds_code = "UVV4UE4xcExRekE9", ds_senha = "ALO7ZKC0", st_status = "A", co_pessoa = "5", co_assinante = "4" where co_usuario = 5;
+
+DELETE FROM sisbela.TB_USUARIO_PERFIL where co_usuario in (5);
+
+INSERT INTO sisbela.TB_USUARIO_PERFIL (co_perfil) VALUES ("2");
+
+INSERT INTO sisbela.TB_USUARIO_PERFIL (co_perfil) VALUES ("3");
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:03:32" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:03:33" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:03:45" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:03:46" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:04:01" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:04:02" where co_acesso = 22;
+
+UPDATE sisbela.TB_ENDERECO SET co_endereco = "12", ds_endereco = "", ds_complemento = "", ds_bairro = "", nu_cep = "", no_cidade = "", sg_uf = "" where co_endereco = 12;
+
+UPDATE sisbela.TB_CONTATO SET co_contato = "5", nu_tel1 = "61998110601", nu_tel2 = "", nu_tel3 = "", nu_tel_0800 = "", ds_email = "fef@rtj.com", ds_site = "", ds_facebook = "", ds_twitter = "", ds_instagram = "" where co_contato = 5;
+
+UPDATE sisbela.TB_PESSOA SET co_pessoa = "5", nu_cpf = "", no_pessoa = "EFWEGRG NOVIDADES", nu_rg = "", dt_nascimento = "", st_sexo = "", co_contato = "5", co_endereco = "12" where co_pessoa = 5;
+
+UPDATE sisbela.TB_USUARIO SET ds_code = "UVV4UE4xcExRekE9", ds_senha = "ALO7ZKC0", st_status = "A", co_pessoa = "5", co_assinante = "4" where co_usuario = 5;
+
+DELETE FROM sisbela.TB_USUARIO_PERFIL where co_usuario in (5);
+
+INSERT INTO sisbela.TB_USUARIO_PERFIL (co_perfil) VALUES ("4");
+
+INSERT INTO sisbela.TB_USUARIO_PERFIL (co_perfil) VALUES ("2");
+
+INSERT INTO sisbela.TB_USUARIO_PERFIL (co_perfil) VALUES ("3");
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:04:03" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:04:04" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:04:14" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:04:14" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:05:05" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:05:06" where co_acesso = 22;
+
+UPDATE sisbela.TB_ENDERECO SET co_endereco = "12", ds_endereco = "", ds_complemento = "", ds_bairro = "", nu_cep = "", no_cidade = "", sg_uf = "" where co_endereco = 12;
+
+UPDATE sisbela.TB_CONTATO SET co_contato = "5", nu_tel1 = "61998110601", nu_tel2 = "", nu_tel3 = "", nu_tel_0800 = "", ds_email = "fef@rtj.com", ds_site = "", ds_facebook = "", ds_twitter = "", ds_instagram = "" where co_contato = 5;
+
+UPDATE sisbela.TB_PESSOA SET co_pessoa = "5", nu_cpf = "", no_pessoa = "EFWEGRG NOVIDADES", nu_rg = "", dt_nascimento = "", st_sexo = "", co_contato = "5", co_endereco = "12" where co_pessoa = 5;
+
+UPDATE sisbela.TB_USUARIO SET ds_code = "UVV4UE4xcExRekE9", ds_senha = "ALO7ZKC0", st_status = "A", co_pessoa = "5", co_assinante = "4" where co_usuario = 5;
+
+DELETE FROM sisbela.TB_USUARIO_PERFIL where co_usuario in (5);
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:05:16" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:05:17" where co_acesso = 22;
+
+UPDATE sisbela.TB_ENDERECO SET co_endereco = "12", ds_endereco = "", ds_complemento = "", ds_bairro = "", nu_cep = "", no_cidade = "", sg_uf = "" where co_endereco = 12;
+
+UPDATE sisbela.TB_CONTATO SET co_contato = "5", nu_tel1 = "61998110601", nu_tel2 = "", nu_tel3 = "", nu_tel_0800 = "", ds_email = "fef@rtj.com", ds_site = "", ds_facebook = "", ds_twitter = "", ds_instagram = "" where co_contato = 5;
+
+UPDATE sisbela.TB_PESSOA SET co_pessoa = "5", nu_cpf = "", no_pessoa = "EFWEGRG NOVIDADES", nu_rg = "", dt_nascimento = "", st_sexo = "", co_contato = "5", co_endereco = "12" where co_pessoa = 5;
+
+UPDATE sisbela.TB_USUARIO SET ds_code = "UVV4UE4xcExRekE9", ds_senha = "ALO7ZKC0", st_status = "A", co_pessoa = "5", co_assinante = "4" where co_usuario = 5;
+
+DELETE FROM sisbela.TB_USUARIO_PERFIL where co_usuario in (5);
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:06:02" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:06:03" where co_acesso = 22;
+
+UPDATE sisbela.TB_ENDERECO SET co_endereco = "12", ds_endereco = "", ds_complemento = "", ds_bairro = "", nu_cep = "", no_cidade = "", sg_uf = "" where co_endereco = 12;
+
+UPDATE sisbela.TB_CONTATO SET co_contato = "5", nu_tel1 = "61998110601", nu_tel2 = "", nu_tel3 = "", nu_tel_0800 = "", ds_email = "fef@rtj.com", ds_site = "", ds_facebook = "", ds_twitter = "", ds_instagram = "" where co_contato = 5;
+
+UPDATE sisbela.TB_PESSOA SET co_pessoa = "5", nu_cpf = "", no_pessoa = "EFWEGRG NOVIDADES", nu_rg = "", dt_nascimento = "", st_sexo = "", co_contato = "5", co_endereco = "12" where co_pessoa = 5;
+
+UPDATE sisbela.TB_USUARIO SET ds_code = "UVV4UE4xcExRekE9", ds_senha = "ALO7ZKC0", st_status = "A", co_pessoa = "5", co_assinante = "4" where co_usuario = 5;
+
+DELETE FROM sisbela.TB_USUARIO_PERFIL where co_usuario in (5);
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:06:10" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:06:11" where co_acesso = 22;
+
+UPDATE sisbela.TB_ENDERECO SET co_endereco = "12", ds_endereco = "", ds_complemento = "", ds_bairro = "", nu_cep = "", no_cidade = "", sg_uf = "" where co_endereco = 12;
+
+UPDATE sisbela.TB_CONTATO SET co_contato = "5", nu_tel1 = "61998110601", nu_tel2 = "", nu_tel3 = "", nu_tel_0800 = "", ds_email = "fef@rtj.com", ds_site = "", ds_facebook = "", ds_twitter = "", ds_instagram = "" where co_contato = 5;
+
+UPDATE sisbela.TB_PESSOA SET co_pessoa = "5", nu_cpf = "", no_pessoa = "EFWEGRG NOVIDADES", nu_rg = "", dt_nascimento = "", st_sexo = "", co_contato = "5", co_endereco = "12" where co_pessoa = 5;
+
+UPDATE sisbela.TB_USUARIO SET ds_code = "UVV4UE4xcExRekE9", ds_senha = "ALO7ZKC0", st_status = "A", co_pessoa = "5", co_assinante = "4" where co_usuario = 5;
+
+DELETE FROM sisbela.TB_USUARIO_PERFIL where co_usuario in (5);
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:06:37" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:06:37" where co_acesso = 22;
+
+UPDATE sisbela.TB_ENDERECO SET co_endereco = "12", ds_endereco = "", ds_complemento = "", ds_bairro = "", nu_cep = "", no_cidade = "", sg_uf = "" where co_endereco = 12;
+
+UPDATE sisbela.TB_CONTATO SET co_contato = "5", nu_tel1 = "61998110601", nu_tel2 = "", nu_tel3 = "", nu_tel_0800 = "", ds_email = "fef@rtj.com", ds_site = "", ds_facebook = "", ds_twitter = "", ds_instagram = "" where co_contato = 5;
+
+UPDATE sisbela.TB_PESSOA SET co_pessoa = "5", nu_cpf = "", no_pessoa = "EFWEGRG NOVIDADES", nu_rg = "", dt_nascimento = "", st_sexo = "", co_contato = "5", co_endereco = "12" where co_pessoa = 5;
+
+UPDATE sisbela.TB_USUARIO SET ds_code = "UVV4UE4xcExRekE9", ds_senha = "ALO7ZKC0", st_status = "A", co_pessoa = "5", co_assinante = "4" where co_usuario = 5;
+
+DELETE FROM sisbela.TB_USUARIO_PERFIL where co_usuario in (5);
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:06:49" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:06:49" where co_acesso = 22;
+
+UPDATE sisbela.TB_ENDERECO SET co_endereco = "12", ds_endereco = "", ds_complemento = "", ds_bairro = "", nu_cep = "", no_cidade = "", sg_uf = "" where co_endereco = 12;
+
+UPDATE sisbela.TB_CONTATO SET co_contato = "5", nu_tel1 = "61998110601", nu_tel2 = "", nu_tel3 = "", nu_tel_0800 = "", ds_email = "fef@rtj.com", ds_site = "", ds_facebook = "", ds_twitter = "", ds_instagram = "" where co_contato = 5;
+
+UPDATE sisbela.TB_PESSOA SET co_pessoa = "5", nu_cpf = "", no_pessoa = "EFWEGRG NOVIDADES", nu_rg = "", dt_nascimento = "", st_sexo = "", co_contato = "5", co_endereco = "12" where co_pessoa = 5;
+
+UPDATE sisbela.TB_USUARIO SET ds_code = "UVV4UE4xcExRekE9", ds_senha = "ALO7ZKC0", st_status = "A", co_pessoa = "5", co_assinante = "4" where co_usuario = 5;
+
+DELETE FROM sisbela.TB_USUARIO_PERFIL where co_usuario in (5);
+
+INSERT INTO sisbela.TB_USUARIO_PERFIL (co_usuario, co_perfil) VALUES ("5", "4");
+
+INSERT INTO sisbela.TB_USUARIO_PERFIL (co_usuario, co_perfil) VALUES ("5", "3");
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:06:50" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:06:51" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:06:55" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:06:56" where co_acesso = 22;
+
+UPDATE sisbela.TB_ACESSO SET tp_situacao = "F", dt_fim_acesso = "2021-04-19 15:37:01" where co_acesso = 22;
+
+INSERT INTO sisbela.TB_TRAFEGO (ds_navegador, ds_sistema_operacional, ds_dispositivo, nu_ip, ds_pais, ds_code_pais, ds_estado, ds_uf, ds_cidade, ds_agente) VALUES ("Firefox", "Windows 8.1", "Desktop", "127.0.0.1", "Desconhecido", "Desconhecida", "Desconhecida", "Desconhecida", "Desconhecida", "Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0");
+
+INSERT INTO sisbela.TB_ACESSO (ds_session_id, co_usuario, tp_situacao, co_trafego, dt_fim_acesso, dt_inicio_acesso) VALUES ("mbr0gpfb7i72t6jrsf0a436t0r", "2", "A", "183", "2021-04-19 16:07:05", "2021-04-19 15:37:05");
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:07:06" where co_acesso = 23;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:07:07" where co_acesso = 23;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:09:17" where co_acesso = 23;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:09:18" where co_acesso = 23;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:09:23" where co_acesso = 23;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:09:23" where co_acesso = 23;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:09:33" where co_acesso = 23;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:09:34" where co_acesso = 23;
+
+UPDATE sisbela.TB_ENDERECO SET co_endereco = "11", ds_endereco = "", ds_complemento = "", ds_bairro = "", nu_cep = "", no_cidade = "", sg_uf = "" where co_endereco = 11;
+
+UPDATE sisbela.TB_CONTATO SET co_contato = "17", nu_tel1 = "23443243258", nu_tel2 = "", nu_tel3 = "", nu_tel_0800 = "", ds_email = "colaborador1@gmail.com", ds_site = "", ds_facebook = "", ds_twitter = "", ds_instagram = "" where co_contato = 17;
+
+UPDATE sisbela.TB_PESSOA SET co_pessoa = "55", nu_cpf = "49978109080", no_pessoa = "NOVO COLABORADOR", nu_rg = "", dt_nascimento = "", st_sexo = "", co_contato = "17", co_endereco = "11" where co_pessoa = 55;
+
+UPDATE sisbela.TB_USUARIO SET ds_code = "TVRJek5EVTJLaW89", ds_senha = "123456**", st_status = "A", co_pessoa = "55", co_assinante = "1" where co_usuario = 17;
+
+DELETE FROM sisbela.TB_USUARIO_PERFIL where co_usuario in (17);
+
+INSERT INTO sisbela.TB_USUARIO_PERFIL (co_usuario, co_perfil) VALUES ("17", "4");
+
+INSERT INTO sisbela.TB_USUARIO_PERFIL (co_usuario, co_perfil) VALUES ("17", "3");
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:09:35" where co_acesso = 23;
+
+UPDATE sisbela.TB_ACESSO SET dt_fim_acesso = "2021-04-19 16:09:35" where co_acesso = 23;
+
