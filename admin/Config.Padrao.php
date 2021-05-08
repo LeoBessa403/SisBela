@@ -28,7 +28,7 @@ define('TAMANHO', '800');
 define('WHATSAPP', '5561994368031');
 define('WHATSAPP_MSG', '5561994368031');
 define('NUM_BG_IMAGENS', '50');
-define('CONTROLLER_SEO', '');
+define('CONTROLLER_SEO', 'Curso');
 define('USER_EMAIL', 'contato@sistemadabeleza.com.br');
 define('PASS_EMAIL', 'Admin101**');
 define('HOST_EMAIL', 'mail.sistemadabeleza.com.br');
