@@ -10991,10 +10991,26 @@ label[for="rating"] {
     color: white !important;
 }
 
-.beautypress-pricing-table-section{
+.padding-p{
+    padding: 20px 0;
+}
+
+.padding-m{
     padding: 40px 0;
 }
 
-.beautypress-call-to-action-section{
+.padding-g{
+    padding: 80px 0;
+}
+
+.padding-xg{
     padding: 150px 0;
+}
+
+.align-center{
+    text-align: center;
+}
+
+.img-full{
+    padding: 0 !important;
 }
