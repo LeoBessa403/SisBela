@@ -1,4 +1,4 @@
--- Atualizado em: 10/05/2021 08:18:39
+-- Atualizado em: 10/06/2021 22:51:36
 -- AMBIENTE: http://localhost/SisBela/
 -- BANCO: sisbela
 
@@ -606,7 +606,7 @@ INSERT INTO TB_HISTORICO_SUPORTE VALUES('8','2020-04-04 11:02:24','Guarda roupas
 
 INSERT INTO TB_HISTORICO_SUPORTE VALUES('9','2021-03-31 11:24:23','Legal','N','3','6','12');
 
-INSERT INTO TB_HISTORICO_SUPORTE VALUES('10','2021-04-05 17:23:23','<h2>R&aacute;pido, f&aacute;cil e seguro de usar. Acabe com a dor de cabe&ccedil;a na hora de fazer a gest&atilde;o do seu negocio!</h2>\n\n<p>&nbsp;</p>\n\n<p>Voc&ecirc; pode controlar sua agenda do computador, tablet ou celular. Fa&ccedil;a a gest&atilde;o<span style=\"background-color:#e74c3c\"> completa dos seus agendamentos de qualquer lugar, com Relat&oacute;rios que s&atilde;o simples, claros e co</span>mpletos. R&aacute;pido e f&aacute;cil de usar.</p>','S','4','6','13');
+INSERT INTO TB_HISTORICO_SUPORTE VALUES('10','2021-04-05 17:23:23','<h2>R&aacute;pido, f&aacute;cil e seguro de usar. Acabe com a dor de cabe&ccedil;a na hora de fazer a gest&atilde;o do seu negocio!</h2>\n\n\n\n<p>&nbsp;</p>\n\n\n\n<p>Voc&ecirc; pode controlar sua agenda do computador, tablet ou celular. Fa&ccedil;a a gest&atilde;o<span style=\"background-color:#e74c3c\"> completa dos seus agendamentos de qualquer lugar, com Relat&oacute;rios que s&atilde;o simples, claros e co</span>mpletos. R&aacute;pido e f&aacute;cil de usar.</p>','S','4','6','13');
 
 INSERT INTO TB_HISTORICO_SUPORTE VALUES('11','2021-04-05 17:54:36','<p>f df sdf dsfdsa</p>','N','5','6','14');
 
@@ -616,7 +616,7 @@ INSERT INTO TB_HISTORICO_SUPORTE VALUES('13','2021-04-05 18:17:51','<p>fewafe wa
 
 INSERT INTO TB_HISTORICO_SUPORTE VALUES('14','2021-04-05 18:23:10','<p>gres htr htrh hgf</p>','S','8','6','17');
 
-INSERT INTO TB_HISTORICO_SUPORTE VALUES('15','2021-04-05 18:24:51','<p>hgf hgfdhfh gfhfg dhfd g</p>','N','9','6','18');
+INSERT INTO TB_HISTORICO_SUPORTE VALUES('15','2021-04-05 18:24:51','<p>hgf hgfdhfh gfhfg dhfd g</p>','S','9','6','18');
 
 
 
@@ -1214,7 +1214,7 @@ CREATE TABLE `TB_STATUS_AGENDA` (
   `co_profissional` int(11) NOT NULL,
   `co_servico` int(11) NOT NULL,
   PRIMARY KEY (`co_status_agenda`,`co_cliente`,`co_agenda`,`co_usuario`,`co_profissional`,`co_servico`)
-) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_STATUS_AGENDA VALUES('1','2020-03-25 16:37:38','2','2020-03-18 17:50:00','2020-03-18 18:00:00','0.00','0','frf rg rg','1','1','6','16','15');
@@ -1281,13 +1281,13 @@ INSERT INTO TB_STATUS_AGENDA VALUES('36','2021-03-24 00:00:01','5','2020-03-18 1
 
 INSERT INTO TB_STATUS_AGENDA VALUES('37','2021-03-30 14:38:47','1','2021-03-30 08:00:00','2021-03-30 09:00:00','0.00','0','','14','20','6','16','15');
 
-INSERT INTO TB_STATUS_AGENDA VALUES('38','2021-03-30 14:41:37','7','2021-03-30 08:00:00','2021-03-30 09:00:00','','','','14','20','6','16','15');
+INSERT INTO TB_STATUS_AGENDA VALUES('38','2021-03-30 14:41:37','7','2021-03-30 08:00:00','2021-03-30 09:00:00','0.00','0','','14','20','6','16','15');
 
 INSERT INTO TB_STATUS_AGENDA VALUES('39','2021-03-31 11:42:23','1','2021-03-31 08:00:00','2021-03-31 10:00:00','0.00','0','So pra testar o campo de observação','16','21','6','17','16');
 
-INSERT INTO TB_STATUS_AGENDA VALUES('40','2021-03-31 11:43:07','1','2021-04-02 08:00:00','2021-04-02 10:00:00','','','So pra testar o campo de observação','16','21','6','17','16');
+INSERT INTO TB_STATUS_AGENDA VALUES('40','2021-03-31 11:43:07','1','2021-04-02 08:00:00','2021-04-02 10:00:00','0.00','0','So pra testar o campo de observação','16','21','6','17','16');
 
-INSERT INTO TB_STATUS_AGENDA VALUES('41','2021-04-05 00:00:01','6','2021-04-02 08:00:00','2021-04-02 10:00:00','','','Mudou para o Status (Faltou) automaticamente pelo Sistema','16','21','1','17','16');
+INSERT INTO TB_STATUS_AGENDA VALUES('41','2021-04-05 00:00:01','6','2021-04-02 08:00:00','2021-04-02 10:00:00','0.00','0','Mudou para o Status (Faltou) automaticamente pelo Sistema','16','21','1','17','16');
 
 INSERT INTO TB_STATUS_AGENDA VALUES('42','2021-04-05 14:55:10','1','2021-04-06 08:00:00','2021-04-06 10:00:00','0.00','0','s dgsd fg','9','22','6','17','15');
 
@@ -1324,6 +1324,8 @@ INSERT INTO TB_STATUS_AGENDA VALUES('57','2021-04-08 00:00:01','6','2021-04-06 0
 INSERT INTO TB_STATUS_AGENDA VALUES('58','2021-04-11 14:56:21','6','2020-12-16 08:00:00','2020-12-16 10:00:00','0.00','0','','16','31','6','17','16');
 
 INSERT INTO TB_STATUS_AGENDA VALUES('59','2021-04-11 14:57:31','1','2021-05-11 08:00:00','2021-05-11 10:00:00','0.00','0','','2','32','6','17','15');
+
+INSERT INTO TB_STATUS_AGENDA VALUES('60','2021-05-12 00:00:01','6','2021-05-11 08:00:00','2021-05-11 10:00:00','0.00','0','Mudou para o Status (Faltou) automaticamente pelo Sistema','2','32','1','17','15');
 
 
 

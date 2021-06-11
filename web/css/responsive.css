@@ -4,6 +4,16 @@ Author URI: http://themeforest.net/user/XpeedStudio/portfolio
 */
 
 /* Portrait tablets and medium desktops */
+@media (min-width: 1200px)  {
+    .beautypress-welcome-container h2{
+        font-size: 3em;
+        font-weight: 500;
+    }
+    .beautypress-welcome-container h3{
+        font-size: 3.5em;
+        font-weight: 400;
+    }
+}
 
 @media (min-width: 992px) and (max-width: 1199px) {
     body {
