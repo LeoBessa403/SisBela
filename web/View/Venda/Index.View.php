@@ -1,5 +1,4 @@
-<!-- welcome section -->
-<section class="beautypress-welcome-section beautypress-welcome-section-v1 welcome-height-calc-minus">
+<section id="home_inicio" class="beautypress-welcome-section beautypress-welcome-section-v1 welcome-height-calc-minus">
     <div class="beautypress-welcome-slider-wraper">
         <div class="beautypress-welcome-slider owl-carousel">
             <div class="beautypress-welcome-slider-item content-left beautypress-bg"
@@ -26,13 +25,13 @@
 </section><!-- .beautypress-welcome-section END -->
 <!-- welcome section -->
 
-<section class="beautypress-pricing-table-section padding-m">
+<section id="planos_sistema" class="beautypress-pricing-table-section padding-m">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">
                 <div class="beautypress-single-pricing-table beautypress-image-overlay-1 beautypress-version-3">
                     <div class="beautypress-pricing-header">
-                        <img src="img/pricing-icons-1.png" alt="">
+                        <img src="<?= PASTASITE; ?>img/pricing-icons-1.png" alt="">
                         <div class="beautypress-pricing-header-content">
                             <div class="beautypress-pricing-title">
                                 <h2>Mensal</h2>
@@ -64,7 +63,7 @@
             <div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">
                 <div class="beautypress-single-pricing-table beautypress-image-overlay-2 beautypress-version-3">
                     <div class="beautypress-pricing-header">
-                        <img src="img/pricing-icons-2.png" alt="">
+                        <img src="<?= PASTASITE; ?>img/pricing-icons-2.png" alt="">
                         <div class="beautypress-pricing-header-content">
                             <div class="beautypress-pricing-title">
                                 <h2>Semestral</h2>
@@ -96,7 +95,7 @@
             <div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">
                 <div class="beautypress-single-pricing-table beautypress-image-overlay-3 beautypress-version-3">
                     <div class="beautypress-pricing-header">
-                        <img src="img/pricing-icons-3.png" alt="">
+                        <img src="<?= PASTASITE; ?>img/pricing-icons-3.png" alt="">
                         <div class="beautypress-pricing-header-content">
                             <div class="beautypress-pricing-title">
                                 <h2>Anual</h2>
@@ -130,7 +129,7 @@
 </section>
 
 <section class="beautypress-call-to-action-section beautypress-bg parallax-bg padding-xg" data-parallax="scroll"
-         data-image-src="img/gallery-V4-5.jpg">
+         data-image-src="<?= PASTASITE; ?>img/gallery-V4-5.jpg">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-lg-4 col-xl-4">
@@ -164,7 +163,7 @@
     </div>
 </section>
 
-<section class="beautypress-faq-section section-padding">
+<section id="duvidas" class="beautypress-faq-section section-padding">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-xl-12">
@@ -357,7 +356,7 @@
     </div>
 </section>
 
-<div class="beautypress-video-section beautypress-bg parallax-bg" data-parallax="scroll"
+<div id="saiba_mais" class="beautypress-video-section beautypress-bg parallax-bg" data-parallax="scroll"
      data-image-src="<?= PASTASITE; ?>img/welcome-v3-img.jpg">
     <div class="container">
         <div class="beautypress-video-section-content">
@@ -372,7 +371,7 @@
     <div class="beautypress-black-overlay"></div>
 </div><!-- .beautypress-video-section END -->
 
-<div class="beautypress-our-service-section section-padding">
+<div id="bonus" class="beautypress-our-service-section section-padding">
     <div class="container">
         <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 align-center padding-m">
             <h2>Bônus por planos</h2>
@@ -402,8 +401,9 @@
                     </div><!-- .beautypress-service-header img-full END -->
                     <div class="beautypress-service-footer">
                         <a href="#" class="beautypress-service-title">Mentoria Ao Vivo</a>
-                        <p>When an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            It has survived not only five centuries</p>
+                        <p>Uma das melhores coisas que os Alunos do treinamento relataram é que todas as AULAS são AO
+                            VIVO.
+                            Fazemos todos os passos juntos Ao Vivo e se algo der errado, vamos corrigir na hora!</p>
 
                         <a href="#" class="xs-btn bg-color-pink round-btn box-shadow-btn">
                             Quero esse bônus
@@ -435,7 +435,7 @@
 
 <div class="beautypress-clients-section beautypress-about-section-v2 section-padding">
     <div class="beautypress-clients-wraper no-slider beautypress-version-3 beautypress-bg"
-         style="background-image: url(img/welcome-bg-v4-2.jpg);">
+         style="background-image: url(<?= PASTASITE; ?>img/welcome-bg-v4-2.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-lg-6 col-xl-6">
@@ -449,23 +449,52 @@
                             <h2 data-title="About Us">Sobre o Desenvolvedor do Sistema</h2>
                             <h3>Leonardo Bessa</h3>
                         </div><!-- .beautypress-sub-heading END -->
-                        <p>Formado em Tecnologia da Informação e Pós Graduado em Desenvolvimento de Sistemas para Web, Trabalha como Desenvolvedor de Sistemas desde 2010, ja trabalhou em mais de 30 projetos de Software em orgões públicos como: MEC, FNDE e Ibama. com mais de 50 Cursos na area de Desenvolvimento de Sistemas.</p>
-
-                        <div class="xs-btn-wraper">
-                            <a href="#" class="xs-btn round-btn box-shadow-btn bg-chocolate">learn more
-                                <span style="top: 25.3906px; left: 178.5px;"></span>
-                            </a>
-                        </div>
+                        <p>Formado em Tecnologia da Informação e Pós Graduado em Desenvolvimento de Sistemas para Web,
+                            Trabalha como Desenvolvedor de Sistemas desde 2010, ja trabalhou em mais de 30 projetos de
+                            Software em orgões públicos como: MEC, FNDE e Ibama. com mais de 50 Cursos na area de
+                            Desenvolvimento de Sistemas.</p>
                     </div>
                 </div>
             </div>
         </div>
-<!--        <div class="beautypress-black-overlay"></div>-->
+        <!--        <div class="beautypress-black-overlay"></div>-->
     </div><!-- .beautypress-clients-wraper .no-slider .beautypress-version-3 END -->
 </div>
 
-<section class="beautypress-booking-section section-padding">
+<section id="compra" class="beautypress-booking-section seguranca-checkout section-padding">
     <div class="container">
+        <div class="row padding-m">
+            <div class="col-sm-12 col-lg-4 col-xl-4 margin-p">
+                <div class="beautypress-single-square-service-content beautypress-version-2">
+                    <img src="<?= PASTASITE; ?>img/1.jpg" alt="">
+                </div><!-- .beautypress-single-square-service-content END -->
+            </div>
+            <div class="col-sm-12 col-lg-4 col-xl-4 margin-p">
+                <div class="beautypress-single-square-service-content beautypress-version-2">
+                    <img src="<?= PASTASITE; ?>img/2.jpg" alt="">
+                </div><!-- .beautypress-single-square-service-content END -->
+            </div>
+            <div class="col-sm-12 col-lg-4 col-xl-4 margin-p">
+                <div class="beautypress-single-square-service-content beautypress-version-2">
+                    <img src="<?= PASTASITE; ?>img/3.jpg" alt="">
+                </div><!-- .beautypress-single-square-service-content END -->
+            </div>
+            <div class="col-sm-12 col-lg-4 col-xl-4 margin-p">
+                <div class="beautypress-single-square-service-content beautypress-version-2">
+                    <img src="<?= PASTASITE; ?>img/4.jpg" alt="">
+                </div><!-- .beautypress-single-square-service-content END -->
+            </div>
+            <div class="col-sm-12 col-lg-4 col-xl-4 margin-p">
+                <div class="beautypress-single-square-service-content beautypress-version-2">
+                    <img src="<?= PASTASITE; ?>img/5.jpg" alt="">
+                </div><!-- .beautypress-single-square-service-content END -->
+            </div>
+            <div class="col-sm-12 col-lg-4 col-xl-4 margin-p">
+                <div class="beautypress-single-square-service-content beautypress-version-2">
+                    <img src="<?= PASTASITE; ?>img/6.jpg" alt="">
+                </div><!-- .beautypress-single-square-service-content END -->
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-12 col-sm-12 col-lg-6 col-xl-6">
                 <div class="beautypress-booking-text-wraper">
@@ -474,7 +503,8 @@
                             <h2>Adeus, agenda de papel!</h2>
                             <h3>Papel Nunca Mais..</h3>
                             <div class="beautypress-icon-bg-text">
-                                <p style="font: bold; color: #0b0b0b;">Ter uma agenda organizada é fundamental. Todo
+                                <p style="font-weight: bold; color: #0b0b0b;">Ter uma agenda organizada é fundamental.
+                                    Todo
                                     profissional que possui uma carteira de
                                     clientes necessita de uma agenda organizada. Se esse profissional atua no setor de
                                     beleza e estética, essa necessidade torna-se ainda mais importante.</p>
@@ -493,38 +523,165 @@
                 <div class="beautypress-booking-form-wraper">
                     <form action="#" method="POST" id="beautypress-booking-form">
                         <div class="beautypress-service-and-date">
-                            <h2>Experimente Grátis por <?= ConfiguracoesEnum::DIAS_EXPERIMENTAR ?> Dias.</h2>
-                            <h2>Ainda não é cliente, Faça seu cadastro.</h2>
-                            <h5>Sou Cliente, acesso o sistema
+                            <h2>Ainda não é cliente? Faça seu cadastro.</h2>
+                            <h5>Sou Cliente, acesse o sistema
                                 <a href="<?= PASTAADMIN; ?>Index/PrimeiroAcesso" title="Acesso ao Sitema SisBela"
                                    target="_blank">SisBela</a>.</h5>
 
-
-                            <div class="input-group">
+                            <div class="input-group margin-p">
                                 <input type="text" required name="<?= NO_FANTASIA; ?>" class="form-control"
                                        id="<?= NO_FANTASIA; ?>" placeholder="Nome do Estabelecimento">
                                 <div class="input-group-addon"><i class="fa fa-hospital-o"></i></div>
                             </div>
 
-                            <div class="input-group">
+                            <div class="input-group margin-p">
                                 <input type="text" required name="<?= NO_PESSOA; ?>" class="form-control"
                                        id="<?= NO_PESSOA; ?>" placeholder="Nome do Responsável">
                                 <div class="input-group-addon"><i class="fa fa-user"></i></div>
                             </div>
 
-                            <div class="input-group">
+                            <div class="input-group margin-p">
                                 <input type="text" required name="<?= NU_TEL1; ?>" class="form-control tel"
                                        id="<?= NU_TEL1; ?>" placeholder="Telefone (WhatsApp)....">
                                 <div class="input-group-addon"><i class="fa fa-whatsapp"></i></div>
                             </div>
 
-                            <div class="input-group">
-                                <input type="email" required name="<?= DS_EMAIL; ?>" class="form-control"
+                            <div class="input-group margin-p">
+                                <input type="email" required name="<?= DS_EMAIL; ?>" class="form-control email"
                                        id="<?= DS_EMAIL; ?>" placeholder="Email ....">
                                 <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
                             </div>
 
-                            <div class="beautypress-btn-wraper" style="text-align: right; margin-right: -10px">
+                            <div class="beautypress-select">
+                                <div class="input-group">
+                                    <select name="<?= CO_PLANO; ?>" required id="<?= CO_PLANO; ?>"
+                                            class="form-control">
+                                        <option value="">Escolher Plano</option>
+                                        <option value="1">Mensal</option>
+                                        <option value="2">Semestral</option>
+                                        <option value="3">Anual</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="beautypress-select">
+                                <div class="input-group">
+                                    <select name="<?= TP_PAGAMENTO; ?>" required id="<?= TP_PAGAMENTO; ?>"
+                                            class="form-control">
+                                        <option value="">Forma de Pagamento</option>
+                                        <option value="<?= TipoPagamentoEnum::CARTAO_CREDITO; ?>">
+                                            <?= TipoPagamentoEnum::getDescricaoValor(TipoPagamentoEnum::CARTAO_CREDITO); ?>
+                                        </option>
+                                        <option value="<?= TipoPagamentoEnum::PIX; ?>">
+                                            <?= TipoPagamentoEnum::getDescricaoValor(TipoPagamentoEnum::PIX); ?>
+                                        </option>
+                                        <option value="<?= TipoPagamentoEnum::BOLETO; ?>">
+                                            <?= TipoPagamentoEnum::getDescricaoValor(TipoPagamentoEnum::BOLETO); ?>
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="input-group margin-p">
+                                <input type="text" required name="numCartao"
+                                       class="form-control cartao_credito credito"
+                                       id="numCartao" placeholder="Número do Cartão">
+                                <div class="input-group-addon"><i class="fa fa-credit-card-alt"></i></div>
+                            </div>
+
+                            <div class="beautypress-spilit-container margin-p">
+                                <div class="input-group">
+                                    <input type="text" required name="validadeCartao"
+                                           class="form-control validade_cartao credito"
+                                           id="validadeCartao" placeholder="Validade do Cartão">
+                                    <div class="input-group-addon"><i class="fa fa-calendar-check-o"></i></div>
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" required name="cvvCartao" class="form-control cvv credito"
+                                           id="cvvCartao" placeholder="CVV do cartão">
+                                    <div class="input-group-addon"><i class="fa fa-code"></i></div>
+                                </div>
+                            </div>
+
+                            <div class="beautypress-select">
+                                <div class="input-group">
+                                    <select name="qntParcelas" required id="qntParcelas"
+                                            class="form-control credito">
+                                        <option value="">Número de Parcelas</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="input-group margin-p">
+                                <input type="text" required name="creditCardHolderName"
+                                       class="form-control nome credito"
+                                       id="creditCardHolderName" placeholder="Nome no Cartão">
+                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                            </div>
+
+                            <div class="beautypress-spilit-container">
+                                <div class="input-group">
+                                    <input type="text" required name="creditCardHolderCPF"
+                                           class="form-control cpf credito"
+                                           id="creditCardHolderCPF" placeholder="CPF do dono do Cartão">
+                                    <div class="input-group-addon"><i class="fa fa-address-card"></i></div>
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" required name="creditCardHolderBirthDate"
+                                           class="form-control data credito"
+                                           id="creditCardHolderBirthDate" placeholder="Nascimento do dono">
+                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+
+
+                            <div class="input-group margin-p">
+                                <input type="text" required name="<?= NU_CEP; ?>" class="form-control cep credito"
+                                       id="<?= NU_CEP; ?>" placeholder="CEP do dono do Cartão">
+                                <div class="input-group-addon"><i class="fa fa-map"></i></div>
+                            </div>
+
+                            <div class="input-group margin-p">
+                                <input type="text" required name="<?= DS_ENDERECO; ?>" class="form-control credito"
+                                       id="<?= DS_ENDERECO; ?>" placeholder="Endereço do dono do Cartão">
+                                <div class="input-group-addon"><i class="fa fa-hospital-o"></i></div>
+                            </div>
+
+                            <div class="input-group margin-p">
+                                <input type="text" required name="<?= DS_COMPLEMENTO; ?>" class="form-control credito"
+                                       id="<?= DS_COMPLEMENTO; ?>" placeholder="Complemento do dono do Cartão">
+                                <div class="input-group-addon"><i class="fa fa-compass"></i></div>
+                            </div>
+
+                            <div class="input-group margin-p">
+                                <input type="text" required name="<?= DS_BAIRRO; ?>" class="form-control credito"
+                                       id="<?= DS_BAIRRO; ?>" placeholder="Bairro do dono do Cartão">
+                                <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+                            </div>
+
+                            <div class="input-group margin-p">
+                                <input type="text" required name="<?= NO_CIDADE; ?>" class="form-control credito"
+                                       id="<?= NO_CIDADE; ?>" placeholder="Cidade do dono do Cartão">
+                                <div class="input-group-addon"><i class="fa fa-map-signs"></i></div>
+                            </div>
+
+                            <div class="beautypress-select">
+                                <div class="input-group">
+                                    <select name="<?= SG_UF; ?>" required id="<?= SG_UF; ?>"
+                                            class="form-control credito">
+                                        <option value="">Estado do dono do Cartão</option>
+                                        <?php
+                                        $estados = EnderecoService::montaComboEstadosDescricao();
+                                        foreach ($estados as $sg_uf => $estado) {
+                                            echo '<option value="' . $sg_uf . '">' . $estado . '</option>';
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="beautypress-btn-wraper margin-p" style="text-align: right; margin-right: -10px">
                                 <button type="submit" style="cursor: pointer!important;"
                                         class="xs-btn round-btn box-shadow-btn bg-color-green">
                                     Experimentar Agora

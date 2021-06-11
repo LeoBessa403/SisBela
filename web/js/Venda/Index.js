@@ -22,22 +22,11 @@ $(function () {
         $(this).val(valor);
     });
 
-
-    $('.home_inicio').bind('click', function (e) {
+    $('.menu_click').bind('click', function (e) {
+        var div_ref = $(this).attr('data-class');
         $('html, body').animate({
-            scrollTop: 0 //back-to-top
+            scrollTop: $("#" + div_ref).offset().top
         }, 1000)
     });
 
-    $('.planos_sistema').bind('click', function (e) {
-        $('html, body').animate({
-            scrollTop: $(".beautypress-section-headinig").offset().top
-        }, 1000)
-    });
-
-    $('.saiba_mais').bind('click', function (e) {
-        $('html, body').animate({
-            scrollTop: $(".beautypress-video-section").offset().top
-        }, 1000)
-    });
 });

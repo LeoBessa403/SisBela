@@ -11007,10 +11007,37 @@ label[for="rating"] {
     padding: 150px 0;
 }
 
+.margin-p{
+    margin: 20px 0;
+}
+
+.margin-m{
+    margin: 40px 0;
+}
+
+.margin-g{
+    margin: 80px 0;
+}
+
+.margin-xg{
+    margin: 150px 0;
+}
+
 .align-center{
     text-align: center;
 }
 
 .img-full{
     padding: 0 !important;
+}
+
+.seguranca-checkout .beautypress-single-square-service-content{
+    min-height: auto;
+    padding: 3px 50px;
+    box-shadow: 3px 3px 10px #E3BDA8;
+}
+
+.seguranca-checkout .beautypress-single-square-service-content:hover{
+    box-shadow: 5px 5px 20px #6A1B9A;
+    cursor: pointer;
 }
