@@ -546,10 +546,11 @@
                                 <div class="input-group-addon"><i class="fa fa-whatsapp"></i></div>
                             </div>
 
-                            <div class="input-group margin-p">
-                                <input type="email" required name="<?= DS_EMAIL; ?>" class="form-control email"
+                            <div class="input-group margin-p form-group <?= DS_EMAIL; ?>_parent">
+                                <input type="text" required name="<?= DS_EMAIL; ?>" class="form-control email"
                                        id="<?= DS_EMAIL; ?>" placeholder="Email ....">
                                 <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                                <span class="help-block" id="<?= DS_EMAIL; ?>-info">texto de teste</span>
                             </div>
 
                             <div class="beautypress-select">
@@ -629,7 +630,7 @@
                                 <div class="input-group">
                                     <input type="text" required name="creditCardHolderBirthDate"
                                            class="form-control data credito"
-                                           id="creditCardHolderBirthDate" placeholder="Nascimento do dono">
+                          a                 id="creditCardHolderBirthDate" placeholder="Nascimento do dono">
                                     <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                 </div>
                             </div>
