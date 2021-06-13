@@ -583,24 +583,27 @@
                                 </div>
                             </div>
 
-                            <div class="input-group margin-p">
+                            <div class="input-group margin-p numCartao_parent">
                                 <input type="text" required name="numCartao"
                                        class="form-control cartao_credito credito"
                                        id="numCartao" placeholder="Número do Cartão">
                                 <div class="input-group-addon"><i class="fa fa-credit-card-alt"></i></div>
+                                <span class="help-block" id="numCartao-info"></span>
                             </div>
 
                             <div class="beautypress-spilit-container margin-p">
-                                <div class="input-group">
+                                <div class="input-group validadeCartao_parent">
                                     <input type="text" required name="validadeCartao"
                                            class="form-control validade_cartao credito"
                                            id="validadeCartao" placeholder="Validade do Cartão">
                                     <div class="input-group-addon"><i class="fa fa-calendar-check-o"></i></div>
+                                    <span class="help-block" id="validadeCartao-info"></span>
                                 </div>
-                                <div class="input-group">
+                                <div class="input-group cvvCartao_parent">
                                     <input type="text" required name="cvvCartao" class="form-control cvv credito"
                                            id="cvvCartao" placeholder="CVV do cartão">
                                     <div class="input-group-addon"><i class="fa fa-code"></i></div>
+                                    <span class="help-block" id="cvvCartao-info"></span>
                                 </div>
                             </div>
 
@@ -621,25 +624,28 @@
                             </div>
 
                             <div class="beautypress-spilit-container">
-                                <div class="input-group">
+                                <div class="input-group creditCardHolderCPF_parent">
                                     <input type="text" required name="creditCardHolderCPF"
                                            class="form-control cpf credito"
                                            id="creditCardHolderCPF" placeholder="CPF do dono do Cartão">
                                     <div class="input-group-addon"><i class="fa fa-address-card"></i></div>
+                                    <span class="help-block" id="creditCardHolderCPF-info"></span>
                                 </div>
-                                <div class="input-group">
+                                <div class="input-group creditCardHolderBirthDate_parent">
                                     <input type="text" required name="creditCardHolderBirthDate"
                                            class="form-control data credito"
                           a                 id="creditCardHolderBirthDate" placeholder="Nascimento do dono">
                                     <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                    <span class="help-block" id="creditCardHolderBirthDate-info"></span>
                                 </div>
                             </div>
 
 
-                            <div class="input-group margin-p">
+                            <div class="input-group margin-p <?= NU_CEP; ?>_parent">
                                 <input type="text" required name="<?= NU_CEP; ?>" class="form-control cep credito"
                                        id="<?= NU_CEP; ?>" placeholder="CEP do dono do Cartão">
                                 <div class="input-group-addon"><i class="fa fa-map"></i></div>
+                                <span class="help-block" id="<?= NU_CEP; ?>-info"></span>
                             </div>
 
                             <div class="input-group margin-p">

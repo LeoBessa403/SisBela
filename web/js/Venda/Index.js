@@ -37,6 +37,16 @@ $(function () {
         // $(".img-load").hide();
     });
 
+    $(".input-group .form-control").change(function () {
+        // var elemFilho = $(this).parents('.input-group').children('.help-block');
+        // var elemPai = $(this).parents('.input-group');
+        // if (elemPai.hasClass('has-error') || elemPai.hasClass('has-success')) {
+        //     elemFilho.removeClass('hidden-help').addClass('block-help');
+        // } else {
+        //     elemFilho.addClass('hidden-help').removeClass('block-help');
+        // }
+    });
+
     $(".cartao_credito").keyup(function () {
         var numCartao = $(this).val().replace(/[^0-9]+/g, '');
         var TamNumCartao = numCartao.length;
