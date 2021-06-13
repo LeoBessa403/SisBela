@@ -550,7 +550,7 @@
                                 <input type="text" required name="<?= DS_EMAIL; ?>" class="form-control email"
                                        id="<?= DS_EMAIL; ?>" placeholder="Email ....">
                                 <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
-                                <span class="help-block" id="<?= DS_EMAIL; ?>-info">texto de teste</span>
+                                <span class="help-block" id="<?= DS_EMAIL; ?>-info"></span>
                             </div>
 
                             <div class="beautypress-select">
