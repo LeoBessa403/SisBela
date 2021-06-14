@@ -521,54 +521,59 @@
             </div>
             <div class="col-md-12 col-sm-12 col-lg-6 col-xl-6">
                 <div class="beautypress-booking-form-wraper">
-                    <form action="#" method="POST" id="beautypress-booking-form">
+                    <form action="<?= PASTASITE; ?>Venda/Assinatura" method="POST" id="VendaAssinatura"
+                          role="form" enctype="multipart/form-data" name="VendaAssinatura" class="formulario">
                         <div class="beautypress-service-and-date">
                             <h2>Ainda não é cliente? Faça seu cadastro.</h2>
                             <h5>Sou Cliente, acesse o sistema
                                 <a href="<?= PASTAADMIN; ?>Index/PrimeiroAcesso" title="Acesso ao Sitema SisBela"
                                    target="_blank">SisBela</a>.</h5>
 
-                            <div class="input-group margin-p">
-                                <input type="text" required name="<?= NO_FANTASIA; ?>" class="form-control"
+                            <div class="input-group margin-p form-group <?= NO_FANTASIA; ?>_parent">
+                                <input type="text" name="<?= NO_FANTASIA; ?>" class="form-control ob"
                                        id="<?= NO_FANTASIA; ?>" placeholder="Nome do Estabelecimento">
                                 <div class="input-group-addon"><i class="fa fa-hospital-o"></i></div>
+                                <span class="help-block" id="<?= NO_FANTASIA; ?>-info"></span>
                             </div>
 
-                            <div class="input-group margin-p">
-                                <input type="text" required name="<?= NO_PESSOA; ?>" class="form-control"
+                            <div class="input-group margin-p form-group <?= NO_PESSOA; ?>_parent">
+                                <input type="text" name="<?= NO_PESSOA; ?>" class="form-control ob"
                                        id="<?= NO_PESSOA; ?>" placeholder="Nome do Responsável">
                                 <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                <span class="help-block" id="<?= NO_PESSOA; ?>-info"></span>
                             </div>
 
-                            <div class="input-group margin-p">
-                                <input type="text" required name="<?= NU_TEL1; ?>" class="form-control tel"
+                            <div class="input-group margin-p form-group <?= NU_TEL1; ?>_parent">
+                                <input type="text" name="<?= NU_TEL1; ?>" class="form-control tel ob"
                                        id="<?= NU_TEL1; ?>" placeholder="Telefone (WhatsApp)....">
                                 <div class="input-group-addon"><i class="fa fa-whatsapp"></i></div>
+                                <span class="help-block" id="<?= NU_TEL1; ?>-info"></span>
                             </div>
 
                             <div class="input-group margin-p form-group <?= DS_EMAIL; ?>_parent">
-                                <input type="text" required name="<?= DS_EMAIL; ?>" class="form-control email"
+                                <input type="text" name="<?= DS_EMAIL; ?>" class="form-control email ob"
                                        id="<?= DS_EMAIL; ?>" placeholder="Email ....">
                                 <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
                                 <span class="help-block" id="<?= DS_EMAIL; ?>-info"></span>
                             </div>
 
                             <div class="beautypress-select">
-                                <div class="input-group">
-                                    <select name="<?= CO_PLANO; ?>" required id="<?= CO_PLANO; ?>"
-                                            class="form-control">
+                                <div class="input-group form-group <?= CO_PLANO; ?>_parent">
+                                    <select name="<?= CO_PLANO; ?>" id="<?= CO_PLANO; ?>"
+                                            class="form-control ob">
                                         <option value="">Escolher Plano</option>
                                         <option value="1">Mensal</option>
                                         <option value="2">Semestral</option>
                                         <option value="3">Anual</option>
                                     </select>
+                                    <span class="help-block" id="<?= CO_PLANO; ?>-info"></span>
                                 </div>
                             </div>
 
                             <div class="beautypress-select">
-                                <div class="input-group">
-                                    <select name="<?= TP_PAGAMENTO; ?>" required id="<?= TP_PAGAMENTO; ?>"
-                                            class="form-control">
+                                <div class="input-group form-group <?= TP_PAGAMENTO; ?>_parent">
+                                    <select name="<?= TP_PAGAMENTO; ?>" id="<?= TP_PAGAMENTO; ?>"
+                                            class="form-control ob">
                                         <option value="">Forma de Pagamento</option>
                                         <option value="<?= TipoPagamentoEnum::CARTAO_CREDITO; ?>">
                                             <?= TipoPagamentoEnum::getDescricaoValor(TipoPagamentoEnum::CARTAO_CREDITO); ?>
@@ -580,11 +585,12 @@
                                             <?= TipoPagamentoEnum::getDescricaoValor(TipoPagamentoEnum::BOLETO); ?>
                                         </option>
                                     </select>
+                                    <span class="help-block" id="<?= TP_PAGAMENTO; ?>-info"></span>
                                 </div>
                             </div>
 
                             <div class="input-group margin-p numCartao_parent">
-                                <input type="text" required name="numCartao"
+                                <input type="text" name="numCartao"
                                        class="form-control cartao_credito credito"
                                        id="numCartao" placeholder="Número do Cartão">
                                 <div class="input-group-addon"><i class="fa fa-credit-card-alt"></i></div>
@@ -593,14 +599,14 @@
 
                             <div class="beautypress-spilit-container margin-p">
                                 <div class="input-group validadeCartao_parent">
-                                    <input type="text" required name="validadeCartao"
+                                    <input type="text" name="validadeCartao"
                                            class="form-control validade_cartao credito"
                                            id="validadeCartao" placeholder="Validade do Cartão">
                                     <div class="input-group-addon"><i class="fa fa-calendar-check-o"></i></div>
                                     <span class="help-block" id="validadeCartao-info"></span>
                                 </div>
                                 <div class="input-group cvvCartao_parent">
-                                    <input type="text" required name="cvvCartao" class="form-control cvv credito"
+                                    <input type="text" name="cvvCartao" class="form-control cvv credito"
                                            id="cvvCartao" placeholder="CVV do cartão">
                                     <div class="input-group-addon"><i class="fa fa-code"></i></div>
                                     <span class="help-block" id="cvvCartao-info"></span>
@@ -609,7 +615,7 @@
 
                             <div class="beautypress-select">
                                 <div class="input-group">
-                                    <select name="qntParcelas" required id="qntParcelas"
+                                    <select name="qntParcelas" id="qntParcelas"
                                             class="form-control credito">
                                         <option value="">Número de Parcelas</option>
                                     </select>
@@ -617,7 +623,7 @@
                             </div>
 
                             <div class="input-group margin-p">
-                                <input type="text" required name="creditCardHolderName"
+                                <input type="text" name="creditCardHolderName"
                                        class="form-control nome credito"
                                        id="creditCardHolderName" placeholder="Nome no Cartão">
                                 <div class="input-group-addon"><i class="fa fa-user"></i></div>
@@ -625,16 +631,16 @@
 
                             <div class="beautypress-spilit-container">
                                 <div class="input-group creditCardHolderCPF_parent">
-                                    <input type="text" required name="creditCardHolderCPF"
+                                    <input type="text" name="creditCardHolderCPF"
                                            class="form-control cpf credito"
                                            id="creditCardHolderCPF" placeholder="CPF do dono do Cartão">
                                     <div class="input-group-addon"><i class="fa fa-address-card"></i></div>
                                     <span class="help-block" id="creditCardHolderCPF-info"></span>
                                 </div>
                                 <div class="input-group creditCardHolderBirthDate_parent">
-                                    <input type="text" required name="creditCardHolderBirthDate"
+                                    <input type="text" name="creditCardHolderBirthDate"
                                            class="form-control data credito"
-                          a                 id="creditCardHolderBirthDate" placeholder="Nascimento do dono">
+                                           a id="creditCardHolderBirthDate" placeholder="Nascimento do dono">
                                     <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                     <span class="help-block" id="creditCardHolderBirthDate-info"></span>
                                 </div>
@@ -642,32 +648,32 @@
 
 
                             <div class="input-group margin-p <?= NU_CEP; ?>_parent">
-                                <input type="text" required name="<?= NU_CEP; ?>" class="form-control cep credito"
+                                <input type="text" name="<?= NU_CEP; ?>" class="form-control cep credito"
                                        id="<?= NU_CEP; ?>" placeholder="CEP do dono do Cartão">
                                 <div class="input-group-addon"><i class="fa fa-map"></i></div>
                                 <span class="help-block" id="<?= NU_CEP; ?>-info"></span>
                             </div>
 
                             <div class="input-group margin-p">
-                                <input type="text" required name="<?= DS_ENDERECO; ?>" class="form-control credito"
+                                <input type="text" name="<?= DS_ENDERECO; ?>" class="form-control credito"
                                        id="<?= DS_ENDERECO; ?>" placeholder="Endereço do dono do Cartão">
                                 <div class="input-group-addon"><i class="fa fa-hospital-o"></i></div>
                             </div>
 
                             <div class="input-group margin-p">
-                                <input type="text" required name="<?= DS_COMPLEMENTO; ?>" class="form-control credito"
+                                <input type="text" name="<?= DS_COMPLEMENTO; ?>" class="form-control credito"
                                        id="<?= DS_COMPLEMENTO; ?>" placeholder="Complemento do dono do Cartão">
                                 <div class="input-group-addon"><i class="fa fa-compass"></i></div>
                             </div>
 
                             <div class="input-group margin-p">
-                                <input type="text" required name="<?= DS_BAIRRO; ?>" class="form-control credito"
+                                <input type="text" name="<?= DS_BAIRRO; ?>" class="form-control credito"
                                        id="<?= DS_BAIRRO; ?>" placeholder="Bairro do dono do Cartão">
                                 <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
                             </div>
 
                             <div class="input-group margin-p">
-                                <input type="text" required name="<?= NO_CIDADE; ?>" class="form-control credito"
+                                <input type="text" name="<?= NO_CIDADE; ?>" class="form-control credito"
                                        id="<?= NO_CIDADE; ?>" placeholder="Cidade do dono do Cartão">
                                 <div class="input-group-addon"><i class="fa fa-map-signs"></i></div>
                             </div>
@@ -687,12 +693,19 @@
                                 </div>
                             </div>
 
+                            <input type="hidden" name="bandeiraCartao" id="bandeiraCartao"/>
+                            <input type="hidden" name="hash" id="hash"/>
+                            <input type="hidden" name="tokenCartao" id="tokenCartao"/>
+                            <input type="hidden" name="installmentValue" id="installmentValue"/>
 
                             <div class="beautypress-btn-wraper margin-p" style="text-align: right; margin-right: -10px">
                                 <button type="submit" style="cursor: pointer!important;"
                                         class="xs-btn round-btn box-shadow-btn bg-color-green">
                                     Experimentar Agora
                                     <span></span></button>
+
+                                <img src="https://ccaug.com.br/library/images/loading.gif" class="img-load pull-right"
+                                     alt="load" style="margin: 18px 0 0 10px; display: none;"/>
                             </div>
                         </div><!-- .beautypress-service-and-date END -->
                     </form><!-- #beautypress-booking-form END -->
@@ -701,3 +714,8 @@
         </div>
     </div>
 </section>
+
+
+<!-- SCRIPT PAGSEGURO -->
+<script type="text/javascript"
+        src="<?= JS_PAGSEGURO; ?>"></script>

@@ -11,14 +11,12 @@ $(function () {
     $('.debito,.credito').parents('.input-group').hide();
     $('.user-edit-image-buttons').hide();
 
-    $("button.btn-success").attr('type', 'button');
-
-    $("#co_plano").change(function () {
-        limpaComboParcelas();
-        iniciaComboParcelas();
-        $(".cartao_credito").val('');
-        Funcoes.TiraValidacao('numCartao')
-    });
+    // $("#co_plano").change(function () {
+    //     limpaComboParcelas();
+    //     iniciaComboParcelas();
+    //     $(".cartao_credito").val('');
+    //     Funcoes.TiraValidacao('numCartao')
+    // });
 
     $("#tp_pagamento").change(function () {
         $(".img-load").show();
@@ -34,7 +32,7 @@ $(function () {
             $('.debito,.credito').parents('.input-group').hide();
             carregaSession();
         }
-        // $(".img-load").hide();
+        $(".img-load").hide();
     });
 
     $(".cartao_credito").keyup(function () {
@@ -132,31 +130,13 @@ $(function () {
         comboParc.select2({allowClear: !1})
     }
 
-    function carregaBancos() {
-        PagSeguroDirectPayment.getPaymentMethods({
-            amount: '15.00', success: function (retorno) {
-                console.log(retorno);
-                var comboBank = $("#bankName");
-                comboBank.select2("destroy");
-                comboBank.empty();
-                var newOptionBank = new Option('Selecione um Banco', null, !1, !1);
-                comboBank.append(newOptionBank).trigger('change');
-                $.each(retorno.paymentMethods.ONLINE_DEBIT.options, function (i, obj) {
-                    comboBank.append(new Option(obj.displayName, obj.name, !1, !1)).trigger('change')
-                });
-                comboBank.select2({allowClear: !1})
-            }, error: function (retorno) {
-            }, complete: function (retorno) {
-            }
-        })
-    }
-
     function carregaSession() {
-        var dados = Funcoes.Ajax('Inscricao/getReferenciaPagamentoInscricao', null);
+        var dados = Funcoes.Ajax('Venda/getReferenciaPagamentoInscricao', null);
+        console.log(dados.id);
         PagSeguroDirectPayment.setSessionId(dados.id);
     }
 
-    $(".btn-success").click(function () {
+    $(".bg-color-green").click(function () {
         $(".img-load").show();
         var tpPagamento = $("#tp_pagamento").val();
         if (tpPagamento) {
@@ -197,19 +177,9 @@ $(function () {
                 return 1
             } else {
                 $("#hash").val(retorno.senderHash);
-                $("#InscricaoCurso").submit();
+                $("#VendaAssinatura").submit();
             }
         })
     }
-
-    $(".btn-primary").click(function () {
-        $(".img-load").show();
-
-
-        console.log($("#InscricaoCurso").serialize());
-
-        // location.href = $("#home").attr('data-val');
-        return false;
-    });
 
 });
