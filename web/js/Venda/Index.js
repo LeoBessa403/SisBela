@@ -11,12 +11,12 @@ $(function () {
     $('.debito,.credito').parents('.input-group').hide();
     $('.user-edit-image-buttons').hide();
 
-    // $("#co_plano").change(function () {
-    //     limpaComboParcelas();
-    //     iniciaComboParcelas();
-    //     $(".cartao_credito").val('');
-    //     Funcoes.TiraValidacao('numCartao')
-    // });
+    $("#co_plano").change(function () {
+        limpaComboParcelas();
+        iniciaComboParcelas();
+        $(".cartao_credito").val('');
+        Funcoes.TiraValidacao('numCartao');
+    });
 
     $("#tp_pagamento").change(function () {
         $(".img-load").show();

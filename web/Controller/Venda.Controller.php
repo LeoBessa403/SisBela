@@ -12,8 +12,15 @@ class Venda extends AbstractController
 
     public function Assinatura()
     {
-        debug($_POST,1);
+        /** @var AssinanteService $assinanteService */
+        $assinanteService = $this->getService(ASSINANTE_SERVICE);
 
+        if (!empty($_POST)):
+            $retorno = $assinanteService->salvaAssinante($_POST);
+            if ($retorno[SUCESSO]) {
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarAssinante/');
+            }
+        endif;
     }
 
     public static function getReferenciaPagamentoInscricao()
