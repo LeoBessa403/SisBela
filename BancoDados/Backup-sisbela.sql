@@ -606,7 +606,11 @@ INSERT INTO TB_HISTORICO_SUPORTE VALUES('8','2020-04-04 11:02:24','Guarda roupas
 
 INSERT INTO TB_HISTORICO_SUPORTE VALUES('9','2021-03-31 11:24:23','Legal','N','3','6','12');
 
-INSERT INTO TB_HISTORICO_SUPORTE VALUES('10','2021-04-05 17:23:23','<h2>R&aacute;pido, f&aacute;cil e seguro de usar. Acabe com a dor de cabe&ccedil;a na hora de fazer a gest&atilde;o do seu negocio!</h2>\n\n\n\n<p>&nbsp;</p>\n\n\n\n<p>Voc&ecirc; pode controlar sua agenda do computador, tablet ou celular. Fa&ccedil;a a gest&atilde;o<span style=\"background-color:#e74c3c\"> completa dos seus agendamentos de qualquer lugar, com Relat&oacute;rios que s&atilde;o simples, claros e co</span>mpletos. R&aacute;pido e f&aacute;cil de usar.</p>','S','4','6','13');
+INSERT INTO TB_HISTORICO_SUPORTE VALUES('10','2021-04-05 17:23:23','<h2>R&aacute;pido, f&aacute;cil e seguro de usar. Acabe com a dor de cabe&ccedil;a na hora de fazer a gest&atilde;o do seu negocio!</h2>
+\n\n
+\n\n<p>&nbsp;</p>
+\n\n
+\n\n<p>Voc&ecirc; pode controlar sua agenda do computador, tablet ou celular. Fa&ccedil;a a gest&atilde;o<span style=\"background-color:#e74c3c\"> completa dos seus agendamentos de qualquer lugar, com Relat&oacute;rios que s&atilde;o simples, claros e co</span>mpletos. R&aacute;pido e f&aacute;cil de usar.</p>','S','4','6','13');
 
 INSERT INTO TB_HISTORICO_SUPORTE VALUES('11','2021-04-05 17:54:36','<p>f df sdf dsfdsa</p>','N','5','6','14');
 
@@ -1030,7 +1034,6 @@ CREATE TABLE `TB_PLANO_ASSINANTE_ASSINATURA` (
   `st_status` varchar(1) DEFAULT 'I' COMMENT 'A - Ativo / I - Inativo',
   `ds_code_transacao` varchar(80) DEFAULT 'null' COMMENT 'Code da transação do PagSeguro',
   `nu_valor_assinatura` decimal(8,2) DEFAULT NULL COMMENT 'Valor final da assinatura',
-  `nu_profissionais` int(3) DEFAULT NULL COMMENT 'Número de profissionais que o sistema ira gerenciar',
   `co_assinante` int(11) NOT NULL,
   `co_plano_assinante` int(11) NOT NULL,
   PRIMARY KEY (`co_plano_assinante_assinatura`,`co_assinante`,`co_plano_assinante`)

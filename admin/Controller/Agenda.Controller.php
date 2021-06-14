@@ -192,10 +192,4 @@ class Agenda extends AbstractController
         return $retorno;
     }
 
-    public static function ValidaNuProfissionais()
-    {
-        /** @var ProfissionalService $profissionalService */
-        $profissionalService = static::getServiceStatic(PROFISSIONAL_SERVICE);
-        return $profissionalService->ValidaNuProfissionais();
-    }
 }

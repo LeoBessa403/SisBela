@@ -557,14 +557,19 @@
                                 <span class="help-block" id="<?= DS_EMAIL; ?>-info"></span>
                             </div>
 
+                            <?php
+                                $planosAtivos = PlanoService::montaComboPlanosAtivos();
+                            ?>
                             <div class="beautypress-select">
                                 <div class="input-group form-group <?= CO_PLANO; ?>_parent">
                                     <select name="<?= CO_PLANO; ?>" id="<?= CO_PLANO; ?>"
                                             class="form-control ob">
-                                        <option value="">Escolher Plano</option>
-                                        <option value="1">Mensal</option>
-                                        <option value="2">Semestral</option>
-                                        <option value="3">Anual</option>
+
+                                        <?php
+                                            foreach ($planosAtivos as $nuMeses => $plano){
+                                                echo '<option value="' . $nuMeses . '">' . $plano . '</option>';
+                                            }
+                                        ?>
                                     </select>
                                     <span class="help-block" id="<?= CO_PLANO; ?>-info"></span>
                                 </div>

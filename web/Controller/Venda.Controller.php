@@ -27,6 +27,6 @@ class Venda extends AbstractController
     {
         /** @var PlanoAssinanteAssinaturaService $PlanoAssinanteAssinaturaService */
         $PlanoAssinanteAssinaturaService = new PlanoAssinanteAssinaturaService();
-        return $PlanoAssinanteAssinaturaService->getReferenciaPagamentoInscricao();
+        return $PlanoAssinanteAssinaturaService->getReferenciaPagamentoPlano();
     }
 }

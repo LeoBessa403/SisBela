@@ -11,7 +11,6 @@ $plano = $planoService->PesquisaUmRegistro($historico->getCoPlanoAssinante()->ge
     Meses Ativos: <b><?= $plano->getNuMesAtivo(); ?></b></br>
     Valor da Assinatura R$: <b><?=
         Valida::FormataMoeda($historico->getNuValorAssinatura()); ?></b></br>
-    Núm. de Profissionais: <b><?= $historico->getNuProfissionais(); ?></b></br>
     Núm. de Filiais: <b><?= $historico->getNuFiliais(); ?></b></br>
     Expiração em: <b><?=
         Valida::DataShow(

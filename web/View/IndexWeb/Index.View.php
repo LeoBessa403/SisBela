@@ -137,9 +137,6 @@
                                 <ul class="beautypress-both-side-list">
                                     <li>Sem Taxa de Adesão<span>0</span></li>
                                     <li>Meses de Assinatura<span><?= $plano->getNuMesAtivo(); ?></span></li>
-                                    <li>Nº Profissionais<span><?= PlanoService::getNuProfissionais(
-                                                $plano->getNuMesAtivo()); ?></span>
-                                    </li>
                                     <li>Cartão em até<span>12x</span></li>
                                     <li>Cupom de Desconto<span>50%</span></li>
                                 </ul>

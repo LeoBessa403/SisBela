@@ -154,16 +154,6 @@ var Calendar = function () {
             runCalendar();
             $('#no_cliente,#no_servico,#no_profissional').parent(".form-group").parent("div").hide().css('display', 'none');
             $('#st_servico,#st_cliente,#st_profissional').change(function () {
-                if ($(this).attr('id') == 'st_profissional') {
-                    if ($(this).prop("checked")) {
-                        var dados = Funcoes.Ajax('Agenda/ValidaNuProfissionais', null);
-                        if (!dados.sucesso) {
-                            Funcoes.Informativo('Já existem ' + dados.cadastrados + ' Profissionais Cadastrados, ' + 'Favor utilizar um já cadastrado ou mude para um plano maior que possa cadastrar ' + 'mais Profissionais!');
-                            $(this).click();
-                            return false;
-                        }
-                    }
-                }
                 apresentacao($(this).attr('id').replace('st_', ''));
             });
 
