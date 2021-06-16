@@ -4,8 +4,9 @@
  * Config.Padrao [ HELPER ]
  * Constantes padrão gerados do sistema
  *
- * @copyright (c) 2019, Leo Bessa
+ * @copyright (c) 2021, Leo Bessa
  */ 
+define('TEM_SITE', '1');
 define('MODULO_ASSINANTE', '1');
 define('LOGAR_EMAIL', '1');
 define('TABELA_AUDITORIA', '1');
@@ -25,15 +26,16 @@ define('SESSION_USER', 'user_sistema_beleza');
 define('INATIVO', '30');
 define('BACKUP', '5');
 define('TAMANHO', '800');
+define('NUM_BG_IMAGENS', '50');
 define('WHATSAPP', '5561994368031');
 define('WHATSAPP_MSG', '5561994368031');
-define('NUM_BG_IMAGENS', '50');
+define('WHATSAPP_INSTANCE', '288920');
+define('API_WHATS_TOKEN', '7c7jrg4e9n1f75ko');
+define('API_WHATS_SERVER', 'on');
 define('CONTROLLER_SEO', 'Curso');
 define('USER_EMAIL', 'contato@sistemadabeleza.com.br');
 define('PASS_EMAIL', 'Admin101**');
 define('HOST_EMAIL', 'mail.sistemadabeleza.com.br');
 define('PORTA_EMAIL', '587');
 define('ID_ANALITCS', '');
-define('TEM_SITE', 1);
-
 

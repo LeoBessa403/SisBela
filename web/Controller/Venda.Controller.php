@@ -18,7 +18,7 @@ class Venda extends AbstractController
         if (!empty($_POST)):
             $retorno = $assinanteService->salvaAssinante($_POST);
             if ($retorno[SUCESSO]) {
-                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarAssinante/');
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/Index');
             }
         endif;
     }
