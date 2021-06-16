@@ -76,19 +76,8 @@ class  AgendaService extends AbstractService
                 $statusAgenda[CO_PROFISSIONAL] = $dados[CO_PROFISSIONAL];
             } elseif (!empty($dados['no_profissional']) && !empty($dados['st_profissional'])) {
 
-                // VALIDA O NÚMERO DE PROFISSIONAIS JÁ CADASTRADOS
                 /** @var ProfissionalService $profissionalService */
                 $profissionalService = new ProfissionalService();
-                $retornoValidaProf = $profissionalService->ValidaNuProfissionais();
-
-                if (!$retornoValidaProf[SUCESSO]) {
-                    $retorno[MSG] = 'Já existem ' . $retorno['cadastrados'] . ' Profissionais Cadastrados, ' .
-                        'Favor utilizar um já cadastrado ou mude para um plano maior que possa cadastrar ' .
-                        'mais Profissionais!';
-                    $retorno[SUCESSO] = false;
-                    $PDO->rollBack();
-                    return $retorno;
-                }
 
                 $pessoa[NO_PESSOA] = $dados['no_profissional'];
                 $profissional[CO_PESSOA] = $pessoaService->Salva($pessoa);
