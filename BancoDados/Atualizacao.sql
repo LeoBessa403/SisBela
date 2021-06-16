@@ -880,3 +880,85 @@ INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadas
 
 INSERT INTO sisbela.TB_USUARIO_PERFIL (co_perfil, co_usuario) VALUES ("2", "123");
 
+INSERT INTO sisbela.TB_CONTATO (ds_email, nu_tel1) VALUES ("barbecue@gmail.com", "6199494044");
+
+INSERT INTO sisbela.TB_PESSOA (no_pessoa, co_contato, dt_cadastro) VALUES ("Marcio Braga", "125", "2021-06-16 17:47:00");
+
+INSERT INTO sisbela.TB_EMPRESA (no_fantasia, dt_cadastro) VALUES ("Salão novo Stylo 1010", "2021-06-16 17:47:00");
+
+INSERT INTO TB_ASSINANTE (tp_assinante, co_pessoa, co_empresa, dt_cadastro, dt_expiracao) VALUES ("M", "163", "121", "2021-06-16 17:47:00", "2021-12-16");
+
+INSERT INTO sisbela.TB_USUARIO (co_assinante, co_pessoa, ds_senha, ds_code, st_status, dt_cadastro) VALUES ("45", "163", "EVP6COG0", "UlZaUU5rTlBSekE9", "I", "2021-06-16 17:47:00");
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("12", "45", "0", "97.00", "3", "2021-06-16 17:47:00", "2021-12-16");
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("50", "2021-06-16 17:47:00", "Inicia o pagamento", "Marcio Braga Iniciou o pagamento", "0");
+
+INSERT INTO sisbela.TB_CONTATO (ds_email, nu_tel1) VALUES ("barbecue@gmail.com", "6199494044");
+
+INSERT INTO sisbela.TB_PESSOA (no_pessoa, co_contato, dt_cadastro) VALUES ("Marcio Braga", "126", "2021-06-16 17:47:10");
+
+INSERT INTO sisbela.TB_EMPRESA (no_fantasia, dt_cadastro) VALUES ("Salão novo Stylo 1010", "2021-06-16 17:47:10");
+
+INSERT INTO TB_ASSINANTE (tp_assinante, co_pessoa, co_empresa, dt_cadastro, dt_expiracao) VALUES ("M", "164", "122", "2021-06-16 17:47:10", "2021-12-16");
+
+INSERT INTO sisbela.TB_USUARIO (co_assinante, co_pessoa, ds_senha, ds_code, st_status, dt_cadastro) VALUES ("46", "164", "ZIS0ICY6", "V2tsVE1FbERXVFk9", "I", "2021-06-16 17:47:10");
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("12", "46", "0", "97.00", "3", "2021-06-16 17:47:10", "2021-12-16");
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("51", "2021-06-16 17:47:10", "Inicia o pagamento", "Marcio Braga Iniciou o pagamento", "0");
+
+INSERT INTO sisbela.TB_CONTATO (ds_email, nu_tel1) VALUES ("barbecue@gmail.com", "6199494044");
+
+INSERT INTO sisbela.TB_PESSOA (no_pessoa, co_contato, dt_cadastro) VALUES ("Marcio Braga", "127", "2021-06-16 17:47:45");
+
+INSERT INTO sisbela.TB_EMPRESA (no_fantasia, dt_cadastro) VALUES ("Salão novo Stylo 1010", "2021-06-16 17:47:45");
+
+INSERT INTO TB_ASSINANTE (tp_assinante, co_pessoa, co_empresa, dt_cadastro, dt_expiracao) VALUES ("M", "165", "123", "2021-06-16 17:47:45", "2021-12-16");
+
+INSERT INTO sisbela.TB_USUARIO (co_assinante, co_pessoa, ds_senha, ds_code, st_status, dt_cadastro) VALUES ("47", "165", "NPH5WFT7", "VGxCSU5WZEdWRGM9", "I", "2021-06-16 17:47:45");
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("12", "47", "0", "97.00", "3", "2021-06-16 17:47:45", "2021-12-16");
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("52", "2021-06-16 17:47:45", "Inicia o pagamento", "Marcio Braga Iniciou o pagamento", "0");
+
+INSERT INTO sisbela.TB_CONTATO (ds_email, nu_tel1) VALUES ("barbecue@gmail.com", "6199494044");
+
+INSERT INTO sisbela.TB_PESSOA (no_pessoa, co_contato, dt_cadastro) VALUES ("Marcio Braga", "128", "2021-06-16 17:48:32");
+
+INSERT INTO sisbela.TB_EMPRESA (no_fantasia, dt_cadastro) VALUES ("Salão novo Stylo 1010", "2021-06-16 17:48:32");
+
+INSERT INTO TB_ASSINANTE (tp_assinante, co_pessoa, co_empresa, dt_cadastro, dt_expiracao) VALUES ("M", "166", "124", "2021-06-16 17:48:32", "2021-12-16");
+
+INSERT INTO sisbela.TB_USUARIO (co_assinante, co_pessoa, ds_senha, ds_code, st_status, dt_cadastro) VALUES ("48", "166", "NHC7JBW7", "VGtoRE4wcENWemM9", "I", "2021-06-16 17:48:32");
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("12", "48", "0", "97.00", "3", "2021-06-16 17:48:32", "2021-12-16");
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("53", "2021-06-16 17:48:32", "Inicia o pagamento", "Marcio Braga Iniciou o pagamento", "0");
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "1", dt_modificado = "2021-06-16T17:48:33.000-03:00", nu_valor_desconto = "5.42", nu_valor_real = "91.58", ds_link_boleto = "", ds_code_transacao = "3F3DEAEA-4B65-4B20-8CA0-1246E6D931B0", co_plano_assinante = "12" where co_plano_assinante_assinatura = 53;
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("53", "2021-06-16T17:48:33.000-03:00", "Mudou o Status do pagamento para Aguardando pagamento", "Retorno da operadora do pagamento", "1");
+
+INSERT INTO sisbela.TB_USUARIO_PERFIL (co_perfil, co_usuario) VALUES ("2", "127");
+
+INSERT INTO sisbela.TB_CONTATO (ds_email, nu_tel1) VALUES ("sisbela@gmail.com", "6167887667");
+
+INSERT INTO sisbela.TB_PESSOA (no_pessoa, co_contato, dt_cadastro) VALUES ("Leo Bessa", "129", "2021-06-16 17:48:58");
+
+INSERT INTO sisbela.TB_EMPRESA (no_fantasia, dt_cadastro) VALUES ("Salão novo Stylo", "2021-06-16 17:48:58");
+
+INSERT INTO TB_ASSINANTE (tp_assinante, co_pessoa, co_empresa, dt_cadastro, dt_expiracao) VALUES ("M", "167", "125", "2021-06-16 17:48:58", "2021-07-16");
+
+INSERT INTO sisbela.TB_USUARIO (co_assinante, co_pessoa, ds_senha, ds_code, st_status, dt_cadastro) VALUES ("49", "167", "QJD2UYN1", "VVVwRU1sVlpUakU9", "I", "2021-06-16 17:48:58");
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA (co_plano_assinante, co_assinante, nu_filiais, nu_valor_assinatura, tp_pagamento, dt_cadastro, dt_expiracao) VALUES ("13", "49", "0", "17.00", "5", "2021-06-16 17:48:58", "2021-07-16");
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("54", "2021-06-16 17:48:58", "Inicia o pagamento", "Leo Bessa Iniciou o pagamento", "0");
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "1", dt_modificado = "2021-06-16T17:49:01.000-03:00", nu_valor_desconto = "1.08", nu_valor_real = "15.92", ds_link_boleto = "https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=00d84e2213097433c27dda53ebb82d72c40ad12241c5e810c7883b8da5b2d0b3f92f906a16af5afe", ds_code_transacao = "740F3095-684E-448C-BAD8-F683D42A6D97", co_plano_assinante = "13" where co_plano_assinante_assinatura = 54;
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadastro, ds_acao, ds_usuario, st_pagamento) VALUES ("54", "2021-06-16T17:49:01.000-03:00", "Mudou o Status do pagamento para Aguardando pagamento", "Retorno da operadora do pagamento", "1");
+
+INSERT INTO sisbela.TB_USUARIO_PERFIL (co_perfil, co_usuario) VALUES ("2", "128");
+
