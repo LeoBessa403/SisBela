@@ -538,7 +538,7 @@
 
                             <div class="input-group margin-p form-group <?= NO_PESSOA; ?>_parent">
                                 <input type="text" name="<?= NO_PESSOA; ?>" class="form-control ob"
-                                       id="<?= NO_PESSOA; ?>" placeholder="Nome do Responsável">
+                                       id="<?= NO_PESSOA; ?>" placeholder="Nome Completo do Responsável">
                                 <div class="input-group-addon"><i class="fa fa-user"></i></div>
                                 <span class="help-block" id="<?= NO_PESSOA; ?>-info"></span>
                             </div>
