@@ -5,7 +5,9 @@ $(function () {
         $('html, body').animate({
             scrollTop: $("#" + div_ref).offset().top
         }, 1000)
-    });
+    })
+
+    $("button.bg-color-green").attr('type', 'button');
 
     var imgBand = '';
     $('.debito,.credito').parents('.input-group').hide();
@@ -13,7 +15,6 @@ $(function () {
 
     $("#co_plano").change(function () {
         limpaComboParcelas();
-        iniciaComboParcelas();
         $(".cartao_credito").val('');
         Funcoes.TiraValidacao('numCartao');
     });
@@ -42,7 +43,7 @@ $(function () {
             numCartao = $(this).val().replace(/[^0-9]+/g, '').substring(6, 0);
             TamNumCartao = numCartao.length;
         }
-        var spanBandeira = $(this).parents('.input-group').children('span.input-group-addon');
+        var spanBandeira = $(this).parents('.input-group').children('.input-group-addon');
         var spanMensagem = $(this).parents('.input-group').parents('.form-group').children('span.help-block');
         if (TamNumCartao == 6) {
             PagSeguroDirectPayment.getBrand({
@@ -50,14 +51,14 @@ $(function () {
                     imgBand = retorno.brand.name;
                     spanBandeira.html("<img src='https://stc.pagseguro.uol.com.br/public/img/payment-methods-flags/42x20/" + imgBand + ".png'>")
                 }, error: function (retorno) {
-                    spanBandeira.empty();
-                    spanMensagem.text('Cartão inválido').prepend('<i class="fa clip-checkmark-circle-2"></i> ')
+                    spanBandeira.empty().html('<i class="fa fa-credit-card-alt"></i>');
+                    spanMensagem.text('Cartão inválido');
                 }, complete: function (retorno) {
                     $(this).focus()
                 }
             })
         } else if (TamNumCartao < 6) {
-            spanBandeira.empty();
+            spanBandeira.empty().html('<i class="fa fa-credit-card-alt"></i>');
             Funcoes.ValidaErro('numCartao', 'Cartão inválido');
             limpaComboParcelas();
             iniciaComboParcelas()
@@ -66,14 +67,13 @@ $(function () {
         valor = valor.val().replace(/[^.-]+/g, '');
         $(this).val(valor)
     }).focusout(function () {
-        var spanBandeira = $(this).parents('.input-group').children('span.input-group-addon');
+        var spanBandeira = $(this).parents('.input-group').children('.input-group-addon');
         var numCartao = $(this).val().replace(/[^0-9]+/g, '');
         var TamNumCartao = numCartao.length;
         if (TamNumCartao < 16) {
-            spanBandeira.empty();
+            spanBandeira.empty().html('<i class="fa fa-credit-card-alt"></i>');
             Funcoes.ValidaErro('numCartao', 'Cartão inválido');
             limpaComboParcelas();
-            iniciaComboParcelas()
         } else {
             $('#bandeiraCartao').val(imgBand);
             Funcoes.ValidaOK('numCartao', 'Cartão Válido');
@@ -82,15 +82,15 @@ $(function () {
     });
 
     function recupParcelas(bandeira) {
-        var coCurso = $("#co_curso").val();
+        var coPlano = $("#co_plano").val();
         var comboParc = $("#qntParcelas");
-        if (coCurso) {
-            var dados = Funcoes.Ajax('Inscricao/getValorCurso', coCurso);
-            var valorCurso = dados.nu_valor;
+        if (coPlano) {
+            var dados = Funcoes.Ajax('Venda/getValorPlano', coPlano);
+            var valorPlano = dados.nu_valor_assinatura;
             limpaComboParcelas();
             var noIntInstalQuantity = 3;
             PagSeguroDirectPayment.getInstallments({
-                amount: valorCurso,
+                amount: valorPlano,
                 maxInstallmentNoInterest: noIntInstalQuantity,
                 brand: bandeira,
                 success: function (retorno) {
@@ -119,20 +119,17 @@ $(function () {
 
     function limpaComboParcelas() {
         var comboParc = $("#qntParcelas");
-        comboParc.select2("destroy");
         comboParc.empty();
         var newOptionParc = new Option('Selecione um Parcelamento', null, !1, !1);
-        comboParc.append(newOptionParc).trigger('change')
+        comboParc.append(newOptionParc);
     }
 
     function iniciaComboParcelas() {
         var comboParc = $("#qntParcelas");
-        comboParc.select2({allowClear: !1})
     }
 
     function carregaSession() {
         var dados = Funcoes.Ajax('Venda/getReferenciaPagamentoInscricao', null);
-        console.log(dados.id);
         PagSeguroDirectPayment.setSessionId(dados.id);
     }
 
@@ -151,7 +148,7 @@ $(function () {
                     expirationYear: validade[1],
                     success: function (retorno) {
                         $('#tokenCartao').val(retorno.card.token);
-                        recupHashCartao()
+                        recupHashCartao();
                     },
                     error: function (retorno) {
                         $(".img-load").hide();

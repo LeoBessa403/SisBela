@@ -29,4 +29,11 @@ class Venda extends AbstractController
         $PlanoAssinanteAssinaturaService = new PlanoAssinanteAssinaturaService();
         return $PlanoAssinanteAssinaturaService->getReferenciaPagamentoPlano();
     }
+
+    public static function getValorPlano($coPlano)
+    {
+        /** @var PlanoService $planoService */
+        $planoService = static::getServiceStatic(PLANO_SERVICE);
+        return $planoService->getValorPlano($coPlano);
+    }
 }

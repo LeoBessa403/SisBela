@@ -691,7 +691,7 @@
                                         <?php
                                         $estados = EnderecoService::montaComboEstadosDescricao();
                                         foreach ($estados as $sg_uf => $estado) {
-                                            echo '<option value="' . $sg_uf . '">' . $estado . '</option>';
+                                            echo '<option value="' . $sg_uf . '">' . $estado . '</option> ';
                                         }
                                         ?>
                                     </select>
