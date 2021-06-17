@@ -1064,3 +1064,77 @@ INSERT INTO TB_HISTORICO_PAG_ASSINATURA (co_plano_assinante_assinatura, dt_cadas
 
 INSERT INTO sisbela.TB_USUARIO_PERFIL (co_perfil, co_usuario) VALUES ("2", "134");
 
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "1", dt_modificado = "2021-06-16T18:02:41.000-03:00" where co_plano_assinante_assinatura = 60;
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "1", dt_modificado = "2021-06-16T18:01:54.000-03:00" where co_plano_assinante_assinatura = 59;
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "1", dt_modificado = "2021-06-16T18:01:11.000-03:00" where co_plano_assinante_assinatura = 58;
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "1", dt_modificado = "2021-06-16T17:49:01.000-03:00" where co_plano_assinante_assinatura = 54;
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "1", dt_modificado = "2021-06-16T17:48:33.000-03:00" where co_plano_assinante_assinatura = 53;
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "1", dt_modificado = "2021-06-16T17:37:29.000-03:00" where co_plano_assinante_assinatura = 49;
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "1", dt_modificado = "2021-06-16T17:08:28.000-03:00" where co_plano_assinante_assinatura = 42;
+
+UPDATE TB_PLANO_ASSINANTE_ASSINATURA SET st_pagamento = "1", dt_modificado = "2021-06-16T17:07:22.000-03:00" where co_plano_assinante_assinatura = 41;
+
+INSERT INTO sisbela.TB_ENDERECO (ds_endereco, ds_complemento, ds_bairro, nu_cep, no_cidade, sg_uf) VALUES ("", "", "", "", "", "");
+
+UPDATE sisbela.TB_CONTATO SET co_contato = "135", nu_tel1 = "76965656560", nu_tel2 = "", nu_tel3 = "", nu_tel_0800 = "", ds_email = "barbecue55@gmail.com", ds_site = "", ds_facebook = "", ds_twitter = "", ds_instagram = "" where co_contato = 135;
+
+UPDATE sisbela.TB_PESSOA SET co_pessoa = "173", nu_cpf = "", no_pessoa = "OSR NO", nu_rg = "", dt_nascimento = "", st_sexo = "", co_contato = "135", co_endereco = "13" where co_pessoa = 173;
+
+UPDATE sisbela.TB_USUARIO SET ds_code = "VEZsS09VSkpXRGM9", ds_senha = "LYJ9BIX7", st_status = "A", co_pessoa = "173", co_assinante = "55" where co_usuario = 134;
+
+DELETE FROM sisbela.TB_USUARIO_PERFIL where co_usuario in (134);
+
+INSERT INTO sisbela.TB_USUARIO_PERFIL (co_usuario, co_perfil) VALUES ("134", "2");
+
+INSERT INTO sisbela.TB_USUARIO_PERFIL (co_usuario, co_perfil) VALUES ("134", "3");
+
+INSERT INTO sisbela.TB_ENDERECO (ds_endereco) VALUES ("");
+
+UPDATE sisbela.TB_EMPRESA SET co_endereco = "14" where co_empresa = 131;
+
+UPDATE TB_PLANO SET no_plano = "Mensal", nu_mes_ativo = "1", st_status = "A" where co_plano = 2;
+
+DELETE FROM TB_PLANO_PACOTE where co_plano in (2);
+
+INSERT INTO TB_PLANO_PACOTE (co_plano, co_pacote) VALUES ("2", "2");
+
+INSERT INTO TB_PLANO_PACOTE (co_plano, co_pacote) VALUES ("2", "1");
+
+INSERT INTO TB_PLANO_ASSINANTE (ds_observacao, nu_valor, dt_cadastro, co_plano) VALUES ("Por 1 meses", "27.97", "2021-06-17 11:32:53", "2");
+
+UPDATE TB_PLANO SET no_plano = "Semestral", nu_mes_ativo = "6", st_status = "A" where co_plano = 4;
+
+DELETE FROM TB_PLANO_PACOTE where co_plano in (4);
+
+INSERT INTO TB_PLANO_PACOTE (co_plano, co_pacote) VALUES ("4", "2");
+
+INSERT INTO TB_PLANO_PACOTE (co_plano, co_pacote) VALUES ("4", "1");
+
+INSERT INTO TB_PLANO_ASSINANTE (ds_observacao, nu_valor, dt_cadastro, co_plano) VALUES ("Por 6 Meses", "97.97", "2021-06-17 11:34:05", "4");
+
+UPDATE TB_PLANO SET no_plano = "Anual", nu_mes_ativo = "12", st_status = "A" where co_plano = 5;
+
+DELETE FROM TB_PLANO_PACOTE where co_plano in (5);
+
+INSERT INTO TB_PLANO_PACOTE (co_plano, co_pacote) VALUES ("5", "2");
+
+INSERT INTO TB_PLANO_PACOTE (co_plano, co_pacote) VALUES ("5", "1");
+
+INSERT INTO TB_PLANO_ASSINANTE (ds_observacao, nu_valor, dt_cadastro, co_plano) VALUES ("Por 12 Meses", "187.97", "2021-06-17 11:34:17", "5");
+
+UPDATE TB_PLANO SET no_plano = "Semestral", nu_mes_ativo = "6", st_status = "A" where co_plano = 4;
+
+DELETE FROM TB_PLANO_PACOTE where co_plano in (4);
+
+INSERT INTO TB_PLANO_PACOTE (co_plano, co_pacote) VALUES ("4", "2");
+
+INSERT INTO TB_PLANO_PACOTE (co_plano, co_pacote) VALUES ("4", "1");
+
+INSERT INTO TB_PLANO_ASSINANTE (ds_observacao, nu_valor, dt_cadastro, co_plano) VALUES ("Por 6 Meses", "127.97", "2021-06-17 11:41:13", "4");
+

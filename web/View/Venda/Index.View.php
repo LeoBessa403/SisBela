@@ -7,10 +7,10 @@
                     <div class="beautypress-welcome-content-group">
                         <div class="beautypress-welcome-container">
                             <div class="beautypress-welcome-wraper">
-                                <h2 class="color-pink">Organize sua agenda em 3 dias sem dor de cabeça</h2>
-                                <h3 class="color-purple"> e conquiste 3 clientes a mais por dia.</h3>
+                                <h2 class="color-pink">Organize sua agenda e conquiste 15 clientes a mais por semana</h2>
+                                <h3 class="color-purple">Investindo menos de R$1 reais por dia.</h3>
                                 <div class="beautypress-btn-wraper">
-                                    <a href="#" class="xs-btn bg-color-pink-2 round-btn box-shadow-btn">Quero Começar
+                                    <a data-class="compra" href="#" class="menu_click xs-btn bg-color-pink-2 round-btn box-shadow-btn">Quero Começar
                                         Agora
                                         <span></span></a>
                                 </div>
@@ -25,108 +25,90 @@
 </section><!-- .beautypress-welcome-section END -->
 <!-- welcome section -->
 
-<section id="planos_sistema" class="beautypress-pricing-table-section padding-m">
+
+<!-- Pricing table -->
+<section id="planos_sistema" class="beautypress-pricing-table-section padding-g beautypress-padding-bottom  beautypress-bg">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">
-                <div class="beautypress-single-pricing-table beautypress-image-overlay-1 beautypress-version-3">
-                    <div class="beautypress-pricing-header">
-                        <img src="<?= PASTASITE; ?>img/pricing-icons-1.png" alt="">
-                        <div class="beautypress-pricing-header-content">
-                            <div class="beautypress-pricing-title">
-                                <h2>Mensal</h2>
-                            </div>
-                            <div class="beautypress-pricing-price">
-                                <h4>2 Lote <s>R$ 29</s></h4>
-                                <h5 class="color-chocolate"><span>R$</span>17</h5>
-                            </div>
-                        </div>
-                    </div><!-- .beautypress-pricing-header END -->
-                    <div class="beautypress-pricing-footer">
-                        <ul class="beautypress-both-side-list beautypress-version-3">
-                            <li>Módulo Agendamento<span><i class="fa fa-check"></i></span></li>
-                            <li>Estatísticas da Agenda<span><i class="fa fa-check"></i></span></li>
-                            <li>Relatórios<span><i class="fa fa-check"></i></span></li>
-                            <li>Suporte<span><i class="fa fa-check"></i></span></li>
-                            <li>E-book Gestão<span><i class="fa fa-check"></i></span></li>
-                            <li>Mentoria Ao Vivo<span><i class="xsicon icon-cancel"></i></span></li>
-                            <li>Mentoria Individual<span><i class="xsicon icon-cancel"></i></span></li>
-                        </ul>
-
-                        <div class="beautypress-btn-wraper">
-                            <a href="#" class="xs-btn round-btn box-shadow-btn bg-color-purple">Adquirir Plano <span
-                                        style="top: 119.297px; left: 17.4688px;"></span></a>
-                        </div>
-                    </div><!-- .beautypress-pricing-footer END -->
-                </div><!-- .beautypress-single-pricing-table END -->
-            </div>
-            <div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">
-                <div class="beautypress-single-pricing-table beautypress-image-overlay-2 beautypress-version-3">
-                    <div class="beautypress-pricing-header">
-                        <img src="<?= PASTASITE; ?>img/pricing-icons-2.png" alt="">
-                        <div class="beautypress-pricing-header-content">
-                            <div class="beautypress-pricing-title">
-                                <h2>Semestral</h2>
-                            </div>
-                            <div class="beautypress-pricing-price">
-                                <h4>2 Lote <s>R$ 147</s></h4>
-                                <h5 class="color-chocolate"><span>R$</span>97</h5>
-                            </div>
-                        </div>
-                    </div><!-- .beautypress-pricing-header END -->
-                    <div class="beautypress-pricing-footer">
-                        <ul class="beautypress-both-side-list beautypress-version-3">
-                            <li>Módulo Agendamento<span><i class="fa fa-check"></i></span></li>
-                            <li>Estatísticas da Agenda<span><i class="fa fa-check"></i></span></li>
-                            <li>Relatórios<span><i class="fa fa-check"></i></span></li>
-                            <li>Suporte<span><i class="fa fa-check"></i></span></li>
-                            <li>E-book Gestão<span><i class="fa fa-check"></i></span></li>
-                            <li>Mentoria Ao Vivo<span><i class="fa fa-check"></i></span></li>
-                            <li>Mentoria Individual<span><i class="xsicon icon-cancel"></i></span></li>
-                        </ul>
-
-                        <div class="beautypress-btn-wraper">
-                            <a href="#" class="xs-btn round-btn box-shadow-btn bg-color-pink">Adquirir Plano <span
-                                        style="top: 119.297px; left: 17.4688px;"></span></a>
-                        </div>
-                    </div><!-- .beautypress-pricing-footer END -->
-                </div><!-- .beautypress-single-pricing-table END -->
-            </div>
-            <div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">
-                <div class="beautypress-single-pricing-table beautypress-image-overlay-3 beautypress-version-3">
-                    <div class="beautypress-pricing-header">
-                        <img src="<?= PASTASITE; ?>img/pricing-icons-3.png" alt="">
-                        <div class="beautypress-pricing-header-content">
-                            <div class="beautypress-pricing-title">
-                                <h2>Anual</h2>
-                            </div>
-                            <div class="beautypress-pricing-price">
-                                <h4>2 Lote <s>R$ 297</s></h4>
-                                <h5 class="color-chocolate"><span>R$</span>187</h5>
-                            </div>
-                        </div>
-                    </div><!-- .beautypress-pricing-header END -->
-                    <div class="beautypress-pricing-footer">
-                        <ul class="beautypress-both-side-list beautypress-version-3">
-                            <li>Módulo Agendamento<span><i class="fa fa-check"></i></span></li>
-                            <li>Estatísticas da Agenda<span><i class="fa fa-check"></i></span></li>
-                            <li>Relatórios<span><i class="fa fa-check"></i></span></li>
-                            <li>Suporte<span><i class="fa fa-check"></i></span></li>
-                            <li>E-book Gestão<span><i class="fa fa-check"></i></span></li>
-                            <li>Mentoria Ao Vivo<span><i class="fa fa-check"></i></span></li>
-                            <li>Mentoria Individual<span><i class="fa fa-check"></i></span></li>
-                        </ul>
-
-                        <div class="beautypress-btn-wraper">
-                            <a href="#" class="xs-btn round-btn box-shadow-btn bg-color-purple">Adquirir Plano <span
-                                        style="top: 119.297px; left: 17.4688px;"></span></a>
-                        </div>
-                    </div><!-- .beautypress-pricing-footer END -->
-                </div><!-- .beautypress-single-pricing-table END -->
-            </div>
+            <?php
+            $foto = 1;
+            $cores = [
+                'sky-blue',
+                'red',
+                'pink',
+                'green',
+                'purple',
+                'black-gradient'
+            ];
+            $result = array_reverse($result);
+            /** @var PlanoEntidade $plano */
+            foreach ($result as $plano) {
+                if ($plano->getCoPlano() > 1) {
+                    ?>
+                    <div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">
+                        <div class="beautypress-single-pricing-table">
+                            <div class="beautypress-pricing-header beautypress-<?= $cores[$foto - 1]; ?>-overlay">
+                                <?php
+                                echo '<img src="' . TIMTHUMB . '?src=' .
+                                    PASTASITE . 'img/pricing-' . $foto . '.jpg&w=370&h=274" 
+                                alt="' . $plano->getNoPlano() . '" title="' . $plano->getNoPlano() . '" />';
+                                ?>
+                                <div class="beautypress-pricing-header-content">
+                                    <div class="beautypress-pricing-title">
+                                        <h2><?= $plano->getNoPlano(); ?></h2>
+                                    </div>
+                                    <div class="beautypress-pricing-price">
+                                        <h4>Total: <?= Valida::FormataMoeda(
+                                                $plano->getCoUltimoPlanoAssinante()->getNuValor()); ?></h4>
+                                        <h5><span>R$</span><?php
+                                            $preço = explode(',', Valida::FormataMoeda(
+                                                $plano->getCoUltimoPlanoAssinante()->getNuValor() /
+                                                $plano->getNuMesAtivo()
+                                            ));
+                                            echo $preço[0];
+                                            echo '<span>,' . $preço[1] . '/Mês</span>';
+                                            ?>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div><!-- .beautypress-pricing-header END -->
+                            <div class="beautypress-pricing-footer">
+                                <ul class="beautypress-both-side-list">
+                                    <li>Sem Taxa de Adesão<span><i class="fa fa-check"></i></span></li>
+                                    <li>Meses de Assinatura<span><?= $plano->getNuMesAtivo(); ?></span></li>
+                                    <li>Módulo Agendamento<span><i class="fa fa-check"></i></span></li>
+                                    <li>Estatísticas da Agenda<span><i class="fa fa-check"></i></span></li>
+                                    <li>Relatórios<span><i class="fa fa-check"></i></span></li>
+                                    <li>Suporte<span><i class="fa fa-check"></i></span></li>
+                                    <li>Mentoria Ao Vivo<span><i class="fa fa-check"></i></span></li>
+                                    <?php if ($foto > 1) { ?>
+                                        <li>E-book Gestão<span><i class="fa fa-check"></i></span></li>
+                                    <?php } else { ?>
+                                        <li>E-book Gestão<span><i class="xsicon icon-cancel"></i></span></li>
+                                    <?php } ?>
+                                    <?php if ($foto > 2) { ?>
+                                        <li>Mentoria Individual<span><i class="fa fa-check"></i></span></li>
+                                    <?php } else { ?>
+                                        <li>Mentoria Individual<span><i class="xsicon icon-cancel"></i></span></li>
+                                    <?php } ?>
+                                </ul>
+                                <div class="beautypress-btn-wraper experimentar_gratis">
+                                    <a href="#" data-class="compra" data-plano="<?= $plano->getCoPlano(); ?>"
+                                       class="menu_click xs-btn round-btn box-shadow-btn bg-color-<?= $cores[$foto - 1]; ?>">
+                                        Adquirir Plano<span></span></a>
+                                </div>
+                            </div><!-- .beautypress-pricing-footer END -->
+                        </div><!-- .beautypress-single-pricing-table END -->
+                    </div>
+                    <?php $foto++;
+                }
+            } ?>
         </div>
     </div>
-</section>
+    <dIndeiv class="beautypress-black-overlay"></dIndeiv>
+</section><!-- .beautypress-pricing-table-section END -->
+<!-- Pricing table -->
+
 
 <section class="beautypress-call-to-action-section beautypress-bg parallax-bg padding-xg" data-parallax="scroll"
          data-image-src="<?= PASTASITE; ?>img/gallery-V4-5.jpg">
@@ -136,7 +118,7 @@
                 <div class="beautypress-single-square-service-content beautypress-version-2">
                     <i class="xsicon icon-essential-oil-2"></i>
                     <h2>Mais Tempo</h2>
-                    <p>Com uma agenda organizada, e com menos stress, sobrará mais tempo para a família, viagens, cursos
+                    <p>Com uma agenda organizada e com menos stress sobrará mais tempo para a família, viagens, cursos
                         profissionalizantes e atividades extras.</p>
                     <div class="beautypress-overlay-with-img img-1"></div>
                 </div><!-- .beautypress-single-square-service-content END -->
@@ -145,8 +127,9 @@
                 <div class="beautypress-single-square-service-content beautypress-version-2">
                     <i class="xsicon icon-cosmetics"></i>
                     <h2>Mais Faturamento</h2>
-                    <p>Com organização da agenda, possibilita atender mais clientes aumentando assim seu faturamento,
-                        para obter uma liberdade financeira</p>
+                    <p>Com organização da agenda, possibilita atender mais clientes, com maior qualidade aumentando,
+                        assim, seu faturamento
+                        para obter uma maior liberdade financeira.</p>
                     <div class="beautypress-overlay-with-img img-2"></div>
                 </div><!-- .beautypress-single-square-service-content END -->
             </div>
@@ -155,7 +138,7 @@
                     <i class="xsicon icon-relax"></i>
                     <h2>Reconhecimento</h2>
                     <p>Com mais tempo para focar no atendimento do cliente, conseguira fidelizar mais clientes obtendo o
-                        reconhecimento profissional desejado.</p>
+                        reconhecimento profissional tão sonhado.</p>
                     <div class="beautypress-overlay-with-img img-3"></div>
                 </div><!-- .beautypress-single-square-service-content END -->
             </div>
@@ -163,7 +146,7 @@
     </div>
 </section>
 
-<section id="duvidas" class="beautypress-faq-section section-padding">
+<section id="duvidas" class="beautypress-faq-section padding-m">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-xl-12">
@@ -348,7 +331,7 @@
         </div>
         <div class="col-md-12 col-xl-12 align-center padding-p">
             <div class="beautypress-btn-wraper">
-                <a href="#" class="xs-btn round-btn box-shadow-btn bg-color-cyan">Quero Organizar minha agenda agora
+                <a href="#" data-class="compra" class="menu_click xs-btn round-btn box-shadow-btn bg-color-cyan">Quero Organizar minha agenda agora
                     <span
                             style="top: 119.297px; left: 17.4688px;"></span></a>
             </div>
@@ -371,29 +354,12 @@
     <div class="beautypress-black-overlay"></div>
 </div><!-- .beautypress-video-section END -->
 
-<div id="bonus" class="beautypress-our-service-section section-padding">
+<div id="bonus" class="beautypress-our-service-section padding-m">
     <div class="container">
-        <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 align-center padding-m">
+        <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 align-center padding-p">
             <h2>Bônus por planos</h2>
         </div>
         <div class="row">
-            <div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">
-                <div class="beautypress-single-our-sevice beautypress-version-2 bg-color-white">
-                    <div class="beautypress-service-header img-full">
-                        <img src="<?= PASTASITE; ?>img/ebook_gestao.jpg" alt="">
-                    </div><!-- .beautypress-service-header img-full END -->
-                    <div class="beautypress-service-footer">
-                        <a href="#" class="beautypress-service-title underline-title">E-book Gestão</a>
-                        <p>When an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            It has survived not only five centuries</p>
-
-                        <a href="#" class="xs-btn bg-color-black-gradient round-btn box-shadow-btn">
-                            Quero esse bônus
-                            <span style="top: -8.10938px; left: 105.5px;"></span>
-                        </a>
-                    </div><!-- .beautypress-service-footer END -->
-                </div><!-- .beautypress-single-our-sevice END -->
-            </div>
             <div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">
                 <div class="beautypress-single-our-sevice beautypress-version-2 bg-color-white">
                     <div class="beautypress-service-header img-full">
@@ -401,14 +367,34 @@
                     </div><!-- .beautypress-service-header img-full END -->
                     <div class="beautypress-service-footer">
                         <a href="#" class="beautypress-service-title">Mentoria Ao Vivo</a>
-                        <p>Uma das melhores coisas que os Alunos do treinamento relataram é que todas as AULAS são AO
-                            VIVO.
-                            Fazemos todos os passos juntos Ao Vivo e se algo der errado, vamos corrigir na hora!</p>
+                        <p>O nosso diferencial é que todas as Mentorias são AO VIVO. Estaremos transmitindo conteúdo,
+                            conversando, ouvindo sugestões e tirando dúvidas na mesma HORA!</p>
 
-                        <a href="#" class="xs-btn bg-color-pink round-btn box-shadow-btn">
-                            Quero esse bônus
-                            <span style="top: -8.10938px; left: 105.5px;"></span>
-                        </a>
+                        <div class="col-md-12 text-center padding-p">
+                            <a href="#" data-class="compra" data-plano="2" class="menu_click xs-btn bg-color-pink round-btn box-shadow-btn">
+                                Quero esse bônus
+                                <span style="top: -8.10938px; left: 105.5px;"></span>
+                            </a>
+                        </div>
+                    </div><!-- .beautypress-service-footer END -->
+                </div><!-- .beautypress-single-our-sevice END -->
+            </div>
+            <div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">
+                <div class="beautypress-single-our-sevice beautypress-version-2 bg-color-white">
+                    <div class="beautypress-service-header img-full">
+                        <img src="<?= PASTASITE; ?>img/ebook_gestao.jpg" alt="">
+                    </div><!-- .beautypress-service-header img-full END -->
+                    <div class="beautypress-service-footer">
+                        <a href="#" class="beautypress-service-title underline-title">E-book Gestão</a>
+                        <p>Nosso E-Book te ensinará, com praticidade, objetividade e rapidez, os 10 Passos para você ter
+                            a autonomia e conhecimento para
+                            gerenciar seu negócio com propriedade.</p>
+                        <div class="col-md-12 text-center padding-p">
+                            <a href="#" data-plano="4" data-class="compra" class="menu_click xs-btn bg-color-black-gradient round-btn box-shadow-btn">
+                                Quero esse bônus
+                                <span style="top: -8.10938px; left: 105.5px;"></span>
+                            </a>
+                        </div>
                     </div><!-- .beautypress-service-footer END -->
                 </div><!-- .beautypress-single-our-sevice END -->
             </div>
@@ -419,13 +405,14 @@
                     </div><!-- .beautypress-service-header img-full END -->
                     <div class="beautypress-service-footer">
                         <a href="#" class="beautypress-service-title">Mentoria Individual</a>
-                        <p>When an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            It has survived not only five centuries</p>
-
-                        <a href="#" class="xs-btn bg-color-cyan round-btn box-shadow-btn">
-                            Quero esse bônus
-                            <span style="top: -8.10938px; left: 105.5px;"></span>
-                        </a>
+                        <p>Uma Mentoria exclusiva e detalhada para identificarmos as falhas e impulsionarmos as
+                            qualidades visando uma maior organização e maior lucratividade para seu negócio.</p>
+                        <div class="col-md-12 text-center padding-p">
+                            <a href="#" data-plano="5" data-class="compra" class="menu_click xs-btn bg-color-cyan round-btn box-shadow-btn">
+                                Quero esse bônus
+                                <span style="top: -8.10938px; left: 105.5px;"></span>
+                            </a>
+                        </div><!-- .beautypress-service-footer END -->
                     </div><!-- .beautypress-service-footer END -->
                 </div><!-- .beautypress-single-our-sevice END -->
             </div>
@@ -433,7 +420,7 @@
     </div>
 </div>
 
-<div class="beautypress-clients-section beautypress-about-section-v2 section-padding">
+<div class="beautypress-clients-section beautypress-about-section-v2">
     <div class="beautypress-clients-wraper no-slider beautypress-version-3 beautypress-bg"
          style="background-image: url(<?= PASTASITE; ?>img/welcome-bg-v4-2.jpg);">
         <div class="container">
@@ -461,7 +448,7 @@
     </div><!-- .beautypress-clients-wraper .no-slider .beautypress-version-3 END -->
 </div>
 
-<section id="compra" class="beautypress-booking-section seguranca-checkout section-padding">
+<section class="beautypress-booking-section seguranca-checkout">
     <div class="container">
         <div class="row padding-m">
             <div class="col-sm-12 col-lg-4 col-xl-4 margin-p">
@@ -495,25 +482,25 @@
                 </div><!-- .beautypress-single-square-service-content END -->
             </div>
         </div>
-        <div class="row">
+        <div class="row" id="compra" >
             <div class="col-md-12 col-sm-12 col-lg-6 col-xl-6">
                 <div class="beautypress-booking-text-wraper">
                     <div class="beautypress-booking-content-text beautypress-border beautypress-version-3">
                         <div class="beautypress-booking-text" style="padding-left: 35px;">
-                            <h2>Adeus, agenda de papel!</h2>
-                            <h3>Papel Nunca Mais..</h3>
-                            <div class="beautypress-icon-bg-text">
-                                <p style="font-weight: bold; color: #0b0b0b;">Ter uma agenda organizada é fundamental.
-                                    Todo
-                                    profissional que possui uma carteira de
-                                    clientes necessita de uma agenda organizada. Se esse profissional atua no setor de
-                                    beleza e estética, essa necessidade torna-se ainda mais importante.</p>
-                            </div><!-- .beautypress-icon-bg-text END -->
-                            <ul>
-                                <li>Agenda Disponível...</li>
-                                <li>24 Horas por Dia</li>
-                                <li>7 Dias da Semana</li>
-                                <li>De forma Rápida</li>
+                            <h2>Adeus agenda de papel!</h2>
+                            <h3>Papel nunca mais..</h3>
+
+                            <p style="font-weight: bold; color: #0b0b0b;">Ter uma agenda organizada é fundamental.
+                                Todo
+                                profissional que possui uma carteira de
+                                clientes necessita de uma agenda organizada. Se esse profissional atua no setor de
+                                beleza e estética, essa necessidade torna-se ainda mais importante.</p>
+
+                            <ul style="margin-top: 25px;">
+                                <li>Agenda disponível...</li>
+                                <li>24 Horas por dia</li>
+                                <li>7 Dias da semana</li>
+                                <li>De forma rápida e prática</li>
                             </ul>
                         </div><!-- .beautypress-booking-text END -->
                     </div><!-- .beautypress-booking-content-text END -->
@@ -558,7 +545,7 @@
                             </div>
 
                             <?php
-                                $planosAtivos = PlanoService::montaComboPlanosAtivos();
+                            $planosAtivos = PlanoService::montaComboPlanosAtivos();
                             ?>
                             <div class="beautypress-select">
                                 <div class="input-group form-group <?= CO_PLANO; ?>_parent">
@@ -566,9 +553,9 @@
                                             class="form-control ob">
 
                                         <?php
-                                            foreach ($planosAtivos as $nuMeses => $plano){
-                                                echo '<option value="' . $nuMeses . '">' . $plano . '</option>';
-                                            }
+                                        foreach ($planosAtivos as $nuMeses => $plano) {
+                                            echo '<option value="' . $nuMeses . '">' . $plano . '</option>';
+                                        }
                                         ?>
                                     </select>
                                     <span class="help-block" id="<?= CO_PLANO; ?>-info"></span>

@@ -1314,7 +1314,6 @@ Section
 .beautypress-welcome-container h3 {
     margin: 0 0 30px;
     font-weight: 600;
-    text-transform: capitalize;
     font-size: 5.000em;
 }
 
@@ -2051,16 +2050,14 @@ Section
 .beautypress-booking-text h2 {
     margin: 0 0 28px;
     color: #6A1B9A;
-    font-weight: 500;
-    text-transform: capitalize;
-    font-size: 1.429em;
+    font-weight: 600;
+    font-size: 2em;
 }
 
 .beautypress-booking-text h3 {
-    margin: 0 0 40px;
-    font-size: 2.143em;
-    font-weight: 600;
-    text-transform: capitalize;
+    margin: 0 0 30px;
+    font-size: 2em;
+    font-weight: 500;
     color: #222222;
 }
 
@@ -2102,7 +2099,6 @@ Section
     font-size: 1.143em;
     color: #646464;
     font-weight: 500;
-    text-transform: capitalize;
     margin: 0 0 18px;
     line-height: 1;
 }
@@ -2510,8 +2506,9 @@ Section
 								7. INDEX-V1 Pricing Plan
 ===============================================================================*/
 .beautypress-single-pricing-table {
-    -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow:  3px 3px 10px #E3BDA8;
+    box-shadow: 3px 3px 10px #E3BDA8;
+    padding: 10px;
     background-color: #FFFFFF;
     -webkit-transition: all .4s ease;
     -o-transition: all .4s ease;
@@ -2600,8 +2597,8 @@ Section
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    font-size: 1.143em;
-    margin: 0 0 10px;
+    font-size: 1.05em;
+    margin: 0 0 2px;
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -2630,8 +2627,9 @@ Section
 }
 
 .beautypress-single-pricing-table:hover {
-    -webkit-box-shadow: 0px 8px 21px 0px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 8px 21px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow:  3px 3px 15px #6A1B9A;
+    box-shadow: 3px 3px 15px #6A1B9A;
+    cursor: pointer;
 }
 
 /*======================================================================================
@@ -3399,10 +3397,10 @@ Section
 }
 
 .beautypress-sub-heading h2 {
-    margin: 0;
+    margin: 30px 0;
     color: #222222;
     font-weight: 500;
-    font-size: 2.857em;
+    font-size: 2.3em;
     position: relative;
     z-index: 1;
 }
@@ -6455,6 +6453,8 @@ Section
     -webkit-transition: all .4s ease;
     -o-transition: all .4s ease;
     transition: all .4s ease;
+    font-size: 1.15em;
+    text-align: justify;
 }
 
 .beautypress-single-square-service-content:hover h2,
@@ -7790,8 +7790,15 @@ Section
 								15. INNER service-v2.html content
 =============================================================================*/
 .beautypress-single-our-sevice.beautypress-version-2 {
-    -webkit-box-shadow: none;
-    box-shadow: none;
+    -webkit-box-shadow:  3px 3px 10px #E3BDA8;
+    box-shadow: 3px 3px 10px #E3BDA8;
+    padding: 10px;
+}
+
+.beautypress-single-our-sevice.beautypress-version-2:hover {
+    -webkit-box-shadow:  3px 3px 15px #6A1B9A;
+    box-shadow: 3px 3px 15px #6A1B9A;
+    cursor: pointer;
 }
 
 .beautypress-single-our-sevice.beautypress-version-2 .beautypress-service-footer {
@@ -8621,6 +8628,7 @@ Section
     font-size: 1.143em;
     margin: 0 0 25px;
     line-height: 1.8725;
+    text-align: justify;
 }
 
 /*=========================================================================
@@ -8644,7 +8652,7 @@ Section
 
 .beautypress-footer-section.beautypress-version-5 .beautypress-footer-content {
     text-align: center;
-    padding: 0 0 80px;
+    padding: 0 0 10px;
     border-color: #414141;
     margin: 0;
 }
@@ -10957,6 +10965,9 @@ label[for="rating"] {
 
 .beautypress-service-footer p {
     font-size: 1.3em;
+    text-align: justify;
+    text-indent: 1em;
+    line-height: 1.5em;
 }
 
 .beautypress-service-title {
@@ -11038,7 +11049,7 @@ label[for="rating"] {
 }
 
 .seguranca-checkout .beautypress-single-square-service-content:hover{
-    box-shadow: 5px 5px 20px #6A1B9A;
+    box-shadow: 5px 5px 15px #6A1B9A;
     cursor: pointer;
 }
 

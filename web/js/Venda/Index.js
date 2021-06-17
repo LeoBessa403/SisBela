@@ -2,9 +2,11 @@ $(function () {
 
     $('.menu_click').bind('click', function (e) {
         var div_ref = $(this).attr('data-class');
+        var plano = $(this).attr('data-plano');
         $('html, body').animate({
             scrollTop: $("#" + div_ref).offset().top
-        }, 1000)
+        }, 1000);
+        $("#co_plano").val(plano);
     })
 
     $("button.bg-color-green").attr('type', 'button');

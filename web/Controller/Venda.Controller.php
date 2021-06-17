@@ -7,7 +7,11 @@ class Venda extends AbstractController
 
     public function Index()
     {
-
+        /** @var PlanoService $planoService */
+        $planoService = $this->getService(PLANO_SERVICE);
+        $this->result = $planoService->PesquisaTodos([
+            ST_STATUS => StatusAcessoEnum::ATIVO
+        ]);
     }
 
     public function Assinatura()
