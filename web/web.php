@@ -1,8 +1,8 @@
 <?php
 ob_start();
-$tpPagina = 'venda';
+$tpPagina = 'inicial';
 if($url[1] != CONTROLLER_INICIAL_SITE)
-    $tpPagina = 'inicial';
+    $tpPagina = 'venda';
 include_once "./library/Partial/Site/topo_" . $tpPagina . ".php";
 
 $url->pegaControllerAction();
