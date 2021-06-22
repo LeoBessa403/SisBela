@@ -7,10 +7,12 @@
                     <div class="beautypress-welcome-content-group">
                         <div class="beautypress-welcome-container">
                             <div class="beautypress-welcome-wraper">
-                                <h2 class="color-pink">Organize sua agenda e conquiste 15 clientes a mais por semana</h2>
-                                <h3 class="color-purple">Investindo menos de R$1 reais por dia.</h3>
+                                <h2 class="color-pink">Organize sua agenda e conquiste até 15 clientes a mais por
+                                    semana</h2>
+                                <h3 class="color-purple">Investindo menos de R$1 real por dia.</h3>
                                 <div class="beautypress-btn-wraper">
-                                    <a data-class="compra" href="#" class="menu_click xs-btn bg-color-pink-2 round-btn box-shadow-btn">Quero Começar
+                                    <a data-class="compra" href="#"
+                                       class="menu_click xs-btn bg-color-pink-2 round-btn box-shadow-btn">Quero Começar
                                         Agora
                                         <span></span></a>
                                 </div>
@@ -19,7 +21,29 @@
                     </div><!-- .beautypress-welcome-content-group END -->
                 </div>
             </div><!-- .beautypress-welcome-slider-item END -->
-
+            <div class="beautypress-welcome-slider-item content-right beautypress-bg"
+                 style="background-image: url(<?= PASTASITE; ?>img/slider-bg-4.png);">
+                <div class="container">
+                    <div class="beautypress-welcome-content-group">
+                        <div class="beautypress-welcome-container">
+                            <div class="beautypress-welcome-wraper">
+                                <!--                                <h2 class="color-pink">Sistema Multiplataforma!</h2>-->
+                                <h3 class="color-purple">Sistema flexível de Multiplataforma!</h3>
+                                <p class="color-black">Faça a gestão completa dos seus agendamentos de qualquer lugar,
+                                    e qualquer dispositivo com acesso a internet.
+                                    Com nosso App, além do computador, você terá acesso ao SisBela pelo smartphone ou
+                                    tablet. Rápido, fácil e seguro de usar..</p>
+                                <div class="beautypress-btn-wraper">
+                                    <a data-class="compra" href="#"
+                                       class="menu_click xs-btn bg-color-green round-btn box-shadow-btn">Quero Começar
+                                        Agora
+                                        <span></span></a>
+                                </div>
+                            </div>
+                        </div><!-- .beautypress-welcome-container END -->
+                    </div><!-- .beautypress-welcome-content-group END -->
+                </div>
+            </div><!-- .beautypress-welcome-slider-item END -->
         </div><!-- .beautypress-welcome-slider END -->
     </div>
 </section><!-- .beautypress-welcome-section END -->
@@ -27,7 +51,8 @@
 
 
 <!-- Pricing table -->
-<section id="planos_sistema" class="beautypress-pricing-table-section padding-g beautypress-padding-bottom  beautypress-bg">
+<section id="planos_sistema"
+         class="beautypress-pricing-table-section padding-g beautypress-padding-bottom  beautypress-bg">
     <div class="container">
         <div class="row">
             <?php
@@ -161,32 +186,33 @@
                             <div class="panel-heading">
                                 <a data-toggle="collapse" data-parent="#accordion" aria-expanded="true"
                                    href="#collapse1">
-                                    Como que isso é diferente de tudo que eu já vi?
+                                    Por que o Sistema da Beleza é diferente de tudo?
                                 </a>
                             </div>
                             <div id="collapse1" class="panel-collapse collapse in">
                                 <div class="panel-body">
-                                    One morning, when Gregor Samsa woke from troubled dreams, he found himself
-                                    transformed in his bed into a horrible vermin. He lay on his armour-like back, and
-                                    if he lifted his head a little he could see his brown belly, slightly domed and
-                                    divided by arches into stiff sections. The bedding was hardly able to cover it and
-                                    seemed ready to slide off any moment.
+                                    Porque com o SisBela, você vai adquirir um sistema que vai automatizar todo o seu
+                                    negócio, você também poderá fazer parte nos auxiliando com sugestões de melhorias e
+                                    ferramentas para o sistema e também ganhará mentorias, <em>X-Bela</em>
+                                    <a data-class="bonus" class="menu_click"
+                                       style="font-weight: bolder; cursor: pointer;">interativas ao vivo pelo zoom,</a>
+                                    para te auxiliar na
+                                    gestão do seu empreendimento.
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                                    O que eu Tenho a ganhar com isso?
+                                    Quais são os benefícios?
                                 </a>
                             </div>
                             <div id="collapse2" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    One morning, when Gregor Samsa woke from troubled dreams, he found himself
-                                    transformed in his bed into a horrible vermin. He lay on his armour-like back, and
-                                    if he lifted his head a little he could see his brown belly, slightly domed and
-                                    divided by arches into stiff sections. The bedding was hardly able to cover it and
-                                    seemed ready to slide off any moment.
+                                    Você nunca mais irá passar pelos conflitos de agenda, tendo mais tranquilidade para
+                                    gerenciar seu tempo, cuidando do seu negócio de onde você estiver e possibilitando o
+                                    investimento na sua profissionalização se tornando, assim, um profissional cada vez
+                                    mais reconhecido no mercado.
                                 </div>
                             </div>
                         </div>
@@ -209,32 +235,32 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-                                    Porque eu não estou tendo sucesso?
+                                    por que minha empresa não evolui?
                                 </a>
                             </div>
                             <div id="collapse4" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    One morning, when Gregor Samsa woke from troubled dreams, he found himself
-                                    transformed in his bed into a horrible vermin. He lay on his armour-like back, and
-                                    if he lifted his head a little he could see his brown belly, slightly domed and
-                                    divided by arches into stiff sections. The bedding was hardly able to cover it and
-                                    seemed ready to slide off any moment.
+                                    Talvez você pense que seu problema está na desordem da sua agenda, mas o problema
+                                    está na falta de gerenciamento desses agendamentos. Com o SisBela podemos solucionar
+                                    todas as suas dificuldades com um sistema que gerenciará seus colaboradores,
+                                    agendamentos, e serviços de uma maneira simples e prática. E assim, venceremos
+                                    juntos a desordem que nos impede de crescer e se profissionalizar cada vez mais.
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
-                                    Quem é o culpado?
+                                    Qual é o verdadeiro problema?
                                 </a>
                             </div>
                             <div id="collapse5" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    One morning, when Gregor Samsa woke from troubled dreams, he found himself
-                                    transformed in his bed into a horrible vermin. He lay on his armour-like back, and
-                                    if he lifted his head a little he could see his brown belly, slightly domed and
-                                    divided by arches into stiff sections. The bedding was hardly able to cover it and
-                                    seemed ready to slide off any moment.
+                                    Talvez você pense que seu problema está na desordem da sua agenda, mas o problema
+                                    está na falta de gerenciamento desses agendamentos. Com o SisBela podemos solucionar
+                                    todas as suas dificuldades com um sistema que gerenciará seus colaboradores,
+                                    agendamentos, e serviços de uma maneira simples e prática. E assim, venceremos
+                                    juntos a desordem que nos impede de crescer e se profissionalizar cada vez mais.
                                 </div>
                             </div>
                         </div>
@@ -247,11 +273,11 @@
                         <div class="panel panel-default active">
                             <div class="panel-heading">
                                 <a data-toggle="collapse" data-parent="#accordion" aria-expanded="true"
-                                   href="#collapse1">
+                                   href="#collapse6">
                                     Porque agora?
                                 </a>
                             </div>
-                            <div id="collapse1" class="panel-collapse collapse in">
+                            <div id="collapse6" class="panel-collapse collapse in">
                                 <div class="panel-body">
                                     One morning, when Gregor Samsa woke from troubled dreams, he found himself
                                     transformed in his bed into a horrible vermin. He lay on his armour-like back, and
@@ -263,11 +289,11 @@
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
                                     Porque eu devo confiar em você?
                                 </a>
                             </div>
-                            <div id="collapse2" class="panel-collapse collapse">
+                            <div id="collapse7" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     One morning, when Gregor Samsa woke from troubled dreams, he found himself
                                     transformed in his bed into a horrible vermin. He lay on his armour-like back, and
@@ -279,11 +305,11 @@
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
                                     Como Funciona isso tudo?
                                 </a>
                             </div>
-                            <div id="collapse3" class="panel-collapse collapse">
+                            <div id="collapse8" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     One morning, when Gregor Samsa woke from troubled dreams, he found himself
                                     transformed in his bed into a horrible vermin. He lay on his armour-like back, and
@@ -295,11 +321,11 @@
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
                                     Como e quando posso começar?
                                 </a>
                             </div>
-                            <div id="collapse4" class="panel-collapse collapse">
+                            <div id="collapse9" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     One morning, when Gregor Samsa woke from troubled dreams, he found himself
                                     transformed in his bed into a horrible vermin. He lay on his armour-like back, and
@@ -311,11 +337,11 @@
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">
                                     O que eu tenho a Perder?
                                 </a>
                             </div>
-                            <div id="collapse5" class="panel-collapse collapse">
+                            <div id="collapse10" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     One morning, when Gregor Samsa woke from troubled dreams, he found himself
                                     transformed in his bed into a horrible vermin. He lay on his armour-like back, and
@@ -331,7 +357,8 @@
         </div>
         <div class="col-md-12 col-xl-12 align-center padding-p">
             <div class="beautypress-btn-wraper">
-                <a href="#" data-class="compra" class="menu_click xs-btn round-btn box-shadow-btn bg-color-cyan">Quero Organizar minha agenda agora
+                <a href="#" data-class="compra" class="menu_click xs-btn round-btn box-shadow-btn bg-color-cyan">Quero
+                    Organizar minha agenda agora
                     <span
                             style="top: 119.297px; left: 17.4688px;"></span></a>
             </div>
@@ -367,11 +394,13 @@
                     </div><!-- .beautypress-service-header img-full END -->
                     <div class="beautypress-service-footer">
                         <a href="#" class="beautypress-service-title">Mentoria Ao Vivo</a>
-                        <p>O nosso diferencial é que todas as Mentorias são AO VIVO. Estaremos transmitindo conteúdo,
+                        <p>O nosso diferencial é que todas as Mentorias são AO VIVO on-line. Estaremos transmitindo
+                            conteúdo,
                             conversando, ouvindo sugestões e tirando dúvidas na mesma HORA!</p>
 
                         <div class="col-md-12 text-center padding-p">
-                            <a href="#" data-class="compra" data-plano="2" class="menu_click xs-btn bg-color-pink round-btn box-shadow-btn">
+                            <a href="#" data-class="compra" data-plano="2"
+                               class="menu_click xs-btn bg-color-pink round-btn box-shadow-btn">
                                 Quero esse bônus
                                 <span style="top: -8.10938px; left: 105.5px;"></span>
                             </a>
@@ -390,7 +419,8 @@
                             a autonomia e conhecimento para
                             gerenciar seu negócio com propriedade.</p>
                         <div class="col-md-12 text-center padding-p">
-                            <a href="#" data-plano="4" data-class="compra" class="menu_click xs-btn bg-color-black-gradient round-btn box-shadow-btn">
+                            <a href="#" data-plano="4" data-class="compra"
+                               class="menu_click xs-btn bg-color-black-gradient round-btn box-shadow-btn">
                                 Quero esse bônus
                                 <span style="top: -8.10938px; left: 105.5px;"></span>
                             </a>
@@ -408,7 +438,8 @@
                         <p>Uma Mentoria exclusiva e detalhada para identificarmos as falhas e impulsionarmos as
                             qualidades visando uma maior organização e maior lucratividade para seu negócio.</p>
                         <div class="col-md-12 text-center padding-p">
-                            <a href="#" data-plano="5" data-class="compra" class="menu_click xs-btn bg-color-cyan round-btn box-shadow-btn">
+                            <a href="#" data-plano="5" data-class="compra"
+                               class="menu_click xs-btn bg-color-cyan round-btn box-shadow-btn">
                                 Quero esse bônus
                                 <span style="top: -8.10938px; left: 105.5px;"></span>
                             </a>
@@ -482,7 +513,7 @@
                 </div><!-- .beautypress-single-square-service-content END -->
             </div>
         </div>
-        <div class="row" id="compra" >
+        <div class="row" id="compra">
             <div class="col-md-12 col-sm-12 col-lg-6 col-xl-6">
                 <div class="beautypress-booking-text-wraper">
                     <div class="beautypress-booking-content-text beautypress-border beautypress-version-3">
@@ -490,12 +521,12 @@
                             <h2>Adeus agenda de papel!</h2>
                             <h3>Papel nunca mais..</h3>
 
-                            <p style="font-weight: bold; color: #0b0b0b;">Ter uma agenda organizada é fundamental.
-                                Todo
-                                profissional que possui uma carteira de
-                                clientes necessita de uma agenda organizada. Se esse profissional atua no setor de
-                                beleza e estética, essa necessidade torna-se ainda mais importante.</p>
-
+                            <p style="font-weight: bold;">
+                                Viemos eliminar os papeis da sua vida, automatizando e facilitando seu agendamento,
+                                armazenamento de registros e atendimentos. Ajudando você a ter uma agenda mais
+                                organizada e moderna. Sua agenda será mais rápida, prática e precisa, tornando seu
+                                agendamento e atendimento mais eficiente para você e seu cliente.
+                            </p>
                             <ul style="margin-top: 25px;">
                                 <li>Agenda disponível...</li>
                                 <li>24 Horas por dia</li>

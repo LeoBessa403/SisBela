@@ -12,6 +12,14 @@ class Venda extends AbstractController
         $this->result = $planoService->PesquisaTodos([
             ST_STATUS => StatusAcessoEnum::ATIVO
         ]);
+
+        /** @var AgendaService $agendaService */
+        $agendaService = $this->getService(AGENDA_SERVICE);
+
+        $coAgenda = UrlAmigavel::PegaParametro(CO_AGENDA);
+        if ($coAgenda) {
+            $this->agenda = $agendaService->PesquisaUmRegistro($coAgenda);
+        }
     }
 
     public function Assinatura()
