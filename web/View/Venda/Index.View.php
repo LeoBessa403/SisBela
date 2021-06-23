@@ -117,8 +117,19 @@
                                         <li>Mentoria Individual<span><i class="xsicon icon-cancel"></i></span></li>
                                     <?php } ?>
                                 </ul>
+                                <?php
+                                $coBotao = null;
+                                if ($plano->getCoPlano() == 2) {
+                                    $coBotao = 9;
+                                } elseif ($plano->getCoPlano() == 4) {
+                                    $coBotao = 10;
+                                }elseif ($plano->getCoPlano() == 5) {
+                                    $coBotao = 11;
+                                }
+                                ?>
                                 <div class="beautypress-btn-wraper experimentar_gratis">
                                     <a href="#" data-class="compra" data-plano="<?= $plano->getCoPlano(); ?>"
+                                       data-co-botao="<?= $coBotao; ?>"
                                        class="menu_click xs-btn round-btn box-shadow-btn bg-color-<?= $cores[$foto - 1]; ?>">
                                         Adquirir Plano<span></span></a>
                                 </div>

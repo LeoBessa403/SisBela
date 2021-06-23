@@ -54,4 +54,11 @@ class Venda extends AbstractController
         $planoService = static::getServiceStatic(PLANO_SERVICE);
         return $planoService->getValorPlano($coPlano);
     }
+
+    public static function CliqueBotaoAjax($coBotao)
+    {
+        /** @var CliqueService $CliqueService */
+        $CliqueService = static::getServiceStatic(CLIQUE_SERVICE);
+        return $CliqueService->salvaClique($coBotao);
+    }
 }

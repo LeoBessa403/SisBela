@@ -7,7 +7,12 @@ $(function () {
             scrollTop: $("#" + div_ref).offset().top
         }, 1000);
         $("#co_plano").val(plano);
-    })
+
+        var coBotao = $(this).attr('data-co-botao');
+        if (coBotao) {
+            Funcoes.Ajax('Venda/CliqueBotaoAjax', coBotao);
+        }
+    });
 
     $("button.bg-color-green").attr('type', 'button');
 

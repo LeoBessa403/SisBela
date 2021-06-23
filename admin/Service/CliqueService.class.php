@@ -21,6 +21,7 @@ class  CliqueService extends AbstractService
     {
         /** @var BotaoService $BotaoService */
         $BotaoService = $this->getService(BOTAO_SERVICE);
+
         /** @var PDO $PDO */
         $PDO = $this->getPDO();
         $PDO->beginTransaction();

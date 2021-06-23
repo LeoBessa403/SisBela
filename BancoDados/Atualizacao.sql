@@ -84,3 +84,19 @@ INSERT INTO TB_BOTAO (no_botao, ds_botao, st_status, nu_total_cliques) VALUES ("
 
 INSERT INTO TB_BOTAO (no_botao, ds_botao, st_status, nu_total_cliques) VALUES ("Botão do WhatsApp", "Botão de suporte no Site do nosso WhatsApp", "A", "0");
 
+INSERT INTO TB_CLIQUE (dt_cadastro, co_botao) VALUES ("2021-06-23 19:10:46", "2");
+
+UPDATE TB_BOTAO SET nu_total_cliques = "1" where co_botao = 2;
+
+INSERT INTO TB_CLIQUE (dt_cadastro, co_botao) VALUES ("2021-06-23 19:14:55", "10");
+
+UPDATE TB_BOTAO SET nu_total_cliques = "1" where co_botao = 10;
+
+INSERT INTO TB_CLIQUE (dt_cadastro, co_botao) VALUES ("2021-06-23 19:15:09", "10");
+
+UPDATE TB_BOTAO SET nu_total_cliques = "2" where co_botao = 10;
+
+INSERT INTO TB_CLIQUE (dt_cadastro, co_botao) VALUES ("2021-06-23 19:15:22", "11");
+
+UPDATE TB_BOTAO SET nu_total_cliques = "1" where co_botao = 11;
+

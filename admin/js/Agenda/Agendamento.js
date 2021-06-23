@@ -212,7 +212,7 @@ var Calendar = function () {
             $('.btn-visualizar').click(function () {
                 var coAgenda = $(this).attr('data-co-agenda');
                 var dados = Funcoes.Ajax('Agenda/GetAgendaAjax', coAgenda);
-                Calendar.CarregaDadosAgendamento(dados, coAgenda)
+                Calendar.CarregaDadosAgendamento(dados, coAgenda);
             });
             $(".btn-deletar").click(function () {
                 Funcoes.TiraValidacao('ds_motivo');
