@@ -32,7 +32,11 @@ define('DT_DEMISSAO', 'dt_demissao');
 define('CO_SERVICO', 'co_servico');
 define('NO_SERVICO', 'no_servico');
 define('NU_DURACAO', 'nu_duracao');
-
+define('CO_BOTAO', 'co_botao');
+define('NO_BOTAO', 'no_botao');
+define('DS_BOTAO', 'ds_botao');
+define('NU_TOTAL_CLIQUES', 'nu_total_cliques');
+define('CO_CLIQUE', 'co_clique');
 
 
 // SERVICES
@@ -41,3 +45,5 @@ define('CLIENTE_SERVICE', 'ClienteService');
 define('PROFISSIONAL_SERVICE', 'ProfissionalService');
 define('SERVICO_SERVICE', 'ServicoService');
 define('STATUS_AGENDA_SERVICE', 'StatusAgendaService');
+define('BOTAO_SERVICE', 'BotaoService');
+define('CLIQUE_SERVICE', 'CliqueService');

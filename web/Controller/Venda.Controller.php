@@ -7,18 +7,24 @@ class Venda extends AbstractController
 
     public function Index()
     {
+        $url = new UrlAmigavel();
+        $session = new Session();
         /** @var PlanoService $planoService */
         $planoService = $this->getService(PLANO_SERVICE);
         $this->result = $planoService->PesquisaTodos([
             ST_STATUS => StatusAcessoEnum::ATIVO
         ]);
 
-        /** @var AgendaService $agendaService */
-        $agendaService = $this->getService(AGENDA_SERVICE);
-
-        $coAgenda = UrlAmigavel::PegaParametro(CO_AGENDA);
-        if ($coAgenda) {
-            $this->agenda = $agendaService->PesquisaUmRegistro($coAgenda);
+        $urlExplode = explode('/',$url::getLink());
+        $noCookie = Valida::ValNome(DESC . '-user-clique');
+        if (!$session::CheckCookie($noCookie)) {
+            /** @var CliqueService $CliqueService */
+            $CliqueService = $this->getService(CLIQUE_SERVICE);
+            $cobotao = $urlExplode[3];
+            if ($cobotao) {
+                $CliqueService->salvaClique($cobotao);
+                $session::setCookie($noCookie, $cobotao, 24 * 60);
+            }
         }
     }
 

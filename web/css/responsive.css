@@ -395,7 +395,7 @@ Author URI: http://themeforest.net/user/XpeedStudio/portfolio
         margin: 0 0 30px;
     }
     .beautypress-single-new-pricing-wraper {
-        -ms-grid-columns: (1fr)[1];
+        -ms-grid-columns:(1fr)[1];
         grid-template-columns: repeat(1, 1fr);
     }
     .beautypress-single-new-pricing.beautypress-pricing-header,

@@ -464,6 +464,30 @@ class Relacionamentos
                     ('Tipo') => '1',
                 ),
             ),
+            (CliqueEntidade::TABELA) => Array(
+                (CO_CLIQUE) => Array(
+                    ('Campo') => CO_CLIQUE,
+                    ('Entidade') => 'CliqueEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_BOTAO) => Array(
+                    ('Campo') => CO_BOTAO,
+                    ('Entidade') => 'BotaoEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (BotaoEntidade::TABELA) => Array(
+                (CO_CLIQUE) => Array(
+                    ('Campo') => CO_BOTAO,
+                    ('Entidade') => 'CliqueEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
         );
     }
 }
+
+
+
+
+
