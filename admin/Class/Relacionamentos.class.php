@@ -465,11 +465,6 @@ class Relacionamentos
                 ),
             ),
             (CliqueEntidade::TABELA) => Array(
-                (CO_CLIQUE) => Array(
-                    ('Campo') => CO_CLIQUE,
-                    ('Entidade') => 'CliqueEntidade',
-                    ('Tipo') => '1',
-                ),
                 (CO_BOTAO) => Array(
                     ('Campo') => CO_BOTAO,
                     ('Entidade') => 'BotaoEntidade',
@@ -480,7 +475,7 @@ class Relacionamentos
                 (CO_CLIQUE) => Array(
                     ('Campo') => CO_BOTAO,
                     ('Entidade') => 'CliqueEntidade',
-                    ('Tipo') => '1',
+                    ('Tipo') => '2',
                 ),
             ),
         );

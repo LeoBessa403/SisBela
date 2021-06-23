@@ -145,4 +145,13 @@ class BotaoEntidade extends AbstractEntidade
         return $this->co_clique = $co_clique;
     }
 
+
+    /**
+     * @return CliqueEntidade $co_clique
+     */
+    public function getUltimoCoClique()
+    {
+        return $this->ultimo($this->getCoClique());
+    }
+
 }

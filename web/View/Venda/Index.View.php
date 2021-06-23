@@ -235,16 +235,17 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-                                    por que minha empresa não evolui?
+                                    Por que minha empresa não evolui?
                                 </a>
                             </div>
                             <div id="collapse4" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    Talvez você pense que seu problema está na desordem da sua agenda, mas o problema
-                                    está na falta de gerenciamento desses agendamentos. Com o SisBela podemos solucionar
-                                    todas as suas dificuldades com um sistema que gerenciará seus colaboradores,
-                                    agendamentos, e serviços de uma maneira simples e prática. E assim, venceremos
-                                    juntos a desordem que nos impede de crescer e se profissionalizar cada vez mais.
+                                    A falta de gestão é o maior vilão do empreendedor no cenário atual, seja ela
+                                    financeira, organizacional, processual e de pessoas. Uma boa gestão é essencial para
+                                    a saúde e prosperidade do seu negócio. A mentoria <em>X-Bela</em> vai te auxiliar na
+                                    formação
+                                    e execução desses processos fundamentais para crescermos juntos e conquistar metas
+                                    inacreditáveis!
                                 </div>
                             </div>
                         </div>
@@ -274,7 +275,7 @@
                             <div class="panel-heading">
                                 <a data-toggle="collapse" data-parent="#accordion" aria-expanded="true"
                                    href="#collapse6">
-                                    Porque agora?
+                                    Por que deve começar agora?
                                 </a>
                             </div>
                             <div id="collapse6" class="panel-collapse collapse in">
@@ -290,7 +291,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
-                                    Porque eu devo confiar em você?
+                                    Por que eu devo confiar em você?
                                 </a>
                             </div>
                             <div id="collapse7" class="panel-collapse collapse">
@@ -327,11 +328,11 @@
                             </div>
                             <div id="collapse9" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    One morning, when Gregor Samsa woke from troubled dreams, he found himself
-                                    transformed in his bed into a horrible vermin. He lay on his armour-like back, and
-                                    if he lifted his head a little he could see his brown belly, slightly domed and
-                                    divided by arches into stiff sections. The bedding was hardly able to cover it and
-                                    seemed ready to slide off any moment.
+                                    Basta escolher o plano que melhor atenda suas necessidades! Ao realizar o pagamento
+                                    você terá acesso ao SisBela de imediato em caso de cartão de crédito. No caso de
+                                    pagamento por boleto bancário é necessário aguardar a compensação dele. Para as
+                                    mentorias, você será direcionado para a próxima turma em aberto e será avisado a
+                                    data de início pelo WhatsApp e via e-mail.
                                 </div>
                             </div>
                         </div>
@@ -522,10 +523,9 @@
                             <h3>Papel nunca mais..</h3>
 
                             <p style="font-weight: bold;">
-                                Viemos eliminar os papeis da sua vida, automatizando e facilitando seu agendamento,
-                                armazenamento de registros e atendimentos. Ajudando você a ter uma agenda mais
-                                organizada e moderna. Sua agenda será mais rápida, prática e precisa, tornando seu
-                                agendamento e atendimento mais eficiente para você e seu cliente.
+                                Nossa missão é eliminar os papeis da sua vida, automatizando e facilitando seu
+                                agendamento, contato com os clientes e armazenando os atendimentos e registros. Vamos
+                                ajudar você a ter uma agenda moderna e organizada.
                             </p>
                             <ul style="margin-top: 25px;">
                                 <li>Agenda disponível...</li>
@@ -724,7 +724,7 @@
                             <div class="beautypress-btn-wraper margin-p" style="text-align: right; margin-right: -10px">
                                 <button type="submit" style="cursor: pointer!important;"
                                         class="xs-btn round-btn box-shadow-btn bg-color-green">
-                                    Experimentar Agora
+                                    Quero Reservar meu lugar
                                     <span></span></button>
 
                                 <img src="https://ccaug.com.br/library/images/loading.gif" class="img-load pull-right"
