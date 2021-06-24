@@ -26,3 +26,7 @@ INSERT INTO TB_CLIQUE (dt_cadastro, co_botao) VALUES ("2021-06-23 23:36:11", "16
 
 UPDATE TB_BOTAO SET nu_total_cliques = "6" where co_botao = 16;
 
+INSERT INTO TB_CLIQUE (dt_cadastro, co_botao) VALUES ("2021-06-23 23:37:15", "6");
+
+UPDATE TB_BOTAO SET nu_total_cliques = "6" where co_botao = 6;
+
