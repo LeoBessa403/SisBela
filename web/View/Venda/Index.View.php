@@ -11,7 +11,7 @@
                                     semana</h2>
                                 <h3 class="color-purple">Investindo menos de R$1 real por dia.</h3>
                                 <div class="beautypress-btn-wraper">
-                                    <a data-class="compra" href="#"
+                                    <a data-class="compra" href="#" data-co-botao="7"
                                        class="menu_click xs-btn bg-color-pink-2 round-btn box-shadow-btn">Quero Começar
                                         Agora
                                         <span></span></a>
@@ -34,7 +34,7 @@
                                     Com nosso App, além do computador, você terá acesso ao SisBela pelo smartphone ou
                                     tablet. Rápido, fácil e seguro de usar..</p>
                                 <div class="beautypress-btn-wraper">
-                                    <a data-class="compra" href="#"
+                                    <a data-class="compra" href="#" data-co-botao="8"
                                        class="menu_click xs-btn bg-color-green round-btn box-shadow-btn">Quero Começar
                                         Agora
                                         <span></span></a>
@@ -369,7 +369,8 @@
         </div>
         <div class="col-md-12 col-xl-12 align-center padding-p">
             <div class="beautypress-btn-wraper">
-                <a href="#" data-class="compra" class="menu_click xs-btn round-btn box-shadow-btn bg-color-cyan">Quero
+                <a href="#" data-class="compra" data-co-botao="12"
+                   class="menu_click xs-btn round-btn box-shadow-btn bg-color-cyan">Quero
                     Organizar minha agenda agora
                     <span
                             style="top: 119.297px; left: 17.4688px;"></span></a>
@@ -382,8 +383,8 @@
      data-image-src="<?= PASTASITE; ?>img/welcome-v3-img.jpg">
     <div class="container">
         <div class="beautypress-video-section-content">
-            <a href="<?= PASTAUPLOADS; ?>Videos/apresentacao_sisbela.mp4"
-               class="beautypress-video-popup beautypress-video-popup-btn bg-color-purple">
+            <a href="<?= PASTAUPLOADS; ?>Videos/apresentacao_sisbela.mp4" data-co-botao="13"
+               class="beautypress-video-popup menu_click beautypress-video-popup-btn bg-color-purple">
                 <i class="fa fa-play"></i>
             </a>
             <p>Em poucos minutos você já terá uma agenda bem organizada e detalhada.</p>
@@ -411,7 +412,7 @@
                             conversando, ouvindo sugestões e tirando dúvidas na mesma HORA!</p>
 
                         <div class="col-md-12 text-center padding-p">
-                            <a href="#" data-class="compra" data-plano="2"
+                            <a href="#" data-class="compra" data-plano="2"  data-co-botao="14"
                                class="menu_click xs-btn bg-color-pink round-btn box-shadow-btn">
                                 Quero esse bônus
                                 <span style="top: -8.10938px; left: 105.5px;"></span>
@@ -431,7 +432,7 @@
                             a autonomia e conhecimento para
                             gerenciar seu negócio com propriedade.</p>
                         <div class="col-md-12 text-center padding-p">
-                            <a href="#" data-plano="4" data-class="compra"
+                            <a href="#" data-plano="4" data-class="compra"  data-co-botao="15"
                                class="menu_click xs-btn bg-color-black-gradient round-btn box-shadow-btn">
                                 Quero esse bônus
                                 <span style="top: -8.10938px; left: 105.5px;"></span>
@@ -450,7 +451,7 @@
                         <p>Uma Mentoria exclusiva e detalhada para identificarmos as falhas e impulsionarmos as
                             qualidades visando uma maior organização e maior lucratividade para seu negócio.</p>
                         <div class="col-md-12 text-center padding-p">
-                            <a href="#" data-plano="5" data-class="compra"
+                            <a href="#" data-plano="5" data-class="compra" data-co-botao="16"
                                class="menu_click xs-btn bg-color-cyan round-btn box-shadow-btn">
                                 Quero esse bônus
                                 <span style="top: -8.10938px; left: 105.5px;"></span>
