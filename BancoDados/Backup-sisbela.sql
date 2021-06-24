@@ -1,4 +1,4 @@
--- Atualizado em: 22/06/2021 10:45:03
+-- Atualizado em: 23/06/2021 23:33:34
 -- AMBIENTE: http://localhost/SisBela/
 -- BANCO: sisbela
 
@@ -37,7 +37,7 @@ CREATE TABLE `TB_ASSINANTE` (
   PRIMARY KEY (`co_assinante`,`co_empresa`,`co_pessoa`),
   KEY `fk_TB_ASSINANTE_TB_EMPRESA1_idx` (`co_empresa`),
   KEY `fk_TB_ASSINANTE_TB_PESSOA1_idx` (`co_pessoa`)
-) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_ASSINANTE VALUES('1','2021-06-16 11:02:06','2022-06-16','N','A','M','77','119');
@@ -66,6 +66,8 @@ INSERT INTO TB_ASSINANTE VALUES('54','2021-06-16 18:01:50','2021-07-16','N','A',
 
 INSERT INTO TB_ASSINANTE VALUES('55','2021-06-16 18:02:37','2021-07-16','N','A','M','131','173');
 
+INSERT INTO TB_ASSINANTE VALUES('56','2021-06-23 23:15:22','2022-06-23','N','A','M','132','174');
+
 
 
 
@@ -92,8 +94,42 @@ CREATE TABLE `TB_BOTAO` (
   `nu_total_cliques` int(8) DEFAULT NULL COMMENT 'Número de cliques no botão',
   `st_status` varchar(1) DEFAULT NULL COMMENT 'S - Sim / N - Não',
   PRIMARY KEY (`co_botao`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
+
+INSERT INTO TB_BOTAO VALUES('1','Inicio','Barra de navegação menu superior','0','A');
+
+INSERT INTO TB_BOTAO VALUES('2','Planos','Barra de navegação menu superior','1','A');
+
+INSERT INTO TB_BOTAO VALUES('3','Dúvidas','Barra de navegação menu superior','2','A');
+
+INSERT INTO TB_BOTAO VALUES('4','Saiba Mais','Barra de navegação menu superior','0','A');
+
+INSERT INTO TB_BOTAO VALUES('5','Bônus','Barra de navegação menu superior','1','A');
+
+INSERT INTO TB_BOTAO VALUES('6','Comprar','Barra de navegação menu superior Botão Checkout','2','A');
+
+INSERT INTO TB_BOTAO VALUES('7','Quero começar agora 1','Botão super promessa','0','A');
+
+INSERT INTO TB_BOTAO VALUES('8','Quero começar agora 2','Botão MultiPlataforma','0','A');
+
+INSERT INTO TB_BOTAO VALUES('9','Adquirir Plano Mensal','Comprar plano','0','A');
+
+INSERT INTO TB_BOTAO VALUES('10','Adquirir Plano Semestral','Comprar plano','2','A');
+
+INSERT INTO TB_BOTAO VALUES('11','Adquirir Plano Anual','Comprar Plano','1','A');
+
+INSERT INTO TB_BOTAO VALUES('12','Quero organizar minha agenda agora','Botão das Dúvidas, direto para o checkout','0','A');
+
+INSERT INTO TB_BOTAO VALUES('13','Visualizar Vídeo','Botão para visualizar o vídeo de Saiba Mais','1','A');
+
+INSERT INTO TB_BOTAO VALUES('14','Quero esse bônus 1','Comprar o plano mensal direto no checkout','0','A');
+
+INSERT INTO TB_BOTAO VALUES('15','Quero esse bônus 2','Comprar o plano semestral direto no checkout','2','A');
+
+INSERT INTO TB_BOTAO VALUES('16','Quero esse bônus 3','Comprar o plano Anual direto no checkout','3','A');
+
+INSERT INTO TB_BOTAO VALUES('17','Botão do WhatsApp','Botão de suporte no Site do nosso WhatsApp','2','A');
 
 
 
@@ -159,12 +195,46 @@ DROP TABLE IF EXISTS TB_CLIQUE;
 
 
 CREATE TABLE `TB_CLIQUE` (
-  `co_clique` int(11) NOT NULL,
+  `co_clique` int(11) NOT NULL AUTO_INCREMENT,
   `dt_cadastro` datetime DEFAULT NULL,
   `co_botao` int(11) NOT NULL,
   PRIMARY KEY (`co_clique`,`co_botao`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+
+INSERT INTO TB_CLIQUE VALUES('1','2021-06-23 19:10:46','2');
+
+INSERT INTO TB_CLIQUE VALUES('2','2021-06-23 19:14:55','10');
+
+INSERT INTO TB_CLIQUE VALUES('3','2021-06-23 19:15:09','10');
+
+INSERT INTO TB_CLIQUE VALUES('4','2021-06-23 19:15:22','11');
+
+INSERT INTO TB_CLIQUE VALUES('5','2021-06-23 23:05:23','17');
+
+INSERT INTO TB_CLIQUE VALUES('6','2021-06-23 23:05:33','13');
+
+INSERT INTO TB_CLIQUE VALUES('7','2021-06-23 23:06:34','17');
+
+INSERT INTO TB_CLIQUE VALUES('8','2021-06-23 23:06:59','15');
+
+INSERT INTO TB_CLIQUE VALUES('9','2021-06-23 23:12:25','3');
+
+INSERT INTO TB_CLIQUE VALUES('10','2021-06-23 23:13:05','3');
+
+INSERT INTO TB_CLIQUE VALUES('11','2021-06-23 23:14:35','16');
+
+INSERT INTO TB_CLIQUE VALUES('12','2021-06-23 23:30:44','16');
+
+INSERT INTO TB_CLIQUE VALUES('13','2021-06-23 23:30:49','6');
+
+INSERT INTO TB_CLIQUE VALUES('14','2021-06-23 23:30:56','16');
+
+INSERT INTO TB_CLIQUE VALUES('15','2021-06-23 23:31:01','5');
+
+INSERT INTO TB_CLIQUE VALUES('16','2021-06-23 23:31:03','6');
+
+INSERT INTO TB_CLIQUE VALUES('17','2021-06-23 23:31:40','15');
 
 
 
@@ -184,7 +254,7 @@ CREATE TABLE `TB_CONTATO` (
   `ds_twitter` varchar(90) DEFAULT NULL,
   `ds_instagram` varchar(90) DEFAULT NULL,
   PRIMARY KEY (`co_contato`)
-) ENGINE=InnoDB AUTO_INCREMENT=136 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_CONTATO VALUES('1','61993274991','6130826060','0','','sisbela@gmail.com','','','','');
@@ -258,6 +328,8 @@ INSERT INTO TB_CONTATO VALUES('133','6198839333','','','','barbecue@gmail.com','
 INSERT INTO TB_CONTATO VALUES('134','6198754445','','','','barbecue@gmail.com','','','','');
 
 INSERT INTO TB_CONTATO VALUES('135','76965656560','','','','barbecue55@gmail.com','','','','');
+
+INSERT INTO TB_CONTATO VALUES('136','3444455553','','','','sisccaug@gmail.com','','','','');
 
 
 
@@ -336,7 +408,7 @@ CREATE TABLE `TB_EMPRESA` (
   KEY `fk_TB_EMPRESA_TB_ENDERECO1_idx` (`co_endereco`),
   KEY `fk_TB_EMPRESA_TB_CONTATO1_idx` (`co_contato`),
   KEY `fk_TB_EMPRESA_TB_IMAGEM1_idx` (`co_imagem`)
-) ENGINE=InnoDB AUTO_INCREMENT=132 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=133 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_EMPRESA VALUES('1','','Esmaltaria Unha Padrão','2020-03-25 12:09:13','','','','','0','2','0','0');
@@ -403,6 +475,8 @@ INSERT INTO TB_EMPRESA VALUES('130','','Salão novo Stylo 1010','2021-06-16 18:0
 
 INSERT INTO TB_EMPRESA VALUES('131','','Salão novo Stylo 1010','2021-06-16 18:02:37','','','','','0','14','0','0');
 
+INSERT INTO TB_EMPRESA VALUES('132','','Salão novo Stylo 1010','2021-06-23 23:15:21','','','','','0','0','0','0');
+
 
 
 
@@ -464,7 +538,7 @@ CREATE TABLE `TB_FUNCIONALIDADE` (
   `co_controller` int(11) NOT NULL,
   PRIMARY KEY (`co_funcionalidade`,`co_controller`),
   KEY `fk_TB_FUNCIONALIDADE_TB_CONTROLLER1_idx` (`co_controller`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO TB_FUNCIONALIDADE VALUES('1','Perfil Master','PerfilMaster','A','S','0');
@@ -539,6 +613,8 @@ INSERT INTO TB_FUNCIONALIDADE VALUES('35','Detalhar Assinatura Assinante','Detal
 
 INSERT INTO TB_FUNCIONALIDADE VALUES('36','Notificação PagSeguro','NotificacaoPagSeguro','A','S','9');
 
+INSERT INTO TB_FUNCIONALIDADE VALUES('37','Botões Site','ListarBotao','A','S','1');
+
 
 
 
@@ -554,7 +630,7 @@ CREATE TABLE `TB_HISTORICO_PAG_ASSINATURA` (
   `co_plano_assinante_assinatura` int(11) NOT NULL,
   PRIMARY KEY (`co_historico_pag_assinatura`,`co_plano_assinante_assinatura`),
   KEY `fk_TB_HISTORICO_PAG_ASSINATURA_TB_PLANO_ASSINANTE_ASSINATUR_idx` (`co_plano_assinante_assinatura`)
-) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_HISTORICO_PAG_ASSINATURA VALUES('1','2021-06-16 11:02:06','Inicia o pagamento','Barbecue Iniciou o pagamento','0','1');
@@ -614,6 +690,10 @@ INSERT INTO TB_HISTORICO_PAG_ASSINATURA VALUES('69','2021-06-16 18:01:54','Mudou
 INSERT INTO TB_HISTORICO_PAG_ASSINATURA VALUES('70','2021-06-16 18:02:37','Inicia o pagamento','Osr No Iniciou o pagamento','0','60');
 
 INSERT INTO TB_HISTORICO_PAG_ASSINATURA VALUES('71','2021-06-16 18:02:41','Mudou o Status do pagamento para Aguardando pagamento','Retorno da operadora do pagamento','1','60');
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA VALUES('72','2021-06-23 23:15:22','Inicia o pagamento','Leo Bessa Iniciou o pagamento','0','61');
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA VALUES('73','2021-06-23 23:15:24','Mudou o Status do pagamento para Aguardando pagamento','Retorno da operadora do pagamento','1','61');
 
 
 
@@ -898,7 +978,7 @@ CREATE TABLE `TB_PESSOA` (
   KEY `fk_TB_PESSOA_TB_ENDERECO1_idx` (`co_endereco`),
   KEY `fk_TB_PESSOA_TB_CONTATO1_idx` (`co_contato`),
   KEY `fk_TB_PESSOA_TB_IMAGEM1_idx` (`co_imagem`)
-) ENGINE=InnoDB AUTO_INCREMENT=174 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=175 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_PESSOA VALUES('1','','Usuário SisBela','','2016-10-31 00:00:00','','M','1','1','1');
@@ -1041,6 +1121,8 @@ INSERT INTO TB_PESSOA VALUES('172','','Osmar No','','2021-06-16 18:01:50','','',
 
 INSERT INTO TB_PESSOA VALUES('173','','OSR NO','','2021-06-16 18:02:37','','','13','135','0');
 
+INSERT INTO TB_PESSOA VALUES('174','','Leo Bessa','','2021-06-23 23:15:21','','','0','136','0');
+
 
 
 
@@ -1149,7 +1231,7 @@ CREATE TABLE `TB_PLANO_ASSINANTE_ASSINATURA` (
   PRIMARY KEY (`co_plano_assinante_assinatura`,`co_assinante`,`co_plano_assinante`),
   KEY `fk_TB_PLANO_ASSINANTE_ASSINATURA_TB_ASSINANTE1_idx` (`co_assinante`),
   KEY `fk_TB_PLANO_ASSINANTE_ASSINATURA_TB_PLANO_ASSINANTE1_idx` (`co_plano_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES('1','2021-06-16 11:02:06','2022-06-16','','5','0','','','','null','0','0','I','null','187.00','1','11');
@@ -1183,6 +1265,8 @@ INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES('58','2021-06-16 18:01:06','202
 INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES('59','2021-06-16 18:01:50','2021-07-16','','5','1','2021-06-16 18:01:54','1.08','15.92','https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=a673078ca4f370f81505c5c489ca1d8016527b1acf8530bab017484da0756d447aaec6ce3c3bd8c7','0','0','I','FC45952C-882F-4D26-82A8-2AC1AE8B5622','17.00','54','13');
 
 INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES('60','2021-06-16 18:02:37','2021-07-16','','5','1','2021-06-16 18:02:41','1.08','15.92','https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=902be1eb43139b2ea3ba616c42452a5fe80803eda0896cb074696448d782efa6a4cfe67979358c10','0','0','I','9C859AEB-66BC-4812-A12F-D4E2C8033C18','17.00','55','13');
+
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES('61','2021-06-23 23:15:22','2022-06-23','','5','1','2021-06-23 23:15:24','7.90','180.07','https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=c95a6b9ed7763ed9846d6d667362126d74f7f9dbb4ce6354264e198a4bfbf70cf2d9a470350a3632','0','0','I','EB482D7F-5BFF-455C-8339-E88EBE7AECF6','187.97','56','16');
 
 
 
@@ -1395,7 +1479,7 @@ CREATE TABLE `TB_USUARIO` (
   KEY `fk_TB_USUARIO_TB_IMAGEM1_idx` (`co_imagem`),
   KEY `fk_TB_USUARIO_TB_PESSOA1_idx` (`co_pessoa`),
   KEY `fk_TB_USUARIO_TB_ASSINANTE1_idx` (`co_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=135 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=136 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_USUARIO VALUES('1','123456**','TVRJek5EVTJLaW89','A','S','2016-10-31 00:00:00','1','1','0');
@@ -1470,6 +1554,8 @@ INSERT INTO TB_USUARIO VALUES('133','GFV6XEC0','UjBaV05saEZRekE9','I','N','2021-
 
 INSERT INTO TB_USUARIO VALUES('134','LYJ9BIX7','VEZsS09VSkpXRGM9','A','N','2021-06-16 18:02:37','0','173','55');
 
+INSERT INTO TB_USUARIO VALUES('135','LZE7SZT7','VEZwRk4xTmFWRGM9','I','N','2021-06-23 23:15:22','0','174','56');
+
 
 
 
@@ -1485,7 +1571,7 @@ CREATE TABLE `TB_USUARIO_PERFIL` (
   KEY `fk_tb_usuario_tb_perfil_tb_perfil1_idx` (`co_perfil`),
   KEY `fk_tb_usuario_tb_perfil_tb_usuario_idx` (`co_usuario`),
   KEY `fk_TB_USUARIO_PERFIL_TB_PERFIL_ASSINANTE1_idx` (`co_perfil_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_USUARIO_PERFIL VALUES('1','1','1','0');
@@ -1591,6 +1677,8 @@ INSERT INTO TB_USUARIO_PERFIL VALUES('54','133','2','0');
 INSERT INTO TB_USUARIO_PERFIL VALUES('56','134','2','0');
 
 INSERT INTO TB_USUARIO_PERFIL VALUES('57','134','3','0');
+
+INSERT INTO TB_USUARIO_PERFIL VALUES('58','135','2','0');
 
 
 

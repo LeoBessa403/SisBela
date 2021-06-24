@@ -8,6 +8,7 @@ $(function () {
                 scrollTop: $("#" + div_ref).offset().top
             }, 1000);
             $("#co_plano").val(plano);
+            Funcoes.ValidaOK('co_plano');
         }
 
         var coBotao = $(this).attr('data-co-botao');
