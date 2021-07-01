@@ -1,4 +1,4 @@
--- Atualizado em: 23/06/2021 23:33:34
+-- Atualizado em: 28/06/2021 14:39:54
 -- AMBIENTE: http://localhost/SisBela/
 -- BANCO: sisbela
 
@@ -107,7 +107,7 @@ INSERT INTO TB_BOTAO VALUES('4','Saiba Mais','Barra de navegação menu superior
 
 INSERT INTO TB_BOTAO VALUES('5','Bônus','Barra de navegação menu superior','1','A');
 
-INSERT INTO TB_BOTAO VALUES('6','Comprar','Barra de navegação menu superior Botão Checkout','2','A');
+INSERT INTO TB_BOTAO VALUES('6','Comprar','Barra de navegação menu superior Botão Checkout','6','A');
 
 INSERT INTO TB_BOTAO VALUES('7','Quero começar agora 1','Botão super promessa','0','A');
 
@@ -125,9 +125,9 @@ INSERT INTO TB_BOTAO VALUES('13','Visualizar Vídeo','Botão para visualizar o v
 
 INSERT INTO TB_BOTAO VALUES('14','Quero esse bônus 1','Comprar o plano mensal direto no checkout','0','A');
 
-INSERT INTO TB_BOTAO VALUES('15','Quero esse bônus 2','Comprar o plano semestral direto no checkout','2','A');
+INSERT INTO TB_BOTAO VALUES('15','Quero esse bônus 2','Comprar o plano semestral direto no checkout','3','A');
 
-INSERT INTO TB_BOTAO VALUES('16','Quero esse bônus 3','Comprar o plano Anual direto no checkout','3','A');
+INSERT INTO TB_BOTAO VALUES('16','Quero esse bônus 3','Comprar o plano Anual direto no checkout','6','A');
 
 INSERT INTO TB_BOTAO VALUES('17','Botão do WhatsApp','Botão de suporte no Site do nosso WhatsApp','2','A');
 
@@ -199,7 +199,7 @@ CREATE TABLE `TB_CLIQUE` (
   `dt_cadastro` datetime DEFAULT NULL,
   `co_botao` int(11) NOT NULL,
   PRIMARY KEY (`co_clique`,`co_botao`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 INSERT INTO TB_CLIQUE VALUES('1','2021-06-23 19:10:46','2');
@@ -235,6 +235,22 @@ INSERT INTO TB_CLIQUE VALUES('15','2021-06-23 23:31:01','5');
 INSERT INTO TB_CLIQUE VALUES('16','2021-06-23 23:31:03','6');
 
 INSERT INTO TB_CLIQUE VALUES('17','2021-06-23 23:31:40','15');
+
+INSERT INTO TB_CLIQUE VALUES('18','2021-06-23 23:33:55','16');
+
+INSERT INTO TB_CLIQUE VALUES('19','2021-06-23 23:35:30','6');
+
+INSERT INTO TB_CLIQUE VALUES('20','2021-06-23 23:35:34','16');
+
+INSERT INTO TB_CLIQUE VALUES('21','2021-06-23 23:35:38','6');
+
+INSERT INTO TB_CLIQUE VALUES('22','2021-06-23 23:35:42','15');
+
+INSERT INTO TB_CLIQUE VALUES('23','2021-06-23 23:36:08','6');
+
+INSERT INTO TB_CLIQUE VALUES('24','2021-06-23 23:36:11','16');
+
+INSERT INTO TB_CLIQUE VALUES('25','2021-06-23 23:37:15','6');
 
 
 

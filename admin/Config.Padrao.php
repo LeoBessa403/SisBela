@@ -16,7 +16,7 @@ define('TITULO_SITE', 'Sistema de gestão do ramo de beleza');
 define('DESC_SITE', 'O sistema de gestão SisBela é ideal para SEU NEGÓCIO, Salão de Beleza, Barbearia, Clínica de Estética, Ateliê de Maquiagem, Esmalteria, Spa e outros. Acesse de qualquer lugar! Todas as ferramentas são muito fáceis de usar e podem ser acessadas pelo computador, Tablet ou celular. Ganhe mais tempo com suas tarefas e deixe nosso sistema organizar sua agenda pra você.');
 define('CONTROLLER_INICIAL_ADMIN', 'Index');
 define('ACTION_INICIAL_ADMIN', 'IndexAdmin');
-define('CONTROLLER_INICIAL_SITE', 'IndexWeb');
+define('CONTROLLER_INICIAL_SITE', 'Venda');
 define('ACTION_INICIAL_SITE', 'Index');
 define('TABLE_USER', 'tb_usuario');
 define('CAMPO_PASS', 'ds_code');

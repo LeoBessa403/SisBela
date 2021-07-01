@@ -1,32 +1,20 @@
-INSERT INTO TB_CLIQUE (dt_cadastro, co_botao) VALUES ("2021-06-23 23:33:55", "16");
+INSERT INTO TB_CLIQUE (dt_cadastro, co_botao) VALUES ("2021-07-01 11:34:58", "2");
 
-UPDATE TB_BOTAO SET nu_total_cliques = "4" where co_botao = 16;
+UPDATE TB_BOTAO SET nu_total_cliques = "2" where co_botao = 2;
 
-INSERT INTO TB_CLIQUE (dt_cadastro, co_botao) VALUES ("2021-06-23 23:35:30", "6");
+INSERT INTO TB_CLIQUE (dt_cadastro, co_botao) VALUES ("2021-07-01 11:35:03", "10");
 
-UPDATE TB_BOTAO SET nu_total_cliques = "3" where co_botao = 6;
+UPDATE TB_BOTAO SET nu_total_cliques = "3" where co_botao = 10;
 
-INSERT INTO TB_CLIQUE (dt_cadastro, co_botao) VALUES ("2021-06-23 23:35:34", "16");
+INSERT INTO TB_CLIQUE (dt_cadastro, co_botao) VALUES ("2021-07-01 11:38:40", "6");
 
-UPDATE TB_BOTAO SET nu_total_cliques = "5" where co_botao = 16;
+UPDATE TB_BOTAO SET nu_total_cliques = "7" where co_botao = 6;
 
-INSERT INTO TB_CLIQUE (dt_cadastro, co_botao) VALUES ("2021-06-23 23:35:38", "6");
+INSERT INTO TB_CLIQUE (dt_cadastro, co_botao) VALUES ("2021-07-01 11:38:59", "13");
 
-UPDATE TB_BOTAO SET nu_total_cliques = "4" where co_botao = 6;
+UPDATE TB_BOTAO SET nu_total_cliques = "2" where co_botao = 13;
 
-INSERT INTO TB_CLIQUE (dt_cadastro, co_botao) VALUES ("2021-06-23 23:35:42", "15");
+INSERT INTO TB_CLIQUE (dt_cadastro, co_botao) VALUES ("2021-07-01 11:54:52", "2");
 
-UPDATE TB_BOTAO SET nu_total_cliques = "3" where co_botao = 15;
-
-INSERT INTO TB_CLIQUE (dt_cadastro, co_botao) VALUES ("2021-06-23 23:36:08", "6");
-
-UPDATE TB_BOTAO SET nu_total_cliques = "5" where co_botao = 6;
-
-INSERT INTO TB_CLIQUE (dt_cadastro, co_botao) VALUES ("2021-06-23 23:36:11", "16");
-
-UPDATE TB_BOTAO SET nu_total_cliques = "6" where co_botao = 16;
-
-INSERT INTO TB_CLIQUE (dt_cadastro, co_botao) VALUES ("2021-06-23 23:37:15", "6");
-
-UPDATE TB_BOTAO SET nu_total_cliques = "6" where co_botao = 6;
+UPDATE TB_BOTAO SET nu_total_cliques = "3" where co_botao = 2;
 
