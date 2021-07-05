@@ -123,7 +123,7 @@
                                     $coBotao = 9;
                                 } elseif ($plano->getCoPlano() == 4) {
                                     $coBotao = 10;
-                                }elseif ($plano->getCoPlano() == 5) {
+                                } elseif ($plano->getCoPlano() == 5) {
                                     $coBotao = 11;
                                 }
                                 ?>
@@ -230,16 +230,20 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-                                    Como que sei que isso é verdade?
+                                    Como que sei que o SisBela vai realmente me ajudar?
                                 </a>
                             </div>
                             <div id="collapse3" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    One morning, when Gregor Samsa woke from troubled dreams, he found himself
-                                    transformed in his bed into a horrible vermin. He lay on his armour-like back, and
-                                    if he lifted his head a little he could see his brown belly, slightly domed and
-                                    divided by arches into stiff sections. The bedding was hardly able to cover it and
-                                    seemed ready to slide off any moment.
+                                    O SisBela é um sistema de Gestão de Agendamento, ajudando no planejamento do
+                                    crescimento do seu negócio.
+                                    Já a falta de planejamento é uma das maiores causas que levam um negócio ao
+                                    fechamento. Sendo que 46,2% dos negócios fecham antes de completarem 4 Anos, Por
+                                    outro lado uma boa gestão leva ao crescimento, sendo que de 9 a cada
+                                    10 negócios de sucesso desejam expandir.<br><br>
+                                    <b>Fonte Sebrae</b>. Mais Informações.
+                                    <a href="https://www.sebrae.com.br/Sebrae/Portal%20Sebrae/UFs/SP/Anexos/causa_mortis_2014.pdf"
+                                       title="Dados de Pesquisa feita pelo Sebrae" target="_blank">Dados de Pesquisa</a>
                                 </div>
                             </div>
                         </div>
@@ -281,59 +285,58 @@
             </div>
             <div class="col-md-12 col-xl-6">
                 <div class="beautypress-accordion beautypress-version-1">
-                    <div class="panel-group" id="accordion">
+                    <div class="panel-group" id="accordion2">
                         <div class="panel panel-default active">
                             <div class="panel-heading">
-                                <a data-toggle="collapse" data-parent="#accordion" aria-expanded="true"
+                                <a data-toggle="collapse" data-parent="#accordion2" aria-expanded="true"
                                    href="#collapse6">
                                     Por que deve começar agora?
                                 </a>
                             </div>
                             <div id="collapse6" class="panel-collapse collapse in">
                                 <div class="panel-body">
-                                    One morning, when Gregor Samsa woke from troubled dreams, he found himself
-                                    transformed in his bed into a horrible vermin. He lay on his armour-like back, and
-                                    if he lifted his head a little he could see his brown belly, slightly domed and
-                                    divided by arches into stiff sections. The bedding was hardly able to cover it and
-                                    seemed ready to slide off any moment.
+                                    As vagas para a turma da Mentoria X-Bela e assinaturas do sistema são limitadas,
+                                    Pois precisamos dar uma grande atenção para cada um de nossos clientes para que eles
+                                    obtenham realmente os resultados que oferecemos. Após o lançamento não teremos
+                                    outras turmas a serem abertas logo.
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+                                <a data-toggle="collapse" data-parent="#accordion2" href="#collapse7">
                                     Por que eu devo confiar em você?
                                 </a>
                             </div>
                             <div id="collapse7" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    One morning, when Gregor Samsa woke from troubled dreams, he found himself
-                                    transformed in his bed into a horrible vermin. He lay on his armour-like back, and
-                                    if he lifted his head a little he could see his brown belly, slightly domed and
-                                    divided by arches into stiff sections. The bedding was hardly able to cover it and
-                                    seemed ready to slide off any moment.
+                                    Nos do Sistema da Beleza, temos competências nas áreas de programação (Sistema e
+                                    App) e na de gestão de negócios, e vismos a necessidade de sairmos da nossa zona de
+                                    corforto para oferecermos os nossos conhecimentos em prol e benefícios de outras
+                                    pessoas. Já passamos por situação semelhante e gostarias de ajudar os empreendedores
+                                    a crescerem e elevar o mercado nacional.
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+                                <a data-toggle="collapse" data-parent="#accordion2" href="#collapse8">
                                     Como Funciona isso tudo?
                                 </a>
                             </div>
                             <div id="collapse8" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    One morning, when Gregor Samsa woke from troubled dreams, he found himself
-                                    transformed in his bed into a horrible vermin. He lay on his armour-like back, and
-                                    if he lifted his head a little he could see his brown belly, slightly domed and
-                                    divided by arches into stiff sections. The bedding was hardly able to cover it and
-                                    seemed ready to slide off any moment.
+                                    O acesso ao SisBela é imediato e de fácil marcação dos agendamento e o sistema faz
+                                    todo o restante para você, a falta de organização da agenda, estara com os dias
+                                    contados, e na nossa area de relatórios você acompanharar todo os andamentos dos
+                                    agendamento. Já para a consultoria e so agaurdar o aviso de inicio das aulas e
+                                    participar.
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+                                <a data-toggle="collapse" data-parent="#accordion2" href="#collapse9">
                                     Como e quando posso começar?
                                 </a>
                             </div>
@@ -349,7 +352,7 @@
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">
+                                <a data-toggle="collapse" data-parent="#accordion2" href="#collapse10">
                                     O que eu tenho a Perder?
                                 </a>
                             </div>
@@ -408,11 +411,9 @@
                     <div class="beautypress-service-footer">
                         <a href="#" class="beautypress-service-title">Mentoria Ao Vivo</a>
                         <p>O nosso diferencial é que todas as Mentorias são AO VIVO on-line. Estaremos transmitindo
-                            conteúdo,
-                            conversando, ouvindo sugestões e tirando dúvidas na mesma HORA!</p>
-
+                            conteúdo, conversando, ouvindo sugestões e tirando dúvidas na mesma HORA!</p>
                         <div class="col-md-12 text-center padding-p">
-                            <a href="#" data-class="compra" data-plano="2"  data-co-botao="14"
+                            <a href="#" data-class="compra" data-plano="2" data-co-botao="14"
                                class="menu_click xs-btn bg-color-pink round-btn box-shadow-btn">
                                 Quero esse bônus
                                 <span style="top: -8.10938px; left: 105.5px;"></span>
@@ -432,7 +433,7 @@
                             a autonomia e conhecimento para
                             gerenciar seu negócio com propriedade.</p>
                         <div class="col-md-12 text-center padding-p">
-                            <a href="#" data-plano="4" data-class="compra"  data-co-botao="15"
+                            <a href="#" data-plano="4" data-class="compra" data-co-botao="15"
                                class="menu_click xs-btn bg-color-black-gradient round-btn box-shadow-btn">
                                 Quero esse bônus
                                 <span style="top: -8.10938px; left: 105.5px;"></span>
