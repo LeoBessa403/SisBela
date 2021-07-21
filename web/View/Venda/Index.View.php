@@ -202,13 +202,12 @@
                             </div>
                             <div id="collapse1" class="panel-collapse collapse in">
                                 <div class="panel-body">
-                                    Porque com o SisBela, você vai adquirir um sistema que vai automatizar todo o seu
+                                    Porque com o SisBela você vai adquirir um sistema que vai automatizar todo o seu
                                     negócio, você também poderá fazer parte nos auxiliando com sugestões de melhorias e
                                     ferramentas para o sistema e também ganhará mentorias, <em>X-Bela</em>
                                     <a data-class="bonus" class="menu_click"
-                                       style="font-weight: bolder; cursor: pointer;">interativas ao vivo pelo zoom,</a>
-                                    para te auxiliar na
-                                    gestão do seu empreendimento.
+                                       style="font-weight: bolder; cursor: pointer;">interativas ao vivo pelo zoom</a>
+                                    para te auxiliar na gestão do seu empreendimento.
                                 </div>
                             </div>
                         </div>
@@ -222,7 +221,7 @@
                                 <div class="panel-body">
                                     Você nunca mais irá passar pelos conflitos de agenda, tendo mais tranquilidade para
                                     gerenciar seu tempo, cuidando do seu negócio de onde você estiver e possibilitando o
-                                    investimento na sua profissionalização se tornando, assim, um profissional cada vez
+                                    investimento na sua profissionalização tornando-se assim um profissional cada vez
                                     mais reconhecido no mercado.
                                 </div>
                             </div>
@@ -295,10 +294,11 @@
                             </div>
                             <div id="collapse6" class="panel-collapse collapse in">
                                 <div class="panel-body">
-                                    As vagas para a turma da Mentoria X-Bela e assinaturas do sistema são limitadas,
-                                    Pois precisamos dar uma grande atenção para cada um de nossos clientes para que eles
+                                    As vagas para as turmas de Mentoria X-Bela e assinaturas do sistema são limitadas,
+                                    pois precisamos dar uma grande atenção para cada um de nossos clientes, para que
+                                    eles
                                     obtenham realmente os resultados que oferecemos. Após o lançamento não teremos
-                                    outras turmas a serem abertas logo.
+                                    vagas disponíveis para outras turmas.
                                 </div>
                             </div>
                         </div>
@@ -358,11 +358,11 @@
                             </div>
                             <div id="collapse10" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    One morning, when Gregor Samsa woke from troubled dreams, he found himself
-                                    transformed in his bed into a horrible vermin. He lay on his armour-like back, and
-                                    if he lifted his head a little he could see his brown belly, slightly domed and
-                                    divided by arches into stiff sections. The bedding was hardly able to cover it and
-                                    seemed ready to slide off any moment.
+                                    Caso não realize a assinatura do nosso Sistema da Beleza, nada ira mudar na sua
+                                    vida, as chances as vezes passam só uma vez, e deixamos sempre para depois, nossas
+                                    vagas são limitadas por conta da mentoria, onde prestamos um acompanhamento de cada
+                                    cliente. assim a oportunidade é agora, caso deixe para depois, poderá não ter
+                                    mais vagas.
                                 </div>
                             </div>
                         </div>

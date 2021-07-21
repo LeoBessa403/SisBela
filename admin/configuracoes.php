@@ -8,8 +8,8 @@ function servidor_inicial()
             'HOST' => 'localhost',
             'USER' => 'root',
             'PASS' => '',
-            'DBSA' => 'sisbela',
-            'SCHEMA' => 'sisbela',
+            'DBSA' => 'sisbela100',
+            'SCHEMA' => 'sisbela100',
             'BANCO' => 1, // 1 = mysql, 2 = postgres
             'DEBUG' => true,
             'PROD' => false,
