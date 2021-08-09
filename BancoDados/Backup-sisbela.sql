@@ -1,3 +1,41 @@
+-- Atualizado em: 02/08/2021 10:41:27
+-- AMBIENTE: http://localhost/SisBela/
+-- BANCO: sisbela100
+
+CREATE DATABASE IF NOT EXISTS sisbela100;
+
+USE sisbela100;
+
+DROP TABLE IF EXISTS TB_AGENDA;
+
+
+CREATE TABLE `TB_AGENDA` (
+  `co_agenda` int(11) NOT NULL AUTO_INCREMENT,
+  `ds_motivo` text DEFAULT NULL,
+  `dt_cadastro` datetime DEFAULT NULL,
+  `co_assinante` int(11) NOT NULL,
+  PRIMARY KEY (`co_agenda`,`co_assinante`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
+DROP TABLE IF EXISTS TB_ASSINANTE;
+
+
+CREATE TABLE `TB_ASSINANTE` (
+  `co_assinante` int(11) NOT NULL AUTO_INCREMENT,
+  `dt_cadastro` datetime DEFAULT NULL,
+  `dt_expiracao` date DEFAULT NULL COMMENT 'Data da expiração de utilização do sistema',
+  `st_dados_complementares` varchar(1) DEFAULT 'N' COMMENT 'S - Sim / N - Não',
+  `st_status` varchar(1) DEFAULT 'A' COMMENT 'A - Ativo / I - inativo',
+  `tp_assinante` varchar(1) DEFAULT 'M' COMMENT 'M  - Matriz / F - Filial',
+  `co_empresa` int(11) NOT NULL,
+  `co_pessoa` int(11) NOT NULL COMMENT 'Responsável pelo Assinante',
+  PRIMARY KEY (`co_assinante`,`co_empresa`,`co_pessoa`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
 
 INSERT INTO TB_ASSINANTE VALUES('1','2020-04-11 18:29:33','2020-10-26','N','A','M','1','2');
 
@@ -6,6 +44,32 @@ INSERT INTO TB_ASSINANTE VALUES('2','2020-04-11 18:35:42','2020-04-26','N','A','
 INSERT INTO TB_ASSINANTE VALUES('3','2020-04-13 17:01:03','2020-04-28','N','A','M','3','4');
 
 
+
+
+DROP TABLE IF EXISTS TB_BANCO;
+
+
+CREATE TABLE `TB_BANCO` (
+  `co_banco` int(11) NOT NULL COMMENT 'Código do banco',
+  `no_banco` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`co_banco`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
+DROP TABLE IF EXISTS TB_BOTAO;
+
+
+CREATE TABLE `TB_BOTAO` (
+  `co_botao` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Tabela das informações dos botõs para ir para a págna de venda e dentro da página',
+  `no_botao` varchar(45) DEFAULT NULL COMMENT 'Texto do Botão',
+  `ds_botao` varchar(250) DEFAULT NULL COMMENT 'Descrição do Botão (Posição/cor)',
+  `nu_total_cliques` int(8) DEFAULT NULL COMMENT 'Número de cliques no botão',
+  `st_status` varchar(1) DEFAULT NULL COMMENT 'S - Sim / N - Não',
+  PRIMARY KEY (`co_botao`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_BOTAO VALUES('1','Inicio','Barra de navegação menu superior','2','A');
@@ -45,6 +109,20 @@ INSERT INTO TB_BOTAO VALUES('17','Botão do WhatsApp','Botão de suporte no Site
 
 
 
+DROP TABLE IF EXISTS TB_CHECKOUT;
+
+
+CREATE TABLE `TB_CHECKOUT` (
+  `co_checkout` int(11) NOT NULL AUTO_INCREMENT,
+  `nu_visitas_total` int(11) DEFAULT NULL,
+  `dt_ultima_visita` datetime DEFAULT NULL,
+  PRIMARY KEY (`co_checkout`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
 DROP TABLE IF EXISTS TB_CLIENTE;
 
 
@@ -53,7 +131,7 @@ CREATE TABLE `TB_CLIENTE` (
   `dt_cadastro` datetime DEFAULT NULL,
   `st_status` varchar(1) DEFAULT 'A' COMMENT 'A - Ativo / I - Inativo\n',
   `no_apelido` varchar(45) DEFAULT NULL,
-  `ds_observacao` text,
+  `ds_observacao` text DEFAULT NULL,
   `st_receber_email_agendamento` varchar(1) DEFAULT 'S' COMMENT 'S - Sim / N - Não',
   `st_lembrete_horario_agendamento` varchar(1) DEFAULT 'S' COMMENT 'S - Sim / N - Não',
   `st_sms_marketing` varchar(1) DEFAULT 'S' COMMENT 'S - Sim / N - Não',
@@ -76,7 +154,7 @@ CREATE TABLE `TB_CLIQUE` (
   `dt_cadastro` datetime DEFAULT NULL,
   `co_botao` int(11) NOT NULL,
   PRIMARY KEY (`co_clique`,`co_botao`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_CLIQUE VALUES('1','2021-06-23 19:10:46','2');
@@ -220,7 +298,7 @@ CREATE TABLE `TB_CRONS` (
   `co_cron` int(11) NOT NULL AUTO_INCREMENT,
   `dt_cadastro` datetime DEFAULT NULL,
   `no_cron` varchar(70) DEFAULT NULL,
-  `ds_sql` text,
+  `ds_sql` text DEFAULT NULL,
   PRIMARY KEY (`co_cron`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -238,7 +316,7 @@ CREATE TABLE `TB_EMPRESA` (
   `dt_cadastro` datetime DEFAULT NULL,
   `nu_cnpj` varchar(20) DEFAULT NULL,
   `nu_insc_estadual` varchar(20) DEFAULT NULL,
-  `ds_observacao` text,
+  `ds_observacao` text DEFAULT NULL,
   `st_status` varchar(1) DEFAULT NULL,
   `co_pessoa` int(11) NOT NULL COMMENT 'Pessoa responsável pela empresa\n',
   `co_endereco` int(11) NOT NULL,
@@ -290,13 +368,13 @@ DROP TABLE IF EXISTS TB_FUNCIONALIDADE;
 
 CREATE TABLE `TB_FUNCIONALIDADE` (
   `co_funcionalidade` int(11) NOT NULL AUTO_INCREMENT,
-  `no_funcionalidade` varchar(150) CHARACTER SET latin1 NOT NULL,
-  `ds_action` varchar(120) CHARACTER SET latin1 DEFAULT NULL,
-  `st_status` varchar(1) CHARACTER SET latin1 DEFAULT 'A' COMMENT '''A - Ativo / I - Inativo''',
-  `st_menu` varchar(1) CHARACTER SET latin1 DEFAULT 'S' COMMENT 'S - Sim / N - Não (Se apresenta no menu)',
+  `no_funcionalidade` varchar(150) NOT NULL,
+  `ds_action` varchar(120) DEFAULT NULL,
+  `st_status` varchar(1) DEFAULT 'A' COMMENT '''A - Ativo / I - Inativo''',
+  `st_menu` varchar(1) DEFAULT 'S' COMMENT 'S - Sim / N - Não (Se apresenta no menu)',
   `co_controller` int(11) NOT NULL,
   PRIMARY KEY (`co_funcionalidade`,`co_controller`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO TB_FUNCIONALIDADE VALUES('1','Perfil Master','PerfilMaster','A','S','0');
@@ -387,7 +465,7 @@ CREATE TABLE `TB_HISTORICO_PAG_ASSINATURA` (
   `st_pagamento` int(1) DEFAULT NULL COMMENT '0 - Pendente / 1 - Aguardando pagamento / 2 - Em análise / 3 - Pago / 4 - Disponível / 5 - Em disputa / 6 - Devolvida / 7 - Cancelada\n',
   `co_plano_assinante_assinatura` int(11) NOT NULL,
   PRIMARY KEY (`co_historico_pag_assinatura`,`co_plano_assinante_assinatura`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_HISTORICO_PAG_ASSINATURA VALUES('1','2020-04-11 18:29:34','Plano Grátis','Usuário SisBela Iniciou o plano de experiência de 15 Dias.','3','1');
@@ -415,7 +493,7 @@ DROP TABLE IF EXISTS TB_HISTORICO_SUPORTE;
 CREATE TABLE `TB_HISTORICO_SUPORTE` (
   `co_historico_suporte` int(11) NOT NULL AUTO_INCREMENT,
   `dt_cadastro` datetime DEFAULT NULL,
-  `ds_mensagem` text,
+  `ds_mensagem` text DEFAULT NULL,
   `st_lido` varchar(1) DEFAULT 'N' COMMENT 'S - Sim / N - Não',
   `co_suporte` int(11) NOT NULL,
   `co_usuario` int(10) NOT NULL,
@@ -432,9 +510,9 @@ DROP TABLE IF EXISTS TB_IMAGEM;
 
 CREATE TABLE `TB_IMAGEM` (
   `co_imagem` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `ds_caminho` varchar(150) CHARACTER SET latin1 NOT NULL,
+  `ds_caminho` varchar(150) NOT NULL,
   PRIMARY KEY (`co_imagem`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO TB_IMAGEM VALUES('1','leonardo-m-c-bessa-56e8920c23ab66.jpg');
@@ -462,7 +540,7 @@ DROP TABLE IF EXISTS TB_PACOTE;
 CREATE TABLE `TB_PACOTE` (
   `co_pacote` int(11) NOT NULL AUTO_INCREMENT,
   `no_pacote` varchar(50) DEFAULT NULL,
-  `ds_descricao` text,
+  `ds_descricao` text DEFAULT NULL,
   `dt_cadastro` datetime DEFAULT NULL,
   `dt_lancamento` date DEFAULT NULL,
   PRIMARY KEY (`co_pacote`)
@@ -481,10 +559,10 @@ DROP TABLE IF EXISTS TB_PERFIL;
 
 CREATE TABLE `TB_PERFIL` (
   `co_perfil` int(11) NOT NULL AUTO_INCREMENT,
-  `no_perfil` varchar(45) CHARACTER SET latin1 NOT NULL COMMENT 'Nome do Perfil',
-  `st_status` varchar(1) CHARACTER SET latin1 NOT NULL DEFAULT 'A' COMMENT '''A - Ativo / I - Inativo''',
+  `no_perfil` varchar(45) NOT NULL COMMENT 'Nome do Perfil',
+  `st_status` varchar(1) NOT NULL DEFAULT 'A' COMMENT '''A - Ativo / I - Inativo''',
   PRIMARY KEY (`co_perfil`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO TB_PERFIL VALUES('1','Master','A');
@@ -522,7 +600,7 @@ CREATE TABLE `TB_PERFIL_FUNCIONALIDADE` (
   `co_perfil` int(11) NOT NULL,
   `co_perfil_assinante` int(11) NOT NULL,
   PRIMARY KEY (`co_perfil_funcionalidade`,`co_funcionalidade`,`co_perfil`,`co_perfil_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES('1','1','1','0');
@@ -616,7 +694,7 @@ CREATE TABLE `TB_PESSOA` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_PESSOA VALUES('1','','Usuário Teste','','2019-10-31 00:00:00','0000-00-00','M','1','1','1');
+INSERT INTO TB_PESSOA VALUES('1','','Usuário Teste','','2019-10-31 00:00:00','','M','1','1','1');
 
 INSERT INTO TB_PESSOA VALUES('2','04804195157','MARCELO MOITA','','2020-04-11 18:29:33','','','4','2','0');
 
@@ -661,10 +739,10 @@ DROP TABLE IF EXISTS TB_PLANO_ASSINANTE;
 
 
 CREATE TABLE `TB_PLANO_ASSINANTE` (
-  `co_plano_assinante` int(11) NOT NULL AUTO_INCREMENT,
+  `co_plano_assinante` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Tabela de Histórico de dados do Plano',
   `nu_valor` decimal(8,2) DEFAULT NULL,
   `dt_cadastro` datetime DEFAULT NULL,
-  `ds_observacao` text,
+  `ds_observacao` text DEFAULT NULL,
   `co_plano` int(11) NOT NULL,
   PRIMARY KEY (`co_plano_assinante`,`co_plano`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
@@ -708,20 +786,20 @@ CREATE TABLE `TB_PLANO_ASSINANTE_ASSINATURA` (
   `dt_expiracao` date DEFAULT NULL COMMENT 'data de expiriração da assinatura',
   `dt_confirma_pagamento` datetime DEFAULT NULL COMMENT 'Data que confirmou o pagamento',
   `tp_pagamento` int(1) DEFAULT NULL COMMENT '3 - Cartão de Crédito / 4 - Depósito ou Transferência / 5 - Boleto',
-  `st_pagamento` int(1) DEFAULT '0' COMMENT '0 - Pendente / 1 - Aguardando pagamento / 2 - Em análise / 3 - Pago / 4 - Disponível / 5 - Em disputa / 6 - Devolvida / 7 - Cancelada',
+  `st_pagamento` int(1) DEFAULT 0 COMMENT '0 - Pendente / 1 - Aguardando pagamento / 2 - Em análise / 3 - Pago / 4 - Disponível / 5 - Em disputa / 6 - Devolvida / 7 - Cancelada',
   `dt_modificado` datetime DEFAULT NULL COMMENT 'Data da ùltima modificação',
   `nu_valor_desconto` decimal(8,2) DEFAULT NULL COMMENT 'Valor de Desconto do PagSeguro',
   `nu_valor_real` decimal(8,2) DEFAULT NULL COMMENT 'Valor de recebimento do PagSeguro\n',
-  `ds_link_boleto` text COMMENT 'Link do Boleto que retorno da PagSeguro',
-  `nu_filiais` int(11) DEFAULT '0' COMMENT 'Número de filiais para a assinatura',
-  `co_plano_assinante_assinatura_ativo` int(11) DEFAULT '0' COMMENT 'Número do co_plano_assinante_assinatura que esta ativo',
+  `ds_link_boleto` text DEFAULT 'null' COMMENT 'Link do Boleto que retorno da PagSeguro',
+  `nu_filiais` int(11) DEFAULT 0 COMMENT 'Número de filiais para a assinatura',
+  `co_plano_assinante_assinatura_ativo` int(11) DEFAULT 0 COMMENT 'Número do co_plano_assinante_assinatura que esta ativo',
   `st_status` varchar(1) DEFAULT 'I' COMMENT 'A - Ativo / I - Inativo',
   `ds_code_transacao` varchar(80) DEFAULT 'null' COMMENT 'Code da transação do PagSeguro',
   `nu_valor_assinatura` decimal(8,2) DEFAULT NULL COMMENT 'Valor final da assinatura',
   `co_assinante` int(11) NOT NULL,
   `co_plano_assinante` int(11) NOT NULL,
   PRIMARY KEY (`co_plano_assinante_assinatura`,`co_assinante`,`co_plano_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES('1','2020-04-11 18:29:34','2020-04-26','','','3','2020-04-11 18:29:34','','','','0','0','I','null','0.00','1','1');
@@ -804,9 +882,9 @@ CREATE TABLE `TB_PROFISSIONAL` (
   `dt_cadastro` datetime DEFAULT NULL,
   `ds_cor_agenda` varchar(7) DEFAULT NULL COMMENT 'Valor Hexadecimal',
   `st_assistente` varchar(1) DEFAULT 'S' COMMENT 'S - Sim / N - Não * Se pode ser assitente de outro profissional',
-  `ds_sobre` text,
+  `ds_sobre` text DEFAULT NULL,
   `no_apelido` varchar(45) DEFAULT NULL,
-  `ds_motivo` text,
+  `ds_motivo` text DEFAULT NULL,
   `st_agenda` varchar(1) DEFAULT 'S' COMMENT 'S - Sim / N - Não * Se possui agenda',
   `st_agenda_online` varchar(1) DEFAULT 'S' COMMENT 'S - Sim / N - Não * Se pode ser ter agendamento on line',
   `st_status` varchar(1) DEFAULT 'A' COMMENT 'A - Ativo / I - Inativo',
@@ -834,7 +912,7 @@ CREATE TABLE `TB_SERVICO` (
   `st_assistente` varchar(1) DEFAULT NULL COMMENT 'S - Sim / N - Não * Se precisa ter um assitente',
   `no_servico` varchar(100) DEFAULT NULL,
   `nu_duracao` int(3) DEFAULT NULL,
-  `ds_descricao` text,
+  `ds_descricao` text DEFAULT NULL,
   `co_categoria_servico` int(11) NOT NULL,
   `co_imagem` int(10) NOT NULL,
   `co_assinante` int(11) NOT NULL,
@@ -856,7 +934,7 @@ CREATE TABLE `TB_STATUS_AGENDA` (
   `dt_fim_agenda` datetime DEFAULT NULL,
   `nu_valor` decimal(8,2) DEFAULT NULL COMMENT 'Valor total do agendamento',
   `nu_duracao` int(3) DEFAULT NULL COMMENT 'Em minutos',
-  `ds_observacao` text,
+  `ds_observacao` text DEFAULT NULL,
   `co_cliente` int(11) NOT NULL,
   `co_agenda` int(11) NOT NULL,
   `co_usuario` int(10) NOT NULL,
@@ -939,6 +1017,20 @@ INSERT INTO TB_USUARIO_PERFIL VALUES('5','0','2','0');
 INSERT INTO TB_USUARIO_PERFIL VALUES('6','0','3','0');
 
 INSERT INTO TB_USUARIO_PERFIL VALUES('7','0','3','0');
+
+
+
+
+DROP TABLE IF EXISTS TB_VISITA_CHECKOUT;
+
+
+CREATE TABLE `TB_VISITA_CHECKOUT` (
+  `co_visita_checkout` int(11) NOT NULL AUTO_INCREMENT,
+  `co_visita` int(11) NOT NULL,
+  `co_checkout` int(11) NOT NULL,
+  PRIMARY KEY (`co_visita_checkout`,`co_visita`,`co_checkout`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 
 
