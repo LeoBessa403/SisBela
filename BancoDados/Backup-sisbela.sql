@@ -1,4 +1,4 @@
--- Atualizado em: 02/08/2021 10:41:27
+-- Atualizado em: 09/08/2021 16:11:14
 -- AMBIENTE: http://localhost/SisBela/
 -- BANCO: sisbela100
 
@@ -34,7 +34,7 @@ CREATE TABLE `TB_ASSINANTE` (
   `co_empresa` int(11) NOT NULL,
   `co_pessoa` int(11) NOT NULL COMMENT 'Responsável pelo Assinante',
   PRIMARY KEY (`co_assinante`,`co_empresa`,`co_pessoa`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_ASSINANTE VALUES('1','2020-04-11 18:29:33','2020-10-26','N','A','M','1','2');
@@ -74,7 +74,7 @@ CREATE TABLE `TB_BOTAO` (
 
 INSERT INTO TB_BOTAO VALUES('1','Inicio','Barra de navegação menu superior','2','A');
 
-INSERT INTO TB_BOTAO VALUES('2','Planos','Barra de navegação menu superior','4','A');
+INSERT INTO TB_BOTAO VALUES('2','Planos','Barra de navegação menu superior','5','A');
 
 INSERT INTO TB_BOTAO VALUES('3','Dúvidas','Barra de navegação menu superior','2','A');
 
@@ -154,7 +154,7 @@ CREATE TABLE `TB_CLIQUE` (
   `dt_cadastro` datetime DEFAULT NULL,
   `co_botao` int(11) NOT NULL,
   PRIMARY KEY (`co_clique`,`co_botao`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_CLIQUE VALUES('1','2021-06-23 19:10:46','2');
@@ -221,6 +221,8 @@ INSERT INTO TB_CLIQUE VALUES('31','2021-07-05 18:56:07','16');
 
 INSERT INTO TB_CLIQUE VALUES('32','2021-07-05 19:35:16','17');
 
+INSERT INTO TB_CLIQUE VALUES('33','2021-08-02 17:53:42','2');
+
 
 
 
@@ -239,14 +241,14 @@ CREATE TABLE `TB_CONTATO` (
   `ds_twitter` varchar(90) DEFAULT NULL,
   `ds_instagram` varchar(90) DEFAULT NULL,
   PRIMARY KEY (`co_contato`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_CONTATO VALUES('1','61993274991','6130826060','0','','sisbela@gmail.com','','','','');
 
 INSERT INTO TB_CONTATO VALUES('2','61993055454','','','','moita@hotmail.com','','','','');
 
-INSERT INTO TB_CONTATO VALUES('3','61985544332','','','','marcelo.moita@gmail.com','','','','');
+INSERT INTO TB_CONTATO VALUES('3','6193394999','','','','marcelo.moita@gmail.com','','','','');
 
 INSERT INTO TB_CONTATO VALUES('4','61983576841','','','','jebengacoiffer@gmail.com.br','','','','');
 
@@ -323,7 +325,7 @@ CREATE TABLE `TB_EMPRESA` (
   `co_contato` int(11) NOT NULL,
   `co_imagem` int(11) NOT NULL,
   PRIMARY KEY (`co_empresa`,`co_pessoa`,`co_endereco`,`co_contato`,`co_imagem`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_EMPRESA VALUES('1','','Cabelos Hair','2020-04-11 18:29:33','','','','','0','3','0','0');
@@ -417,7 +419,7 @@ INSERT INTO TB_FUNCIONALIDADE VALUES('19','Cadastro Plano','CadastroPlano','A','
 
 INSERT INTO TB_FUNCIONALIDADE VALUES('20','Listar Assinante','ListarAssinante','A','S','9');
 
-INSERT INTO TB_FUNCIONALIDADE VALUES('21','Cadastro Assinante','CadastroAssinante','A','S','9');
+INSERT INTO TB_FUNCIONALIDADE VALUES('21','Cadastro Assinante','CadastroAssinante','A','N','9');
 
 INSERT INTO TB_FUNCIONALIDADE VALUES('22','Pre Projeto Gestao','PreProjetoGestao','A','S','1');
 
@@ -465,7 +467,7 @@ CREATE TABLE `TB_HISTORICO_PAG_ASSINATURA` (
   `st_pagamento` int(1) DEFAULT NULL COMMENT '0 - Pendente / 1 - Aguardando pagamento / 2 - Em análise / 3 - Pago / 4 - Disponível / 5 - Em disputa / 6 - Devolvida / 7 - Cancelada\n',
   `co_plano_assinante_assinatura` int(11) NOT NULL,
   PRIMARY KEY (`co_historico_pag_assinatura`,`co_plano_assinante_assinatura`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_HISTORICO_PAG_ASSINATURA VALUES('1','2020-04-11 18:29:34','Plano Grátis','Usuário SisBela Iniciou o plano de experiência de 15 Dias.','3','1');
@@ -483,6 +485,10 @@ INSERT INTO TB_HISTORICO_PAG_ASSINATURA VALUES('6','2020-04-24 20:50:09','Mudou 
 INSERT INTO TB_HISTORICO_PAG_ASSINATURA VALUES('7','2021-03-24 11:56:56','Inicia o pagamento','MARCELO MOITA Iniciou o pagamento','0','5');
 
 INSERT INTO TB_HISTORICO_PAG_ASSINATURA VALUES('8','2021-03-24 11:57:01','Mudou o Status do pagamento para Aguardando pagamento','Retorno da operadora do pagamento','1','5');
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA VALUES('14','2021-08-02 18:37:11','Inicia o pagamento','Moita Marcelo Iniciou o pagamento','0','11');
+
+INSERT INTO TB_HISTORICO_PAG_ASSINATURA VALUES('15','2021-08-02 18:37:17','Mudou o Status do pagamento para Aguardando pagamento','Retorno da operadora do pagamento','1','11');
 
 
 
@@ -691,7 +697,7 @@ CREATE TABLE `TB_PESSOA` (
   `co_contato` int(11) NOT NULL,
   `co_imagem` int(10) NOT NULL,
   PRIMARY KEY (`co_pessoa`,`co_endereco`,`co_contato`,`co_imagem`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_PESSOA VALUES('1','','Usuário Teste','','2019-10-31 00:00:00','','M','1','1','1');
@@ -715,7 +721,7 @@ CREATE TABLE `TB_PLANO` (
   `nu_mes_ativo` int(1) DEFAULT NULL COMMENT 'Número de meses ativo do plano (1, 3, 6, 12 e 24)',
   `st_status` varchar(1) DEFAULT 'A' COMMENT 'Status do plano A - Ativo / I - Inativo',
   PRIMARY KEY (`co_plano`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_PLANO VALUES('1','2018-07-31 10:17:46','Padrão','1','A');
@@ -732,6 +738,8 @@ INSERT INTO TB_PLANO VALUES('6','2020-01-29 19:03:13','Bienal','24','I');
 
 INSERT INTO TB_PLANO VALUES('7','2020-03-18 10:39:16','Trienal','36','I');
 
+INSERT INTO TB_PLANO VALUES('8','2021-08-02 17:53:18','Novidades','1','I');
+
 
 
 
@@ -745,7 +753,7 @@ CREATE TABLE `TB_PLANO_ASSINANTE` (
   `ds_observacao` text DEFAULT NULL,
   `co_plano` int(11) NOT NULL,
   PRIMARY KEY (`co_plano_assinante`,`co_plano`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_PLANO_ASSINANTE VALUES('1','0.00','2018-07-31 10:17:46','Plano Padrão','1');
@@ -774,6 +782,14 @@ INSERT INTO TB_PLANO_ASSINANTE VALUES('12','79.90','2021-06-17 17:05:40','Por 3 
 
 INSERT INTO TB_PLANO_ASSINANTE VALUES('13','27.97','2021-06-17 17:05:52','Por 1 meses','2');
 
+INSERT INTO TB_PLANO_ASSINANTE VALUES('14','599.97','2021-08-02 17:51:58','Por 36 Meses','7');
+
+INSERT INTO TB_PLANO_ASSINANTE VALUES('15','599.97','2021-08-02 17:52:40','Por 36 Meses','7');
+
+INSERT INTO TB_PLANO_ASSINANTE VALUES('16','0.99','2021-08-02 17:53:18','','8');
+
+INSERT INTO TB_PLANO_ASSINANTE VALUES('17','0.99','2021-08-02 17:54:00','','8');
+
 
 
 
@@ -799,7 +815,7 @@ CREATE TABLE `TB_PLANO_ASSINANTE_ASSINATURA` (
   `co_assinante` int(11) NOT NULL,
   `co_plano_assinante` int(11) NOT NULL,
   PRIMARY KEY (`co_plano_assinante_assinatura`,`co_assinante`,`co_plano_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES('1','2020-04-11 18:29:34','2020-04-26','','','3','2020-04-11 18:29:34','','','','0','0','I','null','0.00','1','1');
@@ -812,6 +828,8 @@ INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES('4','2020-04-24 20:48:52','2020
 
 INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES('5','2021-03-24 11:56:56','2020-11-26','','5','1','2021-03-24 11:57:01','1.59','28.31','https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=cf048c50827b4ca54f151c24101678ed2f79652ee39aea3e31a5aedba857a890c48b41754b5c6b1c','0','4','I','EAFFE1DE-25A7-41F8-B825-420C272F5366','29.90','1','2');
 
+INSERT INTO TB_PLANO_ASSINANTE_ASSINATURA VALUES('11','2021-08-02 18:37:11','2021-04-26','','5','1','2021-08-02 18:37:17','7.90','180.07','https://sandbox.pagseguro.uol.com.br/checkout/payment/booklet/print.jhtml?c=aaf6480ac797fa3c8b616e4c8268f6928a55911ca955d9a7867ea517fc887b51ebae6017dc1a22d1','0','2','I','76C6DB19-2E89-45B9-A4DF-D86246EE951E','187.97','2','10');
+
 
 
 
@@ -823,16 +841,12 @@ CREATE TABLE `TB_PLANO_PACOTE` (
   `co_plano` int(11) NOT NULL,
   `co_pacote` int(11) NOT NULL,
   PRIMARY KEY (`co_plano_pacote`,`co_plano`,`co_pacote`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_PLANO_PACOTE VALUES('1','1','1');
 
 INSERT INTO TB_PLANO_PACOTE VALUES('2','1','2');
-
-INSERT INTO TB_PLANO_PACOTE VALUES('15','7','1');
-
-INSERT INTO TB_PLANO_PACOTE VALUES('16','7','2');
 
 INSERT INTO TB_PLANO_PACOTE VALUES('17','6','1');
 
@@ -853,6 +867,14 @@ INSERT INTO TB_PLANO_PACOTE VALUES('24','3','2');
 INSERT INTO TB_PLANO_PACOTE VALUES('25','2','1');
 
 INSERT INTO TB_PLANO_PACOTE VALUES('26','2','2');
+
+INSERT INTO TB_PLANO_PACOTE VALUES('29','7','1');
+
+INSERT INTO TB_PLANO_PACOTE VALUES('30','7','2');
+
+INSERT INTO TB_PLANO_PACOTE VALUES('33','8','1');
+
+INSERT INTO TB_PLANO_PACOTE VALUES('34','8','2');
 
 
 
@@ -978,16 +1000,16 @@ CREATE TABLE `TB_USUARIO` (
   `co_pessoa` int(11) NOT NULL,
   `co_assinante` int(11) NOT NULL,
   PRIMARY KEY (`co_usuario`,`co_imagem`,`co_pessoa`,`co_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_USUARIO VALUES('1','123456**','TVRJek5EVTJLaW89','A','S','2019-10-31 00:00:00','1','1','0');
 
 INSERT INTO TB_USUARIO VALUES('2','123456**','TVRJek5EVTJLaW89','A','N','2020-04-11 18:29:33','0','2','1');
 
-INSERT INTO TB_USUARIO VALUES('3','GZM8VTL8','UjFwTk9GWlVURGc9','I','N','2020-04-11 18:35:42','0','3','2');
+INSERT INTO TB_USUARIO VALUES('3','123456**','TVRJek5EVTJLaW89','A','N','2020-04-11 18:35:42','0','3','2');
 
-INSERT INTO TB_USUARIO VALUES('4','BXZ0MIJ0','UWxoYU1FMUpTakE9','I','N','2020-04-13 17:01:03','0','4','3');
+INSERT INTO TB_USUARIO VALUES('4','123456**','TVRJek5EVTJLaW89','A','N','2020-04-13 17:01:03','0','4','3');
 
 
 
